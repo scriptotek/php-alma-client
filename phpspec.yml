@@ -1,0 +1,5 @@
+suites:
+  alma_suite:
+    namespace: Scriptotek\Alma
+    psr4_prefix: Scriptotek\Alma
+formatter.name: pretty

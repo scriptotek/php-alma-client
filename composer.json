@@ -1,0 +1,35 @@
+{
+    "name": "scriptotek/alma-client",
+    "type": "library",
+    "description": "Package for interacting with some of the Alma APIs",
+    "homepage": "http://github.com/scriptotek/alma-client",
+    "keywords": ["alma"],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0",
+        "scriptotek/marc": "dev-master"
+    },
+    "require-dev": {
+        "sami/sami": "1.4.*",
+        "phpspec/phpspec": "~2.2",
+        "henrikbjorn/phpspec-code-coverage": "~0.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dan Michael O. Heggø",
+            "email": "danmichaelo@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Scriptotek\\Alma\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Scriptotek\\Alma\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

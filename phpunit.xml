@@ -1,0 +1,19 @@
+<phpunit 
+  colors="true"
+  bootstrap="vendor/autoload.php"
+  verbose="true"
+  stopOnFailure="true">
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+
+    <testsuites>
+    	<testsuite name="TestSuite">
+    		<directory>tests/</directory>
+    	</testsuite>
+    </testsuites>
+
+</phpunit>
