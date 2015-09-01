@@ -77,7 +77,22 @@ class Client
      */
     public function request($method, $url, $options = [])
     {
-        return $this->httpClient->request($method, $this->getFullUrl($url), $this->getHttpOptions($options));
+        try {
+            return $this->httpClient->request($method, $this->getFullUrl($url), $this->getHttpOptions($options));
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            $this->handleError($e->getResponse());
+        }
+    }
+
+
+    public function handleError($response)
+    {
+        echo $response->getBody();
+        echo "\n\n";
+
+        $body = json_decode($response->getBody());
+        $msg = $body->errorList->error[0]->errorCode . ' - ' . $body->errorList->error[0]->errorMessage;
+        throw new ClientException('Client error ' . $response->getStatusCode() . ': ' . $msg);
     }
 
     /**
