@@ -61,7 +61,7 @@ class Client
     protected function getHttpOptions($options = [])
     {
         $defaultOptions = [
-            'query' => ['apikey' => $this->apiKey]
+            'headers' => ['Authorization' => 'apikey ' . $this->apiKey]
         ];
 
         return array_merge_recursive($defaultOptions, $options);
