@@ -7,7 +7,9 @@
 Simple PHP package for working with the [Alma REST APIs](https://developers.exlibrisgroup.com/alma/apis).
 SOAP APIs will not be supported.
 Currently, this package only supports the "Bibs" API, but it provides read/write support.
-If the package doesn't fit your needs, you might take a look at [php-alma](https://github.com/BCLibraries/php-alma).
+It is tightly integrated with the excellent File_MARC package for editing MARC records.
+If the package doesn't fit your needs, you might take a look at the alternative
+[php-alma](https://github.com/BCLibraries/php-alma) package.
 
 ### Install using Composer
 
@@ -32,18 +34,38 @@ $apiKey = 'MYSECRETKEY';
 $alma = new AlmaClient($apiKey);
 ```
 
-To update a bibliographic record:
+To fetch and update a bibliographic record:
 
 ```php
 $bib = $alma->bibs['990114012304702204'];  // a Bib object
-echo $bib->mms_id
-$record =  $bib->record; 
-$record->getField('650')->getSubField('a')->setValue('Yo!');
+
+$record = $bib->record;  // a File_MARC_Record object
+$newSubject = new File_MARC_Data_Field('650', array(
+    new File_MARC_Subfield('a', 'Boating with cats'),
+    new File_MARC_Subfield('2', 'noubomn'),
+), null, '0');
+$record->appendField($newSubject);
+
 $bib->record = $record;
 $bib->save()
 ```
 
-Batch update:
+In the future, the package might add more abstraction, so you
+do, say,
+
+
+```php
+$bib = $alma->bibs['990114012304702204'];  // a Bib object
+$bib->record->subjects->add([
+	'term' => 'Boating with cats',
+	'vocabulary' => noubomn'
+]);
+$bib->save()
+```
+
+but that's not supported yet.
+
+The Alma APIs don't include a search API, but we can use SRU for that:
 
 ```php
 $sru = new Sru\Client('...');
@@ -55,31 +77,30 @@ echo "Will update " . count($ids) . " records";
 foreach ($ids as $id) {
 	$bib = $alma->bibs['990114012304702204'];  // a Bib object
 	echo "[$bib->mms_id]\n";
-	$record =  $bib->record;
+	$record = $bib->record;
 
+	// Using File_MARC:
 	$subjects = $record->getSubjects('noubomn');
 	foreach ($subjects as $s) {
 		if ($s == 'Undervannsakustikk') {
 			$s->delete();
 		}
 	}
-	$record->add
-	$subjects->remove('Undervannsakustikk');
-	$subjects->add('Hydroakustikk');
 
+	$bib->record = $record;
 	$bib->save($record)
 }
 ```
 
 
-New entry: (are we allowed to do this??)
+Adding a new record: (not tested)
 
 ```php
 $bib = new Bib();
 $alma->bibs->store($bib);
 ```
 
-Holdings and items:
+Getting holdings and items:
 
 ```php
 $bib = $alma->bibs['990114012304702204'];
