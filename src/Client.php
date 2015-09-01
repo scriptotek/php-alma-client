@@ -91,9 +91,10 @@ class Client
     {
         $response = $this->request('GET', $url, [
             'query' => $query,
-            'headers' => ['Accept' => 'application/xml'],
+            'headers' => ['Accept' => 'application/json'],
         ]);
-        return simplexml_load_string($response->getBody());
+
+        return json_decode($response->getBody());
     }
 
     /**
@@ -103,13 +104,13 @@ class Client
      * @param array $query
      * @return mixed
      */
-    public function getJSON($url, $query = [])
+    public function getXML($url, $query = [])
     {
         $response = $this->request('GET', $url, [
             'query' => $query,
-            'headers' => ['Accept' => 'application/json']
+            'headers' => ['Accept' => 'application/xml']
         ]);
-        return json_decode($response->getBody());
+        return simplexml_load_string($response->getBody());
     }
 
     /**
@@ -121,13 +122,16 @@ class Client
      */
     public function put($url, $data)
     {
+        $data = json_encode($data);
+
         $response = $this->request('PUT', $url, [
             'data' => $data,
             'headers' => [
-                'Content-Type' => 'application/xml',
-                'Accept' => 'application/xml'
+                'Content-Type' => 'application/json',
+                'Accept' => 'application/json'
             ],
         ]);
-        return $response->getStatusCode() == '200';  // TODO: Check if there are other success codes that can be returned
+        return $response->getStatusCode() == '200';
+        // TODO: Check if there are other success codes that can be returned
     }
 }

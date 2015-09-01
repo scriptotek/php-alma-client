@@ -31,7 +31,7 @@ class Bib
 
     public function isDirty()
     {
-        return strcmp($this->data->asXML(), $this->origData->asXML()) != 0;
+        return strcmp(json_encode($this->data), json_encode($this->origData)) != 0;
     }
 
     public function save()
@@ -42,17 +42,16 @@ class Bib
         if (!$this->mms_id) {
             throw new \ErrorException('Cannot save record with no MMS ID');
         }
-        $data = $this->data;
-        return $this->client->put('/bibs/' . $this->mms_id, $data);
+        return $this->client->put('/bibs/' . $this->mms_id, $this->data);
     }
 
     public function __set($key, $value)
     {
-        print " { $key } ";
+        // print " { $key } ";
         $this->dirty = true;
 
         if ($key == 'record') {
-            return simplexml_load_string($value->toXML());
+            $this->data->anies[0] = $value->toXML('UTF-8', false, false);
         } else {
             $this->data->{$key} = $value;
         }
@@ -77,7 +76,13 @@ class Bib
         }
 
         if ($key == 'record') {
-            return Record::fromString($this->data->{$key}->asXML());
+
+            // Strip away XML declaration to avoid getting
+            // "Document labelled UTF-16 but has UTF-8 content" error
+            // TODO: Remove once this has been fixed upstream
+            $marcData = trim(preg_replace('/^\<\?xml.*?\?\>/', '', $this->data->anies[0]));
+
+            return Record::fromString($marcData);
         }
 
         return $this->data->{$key};
