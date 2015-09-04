@@ -111,13 +111,3 @@ foreach ($bib->holdings() as $holding) {
 }
 ```
 
-
-Note that bibliographic data is only loaded when needed,
-so the following holdings request would not cause bibliographic
-data to be loaded:
-
-```php
-$holdings = $alma->bibs['990114012304702204']->holdings
-$items = $holdings[0]->items()
-```
-

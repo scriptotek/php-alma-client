@@ -15,7 +15,11 @@ class Factory
         $args = $args[0];
         $args[] = $client;
         $reflect  = new ReflectionClass($model);
-        return $reflect->newInstanceArgs($args);
+        $instance = $reflect->newInstanceArgs($args);
+        if (method_exists($instance, 'fetch')) {
+            $instance->fetch();
+        }
+        return $instance;
     }
 
 }
