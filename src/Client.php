@@ -4,6 +4,7 @@ namespace Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use GuzzleHttp\Client as HttpClient;
+use GuzzleHttp\Exception\RequestException;
 
 /**
  * Alma client
@@ -149,5 +150,33 @@ class Client
         ]);
         return $response->getStatusCode() == '200';
         // TODO: Check if there are other success codes that can be returned
+    }
+
+    /**
+     * Get redirect location or null if none
+     *
+     * @param string $url
+     * @param array $query
+     * @return string|null
+     */
+    public function getRedirectLocation($url, $query = [])
+    {
+        try {
+            $response = $this->httpClient->request('GET', $this->getFullUrl($url), $this->getHttpOptions([
+                'query' => $query,
+                'headers' => ['Accept' => 'application/json'],
+                'allow_redirects' => false,
+            ]));
+        } catch (RequestException $e) {
+            // We receive a 400 if the barcode is invalid
+            // if ($e->hasResponse()) {
+            //     echo $e->getResponse()->getStatusCode() . "\n";
+            //     echo $e->getResponse()->getBody() . "\n";
+            // }
+            return null;
+        }
+        $locations = $response->getHeader('Location');
+
+        return count($locations) ? $locations[0] : null;
     }
 }

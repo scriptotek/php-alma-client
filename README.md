@@ -38,7 +38,13 @@ To fetch and update a bibliographic record:
 
 ```php
 $bib = $alma->bibs['990114012304702204'];  // a Bib object
+```
+or
+```php
+$bib = $alma->bibs->fromBarcode('92nf02526');
+```
 
+```php
 $record = $bib->record;  // a File_MARC_Record object
 $newSubject = new File_MARC_Data_Field('650', array(
     new File_MARC_Subfield('a', 'Boating with cats'),
