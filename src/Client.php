@@ -89,11 +89,12 @@ class Client
 
     public function handleError($response)
     {
-        echo $response->getBody();
-        echo "\n\n";
-
-        $body = json_decode($response->getBody());
-        $msg = $body->errorList->error[0]->errorCode . ' - ' . $body->errorList->error[0]->errorMessage;
+        try {
+            $body = json_decode($response->getBody());
+            $msg = $body->errorList->error[0]->errorCode . ' - ' . $body->errorList->error[0]->errorMessage;
+        } catch (\Exception $e) {
+            $msg = $response->getBody();
+        }
         throw new ClientException('Client error ' . $response->getStatusCode() . ': ' . $msg);
     }
 
