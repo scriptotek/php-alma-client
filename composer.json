@@ -6,7 +6,8 @@
     "keywords": ["alma"],
     "require": {
         "guzzlehttp/guzzle": "~6.0",
-        "scriptotek/marc": "dev-master"
+        "scriptotek/marc": "dev-master",
+        "danmichaelo/quitesimplexmlelement": "^0.2.5"
     },
     "require-dev": {
         "sami/sami": "1.4.*",

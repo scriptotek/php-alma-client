@@ -22,14 +22,15 @@ class Bib
 
     public function fetch()
     {
-        $this->data = $this->client->get('/bibs/' . $this->mms_id);
+        $this->data = $this->client->getXML('/bibs/' . $this->mms_id);
 
-        // Strip away XML declaration to avoid getting
+        // JSON: Strip away XML declaration to avoid getting
         // "Document labelled UTF-16 but has UTF-8 content" error
         // TODO: Remove once this has been fixed upstream
-        $marcData = trim(preg_replace('/^\<\?xml.*?\?\>/', '', $this->data->anies[0]));
+        // $marcData = trim(preg_replace('/^\<\?xml.*?\?\>/', '', $this->data->anies[0]));
 
-        $this->record = Record::fromString($marcData);
+        $marcRecord = $this->data->first('record')->asXML();
+        $this->record = Record::fromString($marcRecord);
     }
 
     public function holdings()

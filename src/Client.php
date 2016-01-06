@@ -2,6 +2,7 @@
 
 namespace Scriptotek\Alma;
 
+use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use GuzzleHttp\Client as HttpClient;
 
 /**
@@ -96,7 +97,7 @@ class Client
     }
 
     /**
-     * Make a GET request.
+     * Make a GET request, accepting JSON.
      *
      * @param string $url
      * @param array $query
@@ -113,7 +114,7 @@ class Client
     }
 
     /**
-     * Make a GET request.
+     * Make a GET request, accepting XML.
      *
      * @param string $url
      * @param array $query
@@ -125,7 +126,7 @@ class Client
             'query' => $query,
             'headers' => ['Accept' => 'application/xml']
         ]);
-        return simplexml_load_string($response->getBody());
+        return new QuiteSimpleXMLElement(strval($response->getBody()));
     }
 
     /**
