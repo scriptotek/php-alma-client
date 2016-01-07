@@ -7,8 +7,14 @@
     "require": {
         "guzzlehttp/guzzle": "~6.0",
         "scriptotek/marc": "dev-master",
-        "danmichaelo/quitesimplexmlelement": "^0.2.5"
+        "danmichaelo/quitesimplexmlelement": "^0.3.0"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "/Users/danmichael/code/scriptotek/marc"
+        }
+    ],
     "require-dev": {
         "sami/sami": "1.4.*",
         "phpspec/phpspec": "~2.2",

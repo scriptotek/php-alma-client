@@ -2,6 +2,7 @@
 
 namespace Scriptotek\Alma\Models;
 
+use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Holdings;
 use Scriptotek\Marc\Record;
@@ -48,12 +49,14 @@ class Bib
 
     public function save()
     {
-        $data = $this->data;
-        $data->anies[0] = $this->record->toXML('UTF-8', false, false);
-        if (!$this->mms_id) {
-            throw new \ErrorException('Cannot save record with no MMS ID');
-        }
-        return $this->client->put('/bibs/' . $this->mms_id, $data);
+        $newRecord = new QuiteSimpleXMLElement($this->record->toXML('UTF-8', false, false));
+        $this->data->first('record')->replace($newRecord);
+        $newData = $this->data->asXML();
+
+        // Alma doesn't like namespaces
+        $newData = str_replace(' xmlns="http://www.loc.gov/MARC21/slim"', '', $newData);
+
+        return $this->client->putXML('/bibs/' . $this->mms_id, $newData);
     }
 
     public function __get($key)

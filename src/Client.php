@@ -154,6 +154,26 @@ class Client
     }
 
     /**
+     * Make a PUT request.
+     *
+     * @param string $url
+     * @param $data
+     * @return bool
+     */
+    public function putXML($url, $data)
+    {
+        $response = $this->request('PUT', $url, [
+            'data' => $data,
+            'headers' => [
+                'Content-Type' => 'application/xml',
+                'Accept' => 'application/xml'
+            ],
+        ]);
+        return $response->getStatusCode() == '200';
+        // TODO: Check if there are other success codes that can be returned
+    }
+
+    /**
      * Get redirect location or null if none
      *
      * @param string $url
