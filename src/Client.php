@@ -170,7 +170,7 @@ class Client
         $data = json_encode($data);
 
         $response = $this->request('PUT', $url, [
-            'data' => $data,
+            'body' => $data,
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json'
@@ -190,7 +190,7 @@ class Client
     public function putXML($url, $data)
     {
         $response = $this->request('PUT', $url, [
-            'data' => $data,
+            'body' => $data,
             'headers' => [
                 'Content-Type' => 'application/xml',
                 'Accept' => 'application/xml'
