@@ -1,5 +1,5 @@
 <?php
 
-namespace Scriptotek\Alma;
+namespace Scriptotek\Alma\Exception;
 
 class ClientException extends \RuntimeException {}

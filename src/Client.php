@@ -5,6 +5,7 @@ namespace Scriptotek\Alma;
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\RequestException;
+use Scriptotek\Alma\Exception\ClientException;
 
 /**
  * Alma client
@@ -42,9 +43,10 @@ class Client
     public function setRegion($regionCode)
     {
         if (!in_array($regionCode, ['na', 'eu', 'ap'])) {
-            throw new \ErrorException('Invalid region code');
+            throw new ClientException('Invalid region code');
         }
         $this->baseUrl = 'https://api-' . $regionCode . '.hosted.exlibrisgroup.com/almaws/v1';
+        return $this;
     }
 
     /**
@@ -62,6 +64,9 @@ class Client
      */
     protected function getHttpOptions($options = [])
     {
+        if (!$this->apiKey) {
+            throw new ClientException('No API key defined');
+        }
         $defaultOptions = [
             'headers' => ['Authorization' => 'apikey ' . $this->apiKey]
         ];
