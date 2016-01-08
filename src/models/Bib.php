@@ -4,6 +4,7 @@ namespace Scriptotek\Alma\Models;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
+use Scriptotek\Alma\Exception\NoLinkedNetworkZoneRecordException;
 use Scriptotek\Alma\Holdings;
 use Scriptotek\Marc\Record;
 
@@ -57,6 +58,15 @@ class Bib
         $newData = str_replace(' xmlns="http://www.loc.gov/MARC21/slim"', '', $newData);
 
         return $this->client->putXML('/bibs/' . $this->mms_id, $newData);
+    }
+
+    public function getNzRecord()
+    {
+        $nz_mms_id = $this->data->text('linked_record_id[@type="NZ"]');
+        if (!$nz_mms_id) {
+            throw new NoLinkedNetworkZoneRecordException("Record $this->mms_id is not linked to a network zone record.");
+        }
+        return $this->client->nz->bibs[$nz_mms_id];
     }
 
     public function __get($key)

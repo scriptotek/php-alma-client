@@ -14,8 +14,14 @@ class Client
 {
     public $baseUrl;
 
+    /** @var string  Alma zone (institution or network) */
+    public $zone;
+
     /** @var string  Alma Developers Network API key for this zone */
     public $key;
+
+    /** @var string  Network zone instance */
+    public $nz;
 
     /** @var HttpClient */
     protected $httpClient;
@@ -25,15 +31,22 @@ class Client
      *
      * @param string $key  API key for institutional zone
      * @param string $region  Hosted region code, used to build base URL
+     * @param string $zone  Alma zone
      * @param HttpClient $httpClient
      * @throws \ErrorException
      */
-    public function __construct($key = null, $region = 'eu', HttpClient $httpClient = null)
+    public function __construct($key = null, $region = 'eu', $zone = Zones::INSTITUTION, HttpClient $httpClient = null)
     {
         $this->key = $key;
         $this->setRegion($region);
         $this->httpClient = $httpClient ?: new HttpClient();
+        $this->zone = $zone;
         $this->bibs = new Bibs($this);  // Or do some magic instead?
+        if ($zone == Zones::INSTITUTION) {
+            $this->nz = new Client(null, $region, Zones::NETWORK, $this->httpClient);
+        } elseif ($zone != Zones::NETWORK) {
+            throw new ClientException('Invalid zone name.');
+        }
     }
 
     /**
@@ -74,7 +87,7 @@ class Client
     protected function getHttpOptions($options = [])
     {
         if (!$this->key) {
-            throw new ClientException('No API key defined.');
+            throw new ClientException('No API key defined for ' . $this->zone);
         }
         $defaultOptions = [
             'headers' => ['Authorization' => 'apikey ' . $this->key]

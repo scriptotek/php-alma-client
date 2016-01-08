@@ -21,28 +21,30 @@ composer require scriptotek/alma-client dev-master
 
 in your project directory to get the latest version of the package.
 
-## Tutorial
+## Tutorial: Editing a bib record
 
-First initiate a new client object:
+Start by initiating a new client:
 
 ```php
 require_once('vendor/autoload.php');
 use Scriptotek\Alma\Client as AlmaClient;
 
-$apiKey = 'MYSECRETKEY';
-
-$alma = new AlmaClient($apiKey);
+$alma = new AlmaClient('MY_SECRET_API_KEY');
 ```
 
-To fetch and update a bibliographic record:
+A bibliographic record can be fetched either by MMS ID:
 
 ```php
-$bib = $alma->bibs['990114012304702204'];  // a Bib object
+$bib = $alma->bibs['990114012304702204'];
 ```
-or
+
+or by barcode:
+
 ```php
 $bib = $alma->bibs->fromBarcode('92nf02526');
 ```
+
+The returned `Bib` object can then easily be edited using the `File_MARC_Record` interface:
 
 ```php
 $record = $bib->record;  // a File_MARC_Record object
@@ -55,6 +57,22 @@ $record->appendField($newSubject);
 $bib->record = $record;
 $bib->save()
 ```
+
+## Network zone
+
+If your Alma instance is connected to a network zone,
+you can easily get the network zone record connected to
+the institution zone record:
+
+```
+$alma->nz->setKey('MY_SECRET_NETWORK_ZONE_API_KEY');
+$nzBib = $bib->getNzRecord();
+```
+
+Note that the API key for the network zone is not the same
+as the one for the institution zone.
+
+## Future plans
 
 In the future, the package might add more abstraction, so you
 do, say,
@@ -97,7 +115,6 @@ foreach ($ids as $id) {
 	$bib->save($record)
 }
 ```
-
 
 Adding a new record: (not tested)
 
