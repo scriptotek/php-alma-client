@@ -14,8 +14,8 @@ class Client
 {
     public $baseUrl;
 
-    /** @var string Alma Developers Network API key */
-    public $apiKey;
+    /** @var string  Alma Developers Network API key for this zone */
+    public $key;
 
     /** @var HttpClient */
     protected $httpClient;
@@ -23,17 +23,26 @@ class Client
     /**
      * Create a new client
      *
-     * @param string $apiKey Api key
-     * @param string $region
+     * @param string $key  API key for institutional zone
+     * @param string $region  Hosted region code, used to build base URL
      * @param HttpClient $httpClient
      * @throws \ErrorException
      */
-    public function __construct($apiKey = null, $region = 'eu', HttpClient $httpClient = null)
+    public function __construct($key = null, $region = 'eu', HttpClient $httpClient = null)
     {
-        $this->apiKey = $apiKey;
+        $this->key = $key;
         $this->setRegion($region);
         $this->httpClient = $httpClient ?: new HttpClient();
         $this->bibs = new Bibs($this);  // Or do some magic instead?
+    }
+
+    /**
+     * @param $key  API key for this zone
+     */
+    public function setKey($key)
+    {
+        $this->key = $key;
+        return $this;
     }
 
     /**
@@ -64,11 +73,11 @@ class Client
      */
     protected function getHttpOptions($options = [])
     {
-        if (!$this->apiKey) {
-            throw new ClientException('No API key defined');
+        if (!$this->key) {
+            throw new ClientException('No API key defined.');
         }
         $defaultOptions = [
-            'headers' => ['Authorization' => 'apikey ' . $this->apiKey]
+            'headers' => ['Authorization' => 'apikey ' . $this->key]
         ];
 
         return array_merge_recursive($defaultOptions, $options);
