@@ -43,4 +43,15 @@ class Bibs extends ResourceList implements ResourceListInterface
         return null;
     }
 
+    public function fromIsbn($isbn)
+    {
+        $record = $this->client->sru->first('alma.isbn="' . $isbn . '"');
+        $mmsId = $record->data->text('//controlfield[@tag="001"][text() = "990702280434702204"]');
+        if ($mmsId) {
+            return $this->offsetGet($mmsId);
+        }
+
+        return null;
+    }
+
 }

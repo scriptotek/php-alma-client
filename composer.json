@@ -7,7 +7,8 @@
     "require": {
         "guzzlehttp/guzzle": "~6.0",
         "scriptotek/marc": "dev-master",
-        "danmichaelo/quitesimplexmlelement": "^0.3.0"
+        "danmichaelo/quitesimplexmlelement": "^0.3.0",
+        "scriptotek/sru-client": "~0.3.0"
     },
     "repositories": [
         {
@@ -17,8 +18,7 @@
     ],
     "require-dev": {
         "sami/sami": "1.4.*",
-        "phpspec/phpspec": "~2.2",
-        "henrikbjorn/phpspec-code-coverage": "~0.2"
+        "phpspec/phpspec": "~2.2"
     },
     "license": "MIT",
     "authors": [

@@ -32,6 +32,17 @@ use Scriptotek\Alma\Client as AlmaClient;
 $alma = new AlmaClient('MY_SECRET_API_KEY');
 ```
 
+Optionally, connect [an SRU client](https://github.com/scriptotek/php-sru-client)
+if you want to do searches:
+
+```
+use Scriptotek\Sru\Client as SruClient;
+$alma->setSruClient(new SruClient(
+    'https://bibsys-k.alma.exlibrisgroup.com/view/sru/47BIBSYS_UBO',
+    ['version' => '1.2']
+));
+```
+
 A bibliographic record can be fetched either by MMS ID:
 
 ```php
@@ -44,6 +55,12 @@ or by barcode:
 $bib = $alma->bibs->fromBarcode('92nf02526');
 ```
 
+or by ISBN (this requires an SRU client):
+
+```php
+$bib = $alma->bibs->fromIsbn('9788299308922');
+```
+
 The returned `Bib` object can then easily be edited using the `File_MARC_Record` interface:
 
 ```php
@@ -54,7 +71,6 @@ $newSubject = new File_MARC_Data_Field('650', array(
 ), null, '0');
 $record->appendField($newSubject);
 
-$bib->record = $record;
 $bib->save()
 ```
 

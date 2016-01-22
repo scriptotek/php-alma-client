@@ -6,6 +6,7 @@ use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\RequestException;
 use Scriptotek\Alma\Exception\ClientException;
+use Scriptotek\Sru\Client as SruClient;
 
 /**
  * Alma client
@@ -25,6 +26,9 @@ class Client
 
     /** @var HttpClient */
     protected $httpClient;
+
+    /** @var SruClient */
+    public $sru;
 
     /**
      * Create a new client
@@ -47,6 +51,11 @@ class Client
         } elseif ($zone != Zones::NETWORK) {
             throw new ClientException('Invalid zone name.');
         }
+    }
+
+    public function setSruClient(SruClient $sru)
+    {
+        $this->sru = $sru;
     }
 
     /**
