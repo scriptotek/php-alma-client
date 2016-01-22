@@ -10,12 +10,6 @@
         "danmichaelo/quitesimplexmlelement": "^0.3.0",
         "scriptotek/sru-client": "~0.3.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "/Users/danmichael/code/scriptotek/marc"
-        }
-    ],
     "require-dev": {
         "sami/sami": "1.4.*",
         "phpspec/phpspec": "~2.2"
