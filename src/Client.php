@@ -136,7 +136,7 @@ class Client
      * @param array $query
      * @return mixed
      */
-    public function get($url, $query = [])
+    public function getJSON($url, $query = [])
     {
         $response = $this->request('GET', $url, [
             'query' => $query,

@@ -11,9 +11,15 @@ use Scriptotek\Marc\Record;
 class Bib
 {
     public $mms_id;
+
+    /** @var Client */
     protected $client;
+
+    /** @var QuiteSimpleXMLElement */
     protected $data;
+
     protected $_holdings;
+
     protected $dirty = false;
 
     public function __construct($mms_id = null, Client $client = null)
@@ -26,10 +32,10 @@ class Bib
     {
         $this->data = $this->client->getXML('/bibs/' . $this->mms_id);
 
-        // JSON: Strip away XML declaration to avoid getting
-        // "Document labelled UTF-16 but has UTF-8 content" error
-        // TODO: Remove once this has been fixed upstream
-        // $marcData = trim(preg_replace('/^\<\?xml.*?\?\>/', '', $this->data->anies[0]));
+        $mms_id = $this->data->first('mms_id');
+        if ($mms_id != $this->mms_id) {
+            throw new \ErrorException('Record mms_id ' . $mms_id . ' does not match requested mms_id ' . $this->mms_id . '.');
+        }
 
         $marcRecord = $this->data->first('record')->asXML();
         $this->record = Record::fromString($marcRecord);
@@ -71,6 +77,6 @@ class Bib
 
     public function __get($key)
     {
-        return $this->data->{$key};
+        return $this->data->text($key);
     }
 }

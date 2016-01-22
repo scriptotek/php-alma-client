@@ -11,7 +11,7 @@ class BibSpec extends ObjectBehavior
 {
 
     public $sample = '<bib>
-          <mms_id>991122800000121</mms_id>
+          <mms_id>abc123</mms_id>
           <holdings link="/almaws/v1/bibs/991122800000121/holdings"/>
           <created_by>exl_impl</created_by>
           <created_date>2013-11-05Z</created_date>
@@ -35,6 +35,10 @@ class BibSpec extends ObjectBehavior
     {
         $mms_id = 'abc123';
         $this->beConstructedWith($mms_id, $almaClient);
+        $almaClient->getXML(Argument::containingString('abc123'))
+            ->shouldBeCalled()
+            ->willReturn(new QuiteSimpleXMLElement($this->sample));
+        $this->fetch();
     }
 
     function it_is_initializable()
@@ -42,17 +46,13 @@ class BibSpec extends ObjectBehavior
         $this->shouldHaveType('Scriptotek\Alma\models\Bib');
     }
 
-    public function it_has_holdings(AlmaClient $almaClient)
-        $this->holdings();
-    }
+    // public function it_has_holdings(AlmaClient $almaClient)
+    // {
+    //     $this->holdings();
+    // }
 
     public function it_should_provide_data(AlmaClient $almaClient)
     {
-        $xml = new QuiteSimpleXMLElement($this->sample);
-        $almaClient->get(Argument::containingString('abc123'))
-            ->shouldBeCalled()
-            ->willReturn($xml);
-
         $this->created_date->shouldBe('2013-11-05Z');
     }
 }
