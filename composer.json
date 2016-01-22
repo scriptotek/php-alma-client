@@ -5,6 +5,7 @@
     "homepage": "http://github.com/scriptotek/alma-client",
     "keywords": ["alma"],
     "require": {
+        "php" : "^5.5 || ^7.0",
         "guzzlehttp/guzzle": "~6.0",
         "scriptotek/marc": "dev-master",
         "danmichaelo/quitesimplexmlelement": "^0.3.0",
