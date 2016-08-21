@@ -7,9 +7,9 @@
     "require": {
         "php" : "^5.5 || ^7.0",
         "guzzlehttp/guzzle": "~6.0",
-        "scriptotek/marc": "^0.2",
+        "scriptotek/marc": "^0.2.1",
         "danmichaelo/quitesimplexmlelement": "^0.4",
-        "scriptotek/sru-client": "^0.4"
+        "scriptotek/sru-client": "^0.4.1"
     },
     "require-dev": {
         "sami/sami": "~3.3",

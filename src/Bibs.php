@@ -2,6 +2,8 @@
 
 namespace Scriptotek\Alma;
 
+use Scriptotek\Alma\Models\Bib;
+
 class Bibs extends ResourceList implements ResourceListInterface
 {
 
@@ -39,5 +41,12 @@ class Bibs extends ResourceList implements ResourceListInterface
         $mmsId = $record->data->text('//controlfield[@tag="001"]');
 
         return $this->getResource($mmsId);
+    }
+
+    public function search($cql, $batchSize=10)
+    {
+        foreach ($this->client->sru->all($cql, $batchSize) as $sruRecord) {
+            yield Bib::fromSruRecord($sruRecord, $this->client);
+        }
     }
 }
