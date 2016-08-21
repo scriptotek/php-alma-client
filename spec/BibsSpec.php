@@ -69,7 +69,9 @@ class BibsSpec extends ObjectBehavior
         $bib->shouldBe(null);
     }
 
+    /*
     public function it_returns_a_bib_object_given_a_barcode(AlmaClient $almaClient)
     {
     }
+    */
 }
