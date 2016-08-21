@@ -14,6 +14,31 @@ class ResourceList implements \Iterator, \Countable, \ArrayAccess
         $this->factory = $factory ?: new Factory();
     }
 
+    /**
+     * Returns a single resource
+     *
+     * @param $id
+     * @return ResourceInterface
+     */
+    public function getResource($id)
+    {
+        return $this->factory->make(
+            $this->resourceName,
+            $this->getFactoryArgs($id),
+            $this->client
+        );
+
+    }
+
+    /**
+     * Returns all resources
+     */
+    public function getResources()
+    {
+        // No endpoint available...
+        throw new \ErrorException('Listing all resources not supported by Alma');
+    }
+
     /*********************************************************
      * Iterator + Countable
      *********************************************************/
@@ -74,11 +99,7 @@ class ResourceList implements \Iterator, \Countable, \ArrayAccess
 
     public function offsetGet($key)
     {
-        return $this->factory->make(
-            $this->resourceName,
-            $this->getFactoryArgs($key),
-            $this->client
-        );
+        return $this->getResource($key);
     }
 
     public function offsetSet($key, $value)
