@@ -7,13 +7,14 @@
     "require": {
         "php" : "^5.5 || ^7.0",
         "guzzlehttp/guzzle": "~6.0",
-        "scriptotek/marc": "dev-master",
-        "danmichaelo/quitesimplexmlelement": "^0.3.0",
-        "scriptotek/sru-client": "~0.3.0"
+        "scriptotek/marc": "^0.2",
+        "danmichaelo/quitesimplexmlelement": "^0.4",
+        "scriptotek/sru-client": "^0.4"
     },
     "require-dev": {
-        "sami/sami": "1.4.*",
-        "phpspec/phpspec": "^3.0"
+        "sami/sami": "~3.3",
+        "phpspec/phpspec": "~3.0",
+        "henrikbjorn/phpspec-code-coverage": "~3.0"
     },
     "license": "MIT",
     "authors": [
@@ -29,9 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Scriptotek\\Alma\\": "tests/"
+            "spec\\Scriptotek\\Alma\\": "spec/"
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
