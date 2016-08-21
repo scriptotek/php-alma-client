@@ -2,4 +2,6 @@
 
 namespace Scriptotek\Alma\Exception;
 
-class ClientException extends \RuntimeException {}
+class ClientException extends \RuntimeException
+{
+}

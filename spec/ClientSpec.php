@@ -2,7 +2,6 @@
 
 namespace spec\Scriptotek\Alma;
 
-use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Response;
 use PhpSpec\ObjectBehavior;
@@ -11,7 +10,7 @@ use Scriptotek\Alma\Zones;
 
 function str_random()
 {
-    return strval(rand(10000,99999));
+    return strval(rand(10000, 99999));
 }
 
 class ClientSpec extends ObjectBehavior
@@ -110,5 +109,4 @@ class ClientSpec extends ObjectBehavior
         $result = $this->put($path, $data);
         $result->shouldBe(true);
     }
-
 }

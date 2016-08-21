@@ -6,7 +6,6 @@ use Scriptotek\Alma\Models\Holding;
 
 class Holdings extends ResourceList implements ResourceListInterface
 {
-
     protected $resourceName = 'Holding';
 
     protected $mms_id;
@@ -20,7 +19,8 @@ class Holdings extends ResourceList implements ResourceListInterface
     public function getFactoryArgs($element)
     {
         $holding_id = $element->holding_id;
-        return array($this->mms_id, $holding_id);
+
+        return [$this->mms_id, $holding_id];
     }
 
     public function getResources()
@@ -32,5 +32,4 @@ class Holdings extends ResourceList implements ResourceListInterface
     {
         return $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings/' . $id);
     }
-
 }

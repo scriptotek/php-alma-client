@@ -32,14 +32,14 @@ class Bib
     }
 
     /**
-     * Initialize from SRU record without having to fetch the Bib record
+     * Initialize from SRU record without having to fetch the Bib record.
      */
     public static function fromSruRecord(SruRecord $record, Client $client = null)
     {
         $record->data->registerXPathNamespace('marc', 'http://www.loc.gov/MARC21/slim');
         $marcRecord = MarcRecord::fromString($record->data->asXML());
 
-        return new Bib(strval($marcRecord->id), $client, $marcRecord);
+        return new self(strval($marcRecord->id), $client, $marcRecord);
     }
 
     public function fetch()
@@ -64,6 +64,7 @@ class Bib
         if (!isset($this->_holdings)) {
             $this->_holdings = new Holdings($this->mms_id, $this->client);
         }
+
         return $this->_holdings;
     }
 
@@ -96,6 +97,7 @@ class Bib
         if (!$nz_mms_id) {
             throw new NoLinkedNetworkZoneRecordException("Record $this->mms_id is not linked to a network zone record.");
         }
+
         return $this->client->nz->bibs[$nz_mms_id];
     }
 

@@ -11,6 +11,6 @@ interface ResourceListInterface
     public function getFactoryArgs($element);
 
     public function getResources();
-    public function getResource($id);
 
+    public function getResource($id);
 }

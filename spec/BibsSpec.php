@@ -2,12 +2,10 @@
 
 namespace spec\Scriptotek\Alma;
 
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-use Scriptotek\Alma\Models\Bib;
-use Scriptotek\Alma\Client as AlmaClient;
-use Scriptotek\Alma\Factory;
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
+use PhpSpec\ObjectBehavior;
+use Scriptotek\Alma\Client as AlmaClient;
+use Scriptotek\Alma\Models\Bib;
 use Scriptotek\Sru\Client as SruClient;
 use Scriptotek\Sru\Record as SruRecord;
 
