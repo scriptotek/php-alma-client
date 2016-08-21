@@ -19,7 +19,7 @@ class BibSpec extends ObjectBehavior
         $this->fetch();
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Scriptotek\Alma\models\Bib');
     }

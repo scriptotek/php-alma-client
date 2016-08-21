@@ -15,9 +15,10 @@ class ResourceList implements \Iterator, \Countable, \ArrayAccess
     }
 
     /**
-     * Returns a single resource
+     * Returns a single resource.
      *
      * @param $id
+     *
      * @return ResourceInterface
      */
     public function getResource($id)
@@ -27,11 +28,10 @@ class ResourceList implements \Iterator, \Countable, \ArrayAccess
             $this->getFactoryArgs($id),
             $this->client
         );
-
     }
 
     /**
-     * Returns all resources
+     * Returns all resources.
      */
     public function getResources()
     {
@@ -60,6 +60,7 @@ class ResourceList implements \Iterator, \Countable, \ArrayAccess
         if ($force || !isset($this->_resources)) {
             $this->_resources = $this->getResources();
         }
+
         return $this->_resources;
     }
 
@@ -80,7 +81,7 @@ class ResourceList implements \Iterator, \Countable, \ArrayAccess
 
     public function valid()
     {
-        return ($this->position < $this->count());
+        return $this->position < $this->count();
     }
 
     public function count()
@@ -111,5 +112,4 @@ class ResourceList implements \Iterator, \Countable, \ArrayAccess
     {
         // Uh oh
     }
-
 }

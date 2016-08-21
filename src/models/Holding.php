@@ -19,5 +19,4 @@ class Holding
         $this->holding_id = $holding_id;
         $this->client = $client;
     }
-
 }

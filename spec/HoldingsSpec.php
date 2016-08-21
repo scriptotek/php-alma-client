@@ -5,13 +5,10 @@ namespace spec\Scriptotek\Alma;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Scriptotek\Alma\Client as AlmaClient;
-use Scriptotek\Alma\Factory;
 use Scriptotek\Alma\models\Holding;
-
 
 class HoldingsSpec extends ObjectBehavior
 {
-
     public $sample = '{
           "holding": [
             {
@@ -61,7 +58,7 @@ class HoldingsSpec extends ObjectBehavior
         $this->beConstructedWith($mms_id, $almaClient);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Scriptotek\Alma\Holdings');
     }
@@ -84,5 +81,4 @@ class HoldingsSpec extends ObjectBehavior
         $this->shouldImplement('Iterator');
         $this->current()->shouldHaveType('Scriptotek\Alma\Models\Holding');
     }
-
 }
