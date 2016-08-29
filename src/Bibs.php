@@ -6,12 +6,7 @@ use Scriptotek\Alma\Models\Bib;
 
 class Bibs extends ResourceList implements ResourceListInterface
 {
-    protected $resourceName = 'Bib';
-
-    public function __construct(Client $client, Factory $factory = null)
-    {
-        parent::__construct($client, $factory);
-    }
+    protected $resourceName = Bib::class;
 
     public function getFactoryArgs($element)
     {

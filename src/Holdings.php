@@ -6,7 +6,7 @@ use Scriptotek\Alma\Models\Holding;
 
 class Holdings extends ResourceList implements ResourceListInterface, \Countable
 {
-    protected $resourceName = 'Holding';
+    protected $resourceName = Holding::class;
 
     protected $mms_id;
 
