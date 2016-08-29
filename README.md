@@ -128,6 +128,30 @@ $record->appendField($newSubject);
 $bib->save($record);
 ```
 
+## Analytics reports
+
+Note: The Analytics API do not provide column names, but we can set them:
+
+```php
+$report = $alma->analytics['UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fysikk'];
+$report->setHeaders([
+    'mms_id',
+    'receiving_date',
+]);
+foreach ($report->rows as $row) {
+    echo $row->mms_id . ": " . $row->receiving_date . "\n";
+}
+```
+
+Columns can also be accessed by their indices:
+
+```
+foreach ($report->rows as $row) {
+    echo $row[0] . " - " . $row[1] . "\n";
+}
+```
+
+
 ## Future plans
 
 In the future, the package might add more abstraction, so you

@@ -5,6 +5,7 @@ namespace Scriptotek\Alma;
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\RequestException;
+use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Exception\ClientException;
 use Scriptotek\Sru\Client as SruClient;
 
@@ -47,6 +48,7 @@ class Client
         $this->httpClient = $httpClient ?: new HttpClient();
         $this->zone = $zone;
         $this->bibs = new Bibs($this);  // Or do some magic instead?
+        $this->analytics = new Analytics($this);  // Or do some magic instead?
         if ($zone == Zones::INSTITUTION) {
             $this->nz = new self(null, $region, Zones::NETWORK, $this->httpClient);
         } elseif ($zone != Zones::NETWORK) {
@@ -60,7 +62,7 @@ class Client
     }
 
     /**
-     * @param $key  API key for this zone
+     * @param string $key  API key for this zone
      */
     public function setKey($key)
     {

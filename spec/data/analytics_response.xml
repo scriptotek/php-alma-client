@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><report><QueryResult>
+  <ResumptionToken>9430AA2905F5C40E4E1C8D0F02787290FC78BF940BDDF2E56748D67F464D011F739E7DDFAA2CBE81B9333F87ED476D5C163D8CC5881FFC5A208117904853089A</ResumptionToken>
+  <IsFinished>true</IsFinished>
+  <ResultXml>
+    <rowset xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql" targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
+        <xsd:complexType name="Row">
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column0" saw-sql:displayFormula="s_0" saw-sql:type="integer" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column1" saw-sql:displayFormula="s_1" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column2" saw-sql:displayFormula="s_2" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column3" saw-sql:displayFormula="s_3" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column4" saw-sql:displayFormula="s_4" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column5" saw-sql:displayFormula="s_5" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column6" saw-sql:displayFormula="s_6" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column7" saw-sql:displayFormula="s_7" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column8" saw-sql:displayFormula="s_8" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column9" saw-sql:displayFormula="s_9" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column10" saw-sql:displayFormula="s_10" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column11" saw-sql:displayFormula="s_11" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column12" saw-sql:displayFormula="s_12" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column13" saw-sql:displayFormula="s_13" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column14" saw-sql:displayFormula="s_14" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column15" saw-sql:displayFormula="s_15" saw-sql:type="date" type="xsd:date"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:schema>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>9782812413926; 2812413921</Column3>
+        <Column4>999919849003602204</Column4>
+        <Column5>2013</Column5>
+        <Column6>Paris</Column6>
+        <Column7>Classiques Garnier</Column7>
+        <Column8>Romancières en France de 1848 à 1870</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16018777</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-20</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Sansal, Boualem.</Column1>
+        <Column3>9782070142897; 2070142892</Column3>
+        <Column4>999919848984602204</Column4>
+        <Column5>[2013]</Column5>
+        <Column6>[Paris] :</Column6>
+        <Column7>Gallimard</Column7>
+        <Column8>Gouverner au nom d'Allah : islamisation et soif de pouvoir dans le monde arabe /</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16020268</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-06-30</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>2745302019; 9782745302014</Column3>
+        <Column4>999919850115002204</Column4>
+        <Column5>2000.</Column5>
+        <Column6>Paris :</Column6>
+        <Column7>Diffusion hors France Slatkine; Champion</Column7>
+        <Column8>Amoralité de la littérature, morales de l'écrivain : actes du colloque international organisé par le Centre Michel Baude littérature et spiritualité de l'Université de Metz, les 26 et 27 mars 1998 /</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16020682</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-06-30</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Quaranta, Jean-Marc.</Column1>
+        <Column3>9782370670205; 2370670207</Column3>
+        <Column4>999919850114902204</Column4>
+        <Column5>[2016]</Column5>
+        <Column6>Paris :</Column6>
+        <Column7>Plein jour</Column7>
+        <Column8>Houellebecq aux fourneaux /</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16020683</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-06-30</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Compagnon, Antoine, 1950-</Column1>
+        <Column3>9782849902448; 2849902446</Column3>
+        <Column4>999919851410702204</Column4>
+        <Column5>[2013]</Column5>
+        <Column6>[Paris] :</Column6>
+        <Column7>Éditions des Équateurs</Column7>
+        <Column8>Un été avec Montaigne /</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16021958</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-14</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Compagnon, Antoine, 1950- author.</Column1>
+        <Column3>2081301679; 9782081301672</Column3>
+        <Column4>999919851410602204</Column4>
+        <Column5>[2014]</Column5>
+        <Column6>[Paris] :</Column6>
+        <Column7>Flammarion</Column7>
+        <Column8>Baudelaire : l'irréductible /</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16021961</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-11</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>9782035923660; 2035923662</Column3>
+        <Column4>999919851810302204</Column4>
+        <Column5>2015</Column5>
+        <Column6>[Paris]</Column6>
+        <Column7>Larousse</Column7>
+        <Column8>Le grand Larousse de l'histoire de France</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16022410</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-20</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Quignard, Pascal</Column1>
+        <Column3>9782070401284; 2070401286</Column3>
+        <Column4>999919852113602204</Column4>
+        <Column5>1997</Column5>
+        <Column6>Paris</Column6>
+        <Column7>Gallimard</Column7>
+        <Column8>Petites traités II</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16022690</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-15</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Schor, Ralph</Column1>
+        <Column3>9782701132136; 2701132134</Column3>
+        <Column4>999919852113202204</Column4>
+        <Column5>2005</Column5>
+        <Column6>Paris</Column6>
+        <Column7>Belin</Column7>
+        <Column8>Histoire de la société française au XXe siècle</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16022697</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-15</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Biglari, Amir</Column1>
+        <Column3>9782806102676; 2806102677</Column3>
+        <Column4>999919852110502204</Column4>
+        <Column5>2016</Column5>
+        <Column6>Paris</Column6>
+        <Column7>L'Harmattan</Column7>
+        <Column8>Figures en discours</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16022869</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-20</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>9782200294823; 2200294824</Column3>
+        <Column4>999919852414902204</Column4>
+        <Column5>[2015]</Column5>
+        <Column6>Paris :</Column6>
+        <Column7>Armand Colin</Column7>
+        <Column8>Dictionnaire arts et émotions /</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16023301</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-20</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Gefen, Alexandre</Column1>
+        <Column3>9782874492471; 2874492477</Column3>
+        <Column4>999919852414802204</Column4>
+        <Column5>2015</Column5>
+        <Column6>Bruxelles</Column6>
+        <Column7>Les Impressions Nouvelles</Column7>
+        <Column8>Inventer une vie: la fabrique littéraire de l'individu</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16023306</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-15</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Quignard, Pascal</Column1>
+        <Column3>9782070401277; 2070401278</Column3>
+        <Column4>999919852113502204</Column4>
+        <Column5>1997</Column5>
+        <Column6>Paris</Column6>
+        <Column7>Gallimard</Column7>
+        <Column8>Petits traites 1</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16026286</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-15</Column15>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column3>9782035923660; 2035923662</Column3>
+        <Column4>999919851810302204</Column4>
+        <Column5>2015</Column5>
+        <Column6>[Paris]</Column6>
+        <Column7>Larousse</Column7>
+        <Column8>Le grand Larousse de l'histoire de France</Column8>
+        <Column9>Fransk</Column9>
+        <Column10>Unknown</Column10>
+        <Column11>UiO HumSam-biblioteket</Column11>
+        <Column12>UHS</Column12>
+        <Column13>k16026578</Column13>
+        <Column14>In Process</Column14>
+        <Column15>2016-07-20</Column15>
+      </Row>
+    </rowset>
+  </ResultXml>
+</QueryResult></report>
