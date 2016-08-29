@@ -2,13 +2,13 @@
 
 namespace Scriptotek\Alma;
 
-class ResourceList implements \Iterator, \Countable, \ArrayAccess
+class ResourceList implements \Iterator, \ArrayAccess
 {
     public $client;
     public $factory;
     protected $resourceName;
 
-    public function __construct($client, $factory)
+    public function __construct(Client $client, Factory $factory = null)
     {
         $this->client = $client;
         $this->factory = $factory ?: new Factory();
@@ -40,7 +40,7 @@ class ResourceList implements \Iterator, \Countable, \ArrayAccess
     }
 
     /*********************************************************
-     * Iterator + Countable
+     * Iterator
      *********************************************************/
 
     protected $position = 0;
@@ -84,10 +84,11 @@ class ResourceList implements \Iterator, \Countable, \ArrayAccess
         return $this->position < $this->count();
     }
 
-    public function count()
+    /*
+     * public function count()
     {
         return count($this->getResources());
-    }
+    }*/
 
     /*********************************************************
      * ArrayAccess
