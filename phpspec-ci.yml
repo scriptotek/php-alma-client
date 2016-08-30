@@ -3,10 +3,3 @@ suites:
     namespace: Scriptotek\Alma
     psr4_prefix: Scriptotek\Alma
 formatter.name: pretty
-extensions:
-  - PhpSpec\Extension\CodeCoverageExtension
-code_coverage:
-  format:
-    - clover
-  output:
-    clover: coverage.clover
