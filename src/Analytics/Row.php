@@ -47,7 +47,7 @@ class Row implements \ArrayAccess, \IteratorAggregate, \Countable
 
     public function getIterator()
     {
-        return new \ArrayIterator($this->byIndex);
+        return new \ArrayIterator($this->byHeader);
     }
 
     public function count()
