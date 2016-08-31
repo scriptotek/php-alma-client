@@ -151,6 +151,22 @@ foreach ($report->rows as $row) {
 }
 ```
 
+## Laravel 5 integration
+
+This project ships with a service provider that you can add to the
+`$providers` array in your `config/app.php` if you like:
+
+    Scriptotek\Alma\Providers\AlmaServiceProvider::class,
+
+There's also a facade you can add to the `$aliases` array:
+
+    'Alma' => Scriptotek\Alma\Facades\Alma::class,
+
+Run
+
+    $ php artisan vendor:publish --provider="Scriptotek\Alma\Providers\AlmaServiceProvider"
+
+to create the `config/alma.php` configuration file.
 
 ## Future plans
 
