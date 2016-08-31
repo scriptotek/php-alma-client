@@ -32,7 +32,7 @@ class Row implements \ArrayAccess, \IteratorAggregate, \Countable
 
     public function offsetExists($offset)
     {
-        return isset($this->byIndex[$offset]);
+        return isset($this->byIndex[$offset]) || isset($this->byHeader[$offset]);
     }
 
     public function offsetUnset($offset)
@@ -42,7 +42,12 @@ class Row implements \ArrayAccess, \IteratorAggregate, \Countable
 
     public function offsetGet($offset)
     {
-        return isset($this->byIndex[$offset]) ? $this->byIndex[$offset] : null;
+        if (isset($this->byIndex[$offset])) {
+            return $this->byIndex[$offset];
+        }
+        if (isset($this->byHeader[$offset])) {
+            return $this->byHeader[$offset];
+        }
     }
 
     public function getIterator()

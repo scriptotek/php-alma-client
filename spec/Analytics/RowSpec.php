@@ -31,7 +31,13 @@ class RowSpec extends ObjectBehavior
         $this->title->shouldBe('col2 content');
     }
 
-    public function it_should_have_columns_accessible_by_index()
+    public function it_should_have_columns_accessible_by_array_key()
+    {
+        $this['mms_id']->shouldBe('col1 content');
+        $this['title']->shouldBe('col2 content');
+    }
+
+    public function it_should_have_columns_accessible_by_array_index()
     {
         $this[0]->shouldBe('col1 content');
         $this[1]->shouldBe('col2 content');
