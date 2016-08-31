@@ -45,7 +45,8 @@ class Row implements \ArrayAccess, \IteratorAggregate, \Countable
         return isset($this->byIndex[$offset]) ? $this->byIndex[$offset] : null;
     }
 
-    public function getIterator() {
+    public function getIterator()
+    {
         return new \ArrayIterator($this->byIndex);
     }
 

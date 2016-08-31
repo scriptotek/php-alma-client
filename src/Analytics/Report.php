@@ -56,7 +56,7 @@ class Report
         while (!$isFinished) {
             $results = $this->fetchRows($resumptionToken);
 
-            $headers = array_map(function($node) {
+            $headers = array_map(function ($node) {
                 return $node->attr('name');
             }, $results->all('//xsd:complexType[@name="Row"]/xsd:sequence/xsd:element[position()>1]'));
             
