@@ -59,4 +59,9 @@ class Row implements \ArrayAccess, \IteratorAggregate, \Countable
     {
         return count($this->byIndex);
     }
+
+    public function toArray()
+    {
+        return $this->byHeader;
+    }
 }

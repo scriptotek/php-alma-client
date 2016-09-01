@@ -4,6 +4,9 @@ namespace Scriptotek\Alma\Analytics;
 
 use Scriptotek\Alma\Client;
 
+/**
+ * @property \Generator|Row[] rows
+ */
 class Report
 {
     public $path;
@@ -48,6 +51,9 @@ class Report
         return $results;
     }
 
+    /**
+     * @return \Generator|Row[]
+     */
     public function getRows()
     {
         $isFinished = false;

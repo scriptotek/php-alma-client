@@ -52,4 +52,9 @@ class RowSpec extends ObjectBehavior
     {
         $this->shouldHaveCount(2);
     }
+
+    public function it_should_be_serializable_as_array()
+    {
+        $this->toArray()->shouldBeArray();
+    }
 }
