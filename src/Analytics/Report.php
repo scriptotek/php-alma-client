@@ -65,7 +65,7 @@ class Report
             $headers = array_map(function ($node) {
                 return $node->attr('name');
             }, $results->all('//xsd:complexType[@name="Row"]/xsd:sequence/xsd:element[position()>1]'));
-            
+
             if (count($headers)) {
                 if (!count($this->headers)) {
                     $this->headers = $headers;
@@ -75,9 +75,6 @@ class Report
             }
 
             foreach ($results->all('//rowset:Row') as $row) {
-                print "yield!\n";
-                // var_dump($this->headers);
-
                 yield new Row($row, $this->headers);
             }
 
