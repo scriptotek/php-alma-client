@@ -4,9 +4,9 @@ namespace spec\Scriptotek\Alma\Bibs;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use PhpSpec\ObjectBehavior;
-use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Bibs;
+use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Sru\Client as SruClient;
 use Scriptotek\Sru\Record as SruRecord;
 

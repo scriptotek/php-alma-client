@@ -7,5 +7,4 @@ use Scriptotek\Alma\ResourceList;
 class Analytics extends ResourceList
 {
     protected $resourceName = Report::class;
-
 }
