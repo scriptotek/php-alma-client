@@ -1,6 +1,7 @@
 [![Build Status](https://img.shields.io/travis/scriptotek/php-alma-client.svg)](https://travis-ci.org/scriptotek/php-alma-client)
 [![Scrutinizer code quality](https://scrutinizer-ci.com/g/scriptotek/php-alma-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/scriptotek/php-alma-client/?branch=master)
 [![StyleCI](https://styleci.io/repos/35571779/shield)](https://styleci.io/repos/35571779)
+[![Packagist](https://img.shields.io/packagist/v/scriptotek/alma-client.svg)](https://packagist.org/packages/scriptotek/alma-client)
 
 # php-alma-client
 
