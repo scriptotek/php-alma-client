@@ -31,7 +31,14 @@ class Bibs extends ResourceList implements ResourceListInterface
         if (is_null($record)) {
             return;
         }
-        $mmsId = $record->data->text('//controlfield[@tag="001"]');
+
+        $mmsId = $record->data->text('//marc:controlfield[@tag="001"]');
+        if (empty($mmsId)) {
+            $mmsId = $record->data->text('//controlfield[@tag="001"]');
+            if (empty($mmsId)) {
+                throw new \RuntimeError('SRU returned a record, but it didn\'t contain valid MARC21!');
+            }
+        }
 
         return $this->getResource($mmsId);
     }

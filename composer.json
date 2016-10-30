@@ -9,7 +9,7 @@
         "guzzlehttp/guzzle": "~6.0",
         "scriptotek/marc": "^0.2.1",
         "danmichaelo/quitesimplexmlelement": "^0.4",
-        "scriptotek/sru-client": "^0.4.1"
+        "scriptotek/sru-client": "^0.4.2"
     },
     "require-dev": {
         "sami/sami": "~3.3",
