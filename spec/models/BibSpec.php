@@ -12,7 +12,7 @@ class BibSpec extends ObjectBehavior
     public function let(AlmaClient $almaClient)
     {
         $mms_id = '990114012304702204';
-        $this->beConstructedWith($mms_id, $almaClient);
+        $this->beConstructedWith($almaClient, $mms_id);
         $almaClient->getXML(Argument::containingString('990114012304702204'))
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('bib_response.xml'));

@@ -4,14 +4,9 @@ namespace Scriptotek\Alma;
 
 use Scriptotek\Alma\Models\Bib;
 
-class Bibs extends ResourceList implements ResourceListInterface
+class Bibs extends ResourceList
 {
     protected $resourceName = Bib::class;
-
-    public function getFactoryArgs($element)
-    {
-        return [$element];
-    }
 
     public function fromBarcode($barcode)
     {
@@ -21,7 +16,7 @@ class Bibs extends ResourceList implements ResourceListInterface
         if (!is_null($destinationUrl) && preg_match('$bibs/([0-9]+)/holdings/([0-9]+)/items/([0-9]+)$', $destinationUrl, $matches)) {
             $mmsId = $matches[1];
 
-            return $this->getResource($mmsId);
+            return $this->get($mmsId);
         }
     }
 
@@ -40,7 +35,7 @@ class Bibs extends ResourceList implements ResourceListInterface
             }
         }
 
-        return $this->getResource($mmsId);
+        return $this->get($mmsId);
     }
 
     public function search($cql, $batchSize = 10)

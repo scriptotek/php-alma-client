@@ -13,8 +13,8 @@ class ReportSpec extends ObjectBehavior
     public function let(Client $almaClient)
     {
         $path = 'xyz';
-        $this->beConstructedWith($path, $almaClient);
-        $almaClient->getXML('/analytics/reports', ['path' => $path, 'limit' => 1000, 'token' => null])
+        $this->beConstructedWith($almaClient, $path);
+        $almaClient->getXML('/analytics/reports', ['path' => $path, 'limit' => 1000, 'token' => null, 'filter' => null])
             ->willReturn(SpecHelper::getDummyData('analytics_response.xml'));
     }
 
@@ -27,5 +27,12 @@ class ReportSpec extends ObjectBehavior
     {
         $this->rows->shouldImplement(\Generator::class);
         $this->rows->current()->shouldBeAnInstanceOf(Row::class);
+    }
+
+    function it_supports_setting_headers(Client $almaClient)
+    {
+        $this->beConstructedWith($almaClient, 'xyz', ['a', 'b']);
+
+        $this->headers->shouldBe(['a', 'b']);
     }
 }

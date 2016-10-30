@@ -2,115 +2,41 @@
 
 namespace Scriptotek\Alma;
 
-class ResourceList implements \Iterator, \ArrayAccess
+use ReflectionClass;
+
+class ResourceList
 {
     public $client;
     public $factory;
     protected $resourceName;
 
-    public function __construct(Client $client, Factory $factory = null)
+    public function __construct(Client $client)
     {
         $this->client = $client;
-        $this->factory = $factory ?: new Factory();
+    }
+
+    protected function factory($args)
+    {
+        array_unshift($args, $this->client);
+
+        $reflect = new ReflectionClass($this->resourceName);
+        $instance = $reflect->newInstanceArgs($args);
+        if (method_exists($instance, 'fetch')) {
+            $instance->fetch();
+        }
+
+        return $instance;
     }
 
     /**
      * Returns a single resource.
      *
-     * @param $id
-     *
      * @return ResourceInterface
      */
-    public function getResource($id)
+    public function get()
     {
-        return $this->factory->make(
-            $this->resourceName,
-            $this->getFactoryArgs($id),
-            $this->client
-        );
-    }
+        $args = func_get_args();
 
-    /**
-     * Returns all resources.
-     */
-    public function getResources()
-    {
-        // No endpoint available...
-        throw new \ErrorException('Listing all resources not supported by Alma');
-    }
-
-    /*********************************************************
-     * Iterator
-     *********************************************************/
-
-    protected $position = 0;
-    protected $_resources;
-
-    public function current()
-    {
-        return $this->factory->make(
-            $this->resourceName,
-            $this->getFactoryArgs($this->resources()[$this->position]),
-            $this->client
-        );
-    }
-
-    public function resources($force = false)
-    {
-        if ($force || !isset($this->_resources)) {
-            $this->_resources = $this->getResources();
-        }
-
-        return $this->_resources;
-    }
-
-    public function key()
-    {
-        return $this->position;
-    }
-
-    public function next()
-    {
-        $this->position++;
-    }
-
-    public function rewind()
-    {
-        $this->position = 0;
-    }
-
-    public function valid()
-    {
-        return $this->position < $this->count();
-    }
-
-    /*
-     * public function count()
-    {
-        return count($this->getResources());
-    }*/
-
-    /*********************************************************
-     * ArrayAccess
-     *********************************************************/
-
-    public function offsetExists($key)
-    {
-        return true;
-    }
-
-    public function offsetGet($key)
-    {
-        return $this->getResource($key);
-    }
-
-    public function offsetSet($key, $value)
-    {
-        // Uh oh
-    }
-
-    public function offsetUnset($key)
-    {
-        // Uh oh
+        return $this->factory($args);
     }
 }

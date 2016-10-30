@@ -31,6 +31,12 @@ class Client
     /** @var SruClient */
     public $sru;
 
+    /** @var Bibs */
+    public $bibs;
+
+    /** @var Analytics */
+    public $analytics;
+
     /**
      * Create a new client.
      *

@@ -68,7 +68,7 @@ $alma->nz->setSruClient(new SruClient(
 A bibliographic record can be fetched either by MMS ID:
 
 ```php
-$bib = $alma->bibs['990114012304702204'];
+$bib = $alma->bibs->get('990114012304702204');
 ```
 
 or by barcode:
@@ -130,24 +130,38 @@ $bib->save($record);
 
 ## Analytics reports
 
-Note: The Analytics API do not provide column names, but we can set them:
+To retrieve the results from a single report:
 
 ```php
-$report = $alma->analytics['UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fysikk'];
-$report->setHeaders([
-    'mms_id',
-    'receiving_date',
-]);
+$report = $alma->analytics->get('UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fysikk');
 foreach ($report->rows as $row) {
-    echo $row->mms_id . ": " . $row->receiving_date . "\n";
+    echo $row[0] . ": " . $row[1] . "\n";
 }
 ```
 
-Columns can also be accessed by their indices:
+The rows are returned using a generator that takes care of fetching more rows until
+the result set is depleted, so you don't have to think about continuation. If you only
+want a subset of the rows, you must take care of breaking out of the loop yourself.
 
-```
+### Column names
+
+Unfortunately, the Analytics API doesn't provide column names (an inherent
+limitation in OBI according to a comment
+[here](https://developers.exlibrisgroup.com/blog/Working-with-Analytics-REST-APIs)),
+but as a workaround you can pass a list of column names into the get method to
+create a manual mapping (which will of course break if someone decides to re-order
+the columns inside OBI... there's just no way to safeguard against that).
+
+```php
+$report = $alma->analytics->get(
+    'UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fysikk',
+    [
+        'mms_id',
+        'receiving_date',
+    ]
+);
 foreach ($report->rows as $row) {
-    echo $row[0] . " - " . $row[1] . "\n";
+    echo $row->mms_id . ": " . $row->receiving_date . "\n";
 }
 ```
 
@@ -175,7 +189,7 @@ do, say,
 
 
 ```php
-$bib = $alma->bibs['990114012304702204'];  // a Bib object
+$bib = $alma->bibs->get('990114012304702204');  // a Bib object
 $bib->record->subjects->add([
 	'term' => 'Boating with cats',
 	'vocabulary' => noubomn'
@@ -195,7 +209,7 @@ $alma->bibs->store($bib);
 Getting holdings and items:
 
 ```php
-$bib = $alma->bibs['990114012304702204'];
+$bib = $alma->bibs->get('990114012304702204');
 foreach ($bib->holdings() as $holding) {
     foreach ($holding->items() as $item) {
         echo $item->id;

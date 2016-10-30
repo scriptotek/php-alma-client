@@ -17,10 +17,12 @@ class Report
 
     protected $headers = [];
 
-    public function __construct($path = null, Client $client = null)
+    public function __construct(Client $client = null, $path = null, $headers = [])
     {
         $this->path = $path;
         $this->client = $client;
+
+        $this->headers = $headers;
         // $this->rows = new Rows($this->path, $this->client);
     }
 
@@ -29,11 +31,9 @@ class Report
         if ($key == 'rows') {
             return $this->getRows();
         }
-    }
-
-    public function setHeaders($headers)
-    {
-        $this->headers = $headers;
+        if ($key == 'headers') {
+            return $this->headers;
+        }
     }
 
     protected function fetchRows($resumptionToken = null)

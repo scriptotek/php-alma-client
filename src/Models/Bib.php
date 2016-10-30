@@ -24,7 +24,7 @@ class Bib
 
     protected $_holdings;
 
-    public function __construct($mms_id = null, Client $client = null, MarcRecord $record = null)
+    public function __construct(Client $client = null, $mms_id = null, MarcRecord $record = null)
     {
         $this->mms_id = $mms_id;
         $this->client = $client;
@@ -62,7 +62,7 @@ class Bib
     public function holdings()
     {
         if (!isset($this->_holdings)) {
-            $this->_holdings = new Holdings($this->mms_id, $this->client);
+            $this->_holdings = new Holdings($this->client, null, $this->mms_id);
         }
 
         return $this->_holdings;

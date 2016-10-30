@@ -4,15 +4,17 @@ namespace Scriptotek\Alma;
 
 use Scriptotek\Alma\Models\Holding;
 
-class Holdings extends ResourceList implements ResourceListInterface, \Countable
+class Holdings extends ResourceList implements \Countable, \Iterator
 {
+    use IterableResource;
+
     protected $resourceName = Holding::class;
 
     protected $mms_id;
 
-    public function __construct($mms_id, Client $client, Factory $factory = null)
+    public function __construct(Client $client, $mms_id)
     {
-        parent::__construct($client, $factory);
+        parent::__construct($client);
         $this->mms_id = $mms_id;
     }
 
@@ -26,11 +28,6 @@ class Holdings extends ResourceList implements ResourceListInterface, \Countable
     public function getResources()
     {
         return $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings')->holding;
-    }
-
-    public function getResource($id)
-    {
-        return $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings/' . $id);
     }
 
     /**

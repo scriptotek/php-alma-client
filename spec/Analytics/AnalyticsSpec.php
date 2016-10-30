@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Scriptotek\Alma;
+namespace spec\Scriptotek\Alma\Analytics;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -16,17 +16,16 @@ class AnalyticsSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Scriptotek\Alma\Analytics');
+        $this->shouldHaveType('Scriptotek\Alma\Analytics\Analytics');
     }
 
-    public function it_provides_an_array_interface_to_report_objects(AlmaClient $almaClient)
+    public function it_provides_an_interface_to_report_objects(AlmaClient $almaClient)
     {
         $path = 'UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fransk';  // str_random();
 
-        $report = $this[$path];
+        $report = $this->get($path);
 
-        $this->shouldImplement('ArrayAccess');
-        $report->shouldHaveType('Scriptotek\Alma\Models\Report');
+        $report->shouldHaveType('Scriptotek\Alma\Analytics\Report');
         $report->path->shouldBe($path);
     }
 

@@ -11,7 +11,7 @@ class HoldingSpec extends ObjectBehavior
     {
         $mms_id = 'abc';
         $holdings_id = '123';
-        $this->beConstructedWith($mms_id, $holdings_id, $almaClient);
+        $this->beConstructedWith($almaClient, $mms_id, $holdings_id);
     }
 
     public function it_is_initializable()
