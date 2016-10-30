@@ -38,5 +38,4 @@ class Holding
         // $marcRecord = $this->data->first('record')->asXML();
         // $this->_record = MarcRecord::fromString($marcRecord);
     }
-
 }

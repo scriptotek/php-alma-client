@@ -69,7 +69,7 @@ class Client
     }
 
     /**
-     * @param string $key  API key for this zone
+     * @param string $key API key for this zone
      */
     public function setKey($key)
     {

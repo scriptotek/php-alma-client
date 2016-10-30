@@ -4,9 +4,9 @@ namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Scriptotek\Alma\Client as AlmaClient;
-use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Bib;
+use Scriptotek\Alma\Bibs\Bibs;
+use Scriptotek\Alma\Client as AlmaClient;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class BibSpec extends ObjectBehavior
@@ -48,5 +48,4 @@ class BibSpec extends ObjectBehavior
 
         $this->getNzRecord()->shouldHaveType(Bib::class);
     }
-
 }

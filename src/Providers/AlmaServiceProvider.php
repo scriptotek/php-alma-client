@@ -17,7 +17,7 @@ class AlmaServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../../config/config.php' => config_path('alma.php')
+            __DIR__ . '/../../config/config.php' => config_path('alma.php'),
         ]);
     }
 
@@ -30,10 +30,10 @@ class AlmaServiceProvider extends ServiceProvider
     {
         $app = $this->app;
         $this->mergeConfigFrom(
-            __DIR__.'/../../config/config.php',
+            __DIR__ . '/../../config/config.php',
             'alma'
         );
-        $this->app->singleton('alma', function($app) {
+        $this->app->singleton('alma', function ($app) {
             $alma = new AlmaClient($app['config']->get('alma.iz.key'), $app['config']->get('alma.region'));
             $alma->nz->setKey($app['config']->get('alma.nz.key'));
 

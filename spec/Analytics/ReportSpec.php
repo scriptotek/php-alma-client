@@ -2,8 +2,8 @@
 
 namespace spec\Scriptotek\Alma\Analytics;
 
-use Scriptotek\Alma\Analytics\Report;
 use PhpSpec\ObjectBehavior;
+use Scriptotek\Alma\Analytics\Report;
 use Scriptotek\Alma\Analytics\Row;
 use Scriptotek\Alma\Client;
 use spec\Scriptotek\Alma\SpecHelper;
@@ -18,25 +18,25 @@ class ReportSpec extends ObjectBehavior
             ->willReturn(SpecHelper::getDummyData('analytics_response.xml'));
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(Report::class);
     }
 
-    function it_has_rows()
+    public function it_has_rows()
     {
         $this->rows->shouldImplement(\Generator::class);
         $this->rows->current()->shouldBeAnInstanceOf(Row::class);
     }
 
-    function it_supports_setting_headers(Client $almaClient)
+    public function it_supports_setting_headers(Client $almaClient)
     {
         $this->beConstructedWith($almaClient, 'xyz', ['a', 'b']);
 
         $this->headers->shouldBe(['a', 'b']);
     }
 
-    function it_supports_setting_filter(Client $almaClient)
+    public function it_supports_setting_filter(Client $almaClient)
     {
         $this->beConstructedWith($almaClient, 'xyz', ['a', 'b'], 'la la la');
 
