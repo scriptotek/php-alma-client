@@ -17,12 +17,13 @@ class Report
 
     protected $headers = [];
 
-    public function __construct(Client $client = null, $path = null, $headers = [])
+    public function __construct(Client $client = null, $path = null, $headers = [], $filter = null)
     {
         $this->path = $path;
         $this->client = $client;
 
         $this->headers = $headers;
+        $this->filter = $filter;
         // $this->rows = new Rows($this->path, $this->client);
     }
 
@@ -42,6 +43,7 @@ class Report
             'path' => $this->path,
             'limit' => $this->chunkSize,
             'token' => $resumptionToken,
+            'filter' => $this->filter ? str_replace(['\''], ['&apos;'], $this->filter) : null,
         ]);
         $results->registerXPathNamespaces([
             'rowset' => 'urn:schemas-microsoft-com:xml-analysis:rowset',

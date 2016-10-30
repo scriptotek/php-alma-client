@@ -35,4 +35,11 @@ class ReportSpec extends ObjectBehavior
 
         $this->headers->shouldBe(['a', 'b']);
     }
+
+    function it_supports_setting_filter(Client $almaClient)
+    {
+        $this->beConstructedWith($almaClient, 'xyz', ['a', 'b'], 'la la la');
+
+        $this->filter->shouldBe('la la la');
+    }
 }

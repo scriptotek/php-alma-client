@@ -165,6 +165,56 @@ foreach ($report->rows as $row) {
 }
 ```
 
+
+### Filters
+
+The method also accepts a filter.
+
+```php
+$report = $alma->analytics->get(
+    'UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fysikk',
+    [
+        'mms_id',
+        'receiving_date',
+    ],
+    '<sawx:expr op="greaterOrEqual" xsi:type="sawx:comparison"
+                   xmlns:sawx="com.siebel.analytics.web/expression/v1.1"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+       <sawx:expr xsi:type="sawx:sqlExpression">"Physical Item Details"."Receiving   Date"</sawx:expr>
+       <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPADD(SQL_TSI_DAY, -1, CURRENT_DATE)</sawx:expr>
+    </sawx:expr>',
+);
+foreach ($report->rows as $row) {
+    echo $row->mms_id . ": " . $row->receiving_date . "\n";
+}
+```
+
+There isn't much official documentation on filters, and error responses from the
+API are generally not useful, but there's some helpful hints in
+[this blog post](https://developers.exlibrisgroup.com/blog/Working-with-Analytics-REST-APIs).
+
+My experience so far is that including a "is prompted" filter in the report is
+really needed. Otherwise the query returns a `400 No more rows to fetch`
+(after a looong wait).
+
+Furthermore, I've *not* been successful with pure SQL filters. In OBI you can
+convert a filter to SQL. The results looks like this:
+
+```xml
+<sawx:expr xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sawx:sawx:sql">"Physical Item Details"."Receiving   Date" &gt;=  TIMESTAMPADD(SQL_TSI_DAY, -1, CURRENT_DATE)</sawx:expr>
+```
+
+But used with the API, the response is the same as if you forget to include an
+"is prompted" filter: a loong wait follow by a "400 No more rows to fetch".
+
+## Users
+
+```php
+foreach ($alma->users->search('last_name~Heggø AND first_name~Dan') as $user) {
+    echo "$user->first_name $user->last_name ($user->primary_id)\n";
+}
+```
+
 ## Laravel 5 integration
 
 This project ships with a service provider that you can add to the
