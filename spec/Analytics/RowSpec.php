@@ -3,8 +3,8 @@
 namespace spec\Scriptotek\Alma\Analytics;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
-use Scriptotek\Alma\Analytics\Row;
 use PhpSpec\ObjectBehavior;
+use Scriptotek\Alma\Analytics\Row;
 
 class RowSpec extends ObjectBehavior
 {

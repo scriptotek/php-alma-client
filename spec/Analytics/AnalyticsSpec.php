@@ -3,18 +3,16 @@
 namespace spec\Scriptotek\Alma\Analytics;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Scriptotek\Alma\Client as AlmaClient;
 
 class AnalyticsSpec extends ObjectBehavior
 {
-
     public function let(AlmaClient $almaClient)
     {
         $this->beConstructedWith($almaClient);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Scriptotek\Alma\Analytics\Analytics');
     }
@@ -28,5 +26,4 @@ class AnalyticsSpec extends ObjectBehavior
         $report->shouldHaveType('Scriptotek\Alma\Analytics\Report');
         $report->path->shouldBe($path);
     }
-
 }
