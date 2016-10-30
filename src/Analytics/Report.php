@@ -72,7 +72,7 @@ class Report
                 if (!count($this->headers)) {
                     $this->headers = $headers;
                 } elseif (count($headers) != count($this->headers)) {
-                    throw new \RuntimeException('Number of headers doesn\'t match: ' . count($headers) . ' != ' . count($this->headers));
+                    throw new \RuntimeException(sprintf('Number of returned columns (%d) does not match number of assigned headers (%d).', count($headers), count($this->headers)));
                 }
             }
 
