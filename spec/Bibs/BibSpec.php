@@ -1,12 +1,12 @@
 <?php
 
-namespace spec\Scriptotek\Alma\models;
+namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Scriptotek\Alma\Client as AlmaClient;
-use Scriptotek\Alma\Bibs;
-use Scriptotek\Alma\Models\Bib;
+use Scriptotek\Alma\Bibs\Bibs;
+use Scriptotek\Alma\Bibs\Bib;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class BibSpec extends ObjectBehavior
@@ -25,7 +25,7 @@ class BibSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType('Scriptotek\Alma\models\Bib');
+        $this->shouldHaveType(Bib::class);
     }
 
     // public function it_has_holdings(AlmaClient $almaClient)
@@ -46,7 +46,7 @@ class BibSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($nz_bib);
 
-        $this->getNzRecord()->shouldHaveType('Scriptotek\Alma\models\Bib');
+        $this->getNzRecord()->shouldHaveType(Bib::class);
     }
 
 }

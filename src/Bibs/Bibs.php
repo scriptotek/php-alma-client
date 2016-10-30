@@ -1,8 +1,8 @@
 <?php
 
-namespace Scriptotek\Alma;
+namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\Models\Bib;
+use Scriptotek\Alma\ResourceList;
 
 class Bibs extends ResourceList
 {

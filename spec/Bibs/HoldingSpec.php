@@ -1,8 +1,9 @@
 <?php
 
-namespace spec\Scriptotek\Alma\models;
+namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
+use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Client as AlmaClient;
 
 class HoldingSpec extends ObjectBehavior
@@ -16,6 +17,6 @@ class HoldingSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType('Scriptotek\Alma\models\Holding');
+        $this->shouldHaveType(Holding::class);
     }
 }

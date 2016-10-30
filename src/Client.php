@@ -6,6 +6,7 @@ use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\RequestException;
 use Scriptotek\Alma\Analytics\Analytics;
+use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Exception\ClientException;
 use Scriptotek\Sru\Client as SruClient;
 

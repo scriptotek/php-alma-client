@@ -1,6 +1,6 @@
 <?php
 
-namespace Scriptotek\Alma\Models;
+namespace Scriptotek\Alma\Bibs;
 
 use Scriptotek\Alma\Client;
 

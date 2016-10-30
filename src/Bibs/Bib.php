@@ -1,11 +1,10 @@
 <?php
 
-namespace Scriptotek\Alma\Models;
+namespace Scriptotek\Alma\Bibs;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\NoLinkedNetworkZoneRecordException;
-use Scriptotek\Alma\Holdings;
 use Scriptotek\Marc\Record as MarcRecord;
 use Scriptotek\Sru\Record as SruRecord;
 

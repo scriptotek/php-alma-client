@@ -1,11 +1,12 @@
 <?php
 
-namespace spec\Scriptotek\Alma;
+namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Scriptotek\Alma\Bibs\Holdings;
 use Scriptotek\Alma\Client as AlmaClient;
-use Scriptotek\Alma\models\Holding;
+use Scriptotek\Alma\Bibs\Holding;
 
 class HoldingsSpec extends ObjectBehavior
 {
@@ -60,7 +61,7 @@ class HoldingsSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType('Scriptotek\Alma\Holdings');
+        $this->shouldHaveType(Holdings::class);
     }
 
     public function it_is_countable(AlmaClient $almaClient)
@@ -79,6 +80,6 @@ class HoldingsSpec extends ObjectBehavior
             ->willReturn(json_decode($this->sample));
 
         $this->shouldImplement('Iterator');
-        $this->current()->shouldHaveType('Scriptotek\Alma\Models\Holding');
+        $this->current()->shouldHaveType(Holding::class);
     }
 }

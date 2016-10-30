@@ -1,8 +1,10 @@
 <?php
 
-namespace Scriptotek\Alma;
+namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\Models\Holding;
+use Scriptotek\Alma\Client;
+use Scriptotek\Alma\IterableResource;
+use Scriptotek\Alma\ResourceList;
 
 class Holdings extends ResourceList implements \Countable, \Iterator
 {

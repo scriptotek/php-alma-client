@@ -1,11 +1,12 @@
 <?php
 
-namespace spec\Scriptotek\Alma;
+namespace spec\Scriptotek\Alma\Bibs;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Client as AlmaClient;
-use Scriptotek\Alma\Models\Bib;
+use Scriptotek\Alma\Bibs\Bib;
+use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Sru\Client as SruClient;
 use Scriptotek\Sru\Record as SruRecord;
 
@@ -14,7 +15,7 @@ class BibsSpec extends ObjectBehavior
     public function it_is_initializable(AlmaClient $almaClient)
     {
         $this->beConstructedWith($almaClient);
-        $this->shouldHaveType('Scriptotek\Alma\Bibs');
+        $this->shouldHaveType(Bibs::class);
     }
 
     public function it_provides_an_interface_to_bib_objects(AlmaClient $almaClient)
@@ -27,7 +28,7 @@ class BibsSpec extends ObjectBehavior
         $mms_id = '123'; // str_random();
         $bib = $this->get($mms_id);
 
-        $bib->shouldHaveType('Scriptotek\Alma\Models\Bib');
+        $bib->shouldHaveType(Bib::class);
         $bib->mms_id->shouldBe($mms_id);
     }
 
@@ -49,7 +50,7 @@ class BibsSpec extends ObjectBehavior
                 ));
 
         $bib = $this->fromIsbn('123');
-        $bib->shouldHaveType('Scriptotek\Alma\Models\Bib');
+        $bib->shouldHaveType(Bib::class);
         $bib->mms_id->shouldBe('990114012304702201');
     }
 
