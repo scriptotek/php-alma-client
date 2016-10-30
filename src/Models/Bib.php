@@ -98,7 +98,7 @@ class Bib
             throw new NoLinkedNetworkZoneRecordException("Record $this->mms_id is not linked to a network zone record.");
         }
 
-        return $this->client->nz->bibs[$nz_mms_id];
+        return $this->client->nz->bibs->get($nz_mms_id);
     }
 
     public function __get($key)

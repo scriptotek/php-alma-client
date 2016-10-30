@@ -5,17 +5,21 @@ namespace spec\Scriptotek\Alma\models;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Scriptotek\Alma\Client as AlmaClient;
+use Scriptotek\Alma\Bibs;
+use Scriptotek\Alma\Models\Bib;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class BibSpec extends ObjectBehavior
 {
     public function let(AlmaClient $almaClient)
     {
-        $mms_id = '990114012304702204';
+        $mms_id = '999104760474702204';
         $this->beConstructedWith($almaClient, $mms_id);
-        $almaClient->getXML(Argument::containingString('990114012304702204'))
+
+        $almaClient->getXML(Argument::containingString('999104760474702204'))
             ->shouldBeCalled()
-            ->willReturn(SpecHelper::getDummyData('bib_response.xml'));
+            ->willReturn(SpecHelper::getDummyData('bib_response_iz.xml'));
+
         $this->fetch();
     }
 
@@ -31,6 +35,18 @@ class BibSpec extends ObjectBehavior
 
     public function it_should_provide_data(AlmaClient $almaClient)
     {
-        $this->created_date->shouldBe('2015-02-10Z');
+        $this->created_date->shouldBe('2015-11-05Z');
     }
+
+    public function it_links_to_network_zone(AlmaClient $almaClient, AlmaClient $nz, Bibs $bibs, Bib $nz_bib)
+    {
+        $almaClient->nz = $nz;
+        $nz->bibs = $bibs;
+        $bibs->get('999104760474702201')
+            ->shouldBeCalled()
+            ->willReturn($nz_bib);
+
+        $this->getNzRecord()->shouldHaveType('Scriptotek\Alma\models\Bib');
+    }
+
 }
