@@ -19,15 +19,15 @@ class Bib
     protected $data = null;
 
     /* @var MarcRecord */
-    protected $_record = null;
+    protected $_marc = null;
 
     protected $_holdings;
 
-    public function __construct(Client $client = null, $mms_id = null, MarcRecord $record = null)
+    public function __construct(Client $client = null, $mms_id = null, MarcRecord $marc = null)
     {
         $this->mms_id = $mms_id;
         $this->client = $client;
-        $this->_record = $record;
+        $this->_marc = $marc;
     }
 
     /**
@@ -55,7 +55,7 @@ class Bib
         }
 
         $marcRecord = $this->data->first('record')->asXML();
-        $this->_record = MarcRecord::fromString($marcRecord);
+        $this->_marc = MarcRecord::fromString($marcRecord);
     }
 
     public function holdings()
@@ -100,10 +100,16 @@ class Bib
         return $this->client->nz->bibs->get($nz_mms_id);
     }
 
+
+    public function getMarc()
+    {
+        return $this->_marc;
+    }
+
     public function __get($key)
     {
-        if ($key == 'record') {
-            return $this->_record;
+        if ($key == 'marc') {
+            return $this->getMarc();
         }
         if (!is_null($this->data)) {
             return $this->data->text($key);

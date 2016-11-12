@@ -86,7 +86,7 @@ $bib = $alma->bibs->fromIsbn('9788299308922');
 
 ### The MARC21 record
 
-The MARC21 record is available as `$bib->record` in the form of a
+The MARC21 record is available as `$bib->marc` in the form of a
 [php-marc](https://github.com/scriptotek/php-marc/blob/master/src/Record.php) `Record` object
 that extends `File_MARC_Record` from [File_MARC](https://github.com/pear/File_MARC),
 meaning you can use all File_MARC methods in addition to the convenience methods from php-marc.
@@ -98,7 +98,7 @@ the CQL search syntax.
 
 ```php
 foreach ($alma->bibs->search('alma.dewey_decimal_class_number=530.12') as $bib) {
-	$rec = $bib->record;
+	$rec = $bib->marc;
 	echo "$rec->id: $rec->title\n";
 }
 ```
@@ -118,7 +118,7 @@ The MARC21 record can easily be edited using the `File_MARC_Record` interface
 (see [File_MARC](https://github.com/pear/File_MARC) for documentation):
 
 ```php
-$record = $bib->record;
+$record = $bib->marc;
 
 $newSubject = new File_MARC_Data_Field('650', array(
     new File_MARC_Subfield('a', 'Boating with cats'),
@@ -241,7 +241,7 @@ do, say,
 
 ```php
 $bib = $alma->bibs->get('990114012304702204');  // a Bib object
-$bib->record->subjects->add([
+$bib->marc->subjects->add([
 	'term' => 'Boating with cats',
 	'vocabulary' => noubomn'
 ]);
