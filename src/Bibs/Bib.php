@@ -38,7 +38,7 @@ class Bib
         $record->data->registerXPathNamespace('marc', 'http://www.loc.gov/MARC21/slim');
         $marcRecord = MarcRecord::fromString($record->data->asXML());
 
-        return new self(strval($marcRecord->id), $client, $marcRecord);
+        return new self($client, strval($marcRecord->id), $marcRecord);
     }
 
     public function fetch()
@@ -61,7 +61,7 @@ class Bib
     public function holdings()
     {
         if (!isset($this->_holdings)) {
-            $this->_holdings = new Holdings($this->client, null, $this->mms_id);
+            $this->_holdings = new Holdings($this->client, $this->mms_id);
         }
 
         return $this->_holdings;
