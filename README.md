@@ -12,7 +12,29 @@ It is tightly integrated with the excellent File_MARC package for editing MARC r
 If the package doesn't fit your needs, you might take a look at the alternative
 [php-alma](https://github.com/BCLibraries/php-alma) package.
 
-### Install using Composer
+## Table of Contents
+
+   * [php-alma-client](#php-alma-client)
+      * [Table of Contents](#table-of-contents)
+      * [Install using Composer](#install-using-composer)
+      * [Initializing a client](#initializing-a-client)
+      * [Bibliographic records](#bibliographic-records)
+         * [Getting a single record](#getting-a-single-record)
+         * [The MARC21 record](#the-marc21-record)
+         * [Searching for records](#searching-for-records)
+         * [Getting linked record from network zone](#getting-linked-record-from-network-zone)
+         * [Editing records](#editing-records)
+         * [Holdings and items](#holdings-and-items)
+      * [Analytics reports](#analytics-reports)
+         * [Column names](#column-names)
+         * [Filters](#filters)
+      * [Users](#users)
+      * [Laravel 5 integration](#laravel-5-integration)
+      * [Future plans](#future-plans)
+
+*Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)*
+
+## Install using Composer
 
 Make sure you have [Composer](https://getcomposer.org) installed, then run
 
@@ -127,6 +149,49 @@ $newSubject = new File_MARC_Data_Field('650', array(
 $record->appendField($newSubject);
 
 $bib->save($record);
+```
+
+### Holdings and items
+
+To get a MARC21 holding record:
+
+```php
+$bib = $alma->bibs->get('990310361044702204');
+$holding = $bib->getHolding('22102913020002204');
+$marc = $holding->getMarc();
+```
+
+Lazy loading: Note that the client uses lazy loading to reduce the number of HTTP
+requests. Requests are not made when you instantiate objects, but when you request
+data from them. So in this case, a HTTP request for the holding record is first
+made when you call `getMarc()`. The response is then cached on the object for
+re-use. In the same way, no HTTP request is made for the Bib record in this case,
+since we don't request any data from that.
+
+To loop over holdings and items:
+
+```php
+$bib = $alma->bibs->get('990310361044702204');
+foreach ($bib->holdings as $holding) {
+    foreach ($holding->items as $item) {
+        echo "{$item->holding_id} {$item->pid} {$item->barcode} : ";
+        echo "{$item->location->desc} {$item->call_number} : ";
+        echo "{$item->base_status->desc} {$item->process_type->desc}";
+        echo "\n";
+    }
+}
+```
+
+In this case, the client makes one request to fetch the list of holdings, and
+then one request per holding.
+
+If you're only interested in item info for a single holding, and know the
+holding ID, you can get away with a single HTTP request using
+
+```
+foreach ($alma->bibs->get('990310361044702204')->getHolding('22102913020002204')->items as $item) {
+    // Do stuff
+}
 ```
 
 ## Analytics reports

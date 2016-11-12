@@ -1,0 +1,994 @@
+{
+    "item": [
+        {
+            "bib_data": {
+                "author": "McMurry, John",
+                "complete_edition": "6th ed.",
+                "isbn": "0534420036",
+                "issn": null,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204",
+                "mms_id": "990310361044702204",
+                "network_number": [
+                    "(NO-TrBIB)031036104",
+                    "031036104-47bibsys_network",
+                    "(EXLNZ-47BIBSYS_NETWORK)990310361044702201"
+                ],
+                "place_of_publication": "Belmont, Calif.",
+                "publisher_const": "Brooks/Cole",
+                "title": "Organic chemistry"
+            },
+            "holding_data": {
+                "accession_number": "",
+                "call_number": "IV:1149a",
+                "call_number_type": {
+                    "desc": "Other scheme",
+                    "value": "8"
+                },
+                "copy_id": "",
+                "holding_id": "22102913020002204",
+                "in_temp_location": false,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204",
+                "temp_call_number": "",
+                "temp_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "temp_library": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_location": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_policy": {
+                    "desc": null,
+                    "value": ""
+                }
+            },
+            "item_data": {
+                "alternative_call_number": "",
+                "alternative_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "barcode": "025585na0",
+                "base_status": {
+                    "desc": "Item in place",
+                    "value": "1"
+                },
+                "chronology_i": "",
+                "creation_date": "2015-11-05Z",
+                "description": "",
+                "edition": null,
+                "enumeration_a": "",
+                "fulfillment_note": "",
+                "imprint": null,
+                "internal_note_1": "Status: kat - kat",
+                "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 0",
+                "internal_note_3": "",
+                "is_magnetic": false,
+                "language": null,
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "location": {
+                    "desc": "UREAL Kjem.",
+                    "value": "k00457"
+                },
+                "modification_date": "2015-11-23Z",
+                "pages": "",
+                "physical_material_type": {
+                    "desc": "Book",
+                    "value": "BOOK"
+                },
+                "pid": "23102912890002204",
+                "pieces": "",
+                "po_line": "",
+                "policy": {
+                    "desc": null,
+                    "value": ""
+                },
+                "process_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "provenance": {
+                    "desc": null,
+                    "value": ""
+                },
+                "public_note": "",
+                "receiving_operator": "",
+                "requested": false,
+                "statistics_note_1": "",
+                "statistics_note_2": "",
+                "statistics_note_3": "",
+                "storage_location_id": "",
+                "year_of_issue": ""
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204/items/23102912890002204"
+        },
+        {
+            "bib_data": {
+                "author": "McMurry, John",
+                "complete_edition": "6th ed.",
+                "isbn": "0534420036",
+                "issn": null,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204",
+                "mms_id": "990310361044702204",
+                "network_number": [
+                    "(NO-TrBIB)031036104",
+                    "031036104-47bibsys_network",
+                    "(EXLNZ-47BIBSYS_NETWORK)990310361044702201"
+                ],
+                "place_of_publication": "Belmont, Calif.",
+                "publisher_const": "Brooks/Cole",
+                "title": "Organic chemistry"
+            },
+            "holding_data": {
+                "accession_number": "",
+                "call_number": "IV:1149a",
+                "call_number_type": {
+                    "desc": "Other scheme",
+                    "value": "8"
+                },
+                "copy_id": "",
+                "holding_id": "22102913020002204",
+                "in_temp_location": false,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204",
+                "temp_call_number": "",
+                "temp_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "temp_library": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_location": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_policy": {
+                    "desc": null,
+                    "value": ""
+                }
+            },
+            "item_data": {
+                "alternative_call_number": "",
+                "alternative_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "arrival_date": "2005-06-16Z",
+                "barcode": "024068na0",
+                "base_status": {
+                    "desc": "Item in place",
+                    "value": "1"
+                },
+                "chronology_i": "",
+                "creation_date": "2015-11-05Z",
+                "description": "",
+                "edition": null,
+                "enumeration_a": "",
+                "fulfillment_note": "",
+                "imprint": null,
+                "internal_note_1": "Status: kat - kat",
+                "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 0",
+                "internal_note_3": "",
+                "is_magnetic": false,
+                "language": null,
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "location": {
+                    "desc": "UREAL Kjem.",
+                    "value": "k00457"
+                },
+                "modification_date": "2015-11-23Z",
+                "pages": "",
+                "physical_material_type": {
+                    "desc": "Book",
+                    "value": "BOOK"
+                },
+                "pid": "23102912900002204",
+                "pieces": "",
+                "po_line": "",
+                "policy": {
+                    "desc": null,
+                    "value": ""
+                },
+                "process_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "provenance": {
+                    "desc": null,
+                    "value": ""
+                },
+                "public_note": "",
+                "receiving_operator": "import",
+                "requested": false,
+                "statistics_note_1": "",
+                "statistics_note_2": "",
+                "statistics_note_3": "",
+                "storage_location_id": "",
+                "year_of_issue": ""
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204/items/23102912900002204"
+        },
+        {
+            "bib_data": {
+                "author": "McMurry, John",
+                "complete_edition": "6th ed.",
+                "isbn": "0534420036",
+                "issn": null,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204",
+                "mms_id": "990310361044702204",
+                "network_number": [
+                    "(NO-TrBIB)031036104",
+                    "031036104-47bibsys_network",
+                    "(EXLNZ-47BIBSYS_NETWORK)990310361044702201"
+                ],
+                "place_of_publication": "Belmont, Calif.",
+                "publisher_const": "Brooks/Cole",
+                "title": "Organic chemistry"
+            },
+            "holding_data": {
+                "accession_number": "",
+                "call_number": "IV:1149a",
+                "call_number_type": {
+                    "desc": "Other scheme",
+                    "value": "8"
+                },
+                "copy_id": "",
+                "holding_id": "22102913020002204",
+                "in_temp_location": false,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204",
+                "temp_call_number": "",
+                "temp_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "temp_library": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_location": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_policy": {
+                    "desc": null,
+                    "value": ""
+                }
+            },
+            "item_data": {
+                "alternative_call_number": "",
+                "alternative_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "arrival_date": "2005-06-16Z",
+                "barcode": "024067na0",
+                "base_status": {
+                    "desc": "Item in place",
+                    "value": "1"
+                },
+                "chronology_i": "",
+                "creation_date": "2015-11-05Z",
+                "description": "",
+                "edition": null,
+                "enumeration_a": "",
+                "fulfillment_note": "",
+                "imprint": null,
+                "internal_note_1": "Status: kat - kat",
+                "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 0",
+                "internal_note_3": "",
+                "is_magnetic": false,
+                "language": null,
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "location": {
+                    "desc": "UREAL Kjem.",
+                    "value": "k00457"
+                },
+                "modification_date": "2015-11-23Z",
+                "pages": "",
+                "physical_material_type": {
+                    "desc": "Book",
+                    "value": "BOOK"
+                },
+                "pid": "23102912910002204",
+                "pieces": "",
+                "po_line": "",
+                "policy": {
+                    "desc": null,
+                    "value": ""
+                },
+                "process_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "provenance": {
+                    "desc": null,
+                    "value": ""
+                },
+                "public_note": "",
+                "receiving_operator": "import",
+                "requested": false,
+                "statistics_note_1": "",
+                "statistics_note_2": "",
+                "statistics_note_3": "",
+                "storage_location_id": "",
+                "year_of_issue": ""
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204/items/23102912910002204"
+        },
+        {
+            "bib_data": {
+                "author": "McMurry, John",
+                "complete_edition": "6th ed.",
+                "isbn": "0534420036",
+                "issn": null,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204",
+                "mms_id": "990310361044702204",
+                "network_number": [
+                    "(NO-TrBIB)031036104",
+                    "031036104-47bibsys_network",
+                    "(EXLNZ-47BIBSYS_NETWORK)990310361044702201"
+                ],
+                "place_of_publication": "Belmont, Calif.",
+                "publisher_const": "Brooks/Cole",
+                "title": "Organic chemistry"
+            },
+            "holding_data": {
+                "accession_number": "",
+                "call_number": "IV:1149a",
+                "call_number_type": {
+                    "desc": "Other scheme",
+                    "value": "8"
+                },
+                "copy_id": "",
+                "holding_id": "22102913020002204",
+                "in_temp_location": false,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204",
+                "temp_call_number": "",
+                "temp_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "temp_library": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_location": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_policy": {
+                    "desc": null,
+                    "value": ""
+                }
+            },
+            "item_data": {
+                "alternative_call_number": "",
+                "alternative_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "arrival_date": "2005-06-16Z",
+                "barcode": "024064na0",
+                "base_status": {
+                    "desc": "Item in place",
+                    "value": "1"
+                },
+                "chronology_i": "",
+                "creation_date": "2015-11-05Z",
+                "description": "",
+                "edition": null,
+                "enumeration_a": "",
+                "fulfillment_note": "",
+                "imprint": null,
+                "internal_note_1": "Status: kat - kat",
+                "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 0",
+                "internal_note_3": "",
+                "is_magnetic": false,
+                "language": null,
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "location": {
+                    "desc": "UREAL Kjem.",
+                    "value": "k00457"
+                },
+                "modification_date": "2015-11-23Z",
+                "pages": "",
+                "physical_material_type": {
+                    "desc": "Book",
+                    "value": "BOOK"
+                },
+                "pid": "23102912920002204",
+                "pieces": "",
+                "po_line": "",
+                "policy": {
+                    "desc": null,
+                    "value": ""
+                },
+                "process_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "provenance": {
+                    "desc": null,
+                    "value": ""
+                },
+                "public_note": "",
+                "receiving_operator": "import",
+                "requested": false,
+                "statistics_note_1": "",
+                "statistics_note_2": "",
+                "statistics_note_3": "",
+                "storage_location_id": "",
+                "year_of_issue": ""
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204/items/23102912920002204"
+        },
+        {
+            "bib_data": {
+                "author": "McMurry, John",
+                "complete_edition": "6th ed.",
+                "isbn": "0534420036",
+                "issn": null,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204",
+                "mms_id": "990310361044702204",
+                "network_number": [
+                    "(NO-TrBIB)031036104",
+                    "031036104-47bibsys_network",
+                    "(EXLNZ-47BIBSYS_NETWORK)990310361044702201"
+                ],
+                "place_of_publication": "Belmont, Calif.",
+                "publisher_const": "Brooks/Cole",
+                "title": "Organic chemistry"
+            },
+            "holding_data": {
+                "accession_number": "",
+                "call_number": "IV:1149a",
+                "call_number_type": {
+                    "desc": "Other scheme",
+                    "value": "8"
+                },
+                "copy_id": "",
+                "holding_id": "22102913020002204",
+                "in_temp_location": false,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204",
+                "temp_call_number": "",
+                "temp_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "temp_library": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_location": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_policy": {
+                    "desc": null,
+                    "value": ""
+                }
+            },
+            "item_data": {
+                "alternative_call_number": "",
+                "alternative_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "arrival_date": "2004-03-09Z",
+                "barcode": "04nk00061",
+                "base_status": {
+                    "desc": "Item in place",
+                    "value": "1"
+                },
+                "chronology_i": "",
+                "creation_date": "2015-11-05Z",
+                "description": "",
+                "edition": null,
+                "enumeration_a": "",
+                "fulfillment_note": "",
+                "imprint": null,
+                "internal_note_1": "Status: kat - kat",
+                "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 0",
+                "internal_note_3": "",
+                "is_magnetic": false,
+                "language": null,
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "location": {
+                    "desc": "UREAL Kjem.",
+                    "value": "k00457"
+                },
+                "modification_date": "2015-11-23Z",
+                "pages": "",
+                "physical_material_type": {
+                    "desc": "Book",
+                    "value": "BOOK"
+                },
+                "pid": "23102912940002204",
+                "pieces": "",
+                "po_line": "",
+                "policy": {
+                    "desc": null,
+                    "value": ""
+                },
+                "process_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "provenance": {
+                    "desc": null,
+                    "value": ""
+                },
+                "public_note": "",
+                "receiving_operator": "import",
+                "requested": false,
+                "statistics_note_1": "",
+                "statistics_note_2": "",
+                "statistics_note_3": "",
+                "storage_location_id": "",
+                "year_of_issue": ""
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204/items/23102912940002204"
+        },
+        {
+            "bib_data": {
+                "author": "McMurry, John",
+                "complete_edition": "6th ed.",
+                "isbn": "0534420036",
+                "issn": null,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204",
+                "mms_id": "990310361044702204",
+                "network_number": [
+                    "(NO-TrBIB)031036104",
+                    "031036104-47bibsys_network",
+                    "(EXLNZ-47BIBSYS_NETWORK)990310361044702201"
+                ],
+                "place_of_publication": "Belmont, Calif.",
+                "publisher_const": "Brooks/Cole",
+                "title": "Organic chemistry"
+            },
+            "holding_data": {
+                "accession_number": "",
+                "call_number": "IV:1149a",
+                "call_number_type": {
+                    "desc": "Other scheme",
+                    "value": "8"
+                },
+                "copy_id": "",
+                "holding_id": "22102913020002204",
+                "in_temp_location": false,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204",
+                "temp_call_number": "",
+                "temp_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "temp_library": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_location": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_policy": {
+                    "desc": null,
+                    "value": ""
+                }
+            },
+            "item_data": {
+                "alternative_call_number": "",
+                "alternative_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "arrival_date": "2003-10-14Z",
+                "barcode": "03nk00263",
+                "base_status": {
+                    "desc": "Item not in place",
+                    "value": "0"
+                },
+                "chronology_i": "",
+                "creation_date": "2015-11-05Z",
+                "description": "",
+                "edition": null,
+                "enumeration_a": "",
+                "fulfillment_note": "",
+                "imprint": null,
+                "internal_note_1": "Status: kat - kat",
+                "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 4",
+                "internal_note_3": "",
+                "is_magnetic": false,
+                "language": null,
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "location": {
+                    "desc": "UREAL Kjem.",
+                    "value": "k00457"
+                },
+                "modification_date": "2016-04-04Z",
+                "pages": "",
+                "physical_material_type": {
+                    "desc": "Book",
+                    "value": "BOOK"
+                },
+                "pid": "23102912960002204",
+                "pieces": "",
+                "po_line": "",
+                "policy": {
+                    "desc": null,
+                    "value": ""
+                },
+                "process_type": {
+                    "desc": "Missing",
+                    "value": "MISSING"
+                },
+                "provenance": {
+                    "desc": null,
+                    "value": ""
+                },
+                "public_note": "",
+                "receiving_operator": "import",
+                "requested": false,
+                "statistics_note_1": "",
+                "statistics_note_2": "",
+                "statistics_note_3": "",
+                "storage_location_id": "",
+                "year_of_issue": ""
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204/items/23102912960002204"
+        },
+        {
+            "bib_data": {
+                "author": "McMurry, John",
+                "complete_edition": "6th ed.",
+                "isbn": "0534420036",
+                "issn": null,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204",
+                "mms_id": "990310361044702204",
+                "network_number": [
+                    "(NO-TrBIB)031036104",
+                    "031036104-47bibsys_network",
+                    "(EXLNZ-47BIBSYS_NETWORK)990310361044702201"
+                ],
+                "place_of_publication": "Belmont, Calif.",
+                "publisher_const": "Brooks/Cole",
+                "title": "Organic chemistry"
+            },
+            "holding_data": {
+                "accession_number": "",
+                "call_number": "IV:1149a",
+                "call_number_type": {
+                    "desc": "Other scheme",
+                    "value": "8"
+                },
+                "copy_id": "",
+                "holding_id": "22102913020002204",
+                "in_temp_location": false,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204",
+                "temp_call_number": "",
+                "temp_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "temp_library": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_location": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_policy": {
+                    "desc": null,
+                    "value": ""
+                }
+            },
+            "item_data": {
+                "alternative_call_number": "",
+                "alternative_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "arrival_date": "2003-10-14Z",
+                "barcode": "03nk00262",
+                "base_status": {
+                    "desc": "Item in place",
+                    "value": "1"
+                },
+                "chronology_i": "",
+                "creation_date": "2015-11-05Z",
+                "description": "",
+                "edition": null,
+                "enumeration_a": "",
+                "fulfillment_note": "",
+                "imprint": null,
+                "internal_note_1": "Status: kat - kat",
+                "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 0",
+                "internal_note_3": "",
+                "is_magnetic": false,
+                "language": null,
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "location": {
+                    "desc": "UREAL Kjem.",
+                    "value": "k00457"
+                },
+                "modification_date": "2015-11-23Z",
+                "pages": "",
+                "physical_material_type": {
+                    "desc": "Book",
+                    "value": "BOOK"
+                },
+                "pid": "23102912970002204",
+                "pieces": "",
+                "po_line": "",
+                "policy": {
+                    "desc": null,
+                    "value": ""
+                },
+                "process_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "provenance": {
+                    "desc": null,
+                    "value": ""
+                },
+                "public_note": "",
+                "receiving_operator": "import",
+                "requested": false,
+                "statistics_note_1": "",
+                "statistics_note_2": "",
+                "statistics_note_3": "",
+                "storage_location_id": "",
+                "year_of_issue": ""
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204/items/23102912970002204"
+        },
+        {
+            "bib_data": {
+                "author": "McMurry, John",
+                "complete_edition": "6th ed.",
+                "isbn": "0534420036",
+                "issn": null,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204",
+                "mms_id": "990310361044702204",
+                "network_number": [
+                    "(NO-TrBIB)031036104",
+                    "031036104-47bibsys_network",
+                    "(EXLNZ-47BIBSYS_NETWORK)990310361044702201"
+                ],
+                "place_of_publication": "Belmont, Calif.",
+                "publisher_const": "Brooks/Cole",
+                "title": "Organic chemistry"
+            },
+            "holding_data": {
+                "accession_number": "",
+                "call_number": "IV:1149a",
+                "call_number_type": {
+                    "desc": "Other scheme",
+                    "value": "8"
+                },
+                "copy_id": "",
+                "holding_id": "22102913020002204",
+                "in_temp_location": false,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204",
+                "temp_call_number": "",
+                "temp_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "temp_library": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_location": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_policy": {
+                    "desc": null,
+                    "value": ""
+                }
+            },
+            "item_data": {
+                "alternative_call_number": "",
+                "alternative_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "arrival_date": "2003-10-14Z",
+                "barcode": "03nk00261",
+                "base_status": {
+                    "desc": "Item in place",
+                    "value": "1"
+                },
+                "chronology_i": "",
+                "creation_date": "2015-11-05Z",
+                "description": "",
+                "edition": null,
+                "enumeration_a": "",
+                "fulfillment_note": "",
+                "imprint": null,
+                "internal_note_1": "Status: kat - kat",
+                "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 0",
+                "internal_note_3": "",
+                "is_magnetic": false,
+                "language": null,
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "location": {
+                    "desc": "UREAL Kjem.",
+                    "value": "k00457"
+                },
+                "modification_date": "2015-11-23Z",
+                "pages": "",
+                "physical_material_type": {
+                    "desc": "Book",
+                    "value": "BOOK"
+                },
+                "pid": "23102912980002204",
+                "pieces": "",
+                "po_line": "",
+                "policy": {
+                    "desc": null,
+                    "value": ""
+                },
+                "process_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "provenance": {
+                    "desc": null,
+                    "value": ""
+                },
+                "public_note": "",
+                "receiving_operator": "import",
+                "requested": false,
+                "statistics_note_1": "",
+                "statistics_note_2": "",
+                "statistics_note_3": "",
+                "storage_location_id": "",
+                "year_of_issue": ""
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204/items/23102912980002204"
+        },
+        {
+            "bib_data": {
+                "author": "McMurry, John",
+                "complete_edition": "6th ed.",
+                "isbn": "0534420036",
+                "issn": null,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204",
+                "mms_id": "990310361044702204",
+                "network_number": [
+                    "(NO-TrBIB)031036104",
+                    "031036104-47bibsys_network",
+                    "(EXLNZ-47BIBSYS_NETWORK)990310361044702201"
+                ],
+                "place_of_publication": "Belmont, Calif.",
+                "publisher_const": "Brooks/Cole",
+                "title": "Organic chemistry"
+            },
+            "holding_data": {
+                "accession_number": "",
+                "call_number": "IV:1149a",
+                "call_number_type": {
+                    "desc": "Other scheme",
+                    "value": "8"
+                },
+                "copy_id": "",
+                "holding_id": "22102913020002204",
+                "in_temp_location": false,
+                "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204",
+                "temp_call_number": "",
+                "temp_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "temp_library": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_location": {
+                    "desc": null,
+                    "value": null
+                },
+                "temp_policy": {
+                    "desc": null,
+                    "value": ""
+                }
+            },
+            "item_data": {
+                "alternative_call_number": "",
+                "alternative_call_number_type": {
+                    "desc": null,
+                    "value": ""
+                },
+                "arrival_date": "2003-10-14Z",
+                "barcode": "03nk00259",
+                "base_status": {
+                    "desc": "Item not in place",
+                    "value": "0"
+                },
+                "chronology_i": "",
+                "creation_date": "2015-11-05Z",
+                "description": "",
+                "edition": null,
+                "enumeration_a": "",
+                "fulfillment_note": "",
+                "imprint": null,
+                "internal_note_1": "Status: kat - kat",
+                "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 4",
+                "internal_note_3": "",
+                "is_magnetic": false,
+                "language": null,
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "location": {
+                    "desc": "UREAL Kjem.",
+                    "value": "k00457"
+                },
+                "modification_date": "2015-11-23Z",
+                "pages": "",
+                "physical_material_type": {
+                    "desc": "Book",
+                    "value": "BOOK"
+                },
+                "pid": "23102912990002204",
+                "pieces": "",
+                "po_line": "",
+                "policy": {
+                    "desc": null,
+                    "value": ""
+                },
+                "process_type": {
+                    "desc": "Loan",
+                    "value": "LOAN"
+                },
+                "provenance": {
+                    "desc": null,
+                    "value": ""
+                },
+                "public_note": "",
+                "receiving_operator": "import",
+                "requested": false,
+                "statistics_note_1": "",
+                "statistics_note_2": "",
+                "statistics_note_3": "",
+                "storage_location_id": "",
+                "year_of_issue": ""
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990310361044702204/holdings/22102913020002204/items/23102912990002204"
+        }
+    ],
+    "total_record_count": 9
+}

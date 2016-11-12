@@ -21,9 +21,6 @@ class BibsSpec extends ObjectBehavior
     public function it_provides_an_interface_to_bib_objects(AlmaClient $almaClient)
     {
         $this->beConstructedWith($almaClient);
-        $almaClient->getXML('/bibs/123')
-            ->shouldBeCalled()
-            ->willReturn(new QuiteSimpleXMLElement('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><bib><mms_id>123</mms_id><record><leader>02615cam a22002417u 4500</leader></record></bib>'));
 
         $mms_id = '123'; // str_random();
         $bib = $this->get($mms_id);
@@ -41,12 +38,6 @@ class BibsSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn(SruRecord::make(1,
                 '<record><controlfield tag="001">990114012304702201</controlfield></record>'
-                ));
-
-        $almaClient->getXML('/bibs/990114012304702201')
-            ->shouldBeCalled()
-            ->willReturn(QuiteSimpleXMLElement::make(
-                '<bib><mms_id>990114012304702201</mms_id><record><leader>02615cam a22002417u 4500</leader></record></bib>'
                 ));
 
         $bib = $this->fromIsbn('123');

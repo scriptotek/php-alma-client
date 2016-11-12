@@ -16,18 +16,20 @@ class Bib
     protected $client;
 
     /** @var QuiteSimpleXMLElement */
-    protected $data = null;
+    protected $bib_data = null;
 
     /* @var MarcRecord */
-    protected $_marc = null;
+    protected $marc_data = null;
 
-    protected $_holdings;
+    protected $_holdings = null;
 
-    public function __construct(Client $client = null, $mms_id = null, MarcRecord $marc = null)
+    public function __construct(Client $client = null, $mms_id = null, MarcRecord $marc_data = null, QuiteSimpleXMLElement $bib_data = null)
     {
         $this->mms_id = $mms_id;
         $this->client = $client;
-        $this->_marc = $marc;
+        $this->marc_data = $marc_data;
+        $this->bib_data = $bib_data;
+        $this->setMarcDataFromBibData();
     }
 
     /**
@@ -41,26 +43,37 @@ class Bib
         return new self($client, strval($marcRecord->id), $marcRecord);
     }
 
-    public function fetch()
+    /* Lazy load */
+    protected function load()
     {
-        if (!is_null($this->data)) {
+        if (!is_null($this->bib_data)) {
             return;  // we already have the data and won't re-fetch
         }
 
-        $this->data = $this->client->getXML('/bibs/' . $this->mms_id);
 
-        $mms_id = $this->data->text('mms_id');
+        $mms_id = $this->bib_data->text('mms_id');
         if ($mms_id != $this->mms_id) {
             throw new \ErrorException('Record mms_id ' . $mms_id . ' does not match requested mms_id ' . $this->mms_id . '.');
         }
 
-        $marcRecord = $this->data->first('record')->asXML();
-        $this->_marc = MarcRecord::fromString($marcRecord);
+        $this->setMarcDataFromBibData();
     }
 
-    public function holdings()
+    protected function setMarcDataFromBibData() {
+        if (!is_null($this->bib_data)) {
+            $marcRecord = $this->bib_data->first('record')->asXML();
+            $this->marc_data = MarcRecord::fromString($marcRecord);
+        }
+    }
+
+    public function getHolding($holding_id)
     {
-        if (!isset($this->_holdings)) {
+        return new Holding($this->client, $this->mms_id, $holding_id);
+    }
+
+    public function getHoldings()
+    {
+        if (is_null($this->_holdings)) {
             $this->_holdings = new Holdings($this->client, $this->mms_id);
         }
 
@@ -71,14 +84,14 @@ class Bib
     {
         // If initialized from an SRU record, we need to fetch the
         // remaining parts of the Bib record.
-        $this->fetch();
+        $this->load();
 
         // Replace the MARC record
         $newRecord = new QuiteSimpleXMLElement($rec->toXML('UTF-8', false, false));
-        $this->data->first('record')->replace($newRecord);
+        $this->bib_data->first('record')->replace($newRecord);
 
         // Serialize
-        $newData = $this->data->asXML();
+        $newData = $this->bib_data->asXML();
 
         // Alma doesn't like namespaces
         $newData = str_replace(' xmlns="http://www.loc.gov/MARC21/slim"', '', $newData);
@@ -90,9 +103,9 @@ class Bib
     {
         // If initialized from an SRU record, we need to fetch the
         // remaining parts of the Bib record.
-        $this->fetch();
+        $this->load();
 
-        $nz_mms_id = $this->data->text('linked_record_id[@type="NZ"]');
+        $nz_mms_id = $this->bib_data->text('linked_record_id[@type="NZ"]');
         if (!$nz_mms_id) {
             throw new NoLinkedNetworkZoneRecordException("Record $this->mms_id is not linked to a network zone record.");
         }
@@ -103,7 +116,10 @@ class Bib
 
     public function getMarc()
     {
-        return $this->_marc;
+        if (is_null($this->marc_data)) {
+            $this->load();
+        }
+        return $this->marc_data;
     }
 
     public function __get($key)
@@ -111,8 +127,10 @@ class Bib
         if ($key == 'marc') {
             return $this->getMarc();
         }
-        if (!is_null($this->data)) {
-            return $this->data->text($key);
+        if ($key == 'holdings') {
+            return $this->getHoldings();
         }
+        $this->load();
+        return $this->bib_data->text($key);
     }
 }

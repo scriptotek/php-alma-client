@@ -10,6 +10,14 @@ class SpecHelper
     {
         $data = file_get_contents(__DIR__ . '/data/' . $filename);
 
-        return $parse ? QuiteSimpleXMLElement::make($data) : $data;
+        if (!$parse) {
+        	return $data;
+        }
+
+        if (strpos($filename, '.xml')) {
+	        return QuiteSimpleXMLElement::make($data);
+        }
+        return json_decode($data);
+
     }
 }

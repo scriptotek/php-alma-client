@@ -3,39 +3,50 @@
 namespace Scriptotek\Alma\Bibs;
 
 use Scriptotek\Alma\Client;
+use Scriptotek\Marc\Record as MarcRecord;
 
 class Holding
 {
+    protected $client;
     public $mms_id;
     public $holding_id;
-    protected $client;
-    protected $data;
-    protected $origData;
-    protected $dirty = false;
+    protected $_marc;
+    protected $_items;
 
     public function __construct(Client $client, $mms_id, $holding_id)
     {
+        $this->client = $client;
         $this->mms_id = $mms_id;
         $this->holding_id = $holding_id;
-        $this->client = $client;
     }
 
-    public function fetch()
+    public function getMarc()
     {
-        if (!is_null($this->data)) {
-            return;  // we already have the data and won't re-fetch
+        if (!isset($this->_marc)) {
+            $data = $this->client->getXML('/bibs/' . $this->mms_id . '/holdings/' . $this->holding_id);
+            $marcRecord = $data->first('record')->asXML();
+            $this->_marc = MarcRecord::fromString($marcRecord);
         }
+        return $this->_marc;
+    }
 
-        $this->data = $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings/' . $this->holding_id);
+    public function getItems()
+    {
+        if (!isset($this->_items)) {
+            $data = $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings/' . $this->holding_id . '/items');
 
-        // @TODO: Parse
+            $this->_items = array_map(function ($data) { return new Item($data); }, $data->item);
+        }
+        return $this->_items;
+    }
 
-        // $mms_id = $this->data->text('mms_id');
-        // if ($mms_id != $this->mms_id) {
-        //     throw new \ErrorException('Record mms_id ' . $mms_id . ' does not match requested mms_id ' . $this->mms_id . '.');
-        // }
-
-        // $marcRecord = $this->data->first('record')->asXML();
-        // $this->_record = MarcRecord::fromString($marcRecord);
+    public function __get($key)
+    {
+        if ($key == 'marc') {
+            return $this->getMarc();
+        }
+        if ($key == 'items') {
+            return $this->getItems();
+        }
     }
 }

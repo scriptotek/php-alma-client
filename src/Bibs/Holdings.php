@@ -11,8 +11,9 @@ class Holdings extends ResourceList implements \Countable, \Iterator
     use IterableResource;
 
     protected $resourceName = Holding::class;
-
     protected $mms_id;
+    protected $data;
+
 
     public function __construct(Client $client, $mms_id)
     {
@@ -29,7 +30,11 @@ class Holdings extends ResourceList implements \Countable, \Iterator
 
     public function getResources()
     {
-        return $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings')->holding;
+        if (!isset($this->data)) {
+            $this->data = $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings')->holding;
+        }
+
+        return $this->data;
     }
 
     /**
