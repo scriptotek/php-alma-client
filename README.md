@@ -275,6 +275,8 @@ But used with the API, the response is the same as if you forget to include an
 
 ## Users
 
+**WARNING**: The interface is subject to change.
+
 ```php
 foreach ($alma->users->search('last_name~Heggø AND first_name~Dan') as $user) {
     echo "$user->first_name $user->last_name ($user->primary_id)\n";

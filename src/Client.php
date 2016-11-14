@@ -8,6 +8,7 @@ use GuzzleHttp\Exception\RequestException;
 use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Exception\ClientException;
+use Scriptotek\Alma\Users\Users;
 use Scriptotek\Sru\Client as SruClient;
 
 /**
@@ -38,6 +39,9 @@ class Client
     /** @var Analytics */
     public $analytics;
 
+    /** @var Users */
+    public $users;
+
     /**
      * Create a new client.
      *
@@ -56,6 +60,7 @@ class Client
         $this->zone = $zone;
         $this->bibs = new Bibs($this);  // Or do some magic instead?
         $this->analytics = new Analytics($this);  // Or do some magic instead?
+        $this->users = new Users($this);  // Or do some magic instead?
         if ($zone == Zones::INSTITUTION) {
             $this->nz = new self(null, $region, Zones::NETWORK, $this->httpClient);
         } elseif ($zone != Zones::NETWORK) {
