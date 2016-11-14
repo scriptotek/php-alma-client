@@ -59,7 +59,8 @@ class Bib
         $this->setMarcDataFromBibData();
     }
 
-    protected function setMarcDataFromBibData() {
+    protected function setMarcDataFromBibData()
+    {
         if (!is_null($this->bib_data)) {
             $marcRecord = $this->bib_data->first('record')->asXML();
             $this->marc_data = MarcRecord::fromString($marcRecord);
