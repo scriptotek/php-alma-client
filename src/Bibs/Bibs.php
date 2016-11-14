@@ -38,6 +38,14 @@ class Bibs extends ResourceList
         return $this->get($mmsId);
     }
 
+    public function fromHoldingsId($holdings_id)
+    {
+        $bib_data = $this->client->getXML('/bibs', ['holdings_id' => $holdings_id])->bib;
+        $mms_id = $bib_data->text('mms_id');
+        echo $mms_id;
+//        return $this->get($mms_id, null, $bib_data);
+    }
+
     public function search($cql, $batchSize = 10)
     {
         foreach ($this->client->sru->all($cql, $batchSize) as $sruRecord) {
