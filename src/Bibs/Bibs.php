@@ -28,13 +28,31 @@ class Bibs extends ResourceList
     }
 
     /**
-     * Get a Bib object from an ISBN value, using an SRU search.
+     * Get a Bib object from a holdings ID.
+     *
+     * @param string $holdings_id
+     * @return Bib
+     */
+    public function fromHoldingsId($holdings_id)
+    {
+        $response = $this->client->getXML('/bibs', ['holdings_id' => $holdings_id]);
+        $bib_data = $response->first('bib');
+        $mms_id = $bib_data->text('mms_id');
+
+        return $this->get($mms_id, null, null, $bib_data);
+    }
+
+    /**
+     * Get a Bib object from an ISBN value. You must have an SRU client
+     * connected to the Alma client (see `Client::setSruClient()`).
      *
      * @param string $isbn
      * @return Bib
      */
     public function fromIsbn($isbn)
     {
+        $this->client->assertHasSruClient();
+
         $record = $this->client->sru->first('alma.isbn="' . $isbn . '"');
         if (is_null($record)) {
             return;
@@ -52,23 +70,9 @@ class Bibs extends ResourceList
     }
 
     /**
-     * Get a Bib object from a holdings ID.
-     *
-     * @param string $holdings_id
-     * @return Bib
-     */
-    public function fromHoldingsId($holdings_id)
-    {
-        $response = $this->client->getXML('/bibs', ['holdings_id' => $holdings_id]);
-        $bib_data = $response->first('bib');
-        $mms_id = $bib_data->text('mms_id');
-
-        return $this->get($mms_id, null, null, $bib_data);
-    }
-
-    /**
-     * Search using a connected SRU service. The Alma SRU service provides
-     * live data.
+     * Get Bib records from SRU search. You must have an SRU client connected
+     * to the Alma client (see `Client::setSruClient()`).
+     * Returns a generator that handles continuation under the hood.
      *
      * @param string $cql  The CQL query
      * @param int $batchSize  Number of records to return in each batch.
@@ -76,6 +80,8 @@ class Bibs extends ResourceList
      */
     public function search($cql, $batchSize = 10)
     {
+        $this->client->assertHasSruClient();
+
         foreach ($this->client->sru->all($cql, $batchSize) as $sruRecord) {
             yield Bib::fromSruRecord($sruRecord, $this->client);
         }

@@ -8,6 +8,7 @@ use GuzzleHttp\Exception\RequestException;
 use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Exception\ClientException;
+use Scriptotek\Alma\Exception\SruClientNotSetException;
 use Scriptotek\Alma\Users\Users;
 use Scriptotek\Sru\Client as SruClient;
 
@@ -76,6 +77,18 @@ class Client
     public function setSruClient(SruClient $sru)
     {
         $this->sru = $sru;
+    }
+
+    /**
+     * Assert that an SRU client is connected. Throws SruClientNotSetException if not.
+     *
+     * @throws SruClientNotSetException
+     */
+    public function assertHasSruClient()
+    {
+        if (!isset($this->sru)) {
+            throw new SruClientNotSetException();
+        }
     }
 
     /**
