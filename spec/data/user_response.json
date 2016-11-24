@@ -1,0 +1,143 @@
+{
+    "account_type": {
+        "desc": "Internal",
+        "value": "INTERNAL"
+    },
+    "birth_date": "1990-03-01Z",
+    "campus_code": {
+        "desc": "UiO Blindern",
+        "value": "BLINDERN"
+    },
+    "cataloger_level": {
+        "desc": "[00] Default Level (00)",
+        "value": "00"
+    },
+    "contact_info": {
+        "address": [
+            {
+                "address_note": "",
+                "address_type": [
+                    {
+                        "desc": "Home",
+                        "value": "home"
+                    }
+                ],
+                "city": "Oslo",
+                "country": {
+                    "desc": null,
+                    "value": null
+                },
+                "line1": "Niels Henrik Abels hus",
+                "line2": null,
+                "line3": null,
+                "line4": null,
+                "line5": null,
+                "postal_code": "0316",
+                "preferred": true,
+                "segment_type": "Internal",
+                "start_date": "2016-08-22Z",
+                "state_province": ""
+            }
+        ],
+        "email": [
+            {
+                "description": null,
+                "email_address": "danmichaelo@gmail.com",
+                "email_type": [
+                    {
+                        "desc": "Personal",
+                        "value": "personal"
+                    }
+                ],
+                "preferred": true,
+                "segment_type": "Internal"
+            }
+        ],
+        "phone": [
+            {
+                "phone_number": "90207510",
+                "phone_type": [
+                    {
+                        "desc": "Mobile",
+                        "value": "mobile"
+                    }
+                ],
+                "preferred": true,
+                "preferred_sms": false,
+                "segment_type": "Internal"
+            }
+        ]
+    },
+    "external_id": "",
+    "fees": null,
+    "first_name": "Dan",
+    "force_password_change": "",
+    "full_name": "Dan Banan",
+    "gender": {
+        "desc": "",
+        "value": ""
+    },
+    "job_category": {
+        "desc": "",
+        "value": ""
+    },
+    "job_description": "",
+    "last_name": "Banan",
+    "link": null,
+    "loans": null,
+    "middle_name": "",
+    "password": "",
+    "preferred_language": {
+        "desc": "Norwegian",
+        "value": "no"
+    },
+    "primary_id": "12345",
+    "proxy_for_user": [],
+    "record_type": {
+        "desc": "Public",
+        "value": "PUBLIC"
+    },
+    "requests": null,
+    "rs_library": [
+        {
+            "code": {
+                "desc": "UiO Realfagsbiblioteket",
+                "value": "1030310"
+            }
+        }
+    ],
+    "status": {
+        "desc": "Active",
+        "value": "ACTIVE"
+    },
+    "user_block": [],
+    "user_group": {
+        "desc": "Egne studenter",
+        "value": "1"
+    },
+    "user_identifier": [],
+    "user_note": [],
+    "user_role": [
+        {
+            "parameter": [],
+            "role_type": {
+                "desc": "Patron",
+                "value": "200"
+            },
+            "scope": {
+                "desc": "UiO,Universitetsbiblioteket",
+                "value": "47BIBSYS_UBO"
+            },
+            "status": {
+                "desc": "Active",
+                "value": "ACTIVE"
+            }
+        }
+    ],
+    "user_statistic": [],
+    "user_title": {
+        "desc": "",
+        "value": ""
+    },
+    "web_site_url": ""
+}

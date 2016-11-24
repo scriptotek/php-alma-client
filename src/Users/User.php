@@ -73,6 +73,20 @@ class User
 
     public function __get($key)
     {
-        return isset($this->data->{$key}) ? $this->data->{$key} : null;
+        $method = 'get' . ucfirst($key);
+        if (method_exists($this, $method)) {
+            return $this->$method();
+        }
+
+        if (isset($this->data->{$key})) {
+            return $this->data->{$key};
+        } else {
+            // If initialized from a search, we don't have the full record.
+            // Let's fetch it.
+            $this->fetch();
+            if (isset($this->data->{$key})) {
+                return $this->data->{$key};
+            }
+        }
     }
 }

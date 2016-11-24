@@ -1,0 +1,23 @@
+{
+    "total_record_count": 1,
+    "user": [
+        {
+            "fees": null,
+            "first_name": "Dan",
+            "gender": {
+                "desc": "",
+                "value": ""
+            },
+            "last_name": "Banan",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/users/1234567",
+            "loans": null,
+            "password": "",
+            "primary_id": "1234567",
+            "requests": null,
+            "status": {
+                "desc": "Active",
+                "value": "ACTIVE"
+            }
+        }
+    ]
+}
