@@ -42,24 +42,24 @@ class User
         return $this->data;
     }
 
-    public function getBarcode()
+    public function getIdOfType($id_type)
     {
         foreach ($this->user_identifier as $identifier) {
-            if ($identifier->id_type->value == 'BARCODE') {
+            if ($identifier->id_type->value == $id_type) {
                 return $identifier->value;
             }
         }
         return null;
     }
 
+    public function getBarcode()
+    {
+        return $this->getIdOfType('BARCODE');
+    }
+
     public function getUniversityId()
     {
-        foreach ($this->user_identifier as $identifier) {
-            if ($identifier->id_type->value == 'UNIV_ID') {
-                return $identifier->value;
-            }
-        }
-        return null;
+        return $this->getIdOfType('UNIV_ID');
     }
 
     public function getIds()

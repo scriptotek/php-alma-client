@@ -190,18 +190,18 @@ class Client
      *
      * @param string $url
      * @param $data
-     *
+     * @param string $contentType
      * @return bool
      */
-    public function put($url, $data)
+    public function put($url, $data, $contentType = 'application/json')
     {
         $data = json_encode($data);
 
         $response = $this->request('PUT', $url, [
             'body'    => $data,
             'headers' => [
-                'Content-Type' => 'application/json',
-                'Accept'       => 'application/json',
+                'Content-Type' => $contentType,
+                'Accept'       => $contentType,
             ],
         ]);
 
@@ -219,16 +219,7 @@ class Client
      */
     public function putXML($url, $data)
     {
-        $response = $this->request('PUT', $url, [
-            'body'    => $data,
-            'headers' => [
-                'Content-Type' => 'application/xml',
-                'Accept'       => 'application/xml',
-            ],
-        ]);
-
-        return $response->getStatusCode() == '200';
-        // TODO: Check if there are other success codes that can be returned
+        return $this->put($url, $data, 'application/xml');
     }
 
     /**
