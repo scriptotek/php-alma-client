@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bibs>
+	<bib>
+		<mms_id>999900137074702204</mms_id>
+		<record_format>marc21</record_format>
+		<linked_record_id type="NZ">999900137074702201</linked_record_id>
+		<title>Quantum Monte Carlo methods in physics and chemistry</title>
+		<author>NATO Advanced Study Institute on Quantum Monte Carlo Methods in Physics and Chemistry</author>
+		<isbn>0792355512</isbn>
+		<network_numbers>
+			<network_number>(NO-TrBIB)990013707</network_number>
+			<network_number>990013707-47bibsys_network</network_number>
+			<network_number>(EXLNZ-47BIBSYS_NETWORK)999900137074702201</network_number>
+		</network_numbers>
+		<place_of_publication>Dordrecht</place_of_publication>
+		<publisher_const>Kluwer</publisher_const>
+		<holdings link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999900137074702204/holdings"/>
+		<created_by>import</created_by>
+		<created_date>2015-11-05Z</created_date>
+		<last_modified_date>2016-01-15Z</last_modified_date>
+		<suppress_from_publishing>false</suppress_from_publishing>
+		<originating_system>ILS</originating_system>
+		<originating_system_id>990013707-47bibsys_network</originating_system_id>
+		<record>
+			<leader>01962cam a2200445 c 4500</leader>
+			<controlfield tag="001">999900137074702204</controlfield>
+			<controlfield tag="005">20110607140158.0</controlfield>
+			<controlfield tag="007">ta</controlfield>
+			<controlfield tag="008">110607s1999    xx#|||||||||||100|u|eng|d</controlfield>
+			<datafield ind1=" " ind2=" " tag="020">
+				<subfield code="a">0792355512</subfield>
+				<subfield code="q">ib.</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="035">
+				<subfield code="a">990013707-47bibsys_network</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="035">
+				<subfield code="a">(NO-TrBIB)990013707</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="035">
+				<subfield code="a">(EXLNZ-47BIBSYS_NETWORK)999900137074702201</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="040">
+				<subfield code="a">NO-TrBIB</subfield>
+				<subfield code="b">nob</subfield>
+				<subfield code="e">katreg</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="080">
+				<subfield code="a">530.145</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="080">
+				<subfield code="a">519.245</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="080">
+				<subfield code="a">541.2</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="097">
+				<subfield code="a">1.6qua</subfield>
+				<subfield code="9">LOCAL</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="097">
+				<subfield code="a">a0250</subfield>
+				<subfield code="9">LOCAL</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="097">
+				<subfield code="a">a0530</subfield>
+				<subfield code="9">LOCAL</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="097">
+				<subfield code="a">a0540</subfield>
+				<subfield code="9">LOCAL</subfield>
+			</datafield>
+			<datafield ind1="2" ind2=" " tag="111">
+				<subfield code="a">NATO Advanced Study Institute on Quantum Monte Carlo Methods in Physics and Chemistry</subfield>
+				<subfield code="0">(NO-TrBIB)99007566</subfield>
+			</datafield>
+			<datafield ind1="1" ind2="0" tag="245">
+				<subfield code="a">Quantum Monte Carlo methods in physics and chemistry</subfield>
+				<subfield code="c">edited by M.P. Nightingale and C.J. Umrigar</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="260">
+				<subfield code="a">Dordrecht</subfield>
+				<subfield code="b">Kluwer</subfield>
+				<subfield code="c">c1999</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="300">
+				<subfield code="a">VIII, 467 s.</subfield>
+				<subfield code="b">ill.</subfield>
+			</datafield>
+			<datafield ind1="1" ind2=" " tag="490">
+				<subfield code="a">NATO science series. Series C, Mathematical and physical sciences</subfield>
+				<subfield code="v">vol. 525</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="500">
+				<subfield code="a">&quot;Proceedings of the NATO Advanced Study Institute on Quantum Monte Carlo Methods in Physics and Chemistry, Ithaca, New York, U.S.A., 12-24 July 1998&quot; - Tittelsidens bakside</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="0" tag="650">
+				<subfield code="a">Monte Carlo method</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="0" tag="650">
+				<subfield code="a">Quantum theory</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="0" tag="650">
+				<subfield code="a">Quantum chemistry</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="7" tag="650">
+				<subfield code="a">Kjemi</subfield>
+				<subfield code="2">noubomn</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="7" tag="650">
+				<subfield code="a">Monte carlo-metoder</subfield>
+				<subfield code="2">noubomn</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="7" tag="650">
+				<subfield code="a">Kvanteteori</subfield>
+				<subfield code="2">noubomn</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="7" tag="650">
+				<subfield code="a">Kvantestatistikk</subfield>
+				<subfield code="2">noubomn</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="7" tag="650">
+				<subfield code="a">Fysikk</subfield>
+				<subfield code="2">noubomn</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="7" tag="650">
+				<subfield code="a">Kvanteteori</subfield>
+				<subfield code="v">Kongresser</subfield>
+				<subfield code="2">tekord</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="7" tag="650">
+				<subfield code="a">Monte-Carlo-metoden</subfield>
+				<subfield code="v">Kongresser</subfield>
+				<subfield code="2">tekord</subfield>
+			</datafield>
+			<datafield ind1=" " ind2="7" tag="650">
+				<subfield code="a">Kvantekjemi</subfield>
+				<subfield code="v">Kongresser</subfield>
+				<subfield code="2">tekord</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="653">
+				<subfield code="a">kvanteteori</subfield>
+				<subfield code="a">montecarlometoder</subfield>
+				<subfield code="a">fysikk</subfield>
+				<subfield code="a">kjemi</subfield>
+				<subfield code="a">kvantestatistikk</subfield>
+			</datafield>
+			<datafield ind1="1" ind2=" " tag="700">
+				<subfield code="a">Nightingale, M.P.</subfield>
+				<subfield code="0">(NO-TrBIB)99007565</subfield>
+			</datafield>
+			<datafield ind1="1" ind2=" " tag="700">
+				<subfield code="a">Umrigar, C.J.</subfield>
+				<subfield code="0">(NO-TrBIB)99007564</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="830">
+				<subfield code="a">NATO science series</subfield>
+				<subfield code="n">Series C</subfield>
+				<subfield code="p">Mathematical and physical sciences</subfield>
+				<subfield code="x">1389-2185</subfield>
+				<subfield code="v">vol. 525</subfield>
+				<subfield code="w">999908638754702201</subfield>
+			</datafield>
+			<datafield ind1="4" ind2="2" tag="856">
+				<subfield code="3">Beskrivelse fra forlaget (kort)</subfield>
+				<subfield code="u">http://content.bibsys.no/content/?type=descr_publ_brief&amp;isbn=0792355512</subfield>
+			</datafield>
+			<datafield ind1="4" ind2="2" tag="856">
+				<subfield code="3">Beskrivelse fra forlaget (lang)</subfield>
+				<subfield code="u">http://content.bibsys.no/content/?type=descr_publ_full&amp;isbn=0792355512</subfield>
+			</datafield>
+			<datafield ind1=" " ind2=" " tag="901">
+				<subfield code="a">80</subfield>
+			</datafield>
+		</record>
+	</bib>
+</bibs>

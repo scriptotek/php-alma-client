@@ -40,10 +40,11 @@ class Bibs extends ResourceList
 
     public function fromHoldingsId($holdings_id)
     {
-        $bib_data = $this->client->getXML('/bibs', ['holdings_id' => $holdings_id])->bib;
+        $response = $this->client->getXML('/bibs', ['holdings_id' => $holdings_id]);
+        $bib_data = $response->first('bib');
         $mms_id = $bib_data->text('mms_id');
-        echo $mms_id;
-//        return $this->get($mms_id, null, $bib_data);
+
+        return $this->get($mms_id, null, null, $bib_data);
     }
 
     public function search($cql, $batchSize = 10)

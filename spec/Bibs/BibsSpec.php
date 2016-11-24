@@ -4,14 +4,22 @@ namespace spec\Scriptotek\Alma\Bibs;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Sru\Client as SruClient;
 use Scriptotek\Sru\Record as SruRecord;
+use spec\Scriptotek\Alma\SpecHelper;
 
 class BibsSpec extends ObjectBehavior
 {
+    public function let(AlmaClient $almaClient, SruClient $sru)
+    {
+        $this->beConstructedWith($almaClient);
+        $almaClient->sru = $sru;
+    }
+
     public function it_is_initializable(AlmaClient $almaClient)
     {
         $this->beConstructedWith($almaClient);
@@ -56,6 +64,17 @@ class BibsSpec extends ObjectBehavior
 
         $bib = $this->fromIsbn('123');
         $bib->shouldBe(null);
+    }
+
+    public function it_supports_lookup_by_holding_id(AlmaClient $almaClient, SruClient $sru)
+    {
+        $almaClient->getXML('/bibs', Argument::containing('12345'), Argument::any())
+            ->shouldBeCalled()
+            ->willReturn(SpecHelper::getDummyData('bibs_holdings.xml'));
+
+        $bib = $this->fromHoldingsId('12345');
+        $bib->shouldHaveType(Bib::class);
+        $bib->mms_id->shouldBe('999900137074702204');
     }
 
     /*
