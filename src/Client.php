@@ -43,11 +43,11 @@ class Client
     public $users;
 
     /**
-     * Create a new client.
+     * Create a new client to connect to a given Alma instance.
      *
-     * @param string     $key        API key for institutional zone
+     * @param string     $key        API key
      * @param string     $region     Hosted region code, used to build base URL
-     * @param string     $zone       Alma zone
+     * @param string     $zone       Alma zone (Either Zones::INSTITUTION or Zones::NETWORK)
      * @param HttpClient $httpClient
      *
      * @throws \ErrorException
@@ -68,13 +68,21 @@ class Client
         }
     }
 
+    /**
+     * Attach an SRU client (so you can search for Bib records).
+     *
+     * @param SruClient $sru
+     */
     public function setSruClient(SruClient $sru)
     {
         $this->sru = $sru;
     }
 
     /**
-     * @param string $key API key for this zone
+     * Set the API key for this Alma instance.
+     *
+     * @param string $key The API key
+     * @return $this
      */
     public function setKey($key)
     {
@@ -84,8 +92,10 @@ class Client
     }
 
     /**
-     * @param $regionCode
+     * Set the Alma region code ('na' for North America, 'eu' for Europe, 'ap' for Asia Pacific).
      *
+     * @param $regionCode
+     * @return $this
      * @throws \ErrorException
      */
     public function setRegion($regionCode)
@@ -223,7 +233,7 @@ class Client
     }
 
     /**
-     * Get redirect location or null if none.
+     * Get the redirect target location of an URL, or null if not a redirect.
      *
      * @param string $url
      * @param array  $query
