@@ -50,13 +50,25 @@ class Bib
             return;  // we already have the data and won't re-fetch
         }
 
+        // If we already have the MARC record (from SRU), we should make a copy
+        // in case the user has made edits to it.
+        $marcRecord = isset($this->marc_data)
+            ? new QuiteSimpleXMLElement($this->marc_data->toXML('UTF-8', false, false))
+            : null ;
+
+        $options = [];
+        $this->bib_data = $this->client->getXML('/bibs/' . $this->mms_id, $options);
 
         $mms_id = $this->bib_data->text('mms_id');
         if ($mms_id != $this->mms_id) {
             throw new \ErrorException('Record mms_id ' . $mms_id . ' does not match requested mms_id ' . $this->mms_id . '.');
         }
 
-        $this->setMarcDataFromBibData();
+        if (is_null($marcRecord)) {
+            $this->setMarcDataFromBibData();
+        } else {
+            $this->bib_data->first('record')->replace($marcRecord);
+        }
     }
 
     protected function setMarcDataFromBibData()
@@ -81,15 +93,11 @@ class Bib
         return $this->_holdings;
     }
 
-    public function save(MarcRecord $rec)
+    public function save()
     {
         // If initialized from an SRU record, we need to fetch the
         // remaining parts of the Bib record.
         $this->load();
-
-        // Replace the MARC record
-        $newRecord = new QuiteSimpleXMLElement($rec->toXML('UTF-8', false, false));
-        $this->bib_data->first('record')->replace($newRecord);
 
         // Serialize
         $newData = $this->bib_data->asXML();
@@ -98,6 +106,14 @@ class Bib
         $newData = str_replace(' xmlns="http://www.loc.gov/MARC21/slim"', '', $newData);
 
         return $this->client->putXML('/bibs/' . $this->mms_id, $newData);
+    }
+
+    public function getXml()
+    {
+        if (is_null($this->bib_data)) {
+            $this->load();
+        }
+        return $this->bib_data->asXML();
     }
 
     public function getNzRecord()
@@ -115,18 +131,22 @@ class Bib
     }
 
 
-    public function getMarc()
+    /**
+     * Returns the MARC record
+     */
+    public function getRecord()
     {
         if (is_null($this->marc_data)) {
             $this->load();
         }
+
         return $this->marc_data;
     }
 
     public function __get($key)
     {
-        if ($key == 'marc') {
-            return $this->getMarc();
+        if ($key == 'record') {
+            return $this->getRecord();
         }
         if ($key == 'holdings') {
             return $this->getHoldings();

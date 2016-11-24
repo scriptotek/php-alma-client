@@ -108,7 +108,7 @@ $bib = $alma->bibs->fromIsbn('9788299308922');
 
 ### The MARC21 record
 
-The MARC21 record is available as `$bib->marc` in the form of a
+The MARC21 record is available as `$bib->record` in the form of a
 [php-marc](https://github.com/scriptotek/php-marc/blob/master/src/Record.php) `Record` object
 that extends `File_MARC_Record` from [File_MARC](https://github.com/pear/File_MARC),
 meaning you can use all File_MARC methods in addition to the convenience methods from php-marc.
@@ -120,7 +120,7 @@ the CQL search syntax.
 
 ```php
 foreach ($alma->bibs->search('alma.dewey_decimal_class_number=530.12') as $bib) {
-	$rec = $bib->marc;
+	$rec = $bib->record;
 	echo "$rec->id: $rec->title\n";
 }
 ```
@@ -140,15 +140,20 @@ The MARC21 record can easily be edited using the `File_MARC_Record` interface
 (see [File_MARC](https://github.com/pear/File_MARC) for documentation):
 
 ```php
-$record = $bib->marc;
 
-$newSubject = new File_MARC_Data_Field('650', array(
+foreach ($bib->record->getSubjects() as $subject) {
+    $term = strval($subject);
+    if ($term == 'Boating with dogs') {
+        $subject->delete();
+    }
+}
+
+$bib->record->appendField(new File_MARC_Data_Field('650', [
     new File_MARC_Subfield('a', 'Boating with cats'),
     new File_MARC_Subfield('2', 'noubomn'),
-), null, '0');
-$record->appendField($newSubject);
+], null, '0'));
 
-$bib->save($record);
+$bib->save();
 ```
 
 ### Holdings and items
@@ -158,13 +163,13 @@ To get a MARC21 holding record:
 ```php
 $bib = $alma->bibs->get('990310361044702204');
 $holding = $bib->getHolding('22102913020002204');
-$marc = $holding->getMarc();
+$marc = $holding->getRecord();
 ```
 
 Lazy loading: Note that the client uses lazy loading to reduce the number of HTTP
 requests. Requests are not made when you instantiate objects, but when you request
 data from them. So in this case, a HTTP request for the holding record is first
-made when you call `getMarc()`. The response is then cached on the object for
+made when you call `getRecord()`. The response is then cached on the object for
 re-use. In the same way, no HTTP request is made for the Bib record in this case,
 since we don't request any data from that.
 
@@ -308,7 +313,7 @@ do, say,
 
 ```php
 $bib = $alma->bibs->get('990114012304702204');  // a Bib object
-$bib->marc->subjects->add([
+$bib->record->subjects->add([
 	'term' => 'Boating with cats',
 	'vocabulary' => noubomn'
 ]);

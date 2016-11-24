@@ -18,7 +18,7 @@ class BibSpec extends ObjectBehavior
         $mms_id = '999104760474702204';
         $this->beConstructedWith($almaClient, $mms_id);
 
-        $almaClient->getXML(Argument::containingString('999104760474702204'))
+        $almaClient->getXML(Argument::containingString('999104760474702204'), Argument::any())
             ->willReturn(SpecHelper::getDummyData('bib_response_iz.xml'));
     }
 

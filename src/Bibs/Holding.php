@@ -20,7 +20,10 @@ class Holding
         $this->holding_id = $holding_id;
     }
 
-    public function getMarc()
+    /**
+     * Returns the MARC record
+     */
+    public function getRecord()
     {
         if (!isset($this->_marc)) {
             $data = $this->client->getXML('/bibs/' . $this->mms_id . '/holdings/' . $this->holding_id);
@@ -42,8 +45,8 @@ class Holding
 
     public function __get($key)
     {
-        if ($key == 'marc') {
-            return $this->getMarc();
+        if ($key == 'record') {
+            return $this->getRecord();
         }
         if ($key == 'items') {
             return $this->getItems();
