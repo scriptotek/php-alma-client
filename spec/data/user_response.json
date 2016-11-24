@@ -42,7 +42,7 @@
         "email": [
             {
                 "description": null,
-                "email_address": "danmichaelo@gmail.com",
+                "email_address": "dan@banan.com",
                 "email_type": [
                     {
                         "desc": "Personal",
@@ -55,7 +55,7 @@
         ],
         "phone": [
             {
-                "phone_number": "90207510",
+                "phone_number": "12345678",
                 "phone_type": [
                     {
                         "desc": "Mobile",
@@ -115,7 +115,18 @@
         "desc": "Egne studenter",
         "value": "1"
     },
-    "user_identifier": [],
+    "user_identifier": [
+        {
+            "id_type": {
+                "desc": "University ID",
+                "value": "UNIV_ID"
+            },
+            "note": null,
+            "segment_type": "Internal",
+            "status": "ACTIVE",
+            "value": "test@uio.no"
+        }
+    ],
     "user_note": [],
     "user_role": [
         {
