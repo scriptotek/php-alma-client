@@ -50,7 +50,28 @@ class Report
             'xsd'    => 'http://www.w3.org/2001/XMLSchema',
         ]);
 
+        $this->readResponseHeaders($results);
+
         return $results;
+    }
+
+    /**
+     * @param $results
+     */
+    protected function readResponseHeaders($results)
+    {
+        $headers = array_map(function ($node) {
+            return $node->attr('name');
+        }, $results->all('//xsd:complexType[@name="Row"]/xsd:sequence/xsd:element[position()>1]'));
+
+        if (count($headers)) {
+            if (!count($this->headers)) {
+                $this->headers = $headers;
+            } elseif (count($headers) != count($this->headers)) {
+                throw new \RuntimeException(sprintf('Number of returned columns (%d) does not match number of assigned headers (%d).',
+                    count($headers), count($this->headers)));
+            }
+        }
     }
 
     /**
@@ -63,18 +84,6 @@ class Report
 
         while (!$isFinished) {
             $results = $this->fetchRows($resumptionToken);
-
-            $headers = array_map(function ($node) {
-                return $node->attr('name');
-            }, $results->all('//xsd:complexType[@name="Row"]/xsd:sequence/xsd:element[position()>1]'));
-
-            if (count($headers)) {
-                if (!count($this->headers)) {
-                    $this->headers = $headers;
-                } elseif (count($headers) != count($this->headers)) {
-                    throw new \RuntimeException(sprintf('Number of returned columns (%d) does not match number of assigned headers (%d).', count($headers), count($this->headers)));
-                }
-            }
 
             foreach ($results->all('//rowset:Row') as $row) {
                 yield new Row($row, $this->headers);
