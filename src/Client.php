@@ -218,8 +218,6 @@ class Client
      */
     public function put($url, $data, $contentType = 'application/json')
     {
-        $data = json_encode($data);
-
         $response = $this->request('PUT', $url, [
             'body'    => $data,
             'headers' => [
@@ -233,7 +231,22 @@ class Client
     }
 
     /**
-     * Make a PUT request.
+     * Make a PUT request, sending JSON data.
+     *
+     * @param string $url
+     * @param $data
+     *
+     * @return bool
+     */
+    public function putJSON($url, $data)
+    {
+        $data = json_encode($data);
+
+        return $this->put($url, $data, 'application/json');
+    }
+
+    /**
+     * Make a PUT request, sending XML data.
      *
      * @param string $url
      * @param $data
