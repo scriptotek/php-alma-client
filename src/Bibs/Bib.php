@@ -29,7 +29,7 @@ class Bib
         $this->client = $client;
         $this->marc_data = $marc_data;
         $this->bib_data = $bib_data;
-        $this->setMarcDataFromBibData();
+        $this->extractMarcDataFromBibData();
     }
 
     /**
@@ -50,12 +50,6 @@ class Bib
             return;  // we already have the data and won't re-fetch
         }
 
-        // If we already have the MARC record (from SRU), we should make a copy
-        // in case the user has made edits to it.
-        $marcRecord = isset($this->marc_data)
-            ? new QuiteSimpleXMLElement($this->marc_data->toXML('UTF-8', false, false))
-            : null ;
-
         $options = [];
         $this->bib_data = $this->client->getXML('/bibs/' . $this->mms_id, $options);
 
@@ -64,19 +58,28 @@ class Bib
             throw new \ErrorException('Record mms_id ' . $mms_id . ' does not match requested mms_id ' . $this->mms_id . '.');
         }
 
-        if (is_null($marcRecord)) {
-            $this->setMarcDataFromBibData();
-        } else {
-            $this->bib_data->first('record')->replace($marcRecord);
-        }
+        $this->extractMarcDataFromBibData();
     }
 
-    protected function setMarcDataFromBibData()
+    /**
+     * Extract and parse the MARC data in the <record> tag
+     * as a MarcRecord object.
+     */
+    protected function extractMarcDataFromBibData()
     {
-        if (!is_null($this->bib_data)) {
-            $marcRecord = $this->bib_data->first('record')->asXML();
-            $this->marc_data = MarcRecord::fromString($marcRecord);
+        if (is_null($this->bib_data)) {
+            return;
         }
+
+        $bibNode = $this->bib_data->el;
+
+        // If we already have the MARC record (from SRU), we should not
+        // overwrite it in case the user has made edits to it.
+        if (is_null($this->marc_data)) {
+            $this->marc_data = MarcRecord::fromString($bibNode->record->asXML());
+        }
+
+        $bibNode->record = null;
     }
 
     public function getHolding($holding_id)
@@ -98,6 +101,10 @@ class Bib
         // If initialized from an SRU record, we need to fetch the
         // remaining parts of the Bib record.
         $this->load();
+
+        // Inject the MARC record
+        $marcXml = new QuiteSimpleXMLElement($this->marc_data->toXML('UTF-8', false, false));
+        $this->bib_data->first('record')->replace($marcXml);
 
         // Serialize
         $newData = $this->bib_data->asXML();
