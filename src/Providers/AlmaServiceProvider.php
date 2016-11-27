@@ -2,7 +2,6 @@
 
 namespace Scriptotek\Alma\Providers;
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Sru\Client as SruClient;

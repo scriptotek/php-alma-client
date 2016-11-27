@@ -17,7 +17,7 @@ class AnalyticsSpec extends ObjectBehavior
         $this->shouldHaveType('Scriptotek\Alma\Analytics\Analytics');
     }
 
-    public function it_provides_an_interface_to_report_objects(AlmaClient $almaClient)
+    public function it_provides_an_interface_to_report_objects()
     {
         $path = 'UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fransk';  // str_random();
 

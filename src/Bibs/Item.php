@@ -2,8 +2,6 @@
 
 namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\Client;
-
 class Item
 {
     protected $_data;

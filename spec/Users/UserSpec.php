@@ -13,7 +13,7 @@ class UserSpec extends ObjectBehavior
 {
     public function let(AlmaClient $almaClient)
     {
-        $this->beConstructedWith($almaClient, '123456', []);
+        $this->beConstructedWith($almaClient, '123456');
 
         $almaClient->getJSON(Argument::containingString('12345'), Argument::any())
             ->willReturn(SpecHelper::getDummyData('user_response.json'));

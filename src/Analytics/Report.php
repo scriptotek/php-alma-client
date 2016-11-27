@@ -2,6 +2,7 @@
 
 namespace Scriptotek\Alma\Analytics;
 
+use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 
 /**
@@ -50,27 +51,36 @@ class Report
             'xsd'    => 'http://www.w3.org/2001/XMLSchema',
         ]);
 
-        $this->readResponseHeaders($results);
+        $this->readColumnHeaders($results);
 
         return $results;
     }
 
     /**
-     * @param $results
+     * Read column headers from response, and check that we got the right number of columns back.
+     *
+     * @param QuiteSimpleXMLElement $results
      */
-    protected function readResponseHeaders($results)
+    protected function readColumnHeaders(QuiteSimpleXMLElement $results)
     {
-        $headers = array_map(function ($node) {
+        $headers = array_map(function (QuiteSimpleXMLElement $node) {
             return $node->attr('name');
         }, $results->all('//xsd:complexType[@name="Row"]/xsd:sequence/xsd:element[position()>1]'));
 
-        if (count($headers)) {
-            if (!count($this->headers)) {
-                $this->headers = $headers;
-            } elseif (count($headers) != count($this->headers)) {
-                throw new \RuntimeException(sprintf('Number of returned columns (%d) does not match number of assigned headers (%d).',
-                    count($headers), count($this->headers)));
-            }
+        if (!count($headers)) {
+            // No column headers included in this response. They're only
+            // included in the first response, so that's probably fine.
+            return;
+        }
+
+        if (!count($this->headers)) {
+            $this->headers = $headers;
+            return;
+        }
+
+        if (count($headers) != count($this->headers)) {
+            throw new \RuntimeException(sprintf('The number of returned columns (%d) does not match the number of assigned headers (%d).',
+                count($headers), count($this->headers)));
         }
     }
 

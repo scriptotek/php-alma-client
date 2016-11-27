@@ -8,40 +8,71 @@ class User
 {
     protected $_user_id;
     protected $client;
+
+    /* @var \stdClass */
     protected $data;
 
-    public function __construct(Client $client = null, $user_id = null, $data = [])
+    /**
+     * User constructor.
+     *
+     * @param Client|null $client
+     * @param string $user_id
+     * @param \stdClass $data
+     */
+    public function __construct(Client $client = null, $user_id = null, \stdClass $data = null)
     {
         $this->_user_id = $user_id;
         $this->client = $client;
         $this->data = $data;
-        // $this->rows = new Rows($this->path, $this->client);
     }
 
-    public static function fromResponse(Client $client = null, $data)
+    /**
+     * Create a user from an API response.
+     *
+     * @param Client $client
+     * @param \stdClass $data
+     * @return User
+     */
+    public static function fromResponse(Client $client, \stdClass $data)
     {
         return new User($client, $data->primary_id, $data);
     }
 
+    /**
+     * Do we have the full record, or only the fields from the search response?
+     *
+     * @return bool
+     */
     public function hasFullRecord()
     {
         return isset($this->data->user_identifier);
     }
 
+    /**
+     * Fetch the full record.
+     */
     public function fetch()
     {
         if ($this->hasFullRecord()) {
             return;
         }
-        $data = $this->client->getJSON('/users/' . $this->_user_id);
-        $this->data = $data;
+        $this->data = $this->client->getJSON('/users/' . $this->_user_id);
     }
 
+    /**
+     * @return \stdClass
+     */
     public function getData()
     {
         return $this->data;
     }
 
+    /**
+     * Get user identifier of a given type, like 'BARCODE' or 'UNIV_ID'.
+     *
+     * @param string $id_type
+     * @return string|null
+     */
     public function getIdOfType($id_type)
     {
         foreach ($this->user_identifier as $identifier) {
@@ -52,16 +83,31 @@ class User
         return null;
     }
 
+    /**
+     * Get the barcode.
+     *
+     * @return null|string
+     */
     public function getBarcode()
     {
         return $this->getIdOfType('BARCODE');
     }
 
+    /**
+     * Get the university id.
+     *
+     * @return null|string
+     */
     public function getUniversityId()
     {
         return $this->getIdOfType('UNIV_ID');
     }
 
+    /**
+     * Get a flat array of all the user IDs.
+     *
+     * @return string[]
+     */
     public function getIds()
     {
         $ids = [$this->primary_id];

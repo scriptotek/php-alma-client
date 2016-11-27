@@ -4,6 +4,7 @@ namespace Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use GuzzleHttp\Client as HttpClient;
+use GuzzleHttp\Exception\ClientException as GuzzleClientException;
 use GuzzleHttp\Exception\RequestException;
 use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
@@ -25,7 +26,7 @@ class Client
     /** @var string Alma Developers Network API key for this zone */
     public $key;
 
-    /** @var string Network zone instance */
+    /** @var Client Network zone instance */
     public $nz;
 
     /** @var HttpClient */
@@ -161,15 +162,35 @@ class Client
     {
         try {
             return $this->httpClient->request($method, $this->getFullUrl($url), $this->getHttpOptions($options));
-        } catch (\GuzzleHttp\Exception\ClientException $e) {
+        } catch (GuzzleClientException $e) {
             $this->handleError($e->getResponse());
         }
     }
 
-    public function handleError($response)
+    public function handleError(GuzzleClientException $response)
     {
+        // TODO: If we get a 429 response, it means we have run into the
+        // "Max 25 API calls per institution per second" limit. In that case we should just wait a sec and retry
         $msg = $response->getBody();
         throw new ClientException('Client error ' . $response->getStatusCode() . ': ' . $msg);
+    }
+
+    /**
+     * Make a GET request.
+     *
+     * @param string $url
+     * @param array  $query
+     * @param string $contentType
+     * @return string  Response body
+     */
+    public function get($url, $query = [], $contentType = 'application/json')
+    {
+        $response = $this->request('GET', $url, [
+            'query'   => $query,
+            'headers' => ['Accept' => $contentType],
+        ]);
+
+        return strval($response->getBody());
     }
 
     /**
@@ -178,16 +199,13 @@ class Client
      * @param string $url
      * @param array  $query
      *
-     * @return mixed
+     * @return \stdClass  JSON response as an object.
      */
     public function getJSON($url, $query = [])
     {
-        $response = $this->request('GET', $url, [
-            'query'   => $query,
-            'headers' => ['Accept' => 'application/json'],
-        ]);
+        $responseBody = $this->get($url, $query, 'application/json');
 
-        return json_decode($response->getBody());
+        return json_decode($responseBody);
     }
 
     /**
@@ -196,16 +214,13 @@ class Client
      * @param string $url
      * @param array  $query
      *
-     * @return mixed
+     * @return QuiteSimpleXMLElement
      */
     public function getXML($url, $query = [])
     {
-        $response = $this->request('GET', $url, [
-            'query'   => $query,
-            'headers' => ['Accept' => 'application/xml'],
-        ]);
+        $responseBody = $this->get($url, $query, 'application/xml');
 
-        return new QuiteSimpleXMLElement(strval($response->getBody()));
+        return new QuiteSimpleXMLElement($responseBody);
     }
 
     /**
@@ -226,8 +241,8 @@ class Client
             ],
         ]);
 
-        return $response->getStatusCode() == '200';
-        // TODO: Check if there are other success codes that can be returned
+        // Consider it a success if status code is 2XX
+        return substr($response->getStatusCode(), 0, 1) == '2';
     }
 
     /**
@@ -275,12 +290,8 @@ class Client
                 'allow_redirects' => false,
             ]));
         } catch (RequestException $e) {
-            // We receive a 400 if the barcode is invalid
-            // if ($e->hasResponse()) {
-            //     echo $e->getResponse()->getStatusCode() . "\n";
-            //     echo $e->getResponse()->getBody() . "\n";
-            // }
-            return;
+            // We receive a 400 response if the barcode is invalid.
+            return null;
         }
         $locations = $response->getHeader('Location');
 

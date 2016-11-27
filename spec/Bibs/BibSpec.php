@@ -28,7 +28,7 @@ class BibSpec extends ObjectBehavior
         $this->shouldHaveType(Bib::class);
     }
 
-    public function it_provides_bib_record_data(AlmaClient $almaClient)
+    public function it_provides_bib_record_data()
     {
         $this->created_date->shouldBe('2015-11-05Z');
     }
@@ -44,17 +44,17 @@ class BibSpec extends ObjectBehavior
         $this->getNzRecord()->shouldHaveType(Bib::class);
     }
 
-    public function it_has_holdings(AlmaClient $almaClient, AlmaClient $nz, Bibs $bibs)
+    public function it_has_holdings()
     {
         $this->holdings->shouldHaveType(Holdings::class);
     }
 
-    public function it_allows_looking_up_a_single_holding(AlmaClient $almaClient, AlmaClient $nz, Bibs $bibs)
+    public function it_allows_looking_up_a_single_holding()
     {
         $this->getHolding('123')->shouldHaveType(Holding::class);
     }
 
-    public function it_has_a_MARC_record(AlmaClient $almaClient)
+    public function it_has_a_MARC_record()
     {
         $this->record->shouldHaveType(Record::class);
         $this->record->getField('245')->getSubfield('a')->getData()->shouldBe('Lonely hearts of the cosmos :');

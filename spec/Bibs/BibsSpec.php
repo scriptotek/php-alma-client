@@ -26,10 +26,8 @@ class BibsSpec extends ObjectBehavior
         $this->shouldHaveType(Bibs::class);
     }
 
-    public function it_provides_an_interface_to_bib_objects(AlmaClient $almaClient)
+    public function it_provides_an_interface_to_bib_objects()
     {
-        $this->beConstructedWith($almaClient);
-
         $mms_id = '123'; // str_random();
         $bib = $this->get($mms_id);
 
@@ -37,11 +35,8 @@ class BibsSpec extends ObjectBehavior
         $bib->mms_id->shouldBe($mms_id);
     }
 
-    public function it_returns_a_bib_object_given_an_isbn(AlmaClient $almaClient, SruClient $sru)
+    public function it_returns_a_bib_object_given_an_isbn(SruClient $sru)
     {
-        $this->beConstructedWith($almaClient);
-        $almaClient->sru = $sru;
-
         $sru->first('alma.isbn="123"')
             ->shouldBeCalled()
             ->willReturn(SruRecord::make(1,
@@ -53,11 +48,8 @@ class BibsSpec extends ObjectBehavior
         $bib->mms_id->shouldBe('990114012304702201');
     }
 
-    public function it_returns_null_given_unknown_isbn(AlmaClient $almaClient, SruClient $sru)
+    public function it_returns_null_given_unknown_isbn(SruClient $sru)
     {
-        $this->beConstructedWith($almaClient);
-        $almaClient->sru = $sru;
-
         $sru->first('alma.isbn="123"')
             ->shouldBeCalled()
             ->willReturn(null);
@@ -66,7 +58,7 @@ class BibsSpec extends ObjectBehavior
         $bib->shouldBe(null);
     }
 
-    public function it_supports_lookup_by_holding_id(AlmaClient $almaClient, SruClient $sru)
+    public function it_supports_lookup_by_holding_id(AlmaClient $almaClient)
     {
         $almaClient->getXML('/bibs', Argument::containing('12345'), Argument::any())
             ->shouldBeCalled()
