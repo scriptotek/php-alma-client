@@ -177,7 +177,7 @@ class Client
                 if ($attempt > $this->maxAttempts) {
                     throw new MaxNumberOfAttemptsExhausted($e);
                 }
-                sleep(1);
+                time_nanosleep(0, 500000000); // 0.5 s
                 return $this->request($method, $url, $options, $attempt + 1);
             }
 
@@ -190,7 +190,7 @@ class Client
             if ($attempt > $this->maxAttempts) {
                 throw new MaxNumberOfAttemptsExhausted($e);
             }
-            sleep(1);
+            time_nanosleep(0, 500000000); // 0.5 s
             return $this->request($method, $url, $options, $attempt + 1);
         }
     }
