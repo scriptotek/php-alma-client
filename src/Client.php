@@ -5,10 +5,12 @@ namespace Scriptotek\Alma;
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\ClientException as GuzzleClientException;
+use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Exception\ClientException;
+use Scriptotek\Alma\Exception\MaxNumberOfAttemptsExhausted;
 use Scriptotek\Alma\Exception\SruClientNotSetException;
 use Scriptotek\Alma\Users\Users;
 use Scriptotek\Sru\Client as SruClient;
@@ -43,6 +45,9 @@ class Client
 
     /** @var Users */
     public $users;
+
+    /** @var int Max number of retries if we get 429 errors */
+    public $maxAttempts = 10;
 
     /**
      * Create a new client to connect to a given Alma instance.
@@ -154,25 +159,40 @@ class Client
      *
      * @param string $method
      * @param string $url
-     * @param array  $options
-     *
+     * @param array $options
+     * @param int $attempt
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function request($method, $url, $options = [])
+    public function request($method, $url, $options = [], $attempt = 1)
     {
         try {
             return $this->httpClient->request($method, $this->getFullUrl($url), $this->getHttpOptions($options));
-        } catch (GuzzleClientException $e) {
-            $this->handleError($e->getResponse());
-        }
-    }
 
-    public function handleError(GuzzleClientException $response)
-    {
-        // TODO: If we get a 429 response, it means we have run into the
-        // "Max 25 API calls per institution per second" limit. In that case we should just wait a sec and retry
-        $msg = $response->getBody();
-        throw new ClientException('Client error ' . $response->getStatusCode() . ': ' . $msg);
+        } catch (GuzzleClientException $e) {
+            // Thrown for 400 level errors
+
+            if ($e->getResponse()->getStatusCode() == '429') {
+                // We've run into the "Max 25 API calls per institution per second" limit.
+                // Wait a sec and retry, unless we've tried too many times already.
+                if ($attempt > $this->maxAttempts) {
+                    throw new MaxNumberOfAttemptsExhausted($e);
+                }
+                sleep(1);
+                return $this->request($method, $url, $options, $attempt + 1);
+            }
+
+            $msg = $e->getResponse()->getBody();
+            throw new ClientException('Client error ' . $e->getResponse()->getStatusCode() . ': ' . $msg);
+
+        } catch (ConnectException $e) {
+            // Thrown in case of a networking error
+
+            if ($attempt > $this->maxAttempts) {
+                throw new MaxNumberOfAttemptsExhausted($e);
+            }
+            sleep(1);
+            return $this->request($method, $url, $options, $attempt + 1);
+        }
     }
 
     /**

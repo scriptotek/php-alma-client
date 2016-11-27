@@ -25,7 +25,6 @@ class Report
 
         $this->headers = $headers;
         $this->filter = $filter;
-        // $this->rows = new Rows($this->path, $this->client);
     }
 
     public function __get($key)
