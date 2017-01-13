@@ -10,13 +10,16 @@ class RowSpec extends ObjectBehavior
 {
     public function let()
     {
+        // We need to be able to handle missing data, so let's assume we have
+        // a report with three columns, but that we for this row only got data
+        // for two of the columns (data missing for Column2).
         $xml = QuiteSimpleXMLElement::make('<Row xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
                 <Column0>0</Column0>
                 <Column1>col1 content</Column1>
-                <Column2>col2 content</Column2>
+                <Column3>col3 content</Column3>
             </Row>');
         $xml->registerXPathNamespace('rowset', 'urn:schemas-microsoft-com:xml-analysis:rowset');
-        $headers = ['mms_id', 'title'];
+        $headers = ['mms_id', 'title', 'isbn'];
         $this->beConstructedWith($xml, $headers);
     }
 
@@ -28,19 +31,22 @@ class RowSpec extends ObjectBehavior
     public function it_should_have_columns_accessible_by_name()
     {
         $this->mms_id->shouldBe('col1 content');
-        $this->title->shouldBe('col2 content');
+        $this->title->shouldBe(null);
+        $this->isbn->shouldBe('col3 content');
     }
 
     public function it_should_have_columns_accessible_by_array_key()
     {
         $this['mms_id']->shouldBe('col1 content');
-        $this['title']->shouldBe('col2 content');
+        $this['title']->shouldBe(null);
+        $this['isbn']->shouldBe('col3 content');
     }
 
     public function it_should_have_columns_accessible_by_array_index()
     {
         $this[0]->shouldBe('col1 content');
-        $this[1]->shouldBe('col2 content');
+        $this[1]->shouldBe(null);
+        $this[2]->shouldBe('col3 content');
     }
 
     public function it_should_be_traversable()
@@ -50,7 +56,7 @@ class RowSpec extends ObjectBehavior
 
     public function it_should_be_countable()
     {
-        $this->shouldHaveCount(2);
+        $this->shouldHaveCount(3);
     }
 
     public function it_should_be_serializable_as_array()
