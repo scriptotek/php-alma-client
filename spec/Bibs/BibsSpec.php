@@ -37,11 +37,11 @@ class BibsSpec extends ObjectBehavior
 
     public function it_returns_a_bib_object_given_an_isbn(SruClient $sru)
     {
-        $sru->first('alma.isbn="123"')
+        $sru->all('alma.isbn="123"', 1)
             ->shouldBeCalled()
-            ->willReturn(SruRecord::make(1,
+            ->willReturn([SruRecord::make(1,
                 '<record><controlfield tag="001">990114012304702201</controlfield></record>'
-                ));
+                )]);
 
         $bib = $this->fromIsbn('123');
         $bib->shouldHaveType(Bib::class);
@@ -50,9 +50,9 @@ class BibsSpec extends ObjectBehavior
 
     public function it_returns_null_given_unknown_isbn(SruClient $sru)
     {
-        $sru->first('alma.isbn="123"')
+        $sru->all('alma.isbn="123"', 1)
             ->shouldBeCalled()
-            ->willReturn(null);
+            ->willReturn([]);
 
         $bib = $this->fromIsbn('123');
         $bib->shouldBe(null);

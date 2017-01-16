@@ -51,22 +51,7 @@ class Bibs extends ResourceList
      */
     public function fromIsbn($isbn)
     {
-        $this->client->assertHasSruClient();
-
-        $record = $this->client->sru->first('alma.isbn="' . $isbn . '"');
-        if (is_null($record)) {
-            return;
-        }
-
-        $mmsId = $record->data->text('//marc:controlfield[@tag="001"]');
-        if (empty($mmsId)) {
-            $mmsId = $record->data->text('//controlfield[@tag="001"]');
-            if (empty($mmsId)) {
-                throw new \RuntimeError('SRU returned a record, but it didn\'t contain valid MARC21!');
-            }
-        }
-
-        return $this->get($mmsId);
+        return $this->search('alma.isbn="' . $isbn . '"', 1)->current();
     }
 
     /**
