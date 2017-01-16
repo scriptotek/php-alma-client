@@ -100,11 +100,20 @@ or by barcode:
 $bib = $alma->bibs->fromBarcode('92nf02526');
 ```
 
-or by ISBN (this requires that you have connected an SRU client):
+There are also two lookup methods that use SRU search and require that you have
+an SRU client attached. The first lets you use a generic CQL query:
+
+```php
+$bib = $alma->bibs->findOne('alma.all_for_ui="9788299308922"');
+```
+
+The second is a shorthand for looking up records from ISBN:
 
 ```php
 $bib = $alma->bibs->fromIsbn('9788299308922');
 ```
+
+All the methods above returns either a single `Bib` record or `null` if not found.
 
 ### The MARC21 record
 

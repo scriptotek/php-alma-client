@@ -43,18 +43,6 @@ class Bibs extends ResourceList
     }
 
     /**
-     * Get a Bib object from an ISBN value. You must have an SRU client
-     * connected to the Alma client (see `Client::setSruClient()`).
-     *
-     * @param string $isbn
-     * @return Bib
-     */
-    public function fromIsbn($isbn)
-    {
-        return $this->search('alma.isbn="' . $isbn . '"', 1)->current();
-    }
-
-    /**
      * Get Bib records from SRU search. You must have an SRU client connected
      * to the Alma client (see `Client::setSruClient()`).
      * Returns a generator that handles continuation under the hood.
@@ -70,5 +58,27 @@ class Bibs extends ResourceList
         foreach ($this->client->sru->all($cql, $batchSize) as $sruRecord) {
             yield Bib::fromSruRecord($sruRecord, $this->client);
         }
+    }
+
+    /**
+     * Returns the first result from a SRU search or null if no results.
+     *
+     * @param string $cql
+     * @return Bib
+     */
+    public function findOne($cql)
+    {
+        return $this->search($cql, 1)->current();
+    }
+
+    /**
+     * Get a Bib object from an ISBN value. Returns null if no Bib record found.
+     *
+     * @param string $isbn
+     * @return Bib
+     */
+    public function fromIsbn($isbn)
+    {
+        return $this->findOne('alma.isbn="' . $isbn . '"');
     }
 }
