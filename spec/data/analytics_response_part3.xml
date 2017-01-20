@@ -1,0 +1,2920 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><report><QueryResult>
+  <IsFinished>true</IsFinished>
+  <ResultXml>
+    <rowset xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Parham, Peter 1950-</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T15:32:46</Column3>
+        <Column4>import</Column4>
+        <Column5>571</Column5>
+        <Column6>571.963</Column6>
+        <Column7>4th ed.</Column7>
+        <Column8>991444440704702204</Column8>
+        <Column9>c2015</Column9>
+        <Column10>Garland Science</Column10>
+        <Column12>The immune system</Column12>
+        <Column13>22195401640002204</Column13>
+        <Column14>QW 504 Pa 15</Column14>
+        <Column15>UiO Odontologisk bibliotek</Column15>
+        <Column16>UMED/ODONT Boksamlin</Column16>
+        <Column17>k16022438</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-17</Column19>
+        <Column20>Acquisition (PO line POL-12916)</Column20>
+        <Column21>23194194870002204</Column21>
+        <Column22>None</Column22>
+        <Column23>2016-08-17T12:18:03</Column23>
+        <Column24>Book</Column24>
+        <Column25>Loan</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T08:46:08</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-12916</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-06-17</Column34>
+        <Column35>9780815345275</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Parmentier, Stephan</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T15:31:28</Column3>
+        <Column4>import</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>991017197794702204</Column8>
+        <Column9>2010</Column9>
+        <Column10>Hart</Column10>
+        <Column12>Between rights and responsibilities : a fundamental debate</Column12>
+        <Column13>22162606660002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Menneskerettighetsbiblioteket</Column15>
+        <Column16>UJUR/MR</Column16>
+        <Column17>13k002518</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>0001-01-01</Column19>
+        <Column20>import</Column20>
+        <Column21>23162606640002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T13:39:19</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>13k002518</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2013-01-10</Column34>
+        <Column35>9789050958868</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pedersen, Jon Krog</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T13:26:33</Column3>
+        <Column4>nbrdep0055######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859910402204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Aschehoug</Column10>
+        <Column12>Bekymringsmelding for Hanna Tidemann roman</Column12>
+        <Column13>22195379580002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030824</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15598)</Column20>
+        <Column21>23195379570002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T13:26:36</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15598</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788203360824</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Peters, Robert L.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T11:34:19</Column3>
+        <Column4>import</Column4>
+        <Column5>378</Column5>
+        <Column6>378.24</Column6>
+        <Column7>Rev.ed.</Column7>
+        <Column8>999919860413302204</Column8>
+        <Column9>1997</Column9>
+        <Column10>Farrar Straus and Giroux</Column10>
+        <Column12>Getting what you came for : the smart student's guide to earning a master's or a Ph.D.</Column12>
+        <Column13>22195450510002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Informatikkbiblioteket</Column15>
+        <Column16>UREAL/INF Boksamling</Column16>
+        <Column17>k16030744</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15573)</Column20>
+        <Column21>23195450500002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T11:35:19</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15573</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-18</Column34>
+        <Column35>9780374524777</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pettersen, Ingrid Kristine</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-06-27T09:52:09</Column3>
+        <Column4>n003649301######47BIBSYS_UBIS</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919851307602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>University of Stavanger Faculty of Science and Technology</Column10>
+        <Column11>PhD thesis UIS (trykt utg.) 1890-1387 no. 299</Column11>
+        <Column12>Prices in the land of cod : analyzing the first-hand market for cod in Norway</Column12>
+        <Column13>22194207180002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16023604</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-27</Column19>
+        <Column20>Acquisition (PO line POL-13385)</Column20>
+        <Column21>23194207170002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T09:42:34</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-13385</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788276446548</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Piaget, Jean</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T13:28:22</Column3>
+        <Column4>import</Column4>
+        <Column5>155</Column5>
+        <Column6>155.7</Column6>
+        <Column8>999218407994702204</Column8>
+        <Column9>1979</Column9>
+        <Column10>Routledge &amp; Kegan Paul</Column10>
+        <Column12>Behaviour and evolution</Column12>
+        <Column13>22195420080002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Realfagsbiblioteket</Column15>
+        <Column16>UREAL Boksamling</Column16>
+        <Column17>k16030472</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15498)</Column20>
+        <Column21>23195420070002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T14:17:44</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15498</Column31>
+        <Column32>ped</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-17</Column34>
+        <Column35>0710000278</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Piaget, Jean</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T12:52:13</Column3>
+        <Column4>import</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999202471804702204</Column8>
+        <Column9>1953</Column9>
+        <Column10>Manchester University Press</Column10>
+        <Column12>Logic and psychology</Column12>
+        <Column13>22195419900002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Realfagsbiblioteket</Column15>
+        <Column16>UREAL Boksamling</Column16>
+        <Column17>k16030515</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15503)</Column20>
+        <Column21>23195419890002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T14:54:05</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15503</Column31>
+        <Column32>ped</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-17</Column34>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Piaget, Jean</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T13:32:12</Column3>
+        <Column4>import</Column4>
+        <Column5>370</Column5>
+        <Column6>370.15</Column6>
+        <Column8>999310429684702204</Column8>
+        <Column9>c1969</Column9>
+        <Column10>Reitzel</Column10>
+        <Column12>Psykologi og pædagogik</Column12>
+        <Column13>22195419760002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Realfagsbiblioteket</Column15>
+        <Column16>UREAL Boksamling</Column16>
+        <Column17>k16030530</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15509)</Column20>
+        <Column21>23195419750002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T15:03:38</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15509</Column31>
+        <Column32>ped</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-17</Column34>
+        <Column35>8741226496</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pila, Justine</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-03T14:51:40</Column3>
+        <Column4>ubo0343310######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919857605602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Oxford university press</Column10>
+        <Column12>European Intellectual Property Law</Column12>
+        <Column13>22195135230002204</Column13>
+        <Column14>534 Pil</Column14>
+        <Column15>UiO Juridisk bibliotek DB</Column15>
+        <Column16>UJUR Boksamling</Column16>
+        <Column17>k16027824</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-03</Column19>
+        <Column20>Acquisition (PO line POL-14829)</Column20>
+        <Column21>23195135220002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T10:36:38</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14829</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-03</Column34>
+        <Column35>9780198729914</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pila, Justine</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-03T14:51:40</Column3>
+        <Column4>ubo0343310######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919857605602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Oxford university press</Column10>
+        <Column12>European Intellectual Property Law</Column12>
+        <Column13>22195135230002204</Column13>
+        <Column14>534 Pil</Column14>
+        <Column15>UiO Juridisk bibliotek DB</Column15>
+        <Column16>UJUR Boksamling</Column16>
+        <Column17>k16027825</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-03</Column19>
+        <Column20>Acquisition (PO line POL-14829)</Column20>
+        <Column21>23195135210002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T10:36:38</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14829</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-03</Column34>
+        <Column35>9780198729914</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pila, Justine</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-03T14:51:40</Column3>
+        <Column4>ubo0343310######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919857605602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Oxford university press</Column10>
+        <Column12>European Intellectual Property Law</Column12>
+        <Column13>22195135230002204</Column13>
+        <Column14>534 Pil</Column14>
+        <Column15>UiO Juridisk bibliotek DB</Column15>
+        <Column16>UJUR Boksamling</Column16>
+        <Column17>k16027826</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-03</Column19>
+        <Column20>Acquisition (PO line POL-14829)</Column20>
+        <Column21>23195135200002204</Column21>
+        <Column22>2 ukers lån</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T10:36:38</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14829</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-03</Column34>
+        <Column35>9780198729914</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pila, Justine</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-03T14:51:40</Column3>
+        <Column4>ubo0343310######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919857605602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Oxford university press</Column10>
+        <Column12>European Intellectual Property Law</Column12>
+        <Column13>22195135190002204</Column13>
+        <Column14>Pil</Column14>
+        <Column15>UiO Juridisk bibliotek DB</Column15>
+        <Column16>UJUR Skranken - Ikke til hjemlån</Column16>
+        <Column17>k16027827</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-03</Column19>
+        <Column20>Acquisition (PO line POL-14829)</Column20>
+        <Column21>23195135180002204</Column21>
+        <Column22>Ikke utlån</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T10:36:38</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14829</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-03</Column34>
+        <Column35>9780198729914</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pila, Justine</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-03T14:51:40</Column3>
+        <Column4>ubo0343310######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919857605602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Oxford university press</Column10>
+        <Column12>European Intellectual Property Law</Column12>
+        <Column13>22195135150002204</Column13>
+        <Column14>534 Pil</Column14>
+        <Column15>UiO Læringssenteret DN</Column15>
+        <Column16>UJUR/DN Boksamling</Column16>
+        <Column17>k16027829</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-03</Column19>
+        <Column20>Acquisition (PO line POL-14829)</Column20>
+        <Column21>23195135140002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T10:36:38</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14829</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-03</Column34>
+        <Column35>9780198729914</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pila, Justine</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-03T14:51:40</Column3>
+        <Column4>ubo0343310######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919857605602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Oxford university press</Column10>
+        <Column12>European Intellectual Property Law</Column12>
+        <Column13>22195135170002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Læringssenteret DN</Column15>
+        <Column16>UJUR/DN Boksamling - Ikke til hjemlån</Column16>
+        <Column17>k16027828</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-03</Column19>
+        <Column20>Acquisition (PO line POL-14829)</Column20>
+        <Column21>23195135160002204</Column21>
+        <Column22>Ikke utlån</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T10:36:38</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14829</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-03</Column34>
+        <Column35>9780198729914</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pila, Justine</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-03T14:51:40</Column3>
+        <Column4>ubo0343310######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919857605602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Oxford university press</Column10>
+        <Column12>European Intellectual Property Law</Column12>
+        <Column13>22195135130002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Rettsinformatikkbiblioteket</Column15>
+        <Column16>UJUR/SERI Boksamling</Column16>
+        <Column17>k16027831</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-03</Column19>
+        <Column20>Acquisition (PO line POL-14829)</Column20>
+        <Column21>23195135120002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T10:36:38</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14829</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-03</Column34>
+        <Column35>9780198729914</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pila, Justine</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-03T14:51:40</Column3>
+        <Column4>ubo0343310######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919857605602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Oxford university press</Column10>
+        <Column12>European Intellectual Property Law</Column12>
+        <Column13>22195135110002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Rettsinformatikkbiblioteket</Column15>
+        <Column16>UJUR/SERI Masterpensum</Column16>
+        <Column17>k16027835</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-03</Column19>
+        <Column20>Acquisition (PO line POL-14829)</Column20>
+        <Column21>23195135100002204</Column21>
+        <Column22>Ikke utlån</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T10:36:38</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14829</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-03</Column34>
+        <Column35>9780198729914</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Pollen, Geir</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T13:18:00</Column3>
+        <Column4>nbrdep0109######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859813702204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Gyldendal</Column10>
+        <Column12>En spøkelseshistorie Roman</Column12>
+        <Column13>22195390970002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030162</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15347)</Column20>
+        <Column21>23195390960002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T13:18:05</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15347</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788205475595</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Potter, Caroline</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-02T07:24:53</Column3>
+        <Column4>ubo0333238######47BIBSYS_UBO</Column4>
+        <Column5>780</Column5>
+        <Column6>780.92</Column6>
+        <Column8>999919857612702204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Boydell Press</Column10>
+        <Column12>Erik Satie : a Parisian composer and his world</Column12>
+        <Column13>22195140600002204</Column13>
+        <Column14>780.92 Sat:Pot</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16027339</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-02</Column19>
+        <Column20>Acquisition (PO line POL-14725)</Column20>
+        <Column21>23195140590002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Hold Shelf</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T15:14:59</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14725</Column31>
+        <Column32>mus</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-02</Column34>
+        <Column35>9781783270835</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Prata, Stephen, author.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T10:56:09</Column3>
+        <Column4>ubo0328116######47BIBSYS_UBO</Column4>
+        <Column5>005</Column5>
+        <Column6>005.13/3</Column6>
+        <Column7>Sixth edition / Stephen Prata.</Column7>
+        <Column8>999919860414102204</Column8>
+        <Column9>[2014]</Column9>
+        <Column10>Addison-Wesley</Column10>
+        <Column12>C primer plus.</Column12>
+        <Column13>22195450640002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Informatikkbiblioteket</Column15>
+        <Column16>UREAL/INF Boksamling</Column16>
+        <Column17>k16030660</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15555)</Column20>
+        <Column21>23195451110002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T11:24:12</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15555</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-18</Column34>
+        <Column35>0321928423</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Quale, Andreas</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T13:14:45</Column3>
+        <Column4>import</Column4>
+        <Column5>507</Column5>
+        <Column6>507.1</Column6>
+        <Column8>990825207554702204</Column8>
+        <Column9>c2008</Column9>
+        <Column10>Sense Publishers</Column10>
+        <Column12>Radical constructivism : a relativist epistemic approach to science education</Column12>
+        <Column13>22195420190002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Realfagsbiblioteket</Column15>
+        <Column16>UREAL Boksamling</Column16>
+        <Column17>k16030456</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15495)</Column20>
+        <Column21>23195420180002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T14:05:20</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15495</Column31>
+        <Column32>ped</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-17</Column34>
+        <Column35>9789087906115</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Reisegg, Øivind</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T12:46:43</Column3>
+        <Column4>nbrdep0405######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859910502204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Pegasus</Column10>
+        <Column12>Oslo under krigen</Column12>
+        <Column13>22195389170002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030790</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15584)</Column20>
+        <Column21>23195389160002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T12:46:47</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15584</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788244201582</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Roberts, Peter</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-06-07T18:39:48</Column3>
+        <Column4>ujur006592######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column7>2nd ed.</Column7>
+        <Column8>999919850612502204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Oxford University press</Column10>
+        <Column12>Petroleum contracts; English Law and practice</Column12>
+        <Column13>22194149930002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Petroleums- og EU-rettsbiblioteket</Column15>
+        <Column16>UJUR/NifsP Boksamling</Column16>
+        <Column17>k16021006</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-07</Column19>
+        <Column20>Acquisition (PO line POL-12316)</Column20>
+        <Column21>23194149920002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T09:01:25</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-12316</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-06-08</Column34>
+        <Column35>9780198723998</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Rohde, Hanne Kristin</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-19T10:37:04</Column3>
+        <Column4>nbrdep0013######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919860814602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Kagge forl</Column10>
+        <Column12>Gudmoren</Column12>
+        <Column13>22195481440002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16031100</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-19</Column19>
+        <Column20>Acquisition (PO line POL-15644)</Column20>
+        <Column21>23195481430002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T10:37:08</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15644</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788248918783</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Rosentrater, Lynn D.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T14:52:20</Column3>
+        <Column4>nbrdep0405######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859813202204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Universitetet i Oslo</Column10>
+        <Column11>Series of dissertations submitted to the Faculty of Social Sciences, University of Oslo (trykt utg.) 1504-3991 no. 602</Column11>
+        <Column12>Adaptation to climate change</Column12>
+        <Column13>22195380940002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030217</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15370)</Column20>
+        <Column21>23195380930002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T14:52:23</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15370</Column31>
+        <Column33>Yes</Column33>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Ross, Sheldon M.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-01-08T11:09:20</Column3>
+        <Column4>import</Column4>
+        <Column5>519</Column5>
+        <Column6>519.2</Column6>
+        <Column7>11th ed.</Column7>
+        <Column8>999919824314002204</Column8>
+        <Column9>cop. 2014</Column9>
+        <Column10>Academic Press</Column10>
+        <Column12>Introduction to probability models</Column12>
+        <Column13>22190320800002204</Column13>
+        <Column14>ROS</Column14>
+        <Column15>UiO Realfagsbiblioteket</Column15>
+        <Column16>UREAL Lærerbibl.Mat - 2.etg.Abel</Column16>
+        <Column17>k16030487</Column17>
+        <Column18>Item in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15500)</Column20>
+        <Column21>23195420030002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>None</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T14:33:42</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>VENDOR_SYSTEM</Column30>
+        <Column31>POL-15500</Column31>
+        <Column32>mat</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-17</Column34>
+        <Column35>9780124079489</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Rowling, J.K.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T17:11:10</Column3>
+        <Column4>nbrdep0381######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859812602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Cappelen Damm</Column10>
+        <Column11>Rowling, J.K. 1965- Harry Potter 5</Column11>
+        <Column12>Harry Potter og Føniksordenen</Column12>
+        <Column13>22195390590002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030258</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15387)</Column20>
+        <Column21>23195390580002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T17:11:12</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15387</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788202523282</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Rowling, J.K.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T12:38:04</Column3>
+        <Column4>nbrdep0116######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859813802204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Cappelen Damm</Column10>
+        <Column12>Harry Potter og Mysteriekammeret</Column12>
+        <Column13>22195381230002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030133</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15335)</Column20>
+        <Column21>23195381220002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T12:38:05</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15335</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788202523602</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Rowling, J.K.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T10:31:57</Column3>
+        <Column4>nbrdep0116######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859814302204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Cappelen Damm</Column10>
+        <Column12>Harry Potter og dødstalismanene</Column12>
+        <Column13>22195381380002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030060</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15302)</Column20>
+        <Column21>23195381370002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T10:32:01</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15302</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788202523664</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Rowling, J.K.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-17T15:19:06</Column3>
+        <Column4>nbrdep0381######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859911402204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Cappelen Damm</Column10>
+        <Column11>Rowling, J.K. 1965- Harry Potter 3</Column11>
+        <Column12>Harry Potter og fangen fra azkaban</Column12>
+        <Column13>22195389540002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030533</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15511)</Column20>
+        <Column21>23195389530002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T15:19:08</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15511</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788202523626</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Rowling, J.K.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T17:47:22</Column3>
+        <Column4>nbrdep0381######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859913302204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Cappelen Damm</Column10>
+        <Column11>Rowling, J.K. 1965- Harry Potter 4</Column11>
+        <Column12>Harry Potter og ildbegeret</Column12>
+        <Column13>22195380760002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030259</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15388)</Column20>
+        <Column21>23195380750002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T17:47:23</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15388</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788202523275</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Rowling, J.K.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T17:02:02</Column3>
+        <Column4>nbrdep0381######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859913402204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Cappelen Damm</Column10>
+        <Column11>Rowling, J.K. 1965- Harry Potter 4</Column11>
+        <Column12>Harry Potter og ildbegeret</Column12>
+        <Column13>22195390620002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030256</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15386)</Column20>
+        <Column21>23195390610002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T17:02:04</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15386</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788202523633</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Rubina, Dina</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-12-02T10:46:06</Column3>
+        <Column4>import</Column4>
+        <Column5>NoO</Column5>
+        <Column6>NoOU</Column6>
+        <Column8>999919812013302204</Column8>
+        <Column9>2015</Column9>
+        <Column10>Ėksmo</Column10>
+        <Column11>Dina Rubina. Sobranie sočinenij</Column11>
+        <Column12>Russkaja kanarejka</Column12>
+        <Column13>22188490660002204</Column13>
+        <Column14>891.7 Rub:Rus</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS S-Litt</Column16>
+        <Column17>15k801531</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2015-12-02</Column19>
+        <Column20>Acquisition (PO line POL-1790)</Column20>
+        <Column21>23188490650002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T10:43:41</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-1790</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2015-12-02</Column34>
+        <Column35>9785699768837</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Russ, Martin</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T15:34:29</Column3>
+        <Column4>import</Column4>
+        <Column5>786</Column5>
+        <Column6>786.74</Column6>
+        <Column7>3rd ed.</Column7>
+        <Column8>990827137314702204</Column8>
+        <Column9>2009</Column9>
+        <Column10>Elsevier</Column10>
+        <Column12>Sound synthesis and sampling</Column12>
+        <Column13>22195008560002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Sophus Bugge</Column15>
+        <Column16>UHS/SOPH Eilsundt</Column16>
+        <Column17>118851KJ1</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-07-19</Column19>
+        <Column20>Acquisition (PO line POL-14346)</Column20>
+        <Column21>23195008570002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T11:35:56</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14346</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-07-19</Column34>
+        <Column35>9780240521053</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Røiseland, Asbjørn</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-17T12:59:50</Column3>
+        <Column4>nbrdep0116######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column7>2. utg.</Column7>
+        <Column8>999919859811102204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Fagbokforl</Column10>
+        <Column12>Styring og samstyring governance på norsk</Column12>
+        <Column13>22195380130002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030418</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15473)</Column20>
+        <Column21>23195380120002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T12:59:53</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15473</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788245019995</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Savage, Steve</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-07-19T11:58:42</Column3>
+        <Column4>import</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919856711402204</Column8>
+        <Column9>2011</Column9>
+        <Column10>Oxford University Press</Column10>
+        <Column12>The art of digital audio recording : a practical guide for home and studio</Column12>
+        <Column13>22195008700002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Sophus Bugge</Column15>
+        <Column16>UHS/SOPH Eilsundt</Column16>
+        <Column17>18863KJ1</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-07-19</Column19>
+        <Column20>Acquisition (PO line POL-14340)</Column20>
+        <Column21>23195008710002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Acquisition</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T09:40:51</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14340</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-07-19</Column34>
+        <Column35>9780195394092</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Saxi, Håkon Lunde</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-15T13:42:46</Column3>
+        <Column4>nbrdep0405######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859915002204</Column8>
+        <Column11>Series of dissertations submitted to the Faculty of Social Sciences, University of Oslo (trykt utg.) 1504-3991 no. 601</Column11>
+        <Column12>From the defence of Europe to global expeditionary operations: british and german defense policy 1990 2014</Column12>
+        <Column13>22195381580002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16029896</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-15</Column19>
+        <Column20>Acquisition (PO line POL-15248)</Column20>
+        <Column21>23195381570002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-15</Column26>
+        <Column27>2016-08-15T13:42:50</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15248</Column31>
+        <Column33>Yes</Column33>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Schutter, Olivier de.</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T15:45:52</Column3>
+        <Column4>import</Column4>
+        <Column5>Unknown</Column5>
+        <Column7>2nd ed.</Column7>
+        <Column8>991434184834702204</Column8>
+        <Column9>2014</Column9>
+        <Column10>Cambridge University Press</Column10>
+        <Column12>International human rights law : cases, materials, commentary</Column12>
+        <Column13>22195141400002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Menneskerettighetsbiblioteket</Column15>
+        <Column16>UJUR/MR Boksamling</Column16>
+        <Column17>k16027147</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-01</Column19>
+        <Column20>Acquisition (PO line POL-14678)</Column20>
+        <Column21>23195141390002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T13:43:03</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14678</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-01</Column34>
+        <Column35>9781107657212</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Scrutton, Thomas Edward</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-06-24T11:53:37</Column3>
+        <Column4>ujur006592######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column7>23 ed.</Column7>
+        <Column8>999919852514002204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Sweet &amp; Maxwell</Column10>
+        <Column12>Scrutton on charterparties and bills of lading</Column12>
+        <Column13>22194410990002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Juridisk bibliotek DB</Column15>
+        <Column16>UJUR Nifs(DB)</Column16>
+        <Column17>k16023492</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-24</Column19>
+        <Column20>Acquisition (PO line POL-13321)</Column20>
+        <Column21>23194410980002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T09:18:32</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-13321</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-06-24</Column34>
+        <Column35>9780414051188</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Shaikh, Anwar</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-04-13T09:07:01</Column3>
+        <Column4>ubo0185669######47BIBSYS_UBO</Column4>
+        <Column5>330</Column5>
+        <Column6>330.122</Column6>
+        <Column8>999919844713202204</Column8>
+        <Column9>cop. 2016</Column9>
+        <Column10>Oxford University Press</Column10>
+        <Column12>Capitalism : competition, conflict, crises</Column12>
+        <Column13>22193310210002204</Column13>
+        <Column14>330.122 Sha</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16026685</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-07-21</Column19>
+        <Column20>Acquisition (PO line POL-14450)</Column20>
+        <Column21>23195070200002204</Column21>
+        <Column22>None</Column22>
+        <Column24>None</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T09:42:39</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14450</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-07-21</Column34>
+        <Column35>9780199390632</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Silverman, David</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T14:16:08</Column3>
+        <Column4>import</Column4>
+        <Column5>300</Column5>
+        <Column6>300.72</Column6>
+        <Column8>999912791664702204</Column8>
+        <Column9>2000</Column9>
+        <Column10>Sage</Column10>
+        <Column12>Doing qualitative research : a practical handbook</Column12>
+        <Column13>22195420380002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Realfagsbiblioteket</Column15>
+        <Column16>UREAL Boksamling</Column16>
+        <Column17>k16030437</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15486)</Column20>
+        <Column21>23195420370002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T13:37:22</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15486</Column31>
+        <Column32>ped</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-17</Column34>
+        <Column35>0761958223</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Simonsen, Talette</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-05-09T14:27:31</Column3>
+        <Column4>UBO0351798######47BIBSYS_UBO</Column4>
+        <Column5>778</Column5>
+        <Column6>778.94</Column6>
+        <Column8>999919847610102204</Column8>
+        <Column9>2016</Column9>
+        <Column10>University og Oslo Department of Philosophy Classics History of Art and Ideas</Column10>
+        <Column12>Towards a "photographic synthesis" of the arts? : a study of architectural photography in publications of Le Corbusier's The Chapel of Ronchamp in the 1950s</Column12>
+        <Column13>22195380600002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030302</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15418)</Column20>
+        <Column21>23195380590002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T09:34:13</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15418</Column31>
+        <Column33>Yes</Column33>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Sjaastad, Egil</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-17T08:20:35</Column3>
+        <Column4>vm00000005######47BIBSYS_MF</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859812502204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Portal</Column10>
+        <Column11>Kyrkjefag profil 1502-7929 nr. 27</Column11>
+        <Column12>Carl Fr. Wisløff presten som ble misjonsfolkets professor</Column12>
+        <Column13>22195390490002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030270</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15394)</Column20>
+        <Column21>23195390480002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T08:20:39</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15394</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788283140866</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Skjefstad, Arnt E. 1975-</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-07-12T09:09:34</Column3>
+        <Column4>ubo0331889######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919856014402204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Cappelen Damm akademisk</Column10>
+        <Column12>Erstatningsberegning: særlig om fradrag for fordeler</Column12>
+        <Column13>22194931300002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Juridisk bibliotek DB</Column15>
+        <Column16>UJUR Boksamling</Column16>
+        <Column17>k16025684</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-07-12</Column19>
+        <Column20>Acquisition (PO line POL-14070)</Column20>
+        <Column21>23194931290002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T14:26:01</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14070</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-07-12</Column34>
+        <Column35>9788202474003</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Skreiberg, Christina</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-03T14:48:11</Column3>
+        <Column4>hioa007796######47BIBSYS_HIOA</Column4>
+        <Column5>779</Column5>
+        <Column6>779.2</Column6>
+        <Column8>999919856308402204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Ada &amp; Lucy mini press</Column10>
+        <Column12>Hei nabo! : én blokk, en hel verden</Column12>
+        <Column13>22194969180002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16027818</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-03</Column19>
+        <Column20>Acquisition (PO line POL-14828)</Column20>
+        <Column21>23194969170002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T12:42:31</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-14828</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788269025804</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Smith, Peter H..</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T15:23:34</Column3>
+        <Column4>import</Column4>
+        <Column5>320</Column5>
+        <Column6>320.98</Column6>
+        <Column7>2nd ed.</Column7>
+        <Column8>991344563604702204</Column8>
+        <Column9>cop. 2012</Column9>
+        <Column10>Oxford University Press</Column10>
+        <Column12>Democracy in Latin America : political change in comparative perspective</Column12>
+        <Column13>22194406610002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Sophus Bugge</Column15>
+        <Column16>UHS/SOPH Eilsundt</Column16>
+        <Column17>118861KJ1</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-28</Column19>
+        <Column20>Acquisition (PO line POL-13500)</Column20>
+        <Column21>23194406620002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T09:45:42</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-13500</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-06-28</Column34>
+        <Column35>9780195387735</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Solberg, A. Audhild</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T13:36:37</Column3>
+        <Column4>nbrdep0055######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859809502204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Aschehoug</Column10>
+        <Column12>Det spøker for superbitchene</Column12>
+        <Column13>22195389100002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030848</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15601)</Column20>
+        <Column21>23195389090002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T13:36:39</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15601</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788203261718</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Somehsaraei, Homam Nikpe</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-05-20T10:43:09</Column3>
+        <Column4>n003649301######47BIBSYS_UBIS</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919848108202204</Column8>
+        <Column9>2016</Column9>
+        <Column10>University of Stavanger Faculty of Science and Technology Department of Petroleum Engineering</Column10>
+        <Column11>PhD thesis UIS (trykt utg.) no. 288</Column11>
+        <Column12>On experimental and theoretical studies of fuel flexible micro gas turbine systems /</Column12>
+        <Column13>22193747880002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16017777</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-05-20</Column19>
+        <Column20>Acquisition (PO line POL-11240)</Column20>
+        <Column21>23193747870002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T09:46:01</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-11240</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788276446418</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Sommer, Theis 1985-</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T12:41:08</Column3>
+        <Column4>ubo0267415######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859508102204</Column8>
+        <Column9>2016</Column9>
+        <Column10>University of Oslo Faculty of Mathematics and Natural Sciences Department of Biosciences</Column10>
+        <Column11>Series of dissertations submitted to the Faculty of Mathematics and Natural Sciences, University of Oslo 1501-7710 1750</Column11>
+        <Column12>Biotechnological application and biophysical characterization of the bacterial enzyme isatin hydrolase and structural studies of the regulatory N-terminal domain of the SLC4 bicarbonate transporter family and characterization of a novel zinc binding</Column12>
+        <Column13>22195348350002204</Column13>
+        <Column14>Diss: 4081</Column14>
+        <Column15>UiO Realfagsbiblioteket</Column15>
+        <Column16>UREAL Avh. VBmag.</Column16>
+        <Column17>k16030137</Column17>
+        <Column18>Item in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15336)</Column20>
+        <Column21>23195348340002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>None</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T12:43:23</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15336</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-16</Column34>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Steine, Bjørn Arne 1972-</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-08T10:03:42</Column3>
+        <Column4>UBO0351798######47BIBSYS_UBO</Column4>
+        <Column5>327</Column5>
+        <Column6>327.17207209481</Column6>
+        <Column8>999919858414502204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Institutt for arkeologi konservering og historie Humanistisk fakultet Universitetet i Oslo</Column10>
+        <Column12>Fred, forskning og formidling : internasjonale studier i Norge og Sverige 1897-1940</Column12>
+        <Column13>22195391200002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030079</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15312)</Column20>
+        <Column21>23195391190002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T10:53:11</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15312</Column31>
+        <Column33>Yes</Column33>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Strøm-Olsen, Nicolai</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-22T13:41:48</Column3>
+        <Column4>nbrdep0405######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919861314702204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Frekk forl</Column10>
+        <Column12>Konkurransekraft gründere som endret Europa</Column12>
+        <Column13>22195521390002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16031507</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-22</Column19>
+        <Column20>Acquisition (PO line POL-15726)</Column20>
+        <Column21>23195521380002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T13:41:52</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15726</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788293097297</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Sucarrat, Genaro</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-17T10:24:31</Column3>
+        <Column4>nbrdep0116######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859911902204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Fagbokforl</Column10>
+        <Column12>Metode og økonometri en moderne innføing</Column12>
+        <Column13>22195380400002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030337</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15442)</Column20>
+        <Column21>23195380390002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T10:24:35</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15442</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788245020632</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Svindland, Frederik</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T15:30:24</Column3>
+        <Column4>nbrdep0381######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859913602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Cappelen Damm</Column10>
+        <Column12>Pelargonia : roman</Column12>
+        <Column13>22195390700002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030231</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15374)</Column20>
+        <Column21>23195390690002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T15:30:27</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15374</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788202524692</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Synstnes, Hans Morten</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T11:11:49</Column3>
+        <Column4>nbrdep0055######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859910702204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Dreyers forl</Column10>
+        <Column12>Den innerste sirkel den militære sikkerhetstjenesten 1945-2002</Column12>
+        <Column13>22195379780002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030692</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15562)</Column20>
+        <Column21>23195379770002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T11:11:53</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15562</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788282651691</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Sølvberg, Helge A.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-17T10:46:01</Column3>
+        <Column4>nbrdep0116######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859811702204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Bokbyen forl</Column10>
+        <Column12>Øya, sjøen og livet Nils Even og Gundine : en familiekrønike fra Sandøya</Column12>
+        <Column13>22195389880002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030350</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15447)</Column20>
+        <Column21>23195389870002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T10:46:02</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15447</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788283160369</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Sørhaug, Olav Kjell</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T13:19:19</Column3>
+        <Column4>nbrdep0055######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859809602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Sørhaug forl</Column10>
+        <Column12>Træna i krig våpensmugling og motstandskamp</Column12>
+        <Column13>22195379610002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030816</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15596)</Column20>
+        <Column21>23195379600002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T13:19:20</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15596</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788299796552</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Taraldrud, Karin Eg</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T10:44:02</Column3>
+        <Column4>nbrdep0116######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859814202204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Cappalen akademisk</Column10>
+        <Column12>Oversikt over rettigheter til fast eiendom</Column12>
+        <Column13>22195381340002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030068</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15307)</Column20>
+        <Column21>23195381330002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T13:35:36</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15307</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788202521622</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Thaulow, Henrik</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T08:57:11</Column3>
+        <Column4>nbrdep0055######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859810202204</Column8>
+        <Column9>cop. 2016</Column9>
+        <Column10>Antropos</Column10>
+        <Column12>Levende linjer, levende tanker formteningsøvelser i grunnskolen</Column12>
+        <Column13>22195379920002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030555</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15519)</Column20>
+        <Column21>23195379910002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T08:57:15</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15519</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788279401339</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Thorson, Bjarte</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-03-10T14:31:03</Column3>
+        <Column4>ujur006592######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919839002302204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Springer International Publishing</Column10>
+        <Column12>Individual Rights in EU Law</Column12>
+        <Column13>22192325390002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Petroleums- og EU-rettsbiblioteket</Column15>
+        <Column16>UJUR/NifsP Boksamling</Column16>
+        <Column17>k16007098</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-03-10</Column19>
+        <Column20>Acquisition (PO line POL-7743)</Column20>
+        <Column21>23192325380002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T09:15:18</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-7743</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-03-10</Column34>
+        <Column35>9783319327709</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Toje, Asle</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T12:17:04</Column3>
+        <Column4>nbrdep0055######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859809902204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Dreyers forl</Column10>
+        <Column12>Jernburet liberalismens krise</Column12>
+        <Column13>22195389210002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030777</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15581)</Column20>
+        <Column21>23195389200002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T12:17:08</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15581</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788282651660</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Tolstoj, Lev Nikolaevič</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T09:59:11</Column3>
+        <Column4>UBO0333647######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919860314402204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Frommann-Holzboog</Column10>
+        <Column11>Forschungen und Materialien zur deutschen Aufklärung. Abteilung 1, Texte Bd. 3</Column11>
+        <Column12>Gedanken Immanuel Kants Anhand der Originalvorlagen aus dem Russischen zurückübertragen</Column12>
+        <Column13>22195441130002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16030609</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15532)</Column20>
+        <Column21>23195441120002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T08:28:13</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>VENDOR_SYSTEM</Column30>
+        <Column31>POL-15532</Column31>
+        <Column32>Plassering: se de enkelte bind</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-18</Column34>
+        <Column35>9783772827747</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Touretzky, David S.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T10:31:11</Column3>
+        <Column4>ubo0328116######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column7>Rev. ed.</Column7>
+        <Column8>999919860414502204</Column8>
+        <Column9>2013</Column9>
+        <Column10>Benjamin/Cummings</Column10>
+        <Column12>Common LISP a gentle introduction to symbolic computation</Column12>
+        <Column13>22195451320002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Informatikkbiblioteket</Column15>
+        <Column16>UREAL/INF Boksamling</Column16>
+        <Column17>k16030632</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15541)</Column20>
+        <Column21>23195451310002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T10:36:46</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15541</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-18</Column34>
+        <Column35>9780486498201</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Tyldum, Guri</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-22T14:35:09</Column3>
+        <Column4>nbrdep0405######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919861214102204</Column8>
+        <Column9>cop. 2016</Column9>
+        <Column10>Fafo</Column10>
+        <Column11>FAFO-notat (trykt utg.) 0804-5135 2016:09</Column11>
+        <Column12>Oppfølging av mulige mindreårige ofre for menneskehandel i Norge</Column12>
+        <Column13>22195511320002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16031524</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-22</Column19>
+        <Column20>Acquisition (PO line POL-15731)</Column20>
+        <Column21>23195511310002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T14:35:13</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15731</Column31>
+        <Column33>Yes</Column33>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Tyler, Royall 1936-</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-07-25T09:47:07</Column3>
+        <Column4>ubo0274328######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919856605102204</Column8>
+        <Column9>2014</Column9>
+        <Column12>Zeami : six revived bangai plays</Column12>
+        <Column13>22194985490002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16026788</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-07-25</Column19>
+        <Column20>Acquisition (PO line POL-14500)</Column20>
+        <Column21>23194985480002204</Column21>
+        <Column22>None</Column22>
+        <Column24>None</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T15:19:40</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14500</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-07-25</Column34>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Tøien, Irina Eidsvold</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-10T13:33:19</Column3>
+        <Column4>UBO0332514######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919858810802204</Column8>
+        <Column9>cop. 2016</Column9>
+        <Column10>Universitetsforlaget</Column10>
+        <Column12>Skapende, utøvende kunstnere : beskyttelsen av utøvende kunstneres prestasjoner etter norsk rett</Column12>
+        <Column13>22195269230002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Juridisk bibliotek DB</Column15>
+        <Column16>UJUR Boksamling</Column16>
+        <Column17>k16029347</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-10</Column19>
+        <Column20>Acquisition (PO line POL-15068)</Column20>
+        <Column21>23195269220002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T10:23:44</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-15068</Column31>
+        <Column32>Til Siri etter mottak</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-10</Column34>
+        <Column35>9788215026909</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Uri, Helene 1964-</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T13:33:20</Column3>
+        <Column4>import</Column4>
+        <Column5>839</Column5>
+        <Column6>839.82</Column6>
+        <Column8>990701822804702204</Column8>
+        <Column9>2007</Column9>
+        <Column10>Gyldendal</Column10>
+        <Column11>Gyldendal pocket</Column11>
+        <Column12>De beste blant oss : roman</Column12>
+        <Column13>22194335150002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Sophus Bugge</Column15>
+        <Column16>UHS/SOPH Eilsundt</Column16>
+        <Column17>118838KJ1</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-23</Column19>
+        <Column20>Acquisition (PO line POL-13230)</Column20>
+        <Column21>23194335160002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Acquisition</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T11:35:15</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-13230</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-06-23</Column34>
+        <Column35>9788205366978</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Uri, Helene 1964-</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T13:33:20</Column3>
+        <Column4>import</Column4>
+        <Column5>839</Column5>
+        <Column6>839.82</Column6>
+        <Column8>990701822804702204</Column8>
+        <Column9>2007</Column9>
+        <Column10>Gyldendal</Column10>
+        <Column11>Gyldendal pocket</Column11>
+        <Column12>De beste blant oss : roman</Column12>
+        <Column13>22194335150002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Sophus Bugge</Column15>
+        <Column16>UHS/SOPH Eilsundt</Column16>
+        <Column17>118839KJ1</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-23</Column19>
+        <Column20>Acquisition (PO line POL-13230)</Column20>
+        <Column21>23194335140002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Acquisition</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T11:34:29</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-13230</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-06-23</Column34>
+        <Column35>9788205366978</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Vaa, Johan 1945-</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-19T09:17:05</Column3>
+        <Column4>riksan0003######47BIBSYS_RIKSANT</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919860714402204</Column8>
+        <Column9>[2016]</Column9>
+        <Column10>Rauland utvikling ANS</Column10>
+        <Column12>Neset - hus og folk /</Column12>
+        <Column13>22195481550002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16031005</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-19</Column19>
+        <Column20>Acquisition (PO line POL-15632)</Column20>
+        <Column21>23195481540002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T09:17:07</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15632</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788230333020</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Vaculčík, Viktor VerfasserIn</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-22T15:17:12</Column3>
+        <Column4>UBO0351798######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column7>1. Auflage</Column7>
+        <Column8>999919861011602204</Column8>
+        <Column9>2014</Column9>
+        <Column10>EPOS</Column10>
+        <Column12>Habsburger v. Tschechoslowakei 1918 - 1938</Column12>
+        <Column13>22195499900002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16031561</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-22</Column19>
+        <Column20>Acquisition (PO line POL-15734)</Column20>
+        <Column21>23195499890002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T15:18:48</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15734</Column31>
+        <Column32>hist</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-22</Column34>
+        <Column35>9788056200476</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Vahr, Ellen</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T13:05:24</Column3>
+        <Column4>nbrdep0055######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859809702204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Aschehoug</Column10>
+        <Column12>Gaven roman</Column12>
+        <Column13>22195389140002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030808</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15591)</Column20>
+        <Column21>23195389130002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T13:05:28</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15591</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788203360794</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Vauchez, A., Lucy</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-06-01T08:58:17</Column3>
+        <Column4>ubo0295658######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919849103202204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Palgrave Macmillan</Column10>
+        <Column12>Democratizing Europe</Column12>
+        <Column13>22193936710002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16019578</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-01</Column19>
+        <Column20>Acquisition (PO line POL-11828)</Column20>
+        <Column21>23193936700002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T09:42:39</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-11828</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-06-01</Column34>
+        <Column35>9781137540911</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Vika, Mikkel</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-19T09:08:19</Column3>
+        <Column4>nbrdep0405######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919860714602204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Vigmostad &amp; Bjørke</Column10>
+        <Column12>Nowa huta</Column12>
+        <Column13>22195481580002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030996</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-19</Column19>
+        <Column20>Acquisition (PO line POL-15628)</Column20>
+        <Column21>23195481570002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T09:08:22</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15628</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788241912153</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Walkila, Sonya</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-06-22T11:55:06</Column3>
+        <Column4>ujur006592######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919852107202204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Europe law publishing</Column10>
+        <Column12>Horizontal effect of fundamental rights in the EU</Column12>
+        <Column13>22194336710002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Petroleums- og EU-rettsbiblioteket</Column15>
+        <Column16>UJUR/NifsP Boksamling</Column16>
+        <Column17>k16023058</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-22</Column19>
+        <Column20>Acquisition (PO line POL-13168)</Column20>
+        <Column21>23194336700002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T09:14:01</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-13168</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-06-22</Column34>
+        <Column35>9789089521811</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Warde, Alan</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-01T10:14:25</Column3>
+        <Column4>ubo0303748######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919857514402204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Polity</Column10>
+        <Column12>The pracice of eating</Column12>
+        <Column13>22195131450002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16027152</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-01</Column19>
+        <Column20>Acquisition (PO line POL-14679)</Column20>
+        <Column21>23195131440002204</Column21>
+        <Column22>None</Column22>
+        <Column24>None</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T15:35:27</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-14679</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-01</Column34>
+        <Column35>9780745691701</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Weber, Max</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T12:37:39</Column3>
+        <Column4>UBO0333647######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919860313102204</Column8>
+        <Column9>cop. 2016</Column9>
+        <Column10>JCB Mohr (Paul Siebeck)</Column10>
+        <Column12>Gesamtausgabe</Column12>
+        <Column13>22195440510002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16030787</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>UBO0333647</Column20>
+        <Column21>23195440490002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T12:38:59</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>VENDOR_SYSTEM</Column30>
+        <Column31>POL-6711</Column31>
+        <Column32>St.o. sos UHS U372 301 Web BEM</Column32>
+        <Column33>No</Column33>
+        <Column34>2016-02-22</Column34>
+        <Column35>9783161532696</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Wergeland, Andrew Donald 190</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-18T11:21:04</Column3>
+        <Column4>import</Column4>
+        <Column5>492</Column5>
+        <Column6>492.45</Column6>
+        <Column8>999919859810002204</Column8>
+        <Column9>cop. 2016</Column9>
+        <Column10>Universitetsforlaget</Column10>
+        <Column12>Bibelhebraisk grammatikk</Column12>
+        <Column13>22195379740002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030726</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-18</Column19>
+        <Column20>Acquisition (PO line POL-15568)</Column20>
+        <Column21>23195379730002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-18</Column26>
+        <Column27>2016-08-18T11:21:08</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15568</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788215025070</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Wichne, Erlend</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-16T15:15:50</Column3>
+        <Column4>nbrdep0287######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859813002204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Flamme forl</Column10>
+        <Column12>Trær/fall/slakse/stå/topp/hopp</Column12>
+        <Column13>22195390740002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16030229</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-16</Column19>
+        <Column20>Acquisition (PO line POL-15372)</Column20>
+        <Column21>23195390730002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T15:15:54</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15372</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788282881791</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Wilczek, Frank, author.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-07-07T16:27:39</Column3>
+        <Column4>ubo0328871######47BIBSYS_UBO</Column4>
+        <Column5>530</Column5>
+        <Column6>530.01</Column6>
+        <Column8>999919855213902204</Column8>
+        <Column9>2015.</Column9>
+        <Column10>Penguin Press</Column10>
+        <Column12>A beautiful question : finding nature's deep design /</Column12>
+        <Column13>22194850550002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Realfagsbiblioteket</Column15>
+        <Column16>UREAL Samling 42</Column16>
+        <Column17>k16025273</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-07-07</Column19>
+        <Column20>Acquisition (PO line POL-13969)</Column20>
+        <Column21>23194850540002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-16</Column26>
+        <Column27>2016-08-16T13:55:36</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-13969</Column31>
+        <Column32>fys</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-07-07</Column34>
+        <Column35>9781594205262</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Wolin, Sheldon S.</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T14:15:07</Column3>
+        <Column4>import</Column4>
+        <Column5>320</Column5>
+        <Column6>320.509</Column6>
+        <Column7>Expanded ed.</Column7>
+        <Column8>990415188024702204</Column8>
+        <Column9>c2004</Column9>
+        <Column10>Princeton University Press</Column10>
+        <Column12>Politics and vision : continuity and innovation in Western political thought</Column12>
+        <Column13>22193714360002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Sophus Bugge</Column15>
+        <Column16>UHS/SOPH Eilsundt</Column16>
+        <Column17>118836KJ1</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-05-18</Column19>
+        <Column20>Acquisition (PO line POL-11127)</Column20>
+        <Column21>23193714370002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Acquisition</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T10:32:58</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>PURCHASE</Column30>
+        <Column31>POL-11127</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-05-18</Column34>
+        <Column35>0691119775</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Wänblad, Mats</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-22T14:53:16</Column3>
+        <Column4>nbrdep0055######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919861314402204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Samlaget</Column10>
+        <Column12>Slik funkar det! heime og rundt omkring</Column12>
+        <Column13>22195521260002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16031550</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-22</Column19>
+        <Column20>Acquisition (PO line POL-15733)</Column20>
+        <Column21>23195521250002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T14:53:22</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15733</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788252192087</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Yanagihara, Hanya 1975-</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-06-13T12:56:52</Column3>
+        <Column4>nbrdep0049######47BIBSYS_NB</Column4>
+        <Column5>813</Column5>
+        <Column6>813</Column6>
+        <Column8>999919851314502204</Column8>
+        <Column9>cop. 2016</Column9>
+        <Column10>Gyldendal</Column10>
+        <Column12>Et lite liv : roman</Column12>
+        <Column13>22194211230002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16021695</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-06-13</Column19>
+        <Column20>Acquisition (PO line POL-12609)</Column20>
+        <Column21>23194211220002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T14:55:44</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-12609</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788205489028</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Yao, Souchou</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-22T09:26:17</Column3>
+        <Column4>ubo0319700######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919861114802204</Column8>
+        <Column9>2016</Column9>
+        <Column10>NIAS Press</Column10>
+        <Column12>The Malayan emergency : essays on a small, distant war /</Column12>
+        <Column13>22195531580002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16031358</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-22</Column19>
+        <Column20>Acquisition (PO line POL-15697)</Column20>
+        <Column21>23195531570002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T10:18:54</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15697</Column31>
+        <Column32>gave ORIE</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-22</Column34>
+        <Column35>9788776941901</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Ye, Wenling</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-19T15:42:05</Column3>
+        <Column4>ubo0247461######47BIBSYS_UBO</Column4>
+        <Column5>895</Column5>
+        <Column6>895.1</Column6>
+        <Column8>999919860506502204</Column8>
+        <Column9>1983</Column9>
+        <Column10>Zhejiang renmin chubanshe</Column10>
+        <Column12>Changtang zhen fengqing</Column12>
+        <Column13>22195426660002204</Column13>
+        <Column14>ØST Dc 166 Ye:Cha</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS Mes</Column16>
+        <Column17>k16031264</Column17>
+        <Column18>Item in place</Column18>
+        <Column19>2016-08-19</Column19>
+        <Column20>ubo0247461</Column20>
+        <Column21>23195426640002204</Column21>
+        <Column22>None</Column22>
+        <Column24>None</Column24>
+        <Column25>None</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T15:42:46</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column31>-1</Column31>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Ye, Zhou</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-19T14:32:16</Column3>
+        <Column4>ubo0247461######47BIBSYS_UBO</Column4>
+        <Column5>305</Column5>
+        <Column6>305.40951</Column6>
+        <Column8>999919860506902204</Column8>
+        <Column9>1949</Column9>
+        <Column10>Guangming shuju</Column10>
+        <Column12>Gei zimeimen</Column12>
+        <Column13>22195426790002204</Column13>
+        <Column14>ØST Dq Ye</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS Mag315</Column16>
+        <Column17>k16031235</Column17>
+        <Column18>Item in place</Column18>
+        <Column19>2016-08-19</Column19>
+        <Column20>ubo0247461</Column20>
+        <Column21>23195426770002204</Column21>
+        <Column22>None</Column22>
+        <Column24>None</Column24>
+        <Column25>None</Column25>
+        <Column26>2016-08-19</Column26>
+        <Column27>2016-08-19T14:32:47</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column31>-1</Column31>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Yttri, Gunnar</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-22T13:19:02</Column3>
+        <Column4>UBO0351798######47BIBSYS_UBO</Column4>
+        <Column5>378</Column5>
+        <Column6>378.4838</Column6>
+        <Column8>999919861012602204</Column8>
+        <Column9>2016</Column9>
+        <Column12>Gjennombrot og kjenneteikn liner I soga om høgare utdanning I Sogn og Fjordane</Column12>
+        <Column13>22195500320002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16031495</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-22</Column19>
+        <Column20>Acquisition (PO line POL-15723)</Column20>
+        <Column21>23195500310002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T13:21:45</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15723</Column31>
+        <Column32>Hist</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-22</Column34>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Zel'dovič, G.M.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-22T14:05:03</Column3>
+        <Column4>ubo0311807######47BIBSYS_UBO</Column4>
+        <Column5>891</Column5>
+        <Column6>891.71009</Column6>
+        <Column8>999919861012002204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Gesellschaft zur Förderung slawistischer Studien</Column10>
+        <Column11>Wiener slawistischer Almanach 89</Column11>
+        <Column12>Diskursivnye otnošenija v liričeskoj poėzii</Column12>
+        <Column13>22195500130002204</Column13>
+        <Column14>891.71009 Zel</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16031518</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-22</Column19>
+        <Column20>ubo0311807</Column20>
+        <Column21>23195500110002204</Column21>
+        <Column22>None</Column22>
+        <Column23>2016-08-22T14:09:51</Column23>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T14:07:19</Column27>
+        <Column28>-1</Column28>
+        <Column29>Yes</Column29>
+        <Column31>-1</Column31>
+        <Column35>9783866886018</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Ziman, J.M.</Column1>
+        <Column2>m</Column2>
+        <Column3>2015-11-05T13:15:45</Column3>
+        <Column4>import</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>997710200314702204</Column8>
+        <Column9>1976</Column9>
+        <Column10>Cambridge University Press</Column10>
+        <Column12>The force of knowledge : the scientific dimension of society</Column12>
+        <Column13>22195419820002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO Realfagsbiblioteket</Column15>
+        <Column16>UREAL Boksamling</Column16>
+        <Column17>k16030524</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-17</Column19>
+        <Column20>Acquisition (PO line POL-15507)</Column20>
+        <Column21>23195419810002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-17</Column26>
+        <Column27>2016-08-17T14:58:36</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15507</Column31>
+        <Column32>ped</Column32>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-17</Column34>
+        <Column35>0521206499</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Øyehaug, Gunnhild</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-22T13:04:33</Column3>
+        <Column4>nbrdep0116######47BIBSYS_NB</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919861214502204</Column8>
+        <Column9>2016</Column9>
+        <Column10>Kolon forl</Column10>
+        <Column12>Draumeskrivar noveller</Column12>
+        <Column13>22195521530002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UNASSIGNED location</Column16>
+        <Column17>k16031484</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-22</Column19>
+        <Column20>Acquisition (PO line POL-15719)</Column20>
+        <Column21>23195521520002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>Transit</Column25>
+        <Column26>2016-08-22</Column26>
+        <Column27>2016-08-22T13:04:37</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>LEGAL_DEPOSIT</Column30>
+        <Column31>POL-15719</Column31>
+        <Column33>Yes</Column33>
+        <Column35>9788205494077</Column35>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>Ḥasanʹzādah, Jamīlah.</Column1>
+        <Column2>m</Column2>
+        <Column3>2016-08-15T15:24:37</Column3>
+        <Column4>UBO0351798######47BIBSYS_UBO</Column4>
+        <Column5>Unknown</Column5>
+        <Column8>999919859510802204</Column8>
+        <Column9>2011.</Column9>
+        <Column10>Aspoliqraf</Column10>
+        <Column12>Four century of glory : Azerbaijan miniature painting of XIII-XVI centuries /</Column12>
+        <Column13>22195349490002204</Column13>
+        <Column14>Unknown</Column14>
+        <Column15>UiO HumSam-biblioteket</Column15>
+        <Column16>UHS</Column16>
+        <Column17>k16029979</Column17>
+        <Column18>Item not in place</Column18>
+        <Column19>2016-08-15</Column19>
+        <Column20>Acquisition (PO line POL-15271)</Column20>
+        <Column21>23195349480002204</Column21>
+        <Column22>None</Column22>
+        <Column24>Book</Column24>
+        <Column25>In Process</Column25>
+        <Column26>2016-08-15</Column26>
+        <Column27>2016-08-15T15:26:30</Column27>
+        <Column28>-1</Column28>
+        <Column29>No</Column29>
+        <Column30>GIFT</Column30>
+        <Column31>POL-15271</Column31>
+        <Column33>Yes</Column33>
+        <Column34>2016-08-15</Column34>
+      </Row>
+    </rowset>
+  </ResultXml>
+</QueryResult></report>
