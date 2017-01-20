@@ -40,7 +40,7 @@ class Report
     protected function fetchRows($resumptionToken = null)
     {
         $results = $this->client->getXML('/analytics/reports', [
-            'path'   => $this->path,
+            'path'   => $resumptionToken ? null : $this->path,
             'limit'  => $this->chunkSize,
             'token'  => $resumptionToken,
             'filter' => $this->filter ? str_replace(['\''], ['&apos;'], $this->filter) : null,
