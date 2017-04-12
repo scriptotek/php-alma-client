@@ -5,7 +5,7 @@
     "homepage": "http://github.com/scriptotek/alma-client",
     "keywords": ["alma"],
     "require": {
-        "php" : "^5.5 || ^7.0",
+        "php" : "^5.6 || ^7.0",
         "guzzlehttp/guzzle": "~6.0",
         "scriptotek/marc": "^0.3.0",
         "danmichaelo/quitesimplexmlelement": "^0.4",
@@ -13,8 +13,8 @@
     },
     "require-dev": {
         "sami/sami": "~3.3",
-        "phpspec/phpspec": "~2.0 | ~3.0",
-        "henrikbjorn/phpspec-code-coverage": "~2.0 | ~3.0"
+        "phpspec/phpspec": "~3.2",
+        "leanphp/phpspec-code-coverage": "~3.1"
     },
     "license": "MIT",
     "authors": [
