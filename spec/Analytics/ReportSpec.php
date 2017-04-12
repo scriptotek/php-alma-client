@@ -56,8 +56,8 @@ class ReportSpec extends ObjectBehavior
             ->shouldBeCalledTimes(3)
             ->willReturn(
 
-                # If Analytics has a bad day, we might get a "still loading" response
-                # See: https://bitbucket.org/uwlib/uwlib-alma-analytic-tools/wiki/Understanding_Analytic_GET_Requests#!analytic-still-loading
+                // If Analytics has a bad day, we might get a "still loading" response
+                // See: https://bitbucket.org/uwlib/uwlib-alma-analytic-tools/wiki/Understanding_Analytic_GET_Requests#!analytic-still-loading
                 SpecHelper::getDummyData('analytics_still_loading_response.xml'),
 
                 SpecHelper::getDummyData('analytics_response_part2.xml'),
@@ -65,6 +65,5 @@ class ReportSpec extends ObjectBehavior
             );
 
         $this->getRows()->shouldHaveCount(150 + 150 + 88);
-
     }
 }

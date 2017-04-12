@@ -16,8 +16,8 @@ class User
      * User constructor.
      *
      * @param Client|null $client
-     * @param string $user_id
-     * @param \stdClass $data
+     * @param string      $user_id
+     * @param \stdClass   $data
      */
     public function __construct(Client $client = null, $user_id = null, \stdClass $data = null)
     {
@@ -29,13 +29,14 @@ class User
     /**
      * Create a user from an API response.
      *
-     * @param Client $client
+     * @param Client    $client
      * @param \stdClass $data
+     *
      * @return User
      */
     public static function fromResponse(Client $client, \stdClass $data)
     {
-        return new User($client, $data->primary_id, $data);
+        return new self($client, $data->primary_id, $data);
     }
 
     /**
@@ -71,6 +72,7 @@ class User
      * Get user identifier of a given type, like 'BARCODE' or 'UNIV_ID'.
      *
      * @param string $id_type
+     *
      * @return string|null
      */
     public function getIdOfType($id_type)
@@ -80,7 +82,6 @@ class User
                 return $identifier->value;
             }
         }
-        return null;
     }
 
     /**
@@ -114,6 +115,7 @@ class User
         foreach ($this->user_identifier as $identifier) {
             $ids[] = $identifier->value;
         }
+
         return $ids;
     }
 

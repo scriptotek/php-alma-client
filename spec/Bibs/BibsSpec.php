@@ -2,7 +2,6 @@
 
 namespace spec\Scriptotek\Alma\Bibs;
 
-use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Scriptotek\Alma\Bibs\Bib;

@@ -21,7 +21,7 @@ class Holding
     }
 
     /**
-     * Returns the MARC record
+     * Returns the MARC record.
      */
     public function getRecord()
     {
@@ -30,6 +30,7 @@ class Holding
             $marcRecord = $data->first('record')->asXML();
             $this->_marc = MarcRecord::fromString($marcRecord);
         }
+
         return $this->_marc;
     }
 
@@ -38,8 +39,11 @@ class Holding
         if (!isset($this->_items)) {
             $data = $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings/' . $this->holding_id . '/items');
 
-            $this->_items = array_map(function ($data) { return new Item($data); }, $data->item);
+            $this->_items = array_map(function ($data) {
+                return new Item($data);
+            }, $data->item);
         }
+
         return $this->_items;
     }
 

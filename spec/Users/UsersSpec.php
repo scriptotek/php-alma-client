@@ -4,9 +4,9 @@ namespace spec\Scriptotek\Alma\Users;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\User;
 use Scriptotek\Alma\Users\Users;
-use Scriptotek\Alma\Client as AlmaClient;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class UsersSpec extends ObjectBehavior

@@ -11,13 +11,13 @@ class SpecHelper
         $data = file_get_contents(__DIR__ . '/data/' . $filename);
 
         if (!$parse) {
-        	return $data;
+            return $data;
         }
 
         if (strpos($filename, '.xml')) {
-	        return QuiteSimpleXMLElement::make($data);
+            return QuiteSimpleXMLElement::make($data);
         }
-        return json_decode($data);
 
+        return json_decode($data);
     }
 }

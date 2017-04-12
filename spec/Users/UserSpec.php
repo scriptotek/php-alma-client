@@ -4,9 +4,8 @@ namespace spec\Scriptotek\Alma\Users;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Scriptotek\Alma\Users\User;
-use Scriptotek\Alma\Users\Users;
 use Scriptotek\Alma\Client as AlmaClient;
+use Scriptotek\Alma\Users\User;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class UserSpec extends ObjectBehavior
@@ -30,5 +29,4 @@ class UserSpec extends ObjectBehavior
         $this->getUniversityId()->shouldBe('test@uio.no');
         $this->getBarcode()->shouldBe(null);
     }
-
 }

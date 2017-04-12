@@ -74,6 +74,7 @@ class Report
 
         if (!count($this->headers)) {
             $this->headers = $headers;
+
             return;
         }
 
