@@ -101,6 +101,7 @@ class Client
      * Set the API key for this Alma instance.
      *
      * @param string $key The API key
+     *
      * @return $this
      */
     public function setKey($key)
@@ -114,8 +115,10 @@ class Client
      * Set the Alma region code ('na' for North America, 'eu' for Europe, 'ap' for Asia Pacific).
      *
      * @param $regionCode
-     * @return $this
+     *
      * @throws \ErrorException
+     *
+     * @return $this
      */
     public function setRegion($regionCode)
     {
@@ -159,15 +162,15 @@ class Client
      *
      * @param string $method
      * @param string $url
-     * @param array $options
-     * @param int $attempt
+     * @param array  $options
+     * @param int    $attempt
+     *
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function request($method, $url, $options = [], $attempt = 1)
     {
         try {
             return $this->httpClient->request($method, $this->getFullUrl($url), $this->getHttpOptions($options));
-
         } catch (GuzzleClientException $e) {
             // Thrown for 400 level errors
 
@@ -183,7 +186,6 @@ class Client
 
             $msg = $e->getResponse()->getBody();
             throw new ClientException('Client error ' . $e->getResponse()->getStatusCode() . ': ' . $msg);
-
         } catch (ConnectException $e) {
             // Thrown in case of a networking error
 
@@ -201,7 +203,8 @@ class Client
      * @param string $url
      * @param array  $query
      * @param string $contentType
-     * @return string  Response body
+     *
+     * @return string Response body
      */
     public function get($url, $query = [], $contentType = 'application/json')
     {
@@ -219,7 +222,7 @@ class Client
      * @param string $url
      * @param array  $query
      *
-     * @return \stdClass  JSON response as an object.
+     * @return \stdClass JSON response as an object.
      */
     public function getJSON($url, $query = [])
     {
@@ -249,6 +252,7 @@ class Client
      * @param string $url
      * @param $data
      * @param string $contentType
+     *
      * @return bool
      */
     public function put($url, $data, $contentType = 'application/json')
@@ -311,7 +315,7 @@ class Client
             ]));
         } catch (RequestException $e) {
             // We receive a 400 response if the barcode is invalid.
-            return null;
+            return;
         }
         $locations = $response->getHeader('Location');
 

@@ -12,6 +12,7 @@ class Bibs extends ResourceList
      * Get a Bib object from a item barcode.
      *
      * @param string $barcode
+     *
      * @return Bib
      */
     public function fromBarcode($barcode)
@@ -31,6 +32,7 @@ class Bibs extends ResourceList
      * Get a Bib object from a holdings ID.
      *
      * @param string $holdings_id
+     *
      * @return Bib
      */
     public function fromHoldingsId($holdings_id)
@@ -47,8 +49,9 @@ class Bibs extends ResourceList
      * to the Alma client (see `Client::setSruClient()`).
      * Returns a generator that handles continuation under the hood.
      *
-     * @param string $cql  The CQL query
-     * @param int $batchSize  Number of records to return in each batch.
+     * @param string $cql       The CQL query
+     * @param int    $batchSize Number of records to return in each batch.
+     *
      * @return \Generator|Bib[]
      */
     public function search($cql, $batchSize = 10)
@@ -64,6 +67,7 @@ class Bibs extends ResourceList
      * Returns the first result from a SRU search or null if no results.
      *
      * @param string $cql
+     *
      * @return Bib
      */
     public function findOne($cql)
@@ -75,6 +79,7 @@ class Bibs extends ResourceList
      * Get a Bib object from an ISBN value. Returns null if no Bib record found.
      *
      * @param string $isbn
+     *
      * @return Bib
      */
     public function fromIsbn($isbn)

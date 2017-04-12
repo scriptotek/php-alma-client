@@ -120,6 +120,7 @@ class Bib
         if (is_null($this->bib_data)) {
             $this->load();
         }
+
         return $this->bib_data->asXML();
     }
 
@@ -137,9 +138,8 @@ class Bib
         return $this->client->nz->bibs->get($nz_mms_id);
     }
 
-
     /**
-     * Returns the MARC record
+     * Returns the MARC record.
      */
     public function getRecord()
     {
@@ -159,6 +159,7 @@ class Bib
             return $this->getHoldings();
         }
         $this->load();
+
         return $this->bib_data->text($key);
     }
 }

@@ -14,7 +14,6 @@ class Holdings extends ResourceList implements \Countable, \Iterator
     protected $mms_id;
     protected $data;
 
-
     public function __construct(Client $client, $mms_id)
     {
         parent::__construct($client);
