@@ -124,7 +124,10 @@ class Bib
         return $this->bib_data->asXML();
     }
 
-    public function getNzRecord()
+    /**
+     * Get the MMS ID of the linked record in network zone.
+     */
+    public function getNzMmsId()
     {
         // If initialized from an SRU record, we need to fetch the
         // remaining parts of the Bib record.
@@ -135,7 +138,15 @@ class Bib
             throw new NoLinkedNetworkZoneRecordException("Record $this->mms_id is not linked to a network zone record.");
         }
 
-        return $this->client->nz->bibs->get($nz_mms_id);
+        return $nz_mms_id;
+    }
+
+    /**
+     * Get the Bib of the linked record in network zone.
+     */
+    public function getNzRecord()
+    {
+        return $this->client->nz->bibs->get($this->getNzMmsId());
     }
 
     /**
