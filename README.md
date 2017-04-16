@@ -7,8 +7,8 @@
 
 Simple PHP package for working with the [Alma REST APIs](https://developers.exlibrisgroup.com/alma/apis).
 SOAP APIs will not be supported.
-Currently, this package only supports the "Bibs" API, but it provides read/write support.
-It is tightly integrated with the excellent File_MARC package for editing MARC records.
+Currently, this package supports Bibs (read/write), Users and Analytics (read only).
+It is integrated with [php-marc](https://github.com/scriptotek/php-marc) for editing MARC records.
 If the package doesn't fit your needs, you might take a look at the alternative
 [php-alma](https://github.com/BCLibraries/php-alma) package.
 
@@ -42,7 +42,15 @@ Make sure you have [Composer](https://getcomposer.org) installed, then run
 composer require scriptotek/alma-client
 ```
 
-in your project directory to get the latest stable version of the package.
+in your project directory to get the latest stable version of the package. You
+also need a HTTP library. Php-alma-client uses
+[HTTPlug discovery](http://php-http.readthedocs.io/en/latest/discovery.html) in
+order to not depend on one specific library. If you don't already have a HTTP
+library installed, try Guzzle:
+
+```bash
+composer require php-http/guzzle6-adapter
+```
 
 ## Initializing a client
 

@@ -3,10 +3,21 @@
 namespace Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
-use GuzzleHttp\Client as HttpClient;
-use GuzzleHttp\Exception\ClientException as GuzzleClientException;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Exception\RequestException;
+use Http\Client\Common\Exception\ClientErrorException;
+use Http\Client\Common\Plugin\ContentLengthPlugin;
+use Http\Client\Common\Plugin\ErrorPlugin;
+use Http\Client\Common\PluginClient;
+use Http\Client\Exception\HttpException;
+use Http\Client\Exception\NetworkException;
+use Http\Client\HttpClient;
+use Http\Discovery\HttpClientDiscovery;
+use Http\Discovery\MessageFactoryDiscovery;
+use Http\Discovery\UriFactoryDiscovery;
+use Http\Message\MessageFactory;
+use Http\Message\UriFactory;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Exception\ClientException;
@@ -32,7 +43,13 @@ class Client
     public $nz;
 
     /** @var HttpClient */
-    protected $httpClient;
+    protected $http;
+
+    /** @var MessageFactory */
+    protected $messageFactory;
+
+    /** @var UriFactory */
+    protected $uriFactory;
 
     /** @var SruClient */
     public $sru;
@@ -49,27 +66,47 @@ class Client
     /** @var int Max number of retries if we get 429 errors */
     public $maxAttempts = 10;
 
+    /** @var float Number of seconds to sleep before retrying */
+    public $sleepTimeOnRetry = 0.5;
+
     /**
      * Create a new client to connect to a given Alma instance.
      *
      * @param string     $key        API key
      * @param string     $region     Hosted region code, used to build base URL
      * @param string     $zone       Alma zone (Either Zones::INSTITUTION or Zones::NETWORK)
-     * @param HttpClient $httpClient
+     * @param HttpClient $http
+     * @param MessageFactory $messageFactory
+     * @param UriFactory $uriFactory
      *
      * @throws \ErrorException
      */
-    public function __construct($key = null, $region = 'eu', $zone = Zones::INSTITUTION, HttpClient $httpClient = null)
-    {
+    public function __construct(
+        $key = null,
+        $region = 'eu',
+        $zone = Zones::INSTITUTION,
+        HttpClient $http = null,
+        MessageFactory $messageFactory = null,
+        UriFactory $uriFactory = null
+    ) {
+        $this->http = new PluginClient(
+            $http ?: HttpClientDiscovery::find(), [
+                new ContentLengthPlugin(),
+                new ErrorPlugin(),
+            ]
+        );
+        $this->messageFactory = $messageFactory ?: MessageFactoryDiscovery::find();
+        $this->uriFactory = $uriFactory ?: UriFactoryDiscovery::find();
+
         $this->key = $key;
         $this->setRegion($region);
-        $this->httpClient = $httpClient ?: new HttpClient();
+
         $this->zone = $zone;
         $this->bibs = new Bibs($this);  // Or do some magic instead?
         $this->analytics = new Analytics($this);  // Or do some magic instead?
         $this->users = new Users($this);  // Or do some magic instead?
         if ($zone == Zones::INSTITUTION) {
-            $this->nz = new self(null, $region, Zones::NETWORK, $this->httpClient);
+            $this->nz = new self(null, $region, Zones::NETWORK, $this->http, $this->messageFactory, $this->uriFactory);
         } elseif ($zone != Zones::NETWORK) {
             throw new ClientException('Invalid zone name.');
         }
@@ -131,47 +168,39 @@ class Client
     }
 
     /**
-     * @param $url
+     * @param string $url
+     * @param array $query
      *
-     * @return string
+     * @return UriInterface
      */
-    protected function getFullUrl($url)
+    protected function getFullUri($url, $query=[])
     {
-        return $this->baseUrl . $url;
+        $query['apikey'] = $this->key;
+
+        return $this->uriFactory->createUri($this->baseUrl . $url)
+            ->withQuery(http_build_query($query));
     }
 
     /**
-     * @param array $options
+     * Make a synchronous HTTP request and return a PSR7 response if successful.
+     * In the case of intermittent errors (connection problem, 429 or 5XX error), the request is
+     * attempted a maximum of {$this->maxAttempts} times with a sleep of {$this->sleepTimeOnRetry}
+     * between each attempt to avoid hammering the server.
      *
-     * @return array
+     * @param RequestInterface $request
+     * @param int $attempt
+     *
+     * @return ResponseInterface
      */
-    protected function getHttpOptions($options = [])
+    public function request(RequestInterface $request, $attempt = 1)
     {
         if (!$this->key) {
             throw new ClientException('No API key defined for ' . $this->zone);
         }
-        $defaultOptions = [
-            'headers' => ['Authorization' => 'apikey ' . $this->key],
-        ];
 
-        return array_merge_recursive($defaultOptions, $options);
-    }
-
-    /**
-     * Make a HTTP request.
-     *
-     * @param string $method
-     * @param string $url
-     * @param array  $options
-     * @param int    $attempt
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function request($method, $url, $options = [], $attempt = 1)
-    {
         try {
-            return $this->httpClient->request($method, $this->getFullUrl($url), $this->getHttpOptions($options));
-        } catch (GuzzleClientException $e) {
+            return $this->http->sendRequest($request);
+        } catch (HttpException $e) {
             // Thrown for 400 level errors
 
             if ($e->getResponse()->getStatusCode() == '429') {
@@ -180,20 +209,20 @@ class Client
                 if ($attempt > $this->maxAttempts) {
                     throw new MaxNumberOfAttemptsExhausted($e);
                 }
-                time_nanosleep(0, 500000000); // 0.5 s
-                return $this->request($method, $url, $options, $attempt + 1);
+                time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
+                return $this->request($request, $attempt + 1);
             }
 
-            $msg = $e->getResponse()->getBody();
-            throw new ClientException('Client error ' . $e->getResponse()->getStatusCode() . ': ' . $msg);
-        } catch (ConnectException $e) {
+            throw $e;
+
+        } catch (NetworkException $e) {
             // Thrown in case of a networking error
 
             if ($attempt > $this->maxAttempts) {
                 throw new MaxNumberOfAttemptsExhausted($e);
             }
-            time_nanosleep(0, 500000000); // 0.5 s
-            return $this->request($method, $url, $options, $attempt + 1);
+            time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
+            return $this->request($request, $attempt + 1);
         }
     }
 
@@ -208,10 +237,12 @@ class Client
      */
     public function get($url, $query = [], $contentType = 'application/json')
     {
-        $response = $this->request('GET', $url, [
-            'query'   => $query,
-            'headers' => ['Accept' => $contentType],
-        ]);
+        $uri = $this->getFullUri($url, $query);
+        $headers = [
+            'Accept' => $contentType
+        ];
+        $request = $this->messageFactory->createRequest('GET', $uri, $headers);
+        $response = $this->request($request);
 
         return strval($response->getBody());
     }
@@ -257,13 +288,14 @@ class Client
      */
     public function put($url, $data, $contentType = 'application/json')
     {
-        $response = $this->request('PUT', $url, [
-            'body'    => $data,
-            'headers' => [
-                'Content-Type' => $contentType,
-                'Accept'       => $contentType,
-            ],
-        ]);
+        $uri = $this->getFullUri($url);
+        $headers = [];
+        if (!is_null($contentType)) {
+            $headers['Content-Type'] = $contentType;
+            $headers['Accept'] = $contentType;
+        }
+        $request = $this->messageFactory->createRequest('PUT', $uri, $headers, $data);
+        $response = $this->request($request);
 
         // Consider it a success if status code is 2XX
         return substr($response->getStatusCode(), 0, 1) == '2';
@@ -307,18 +339,17 @@ class Client
      */
     public function getRedirectLocation($url, $query = [])
     {
-        try {
-            $response = $this->httpClient->request('GET', $this->getFullUrl($url), $this->getHttpOptions([
-                'query'           => $query,
-                'headers'         => ['Accept' => 'application/json'],
-                'allow_redirects' => false,
-            ]));
-        } catch (RequestException $e) {
-            // We receive a 400 response if the barcode is invalid.
-            return;
-        }
-        $locations = $response->getHeader('Location');
 
+        $uri = $this->getFullUri($url, $query);
+        $request = $this->messageFactory->createRequest('GET', $uri);
+
+        try {
+            $response = $this->request($request);
+        } catch (ClientErrorException $e) {
+            return null;
+        }
+
+        $locations = $response->getHeader('Location');
         return count($locations) ? $locations[0] : null;
     }
 }

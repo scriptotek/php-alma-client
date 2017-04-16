@@ -2,10 +2,10 @@
 
 namespace spec\Scriptotek\Alma;
 
-use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Response;
+use function GuzzleHttp\Psr7\stream_for;
+use Http\Mock\Client as MockHttp;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Scriptotek\Alma\Zones;
 
 function str_random()
@@ -15,11 +15,23 @@ function str_random()
 
 class ClientSpec extends ObjectBehavior
 {
-    public function let(HttpClient $httpClient)
+    public function let()
     {
+        $http = new MockHttp();
         $apiKey = 'DummyApiKey';
         $region = 'eu';
-        $this->beConstructedWith($apiKey, $region, Zones::INSTITUTION, $httpClient);
+        $this->beConstructedWith($apiKey, $region, Zones::INSTITUTION, $http);
+
+        return $http;
+    }
+
+    protected function httpWithResponseBody($body)
+    {
+        $http = $this->let();
+        $response = new Response();
+        $response = $response->withBody(stream_for($body));
+        $http->addResponse($response);
+        return $http;
     }
 
     public function it_is_initializable()
@@ -33,80 +45,68 @@ class ClientSpec extends ObjectBehavior
             ->duringSetRegion('ux');
     }
 
-    public function it_can_do_GET_requests(HttpClient $httpClient, Response $response)
+    public function it_can_make_GET_requests()
     {
-        $dummyResponseText = str_random(); // ... or some xml
-        $path = str_random();
-
-        // $xmlElementBuilder->make($dummyResponseText)
-        //     ->shouldBeCalled();
-
-        $response->getBody()
-            ->shouldBeCalled()
-            ->willReturn($dummyResponseText);
-
-        $httpClient->request('GET', Argument::containingString($path), Argument::any())
-            ->shouldBeCalled()
-            ->willReturn($response);
-
-        $this->getJSON($path);
+        $responseBody = str_random();
+        $this->httpWithResponseBody($responseBody);
+        $this->get(str_random())->shouldBe($responseBody);
     }
 
-    public function it_sends_an_API_key_with_each_request(HttpClient $httpClient, Response $response)
+    public function it_sends_an_API_key_with_each_request()
     {
-        $response->getBody()->willReturn(str_random());
-
-        $httpClient->request('GET', Argument::any(), Argument::containing(
-            Argument::withEntry('Authorization', 'apikey DummyApiKey')
-        ))->willReturn($response);
-
+        $http = $this->httpWithResponseBody(str_random());
         $this->getJSON(str_random());
+
+        // Query string should include apikey
+        expect($http->getRequests()[0])->getUri()->getQuery()->toContain('apikey=DummyApiKey');
     }
 
-    public function it_can_request_JSON(HttpClient $httpClient, Response $response)
+    public function it_can_request_and_parse_JSON()
     {
-        $response->getBody()->willReturn(str_random());
-        $httpClient->request('GET', Argument::any(), Argument::containing(
-            Argument::withEntry('Accept', 'application/json')
-        ))->willReturn($response);
+        $responseBody = json_encode(['some_key' => 'some_value']);
+        $http = $this->httpWithResponseBody($responseBody);
 
-        $this->getJSON(str_random());
+        $this->getJSON(str_random())->some_key->shouldBe('some_value');
+
+        $request = $http->getRequests()[0];
+        expect($request->getHeader('Accept')[0])->toBe('application/json');
     }
 
-    public function it_can_request_XML(HttpClient $httpClient, Response $response)
+    public function it_can_request_and_parse_XML()
     {
-        $dummyResponseText = "<?xml version=\"1.0\"?>\n<bib>" . str_random() . "</bib>\n";
-        $response->getBody()->willReturn($dummyResponseText);
-        $httpClient->request('GET', Argument::any(), Argument::containing(
-            Argument::withEntry('Accept', 'application/xml')
-        ))->willReturn($response);
+        $responseBody = "<?xml version=\"1.0\"?>\n<some_key>some_value</some_key>\n";
+        $http = $this->httpWithResponseBody($responseBody);
 
-        $this->getXML(str_random());
-    }
-
-    public function it_parses_responses_as_XML(HttpClient $httpClient, Response $response)
-    {
-        $dummyResponseText = "<?xml version=\"1.0\"?>\n<bib>" . str_random() . "</bib>\n";
-        $response->getBody()
-            ->willReturn($dummyResponseText);
-        $httpClient->request(Argument::cetera())
-            ->willReturn($response);
         $xml = $this->getXML(str_random());
+
+        // Request headers should include Accept: application/xml
+        expect($http->getRequests()[0])->getHeader('Accept')[0]->toBe('application/xml');
+
+        // Response should be of type QuiteSimpleXMLElement
         $xml->shouldHaveType('Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement');
-        $xml->asXML()->shouldBe($dummyResponseText);
+
+        // and have the expected value
+        $xml->asXML()->shouldBe($responseBody);
     }
 
-    public function it_can_do_PUT_requests(HttpClient $httpClient, Response $response)
+    public function it_can_make_PUT_requests()
     {
-        $path = str_random();
-        $data = str_random();
+        $responseBody = str_random();
+        $http = $this->httpWithResponseBody($responseBody);
 
-        $response->getStatusCode()->willReturn(200);
+        $this->put(str_random(), str_random(), 'application/json')->shouldBe(true);
 
-        $httpClient->request('PUT', Argument::containingString($path), Argument::any())
-            ->willReturn($response);
+        expect($http->getRequests())->toHaveCount(1);
+        expect($http->getRequests()[0])->getMethod()->toBe('PUT');
+    }
 
-        $result = $this->put($path, $data);
-        $result->shouldBe(true);
+    public function it_can_get_redirect_locations()
+    {
+        $http = $this->let();
+        $response = new Response();
+        $response = $response->withHeader('Location', 'http://test.test');
+        $http->addResponse($response);
+
+        $this->getRedirectLocation('/')->shouldBe('http://test.test');
     }
 }

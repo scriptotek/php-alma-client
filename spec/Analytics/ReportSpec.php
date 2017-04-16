@@ -27,7 +27,10 @@ class ReportSpec extends ObjectBehavior
     {
         $this->rows->shouldImplement(\Generator::class);
         $this->rows->current()->shouldBeAnInstanceOf(Row::class);
-        $this->getRows()->shouldHaveCount(14);
+
+        // TODO: Once we can upgrade to PHPSpec 3.2, replace the next line by the commented out one
+        expect(iterator_to_array($this->getRows()->getWrappedObject()))->toHaveCount(14);
+        //$this->getRows()->shouldHaveCount(14);
     }
 
     public function it_supports_setting_headers(Client $almaClient)
@@ -64,6 +67,8 @@ class ReportSpec extends ObjectBehavior
                 SpecHelper::getDummyData('analytics_response_part3.xml')
             );
 
-        $this->getRows()->shouldHaveCount(150 + 150 + 88);
+        // NOTE: Once we can upgrade to PHPSpec 3.2, replace the next line by the commented out one
+        expect(iterator_to_array($this->getRows()->getWrappedObject()))->toHaveCount(150 + 150 + 88);
+        // $this->getRows()->shouldHaveCount(150 + 150 + 88);
     }
 }
