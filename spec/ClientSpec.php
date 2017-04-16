@@ -3,10 +3,10 @@
 namespace spec\Scriptotek\Alma;
 
 use GuzzleHttp\Psr7\Response;
-use function GuzzleHttp\Psr7\stream_for;
 use Http\Mock\Client as MockHttp;
 use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Zones;
+use function GuzzleHttp\Psr7\stream_for;
 
 function str_random()
 {
@@ -31,6 +31,7 @@ class ClientSpec extends ObjectBehavior
         $response = new Response();
         $response = $response->withBody(stream_for($body));
         $http->addResponse($response);
+
         return $http;
     }
 

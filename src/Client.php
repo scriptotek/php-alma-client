@@ -72,12 +72,12 @@ class Client
     /**
      * Create a new client to connect to a given Alma instance.
      *
-     * @param string     $key        API key
-     * @param string     $region     Hosted region code, used to build base URL
-     * @param string     $zone       Alma zone (Either Zones::INSTITUTION or Zones::NETWORK)
-     * @param HttpClient $http
+     * @param string         $key            API key
+     * @param string         $region         Hosted region code, used to build base URL
+     * @param string         $zone           Alma zone (Either Zones::INSTITUTION or Zones::NETWORK)
+     * @param HttpClient     $http
      * @param MessageFactory $messageFactory
-     * @param UriFactory $uriFactory
+     * @param UriFactory     $uriFactory
      *
      * @throws \ErrorException
      */
@@ -169,11 +169,11 @@ class Client
 
     /**
      * @param string $url
-     * @param array $query
+     * @param array  $query
      *
      * @return UriInterface
      */
-    protected function getFullUri($url, $query=[])
+    protected function getFullUri($url, $query = [])
     {
         $query['apikey'] = $this->key;
 
@@ -188,7 +188,7 @@ class Client
      * between each attempt to avoid hammering the server.
      *
      * @param RequestInterface $request
-     * @param int $attempt
+     * @param int              $attempt
      *
      * @return ResponseInterface
      */
@@ -210,11 +210,11 @@ class Client
                     throw new MaxNumberOfAttemptsExhausted($e);
                 }
                 time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
+
                 return $this->request($request, $attempt + 1);
             }
 
             throw $e;
-
         } catch (NetworkException $e) {
             // Thrown in case of a networking error
 
@@ -222,6 +222,7 @@ class Client
                 throw new MaxNumberOfAttemptsExhausted($e);
             }
             time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
+
             return $this->request($request, $attempt + 1);
         }
     }
@@ -239,7 +240,7 @@ class Client
     {
         $uri = $this->getFullUri($url, $query);
         $headers = [
-            'Accept' => $contentType
+            'Accept' => $contentType,
         ];
         $request = $this->messageFactory->createRequest('GET', $uri, $headers);
         $response = $this->request($request);
@@ -339,17 +340,17 @@ class Client
      */
     public function getRedirectLocation($url, $query = [])
     {
-
         $uri = $this->getFullUri($url, $query);
         $request = $this->messageFactory->createRequest('GET', $uri);
 
         try {
             $response = $this->request($request);
         } catch (ClientErrorException $e) {
-            return null;
+            return;
         }
 
         $locations = $response->getHeader('Location');
+
         return count($locations) ? $locations[0] : null;
     }
 }
