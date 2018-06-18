@@ -18,6 +18,10 @@ class Users extends ResourceList
         while (true) {
             $response = $this->client->getJSON('/users', ['q' => $query, 'limit' => $batchSize, 'offset' => $offset]);
 
+            if ($response->total_record_count == 0) {
+                break;
+            }
+
             foreach ($response->user as $data) {
                 $user = User::fromResponse($this->client, $data);
                 if ($full) {
