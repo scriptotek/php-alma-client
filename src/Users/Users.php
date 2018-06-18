@@ -23,6 +23,9 @@ class Users extends ResourceList
             }
 
             foreach ($response->user as $data) {
+                if (strpos($data->primary_id, 'no primary id') === 0) {
+                    continue;
+                }
                 $user = User::fromResponse($this->client, $data);
                 if ($full) {
                     $user->fetch();
