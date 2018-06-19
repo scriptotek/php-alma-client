@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Added options `limit` and `phrase` to `Users::search()`.
+- Added `InvalidQueryException` exception.
 
 ### Changed
 

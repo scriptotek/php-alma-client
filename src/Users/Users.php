@@ -2,6 +2,7 @@
 
 namespace Scriptotek\Alma\Users;
 
+use Scriptotek\Alma\Exception\InvalidQueryException;
 use Scriptotek\Alma\ResourceList;
 
 class Users extends ResourceList
@@ -42,7 +43,21 @@ class Users extends ResourceList
         while (true) {
             $response = $this->client->getJSON('/users', ['q' => $query, 'limit' => $batchSize, 'offset' => $offset]);
 
+            // The API sometimes returns total_record_count: -1, with no further error message.
+            // Seems to indicate that the query was not understood.
+            // See: https://github.com/scriptotek/php-alma-client/issues/8
+            if ($response->total_record_count == -1) {
+                throw new InvalidQueryException($query);
+            }
+
             if ($response->total_record_count == 0) {
+                break;
+            }
+
+            if (!isset($response->user)) {
+                // We cannot trust the value in 'total_record_count', so if there are no more records,
+                // we have to assume the result set is depleted.
+                // See: https://github.com/scriptotek/php-alma-client/issues/7
                 break;
             }
 
