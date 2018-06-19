@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - BC: Changed the signature of `Users::search()`.
   Change `users->search($query, $full, $batchSize)`
   to `users->search($query, ['expand' => $full, 'batchSize' => $batchSize])`.
+- All exceptions now extend `Scriptotek\Alma\Exception\ClientException`.
 
 ### Fixed
 

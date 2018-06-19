@@ -2,6 +2,6 @@
 
 namespace Scriptotek\Alma\Exception;
 
-class NoLinkedNetworkZoneRecordException extends \RuntimeException
+class NoLinkedNetworkZoneRecordException extends ClientException
 {
 }

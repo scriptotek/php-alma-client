@@ -2,6 +2,6 @@
 
 namespace Scriptotek\Alma\Exception;
 
-class SruClientNotSetException extends \RuntimeException
+class SruClientNotSetException extends ClientException
 {
 }

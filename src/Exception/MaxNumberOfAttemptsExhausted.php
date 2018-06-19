@@ -2,6 +2,6 @@
 
 namespace Scriptotek\Alma\Exception;
 
-class MaxNumberOfAttemptsExhausted extends \RuntimeException
+class MaxNumberOfAttemptsExhausted extends ClientException
 {
 }
