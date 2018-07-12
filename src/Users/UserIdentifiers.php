@@ -18,7 +18,7 @@ class UserIdentifiers
     public function __construct($id, $data = null)
     {
         $this->id = $id;
-        $this->data = $data ?? [];
+        $this->data = is_null($data) ? [] : $data;
     }
 
     /**
