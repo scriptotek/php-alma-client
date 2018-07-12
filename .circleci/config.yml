@@ -1,0 +1,23 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+---
+version: 2
+jobs:
+  build:
+    docker:
+      # Reference: https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/php:7.2-node-browsers
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download dependencies
+      # (no caching at this point since we use some in dev state)
+      - run: composer install -n --prefer-dist
+
+      # run tests!
+      - run: vendor/bin/phpspec run --verbose --no-interaction
