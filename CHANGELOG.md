@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Added options `limit` and `phrase` to `Users::search()`.
 - Added `InvalidQueryException` exception.
+- Added methods `getBarcodes()` and `getUniversityIds()` to `UserIdentifiers` to get all active values.
+  These are accessible on the `User` object as `$user->barcodes` and `$user->universityIds`.
 
 ### Changed
 
@@ -18,6 +20,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   Change `users->search($query, $full, $batchSize)`
   to `users->search($query, ['expand' => $full, 'batchSize' => $batchSize])`.
 - All exceptions now extend `Scriptotek\Alma\Exception\ClientException`.
+- BC: Moved the user identifier logic from the `User` class to a new `UserIdentifiers` class.
+  The `$user->barcode` and `$user->universityId` magic properties work as before, but
+  `$user->getBarcode()`, `$user->getUniversityId()`, `$user->getIdOfType(...)` and `$user->getIds()`
+  must now be called as `$user->identifiers->getBarcode()`, `$user->identifiers->getUniversityId()`,
+  `$user->identifiers->firstOfType(...)` and `$user->identifiers->all()`.
+  All methods now return only identifiers with status 'ACTIVE' by default.
+  Removed the `$user->hasFullRecord()` method.
 
 ### Fixed
 

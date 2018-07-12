@@ -6,135 +6,133 @@ use Scriptotek\Alma\Client;
 
 class User
 {
-    protected $_user_id;
+    /**
+     * This class is a ghost object that lazy loads the full record only when needed.
+     * If $initialized is false, it means we haven't yet loaded the full record.
+     * We can still have incomplete data from a search response.
+     */
+    protected $initialized = false;
+
     protected $client;
+
+    protected $id;
+
+    protected $_identifiers;
 
     /* @var \stdClass */
     protected $data;
 
     /**
-     * User constructor.
-     *
-     * @param Client|null $client
-     * @param string      $user_id
-     * @param \stdClass   $data
-     */
-    public function __construct(Client $client = null, $user_id = null, \stdClass $data = null)
-    {
-        $this->_user_id = $user_id;
-        $this->client = $client;
-        $this->data = $data;
-    }
-
-    /**
-     * Create a user from an API response.
+     * Create a user from a search response containing an incomplete user record.
      *
      * @param Client    $client
      * @param \stdClass $data
      *
      * @return User
      */
-    public static function fromResponse(Client $client, \stdClass $data)
+    public static function fromSearchResponse(Client $client, \stdClass $data)
     {
-        return new self($client, $data->primary_id, $data);
+        return (new self($client, $data->primary_id))
+            ->init($data);
     }
 
     /**
-     * Do we have the full record, or only the fields from the search response?
+     * User constructor.
      *
-     * @return bool
+     * @param Client $client
+     * @param string $id
      */
-    public function hasFullRecord()
+    public function __construct(Client $client, $id)
     {
-        return isset($this->data->user_identifier);
+        $this->client = $client;
+        $this->id = $id;
     }
 
     /**
-     * Fetch the full record.
+     * Load data on this User object. Chainable method.
+     *
+     * @param \stdClass $data
+     *
+     * @return User
      */
-    public function fetch()
+    public function init($data = null)
     {
-        if ($this->hasFullRecord()) {
-            return;
+        if ($this->initialized) {
+            return $this;
         }
-        $this->data = $this->client->getJSON('/users/' . $this->_user_id);
+
+        if (is_null($data)) {
+            $data = $this->client->getJSON('/users/' . $this->id);
+        }
+
+        if (isset($data->user_identifier)) {
+            $this->_identifiers = new UserIdentifiers($data->primary_id, $data->user_identifier);
+            $this->initialized = true;
+        }
+
+        $this->data = $data;
+
+        return $this;
     }
 
     /**
+     * Get the complete user record.
+     *
      * @return \stdClass
      */
     public function getData()
     {
-        return $this->data;
+        return $this->init()->data;
     }
 
     /**
-     * Get user identifier of a given type, like 'BARCODE' or 'UNIV_ID'.
-     *
-     * @param string $id_type
+     * Get the primary id. No need to load the full record for this.
      *
      * @return string|null
      */
-    public function getIdOfType($id_type)
+    public function getPrimaryId()
     {
-        foreach ($this->user_identifier as $identifier) {
-            if ($identifier->id_type->value == $id_type) {
-                return $identifier->value;
-            }
-        }
+        return $this->primary_id;
     }
 
     /**
-     * Get the barcode.
+     * Get the user identifiers.
      *
-     * @return null|string
+     * @return UserIdentifier[]
      */
-    public function getBarcode()
+    public function getIdentifiers()
     {
-        return $this->getIdOfType('BARCODE');
+        return $this->init()->_identifiers;
     }
 
     /**
-     * Get the university id.
-     *
-     * @return null|string
+     * Magic!
      */
-    public function getUniversityId()
-    {
-        return $this->getIdOfType('UNIV_ID');
-    }
-
-    /**
-     * Get a flat array of all the user IDs.
-     *
-     * @return string[]
-     */
-    public function getIds()
-    {
-        $ids = [$this->primary_id];
-        foreach ($this->user_identifier as $identifier) {
-            $ids[] = $identifier->value;
-        }
-
-        return $ids;
-    }
-
     public function __get($key)
     {
+        // If there's a getter method, call it.
         $method = 'get' . ucfirst($key);
         if (method_exists($this, $method)) {
             return $this->$method();
         }
 
+        // If the property is defined in our data object, return it.
         if (isset($this->data->{$key})) {
             return $this->data->{$key};
-        } else {
-            // If initialized from a search, we don't have the full record.
-            // Let's fetch it.
-            $this->fetch();
-            if (isset($this->data->{$key})) {
-                return $this->data->{$key};
-            }
+        }
+
+        // Load the full record if needed.
+        $this->init();
+
+        // If there's a getter method on the UserIdentifiers object
+        // (getBarcode, getPrimaryId), call it.
+        if (method_exists($this->identifiers, $method)) {
+            return $this->identifiers->$method();
+        }
+
+        // Re-check if there's a property on our data object
+        if (isset($this->data->{$key})) {
+            return $this->data->{$key};
         }
     }
 }

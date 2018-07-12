@@ -30,6 +30,7 @@ class UsersSpec extends ObjectBehavior
 
         $user->shouldHaveType(User::class);
         $user->primary_id->shouldBe('12345');
+        $user->primaryId->shouldBe('12345');
     }
 
     public function it_provides_search(AlmaClient $almaClient)
@@ -42,5 +43,6 @@ class UsersSpec extends ObjectBehavior
 
         $first->shouldHaveType(User::class);
         $first->primary_id->shouldBe('1234567');
+        $first->primaryId->shouldBe('1234567');
     }
 }

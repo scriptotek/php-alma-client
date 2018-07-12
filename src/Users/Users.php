@@ -71,9 +71,9 @@ class Users extends ResourceList
                     continue;
                 }
 
-                $user = User::fromResponse($this->client, $data);
+                $user = User::fromSearchResponse($this->client, $data);
                 if ($expand) {
-                    $user->fetch();
+                    $user->init();
                 }
                 yield $user;
                 $offset++;

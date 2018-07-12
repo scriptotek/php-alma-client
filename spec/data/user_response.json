@@ -118,6 +118,36 @@
     "user_identifier": [
         {
             "id_type": {
+                "desc": "Barcode",
+                "value": "BARCODE"
+            },
+            "note": null,
+            "segment_type": "Internal",
+            "status": "INACTIVE",
+            "value": "ub12345"
+        },
+        {
+            "id_type": {
+                "desc": "Barcode",
+                "value": "BARCODE"
+            },
+            "note": null,
+            "segment_type": "Internal",
+            "status": "ACTIVE",
+            "value": "ub54321"
+        },
+        {
+            "id_type": {
+                "desc": "Barcode",
+                "value": "BARCODE"
+            },
+            "note": null,
+            "segment_type": "External",
+            "status": "ACTIVE",
+            "value": "ntb12897787"
+        },
+        {
+            "id_type": {
                 "desc": "University ID",
                 "value": "UNIV_ID"
             },
