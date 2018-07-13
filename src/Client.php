@@ -20,6 +20,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
+use Scriptotek\Alma\Bibs\Items;
 use Scriptotek\Alma\Exception\ClientException;
 use Scriptotek\Alma\Exception\MaxNumberOfAttemptsExhausted;
 use Scriptotek\Alma\Exception\SruClientNotSetException;
@@ -63,6 +64,9 @@ class Client
     /** @var Users */
     public $users;
 
+    /** @var Items */
+    public  $items;
+
     /** @var int Max number of retries if we get 429 errors */
     public $maxAttempts = 10;
 
@@ -103,6 +107,7 @@ class Client
 
         $this->zone = $zone;
         $this->bibs = new Bibs($this);  // Or do some magic instead?
+        $this->items = new Items($this);  // Or do some magic instead?
         $this->analytics = new Analytics($this);  // Or do some magic instead?
         $this->users = new Users($this);  // Or do some magic instead?
         if ($zone == Zones::INSTITUTION) {

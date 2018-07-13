@@ -295,6 +295,14 @@ convert a filter to SQL. The results looks like this:
 But used with the API, the response is the same as if you forget to include an
 "is prompted" filter: a loong wait follow by a "400 No more rows to fetch".
 
+## Items
+
+Retrieving an item by barcode:
+
+```php
+$item = $alma->items->fromBarcode('92nf02526');
+```
+
 ## Users
 
 **WARNING**: The interface is subject to change.

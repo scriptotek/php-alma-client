@@ -37,11 +37,16 @@ class Holding
     public function getItems()
     {
         if (!isset($this->_items)) {
-            $data = $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings/' . $this->holding_id . '/items');
+            $items = $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings/' . $this->holding_id . '/items');
 
-            $this->_items = array_map(function ($data) {
-                return new Item($data);
-            }, $data->item);
+            $this->_items = array_map(function ($itemData) {
+                return (new Item(
+                    $this->client,
+                    $this->mms_id,
+                    $this->holding_id,
+                    $itemData->item_data->pid
+                ))->init($itemData);
+            }, $items->item);
         }
 
         return $this->_items;
