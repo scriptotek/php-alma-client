@@ -3,19 +3,23 @@
 namespace spec\Scriptotek\Alma\Users;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\User;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class UserSpec extends ObjectBehavior
 {
-    public function let(AlmaClient $almaClient)
+    public function let(AlmaClient $client, UriInterface $url)
     {
-        $this->beConstructedWith($almaClient, '12345');
+        $this->beConstructedWith($client, '12345');
 
-        $almaClient->getJSON(Argument::containingString('12345'), Argument::any())
+        $client->buildUrl('/users/12345', [])
+            ->willReturn($url);
+
+        $client->getJSON($url)
             ->willReturn(SpecHelper::getDummyData('user_response.json'));
+
     }
 
     public function it_is_initializable()

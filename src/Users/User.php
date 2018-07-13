@@ -3,86 +3,42 @@
 namespace Scriptotek\Alma\Users;
 
 use Scriptotek\Alma\Client;
+use Scriptotek\Alma\GhostModel;
 
-class User
+class User extends GhostModel
 {
     /**
-     * This class is a ghost object that lazy loads the full record only when needed.
-     * If $initialized is false, it means we haven't yet loaded the full record.
-     * We can still have incomplete data from a search response.
+     * The primary id or some other id that can be used to fetch user information.
+     * @var string
      */
-    protected $initialized = false;
-
-    protected $client;
-
-    protected $id;
-
-    protected $_identifiers;
-
-    /* @var \stdClass */
-    protected $data;
+    protected $user_id;
 
     /**
-     * Create a user from a search response containing an incomplete user record.
-     *
-     * @param Client    $client
-     * @param \stdClass $data
-     *
-     * @return User
+     * @var UserIdentifiers
      */
-    public static function fromSearchResponse(Client $client, \stdClass $data)
-    {
-        return (new self($client, $data->primary_id))
-            ->init($data);
-    }
+    protected $_identifiers;
 
     /**
      * User constructor.
      *
      * @param Client $client
-     * @param string $id
+     * @param string $user_id
      */
-    public function __construct(Client $client, $id)
+    public function __construct(Client $client, $user_id)
     {
-        $this->client = $client;
-        $this->id = $id;
+        parent::__construct($client);
+        $this->user_id = $user_id;
     }
 
     /**
-     * Load data on this User object. Chainable method.
+     * Get the user id the object was constructed with. This might or might not be the primary id.
+     * The only usefulness of this method over getPrimaryId() is that it will not trigger loading of the full object.
      *
-     * @param \stdClass $data
-     *
-     * @return User
+     * @return string
      */
-    public function init($data = null)
+    public function getUserId()
     {
-        if ($this->initialized) {
-            return $this;
-        }
-
-        if (is_null($data)) {
-            $data = $this->client->getJSON('/users/' . $this->id);
-        }
-
-        if (isset($data->user_identifier)) {
-            $this->_identifiers = new UserIdentifiers($data->primary_id, $data->user_identifier);
-            $this->initialized = true;
-        }
-
-        $this->data = $data;
-
-        return $this;
-    }
-
-    /**
-     * Get the complete user record.
-     *
-     * @return \stdClass
-     */
-    public function getData()
-    {
-        return $this->init()->data;
+        return $this->user_id;
     }
 
     /**
@@ -98,7 +54,7 @@ class User
     /**
      * Get the user identifiers.
      *
-     * @return UserIdentifier[]
+     * @return UserIdentifiers
      */
     public function getIdentifiers()
     {
@@ -106,8 +62,37 @@ class User
     }
 
     /**
-     * Magic!
+     * Check if we have the full representation of our data object.
+     *
+     * @param \stdClass $data
+     * @return boolean
      */
+    protected function isInitialized($data)
+    {
+        return isset($data->user_identifier);
+    }
+
+    /**
+     * Store data onto object.
+     *
+     * @param \stdClass $data
+     */
+    protected function setData(\stdClass $data)
+    {
+        $this->_identifiers = UserIdentifiers::make($this->client, $data);
+    }
+
+
+    /**
+     * Generate the base URL for this resource.
+     *
+     * @return string
+     */
+    protected function urlBase()
+    {
+        return "/users/{$this->user_id}";
+    }
+
     public function __get($key)
     {
         // If there's a getter method, call it.
@@ -134,5 +119,7 @@ class User
         if (isset($this->data->{$key})) {
             return $this->data->{$key};
         }
+
+        return null;
     }
 }

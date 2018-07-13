@@ -10,31 +10,27 @@ use Scriptotek\Alma\Client;
  */
 class Report
 {
-    public $path;
-    public $chunkSize = 1000;
-
     /** @var Client */
     protected $client;
 
+    /** @var string */
+    public $path;
+
+    /** @var integer */
+    public $chunkSize = 1000;
+
+    /** @var array */
     protected $headers = [];
+
+    /** @var string */
+    public $filter;
 
     public function __construct(Client $client = null, $path = null, $headers = [], $filter = null)
     {
-        $this->path = $path;
         $this->client = $client;
-
+        $this->path = $path;
         $this->headers = $headers;
         $this->filter = $filter;
-    }
-
-    public function __get($key)
-    {
-        if ($key == 'rows') {
-            return $this->getRows();
-        }
-        if ($key == 'headers') {
-            return $this->headers;
-        }
     }
 
     protected function fetchRows($resumptionToken = null)
@@ -102,5 +98,17 @@ class Report
             $resumptionToken = $results->text('/report/QueryResult/ResumptionToken') ?: $resumptionToken;
             $isFinished = ($results->text('/report/QueryResult/IsFinished') == 'true');
         }
+    }
+
+    public function __get($key)
+    {
+        if ($key == 'rows') {
+            return $this->getRows();
+        }
+        if ($key == 'headers') {
+            return $this->headers;
+        }
+
+        return null;
     }
 }

@@ -28,6 +28,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   `$user->identifiers->firstOfType(...)` and `$user->identifiers->all()`.
   All methods now return only identifiers with status 'ACTIVE' by default.
   Removed the `$user->hasFullRecord()` method.
+- Replaced the `ResourceList` base model with `GhostModel` and `Model` for models that can/cannot
+  be lazy-loaded respectively.
+- Removed the `Bib::getXml()` method in favour of a standardized `getData()` method part
+  of the new `Model` base model.
+- Removed `$client->bibs->getHolding($mmsId, $holdingId)`, please use
+  `$client->bibs[$mmsId]->holdings[$holdingId]` instead. It's lazy-loaded, so
+  there's no performance drawback of the new interface.
+
 
 ### Fixed
 

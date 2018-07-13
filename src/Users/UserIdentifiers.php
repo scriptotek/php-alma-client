@@ -2,36 +2,20 @@
 
 namespace Scriptotek\Alma\Users;
 
-class UserIdentifiers
+use Scriptotek\Alma\Model;
+
+class UserIdentifiers extends Model
 {
-    /* @var string */
-    protected $id;
-
-    /* @var \stdClass */
-    protected $data;
-
-    /**
-     * UserIdentifiers constructor.
-     *
-     * @param \stdClass   $data
-     */
-    public function __construct($id, $data = null)
-    {
-        $this->id = $id;
-        $this->data = is_null($data) ? [] : $data;
-    }
-
     /**
      * Get a flat array of all the user IDs.
      *
      * @param string $status (Default: 'ACTIVE').
-     *
      * @return string[]
      */
     public function all($status='ACTIVE')
     {
-        $ids = [$this->id];
-        foreach ($this->data as $identifier) {
+        $ids = [$this->data->primary_id];
+        foreach ($this->data->user_identifier as $identifier) {
             if (is_null($status) || $identifier->status == $status) {
                 $ids[] = $identifier->value;
             }
@@ -44,13 +28,13 @@ class UserIdentifiers
      * Get all active user identifiers of a given type, like 'BARCODE' or 'UNIV_ID'.
      *
      * @param string $value
-     *
-     * @return null|string
+     * @param string $status
+     * @return array
      */
     public function allOfType($value, $status = 'ACTIVE')
     {
         $ids = [];
-        foreach ($this->data as $identifier) {
+        foreach ($this->data->user_identifier as $identifier) {
             if ($identifier->id_type->value == $value && (is_null($status) || $identifier->status == $status)) {
                 $ids[] = $identifier->value;
             }
@@ -62,12 +46,12 @@ class UserIdentifiers
      * Get the first active user identifier of a given type, like 'BARCODE' or 'UNIV_ID'.
      *
      * @param string $value
-     *
+     * @param string $status
      * @return null|string
      */
     public function firstOfType($value, $status = 'ACTIVE')
     {
-        foreach ($this->data as $identifier) {
+        foreach ($this->data->user_identifier as $identifier) {
             if ($identifier->id_type->value == $value && (is_null($status) || $identifier->status == $status)) {
                 return $identifier->value;
             }
@@ -112,13 +96,5 @@ class UserIdentifiers
     public function getUniversityIds()
     {
         return $this->allOfType('UNIV_ID');
-    }
-
-    public function __get($key)
-    {
-        $method = 'get' . ucfirst($key);
-        if (method_exists($this, $method)) {
-            return $this->$method();
-        }
     }
 }

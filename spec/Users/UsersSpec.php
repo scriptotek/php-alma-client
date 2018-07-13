@@ -4,6 +4,7 @@ namespace spec\Scriptotek\Alma\Users;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\User;
 use Scriptotek\Alma\Users\Users;
@@ -11,9 +12,9 @@ use spec\Scriptotek\Alma\SpecHelper;
 
 class UsersSpec extends ObjectBehavior
 {
-    public function let(AlmaClient $almaClient)
+    public function let(AlmaClient $client)
     {
-        $this->beConstructedWith($almaClient);
+        $this->beConstructedWith($client);
     }
 
     public function it_is_initializable()
@@ -21,9 +22,23 @@ class UsersSpec extends ObjectBehavior
         $this->shouldHaveType(Users::class);
     }
 
-    public function it_provides_lookup_by_id(AlmaClient $almaClient)
+    public function it_provides_lazy_lookup_by_id(AlmaClient $client)
     {
-        $almaClient->getJSON(Argument::containingString('12345'), Argument::any())
+        $client->buildUrl('/users/12345', [])
+            ->shouldNotBeCalled();
+
+        $user = $this->get('12345');
+        $user->shouldHaveType(User::class);
+    }
+
+    public function it_provides_lookup_by_id(AlmaClient $client, UriInterface $url)
+    {
+        $client->buildUrl('/users/12345', [])
+            ->shouldBeCalled()
+            ->willReturn($url);
+
+        $client->getJSON($url)
+            ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('user_response.json'));
 
         $user = $this->get('12345');
@@ -33,9 +48,9 @@ class UsersSpec extends ObjectBehavior
         $user->primaryId->shouldBe('12345');
     }
 
-    public function it_provides_search(AlmaClient $almaClient)
+    public function it_provides_search(AlmaClient $client)
     {
-        $almaClient->getJSON(Argument::containingString('users'), Argument::any())
+        $client->getJSON(Argument::containingString('users'), Argument::any())
             ->willReturn(SpecHelper::getDummyData('users_response.json'));
 
         $users = $this->search('last_name~banan');

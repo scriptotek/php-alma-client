@@ -1,0 +1,36 @@
+{
+    "bib_data": {
+        "author": "Vollset, K.",
+        "date_of_publication": "2000",
+        "isbn": "8247806290",
+        "issn": null,
+        "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990006312214702204",
+        "mms_id": "990006312214702204",
+        "network_number": [
+            "(NO-TrBIB)092093302",
+            "(NO-TrBIB)000631221",
+            "000631221-47bibsys_network",
+            "(EXLNZ-47BIBSYS_NETWORK)990006312214702201"
+        ],
+        "place_of_publication": "[Oslo]",
+        "publisher": "Gyldendal Tiden",
+        "title": "Bananboken"
+    },
+    "holding": [
+        {
+            "call_number": "Ung 839.82 Vol:Ban",
+            "holding_id": "22163771200002204",
+            "library": {
+                "desc": "UiO HumSam-biblioteket",
+                "value": "1030300"
+            },
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990006312214702204/holdings/22163771200002204",
+            "location": {
+                "desc": "UHS S-Litt",
+                "value": "k00040"
+            },
+            "suppress_from_publishing": "false"
+        }
+    ],
+    "total_record_count": 1
+}

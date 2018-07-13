@@ -3,7 +3,7 @@
 namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Holdings;
 use Scriptotek\Alma\Client as AlmaClient;
@@ -53,10 +53,10 @@ class HoldingsSpec extends ObjectBehavior
           "total_record_count": 2
         }';
 
-    public function let(AlmaClient $almaClient)
+    public function let(AlmaClient $client)
     {
         $mms_id = 'abc';
-        $this->beConstructedWith($almaClient, null, $mms_id);
+        $this->beConstructedWith($client, $mms_id);
     }
 
     public function it_is_initializable()
@@ -64,22 +64,31 @@ class HoldingsSpec extends ObjectBehavior
         $this->shouldHaveType(Holdings::class);
     }
 
-    public function it_is_countable(AlmaClient $almaClient)
+    public function it_is_countable(AlmaClient $client, UriInterface $url)
     {
-        $almaClient->getJSON(Argument::any())
+        $client->buildUrl('/bibs/abc/holdings', [])
+            ->shouldBeCalled()
+            ->willReturn($url);
+
+        $client->getJSON($url)
             ->shouldBeCalled()
             ->willReturn(json_decode($this->sample));
 
         $this->shouldHaveCount(2);
     }
 
-    public function it_provides_an_iterator_interface_to_holding_objects(AlmaClient $almaClient)
+    public function it_provides_an_iterator_interface_to_holding_objects(AlmaClient $client, UriInterface $url)
     {
-        $almaClient->getJSON(Argument::any())
+        $client->buildUrl('/bibs/abc/holdings', [])
+            ->shouldBeCalled()
+            ->willReturn($url);
+
+        $client->getJSON($url)
             ->shouldBeCalled()
             ->willReturn(json_decode($this->sample));
 
         $this->shouldImplement('Iterator');
+
         $this->current()->shouldHaveType(Holding::class);
     }
 }

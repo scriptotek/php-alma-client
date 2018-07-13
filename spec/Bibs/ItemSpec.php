@@ -3,20 +3,20 @@
 namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-use Scriptotek\Alma\Bibs\Holding;
+use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Bibs\Item;
 use Scriptotek\Alma\Client as AlmaClient;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class ItemSpec extends ObjectBehavior
 {
-    public function let(AlmaClient $almaClient)
+    public function let(AlmaClient $client)
     {
-        $mms_id = 'abc';
-        $holdings_id = '123';
-        $item_id = '99991';
-        $this->beConstructedWith($almaClient, $mms_id, $holdings_id, $item_id);
+        $mms_id = '990006312214702204';
+        $holdings_id = '22163771200002204';
+        $item_id = '23163771190002204';
+
+        $this->beConstructedWith($client, $mms_id, $holdings_id, $item_id);
     }
 
     public function it_is_initializable()

@@ -5,123 +5,82 @@ namespace Scriptotek\Alma\Bibs;
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\NoLinkedNetworkZoneRecordException;
+use Scriptotek\Alma\GhostModel;
+use Scriptotek\Alma\GhostResource;
 use Scriptotek\Marc\Record as MarcRecord;
 use Scriptotek\Sru\Record as SruRecord;
 
-class Bib
+class Bib extends GhostModel
 {
+    /** @var string */
     public $mms_id;
 
-    /** @var Client */
-    protected $client;
-
-    /** @var QuiteSimpleXMLElement */
-    protected $bib_data = null;
-
     /* @var MarcRecord */
-    protected $marc_data = null;
+    protected $_marc;
 
-    protected $_holdings = null;
+    /* @var Holdings */
+    public $holdings;
 
-    public function __construct(Client $client = null, $mms_id = null, MarcRecord $marc_data = null, QuiteSimpleXMLElement $bib_data = null)
+    public function __construct(Client $client = null, $mms_id = null)
     {
+        parent::__construct($client);
         $this->mms_id = $mms_id;
-        $this->client = $client;
-        $this->marc_data = $marc_data;
-        $this->bib_data = $bib_data;
-        $this->extractMarcDataFromBibData();
+        $this->holdings = Holdings::make($this->client, $this->mms_id);
+    }
+
+    /**
+     * Load MARC record onto this Bib object. Chainable method.
+     *
+     * @param string $xml
+     *
+     * @return Bib
+     */
+    public function setMarcRecord($xml)
+    {
+        // Workaround for a long-standing API-bug
+        $xml = str_replace('UTF-16', 'UTF-8', $xml);
+
+        $this->_marc = MarcRecord::fromString($xml);
+        // Note: do not marc as initialized, since we miss some other data from the Bib record. Oh, Alma :/
+
+        return $this;
     }
 
     /**
      * Initialize from SRU record without having to fetch the Bib record.
+     * @param SruRecord $record
+     * @param Client|null $client
+     * @return Bib
      */
     public static function fromSruRecord(SruRecord $record, Client $client = null)
     {
         $record->data->registerXPathNamespace('marc', 'http://www.loc.gov/MARC21/slim');
-        $marcRecord = MarcRecord::fromString($record->data->asXML());
+        $mmsId = $record->data->text('.//controlfield[@tag="001"]');
 
-        return new self($client, strval($marcRecord->id), $marcRecord);
-    }
-
-    /* Lazy load */
-    protected function load()
-    {
-        if (!is_null($this->bib_data)) {
-            return;  // we already have the data and won't re-fetch
-        }
-
-        $options = [];
-        $this->bib_data = $this->client->getXML('/bibs/' . $this->mms_id, $options);
-
-        $mms_id = $this->bib_data->text('mms_id');
-        if ($mms_id != $this->mms_id) {
-            throw new \ErrorException('Record mms_id ' . $mms_id . ' does not match requested mms_id ' . $this->mms_id . '.');
-        }
-
-        $this->extractMarcDataFromBibData();
-    }
-
-    /**
-     * Extract and parse the MARC data in the <record> tag
-     * as a MarcRecord object.
-     */
-    protected function extractMarcDataFromBibData()
-    {
-        if (is_null($this->bib_data)) {
-            return;
-        }
-
-        $bibNode = $this->bib_data->el;
-
-        // If we already have the MARC record (from SRU), we should not
-        // overwrite it in case the user has made edits to it.
-        if (is_null($this->marc_data)) {
-            $this->marc_data = MarcRecord::fromString($bibNode->record->asXML());
-        }
-
-        $bibNode->record = null;
-    }
-
-    public function getHolding($holding_id)
-    {
-        return new Holding($this->client, $this->mms_id, $holding_id);
+        return (new self($client, $mmsId))
+            ->setMarcRecord($record->data->asXML());
     }
 
     public function getHoldings()
     {
-        if (is_null($this->_holdings)) {
-            $this->_holdings = new Holdings($this->client, $this->mms_id);
-        }
-
-        return $this->_holdings;
+        return $this->holdings;
     }
 
     public function save()
     {
         // If initialized from an SRU record, we need to fetch the
         // remaining parts of the Bib record.
-        $this->load();
+        $this->init();
 
-        // Inject the MARC record
-        $marcXml = new QuiteSimpleXMLElement($this->marc_data->toXML('UTF-8', false, false));
-        $this->bib_data->first('record')->replace($marcXml);
+        // Serialize the MARC record
+        $data = $this->_marc->toXML('UTF-8', false, false);
 
-        // Serialize
-        $newData = $this->bib_data->asXML();
+        // but wait, Alma hates namespaces, so we have to remove them...
+        $data = str_replace(' xmlns="http://www.loc.gov/MARC21/slim"', '', $data);
 
-        // Alma doesn't like namespaces
-        $newData = str_replace(' xmlns="http://www.loc.gov/MARC21/slim"', '', $newData);
+        $this->data->anies = [$data];
 
-        return $this->client->putXML('/bibs/' . $this->mms_id, $newData);
-    }
-
-    public function getXml()
-    {
-        if (is_null($this->bib_data)) {
-            $this->load();
-        }
-
-        return $this->bib_data->asXML();
+        return $this->client->putJSON('/bibs/' . $this->mms_id, $data);
     }
 
     /**
@@ -131,9 +90,10 @@ class Bib
     {
         // If initialized from an SRU record, we need to fetch the
         // remaining parts of the Bib record.
-        $this->load();
+        $this->init();
 
-        $nz_mms_id = $this->bib_data->text('linked_record_id[@type="NZ"]');
+        // @TODO: What if record is also linked to CZ? Probably an array is returned.
+        $nz_mms_id = $this->data->linked_record_id->value;
         if (!$nz_mms_id) {
             throw new NoLinkedNetworkZoneRecordException("Record $this->mms_id is not linked to a network zone record.");
         }
@@ -150,27 +110,44 @@ class Bib
     }
 
     /**
-     * Returns the MARC record.
+     * Returns the MARC record. Load it if we don't have it yet.
      */
     public function getRecord()
     {
-        if (is_null($this->marc_data)) {
-            $this->load();
+        if (is_null($this->_marc)) {
+            $this->init();
         }
-
-        return $this->marc_data;
+        return $this->_marc;
     }
 
-    public function __get($key)
+    /**
+     * Store data onto object.
+     *
+     * @param \stdClass $data
+     */
+    protected function setData(\stdClass $data)
     {
-        if ($key == 'record') {
-            return $this->getRecord();
-        }
-        if ($key == 'holdings') {
-            return $this->getHoldings();
-        }
-        $this->load();
+        $this->setMarcRecord($data->anies[0]);
+    }
 
-        return $this->bib_data->text($key);
+    /**
+     * Check if we have the full representation of our data object.
+     *
+     * @param \stdClass $data
+     * @return boolean
+     */
+    protected function isInitialized($data)
+    {
+        return isset($data->anies);
+    }
+
+    /**
+     * Generate the base URL for this resource.
+     *
+     * @return string
+     */
+    protected function urlBase()
+    {
+        return "/bibs/{$this->mms_id}";
     }
 }

@@ -2,9 +2,20 @@
 
 namespace Scriptotek\Alma\Analytics;
 
-use Scriptotek\Alma\ResourceList;
+use Scriptotek\Alma\Client;
 
-class Analytics extends ResourceList
+class Analytics
 {
-    protected $resourceName = Report::class;
+    /** @var Client */
+    protected $client;
+
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+
+    public function get(...$args)
+    {
+        return new Report($this->client, ...$args);
+    }
 }

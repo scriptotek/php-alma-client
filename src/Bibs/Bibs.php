@@ -2,11 +2,27 @@
 
 namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\ResourceList;
+use Scriptotek\Alma\Client;
 
-class Bibs extends ResourceList
+class Bibs
 {
-    protected $resourceName = Bib::class;
+    protected $client;
+
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * Get a Bib object.
+     *
+     * @param $mms_id
+     * @return Bib
+     */
+    public function get($mms_id)
+    {
+        return Bib::make($this->client, $mms_id);
+    }
 
     /**
      * Get a Bib object from a item barcode.
@@ -37,11 +53,9 @@ class Bibs extends ResourceList
      */
     public function fromHoldingsId($holdings_id)
     {
-        $response = $this->client->getXML('/bibs', ['holdings_id' => $holdings_id]);
-        $bib_data = $response->first('bib');
-        $mms_id = $bib_data->text('mms_id');
+        $data = $this->client->getJSON('/bibs', ['holdings_id' => $holdings_id]);
 
-        return $this->get($mms_id, null, null, $bib_data);
+        return $this->get($data->bib[0]->mms_id)->init($data->bib[0]);
     }
 
     /**

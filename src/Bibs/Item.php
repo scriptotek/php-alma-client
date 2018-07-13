@@ -3,21 +3,10 @@
 namespace Scriptotek\Alma\Bibs;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\GhostResource;
-use Scriptotek\Alma\Users\User;
+use Scriptotek\Alma\GhostModel;
 
-class Item implements GhostResource
+class Item extends GhostModel
 {
-    /**
-     * This class is a ghost object that lazy loads the full record only when needed.
-     * If $initialized is false, it means we haven't yet loaded the full record.
-     * We can still have incomplete data from a search response.
-     */
-    protected $initialized = false;
-
-    /** @var Client */
-    protected $client;
-
     /** @var string */
     protected $mms_id;
 
@@ -27,8 +16,11 @@ class Item implements GhostResource
     /** @var string */
     protected $item_id;
 
-    /* @var \stdClass */
-    protected $data;
+    /** @var Bib */
+    public $bib;
+
+    /** @var Holding */
+    public $holding;
 
     /**
      * Item constructor.
@@ -39,46 +31,54 @@ class Item implements GhostResource
      */
     public function __construct(Client $client, $mms_id, $holding_id, $item_id)
     {
-        $this->client = $client;
+        parent::__construct($client);
         $this->mms_id = $mms_id;
         $this->holding_id = $holding_id;
         $this->item_id = $item_id;
+        $this->bib = Bib::make($this->client, $mms_id);
+        $this->holding = Holding::make($this->client, $mms_id, $holding_id);
     }
 
     /**
-     * Load data onto this Item object. Chainable method.
+     * Generate the base URL for this resource.
+     *
+     * @return string
+     */
+    protected function urlBase()
+    {
+        return "/bibs/{$this->mms_id}/holdings/{$this->holding_id}/items/{$this->item_id}";
+    }
+
+    /**
+     * Check if we have the full representation of our data object.
      *
      * @param \stdClass $data
-     *
-     * @return Item
+     * @return boolean
      */
-    public function init($data = null)
+    protected function isInitialized($data)
     {
-        if ($this->initialized) {
-            return $this;
-        }
-
-        if (is_null($data)) {
-            $data = $this->client->getJSON("/bibs/{$this->mms_id}/holdings/{$this->holding_id}/items/{$this->item_id}");
-        }
-
-        if (isset($data->item_data)) {
-            $this->initialized = true;
-        }
-
-        $this->data = $data;
-
-        return $this;
+        return isset($data->item_data);
     }
 
-    public function getData()
+    /**
+     * Store data onto object.
+     *
+     * @param \stdClass $data
+     */
+    protected function setData(\stdClass $data)
     {
-        return $this->init()->data;
-    }
+        if (isset($this->bib_data)) {
+            $this->bib->init($this->bib_data);
+        }
+        if (isset($this->holding_data)) {
+            $this->holding->init($this->holding_data);
+        }
     }
 
     public function __get($key)
     {
+        $this->init();
+
         if (isset($this->data->item_data->{$key})) {
             return $this->data->item_data->{$key};
         }
@@ -88,5 +88,7 @@ class Item implements GhostResource
         if (isset($this->data->bib_data->{$key})) {
             return $this->data->bib_data->{$key};
         }
+
+        return parent::__get($key);
     }
 }

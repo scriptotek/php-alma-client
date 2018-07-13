@@ -4,6 +4,7 @@ namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Item;
 use Scriptotek\Alma\Client as AlmaClient;
@@ -11,11 +12,11 @@ use spec\Scriptotek\Alma\SpecHelper;
 
 class HoldingSpec extends ObjectBehavior
 {
-    public function let(AlmaClient $almaClient)
+    public function let(AlmaClient $client)
     {
         $mms_id = 'abc';
         $holdings_id = '123';
-        $this->beConstructedWith($almaClient, $mms_id, $holdings_id);
+        $this->beConstructedWith($client, $mms_id, $holdings_id);
     }
 
     public function it_is_initializable()
@@ -23,13 +24,18 @@ class HoldingSpec extends ObjectBehavior
         $this->shouldHaveType(Holding::class);
     }
 
-    public function it_has_items(AlmaClient $almaClient)
+    public function it_has_items(AlmaClient $client, UriInterface $url)
     {
-        $almaClient->getJSON(Argument::containingString('123'))
+        $client->buildUrl('/bibs/abc/holdings/123/items', [])
+            ->shouldBeCalled()
+            ->willReturn($url);
+
+        $client->getJSON($url)
+            ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('items_response.json'));
 
         $items = $this->items;
         $items->shouldHaveCount(9);
-        $items[0]->shouldHaveType(Item::class);
+        $items->current()->shouldHaveType(Item::class);
     }
 }

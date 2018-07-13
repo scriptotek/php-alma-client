@@ -13,18 +13,7 @@ trait IterableResource
 
     public function current()
     {
-        return $this->factory(
-            $this->getFactoryArgs($this->resources()[$this->position])
-        );
-    }
-
-    public function resources($force = false)
-    {
-        if ($force || !isset($this->_resources)) {
-            $this->_resources = $this->getResources();
-        }
-
-        return $this->_resources;
+        return $this->init()->resources[$this->position];
     }
 
     public function key()

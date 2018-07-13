@@ -3,16 +3,15 @@
 namespace Scriptotek\Alma\Bibs;
 
 use Scriptotek\Alma\Client;
+use Scriptotek\Alma\CountableGhostModelList;
 use Scriptotek\Alma\IterableResource;
-use Scriptotek\Alma\ResourceList;
 
-class Holdings extends ResourceList implements \Countable, \Iterator
+class Holdings extends CountableGhostModelList implements \Countable, \Iterator
 {
     use IterableResource;
 
-    protected $resourceName = Holding::class;
-    protected $mms_id;
-    protected $data;
+    /* @var string */
+    public $mms_id;
 
     public function __construct(Client $client, $mms_id)
     {
@@ -20,31 +19,35 @@ class Holdings extends ResourceList implements \Countable, \Iterator
         $this->mms_id = $mms_id;
     }
 
-    public function getFactoryArgs($element)
+    public function setData(\stdClass $data)
     {
-        $holding_id = $element->holding_id;
-
-        return [$this->mms_id, $holding_id];
-    }
-
-    public function getResources()
-    {
-        if (!isset($this->data)) {
-            $this->data = $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings')->holding;
-        }
-
-        return $this->data;
+        $this->resources = array_map(
+            function (\stdClass $holding) {
+                return Holding::make($this->client, $this->mms_id, $holding->holding_id)
+                    ->init($holding);
+            },
+            $data->holding
+        );
     }
 
     /**
-     * Number of holdings.
+     * Check if we have the full representation of our data object.
      *
-     * @link http://php.net/manual/en/countable.count.php
-     *
-     * @return int The number of holdings as an integer.
+     * @param \stdClass $data
+     * @return boolean
      */
-    public function count()
+    protected function isInitialized($data)
     {
-        return count($this->getResources());
+        return $data->total_record_count;
+    }
+
+    /**
+     * Generate the base URL for this resource.
+     *
+     * @return string
+     */
+    protected function urlBase()
+    {
+        return "/bibs/{$this->mms_id}/holdings";
     }
 }

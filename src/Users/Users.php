@@ -2,12 +2,28 @@
 
 namespace Scriptotek\Alma\Users;
 
+use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\InvalidQueryException;
-use Scriptotek\Alma\ResourceList;
 
-class Users extends ResourceList
+class Users
 {
-    protected $resourceName = User::class;
+    protected $client;
+
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * Get a User object by id.
+     *
+     * @param $user_id
+     * @return User
+     */
+    public function get($user_id)
+    {
+        return User::make($this->client, $user_id);
+    }
 
     /**
      * Iterates over all users matching the given query.
@@ -70,8 +86,8 @@ class Users extends ResourceList
                 if (strpos($data->primary_id, 'no primary id') === 0) {
                     continue;
                 }
-
-                $user = User::fromSearchResponse($this->client, $data);
+                $user = User::make($this->client, $data->primary_id)
+                    ->init($data);
                 if ($expand) {
                     $user->init();
                 }

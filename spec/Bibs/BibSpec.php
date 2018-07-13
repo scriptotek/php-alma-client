@@ -4,6 +4,7 @@ namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Holding;
@@ -14,28 +15,45 @@ use spec\Scriptotek\Alma\SpecHelper;
 
 class BibSpec extends ObjectBehavior
 {
-    public function let(AlmaClient $almaClient)
+    public function let(AlmaClient $client, UriInterface $url)
     {
         $mms_id = '999104760474702204';
-        $this->beConstructedWith($almaClient, $mms_id);
-
-        $almaClient->getXML(Argument::containingString('999104760474702204'), Argument::any())
-            ->willReturn(SpecHelper::getDummyData('bib_response_iz.xml'));
+        $this->beConstructedWith($client, $mms_id);
     }
 
-    public function it_is_initializable()
+    protected function expectNoRequests($client) {
+        $client->getJSON(Argument::any(), Argument::any())
+            ->shouldNotBeCalled();
+    }
+
+    protected function expectRequest($client, $url) {
+        $client->buildUrl('/bibs/999104760474702204', [])
+            ->shouldBeCalled()
+            ->willReturn($url);
+
+        $client->getJSON($url)
+            ->shouldBeCalled()
+            ->willReturn(SpecHelper::getDummyData('bib_response_iz.json'));
+    }
+
+    public function it_is_lazy(AlmaClient $client)
     {
+        $this->expectNoRequests($client);
         $this->shouldHaveType(Bib::class);
     }
 
-    public function it_provides_bib_record_data()
+    public function it_loads_bib_data_when_needed(AlmaClient $client, UriInterface $url)
     {
+        $this->expectRequest($client, $url);
+
         $this->created_date->shouldBe('2015-11-05Z');
     }
 
-    public function it_links_to_network_zone(AlmaClient $almaClient, AlmaClient $nz, Bibs $bibs, Bib $nz_bib)
+    public function it_links_to_network_zone(AlmaClient $client, AlmaClient $nz, Bibs $bibs, Bib $nz_bib, UriInterface $url)
     {
-        $almaClient->nz = $nz;
+        $this->expectRequest($client, $url);
+
+        $client->nz = $nz;
         $nz->bibs = $bibs;
         $bibs->get('999104760474702201')
             ->shouldBeCalled()
@@ -44,27 +62,27 @@ class BibSpec extends ObjectBehavior
         $this->getNzRecord()->shouldHaveType(Bib::class);
     }
 
-    public function it_has_holdings()
+    public function it_provides_lazy_access_to_holdings(AlmaClient $client)
     {
+        $this->expectNoRequests($client);
         $this->holdings->shouldHaveType(Holdings::class);
     }
 
-    public function it_allows_looking_up_a_single_holding()
+    public function it_has_a_MARC_record(AlmaClient $client, UriInterface $url)
     {
-        $this->getHolding('123')->shouldHaveType(Holding::class);
-    }
+        $this->expectRequest($client, $url);
 
-    public function it_has_a_MARC_record()
-    {
         $this->record->shouldHaveType(Record::class);
         $this->record->getField('245')->getSubfield('a')->getData()->shouldBe('Lonely hearts of the cosmos :');
     }
 
-    public function it_can_be_edited(AlmaClient $almaClient)
+    public function it_can_be_edited(AlmaClient $client, UriInterface $url)
     {
+        $this->expectRequest($client, $url);
+
         $this->record->getField('245')->getSubfield('a')->setData('New title');
 
-        $almaClient->putXML('/bibs/999104760474702204', Argument::containingString('New title'))
+        $client->putJSON('/bibs/999104760474702204', Argument::containingString('New title'))
             ->shouldBeCalled();
         $this->save();
     }

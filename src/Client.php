@@ -173,17 +173,23 @@ class Client
     }
 
     /**
-     * @param string $url
+     * @param string $url|UriInterface
      * @param array  $query
      *
      * @return UriInterface
      */
-    protected function getFullUri($url, $query = [])
+    public function buildUrl($url, $query = [])
     {
+        if (!is_a($url, UriInterface::class)) {
+            if (strpos($url, $this->baseUrl) === false) {
+                $url = $this->baseUrl . $url;
+            }
+            $url = $this->uriFactory->createUri($url);
+        }
+
         $query['apikey'] = $this->key;
 
-        return $this->uriFactory->createUri($this->baseUrl . $url)
-            ->withQuery(http_build_query($query));
+        return $url->withQuery(http_build_query($query));
     }
 
     /**
@@ -235,7 +241,7 @@ class Client
     /**
      * Make a GET request.
      *
-     * @param string $url
+     * @param string $url|UriInterface
      * @param array  $query
      * @param string $contentType
      *
@@ -243,11 +249,11 @@ class Client
      */
     public function get($url, $query = [], $contentType = 'application/json')
     {
-        $uri = $this->getFullUri($url, $query);
+        $url = $this->buildUrl($url, $query);
         $headers = [
             'Accept' => $contentType,
         ];
-        $request = $this->messageFactory->createRequest('GET', $uri, $headers);
+        $request = $this->messageFactory->createRequest('GET', $url, $headers);
         $response = $this->request($request);
 
         return strval($response->getBody());
@@ -294,7 +300,7 @@ class Client
      */
     public function put($url, $data, $contentType = 'application/json')
     {
-        $uri = $this->getFullUri($url);
+        $uri = $this->buildUrl($url);
         $headers = [];
         if (!is_null($contentType)) {
             $headers['Content-Type'] = $contentType;
@@ -336,6 +342,58 @@ class Client
     }
 
     /**
+     * Make a POST request.
+     *
+     * @param string $url
+     * @param $data
+     * @param string $contentType
+     *
+     * @return bool
+     */
+    public function post($url, $data, $contentType = 'application/json')
+    {
+        $uri = $this->buildUrl($url);
+        $headers = [];
+        if (!is_null($contentType)) {
+            $headers['Content-Type'] = $contentType;
+            $headers['Accept'] = $contentType;
+        }
+        $request = $this->messageFactory->createRequest('POST', $uri, $headers, $data);
+        $response = $this->request($request);
+
+        // Consider it a success if status code is 2XX
+        return substr($response->getStatusCode(), 0, 1) == '2';
+    }
+
+    /**
+     * Make a POST request, sending JSON data.
+     *
+     * @param string $url
+     * @param $data
+     *
+     * @return bool
+     */
+    public function postJSON($url, $data = null)
+    {
+        $data = json_encode($data);
+
+        return $this->post($url, $data, 'application/json');
+    }
+
+    /**
+     * Make a POST request, sending XML data.
+     *
+     * @param string $url
+     * @param $data
+     *
+     * @return bool
+     */
+    public function postXML($url, $data = null)
+    {
+        return $this->post($url, $data, 'application/xml');
+    }
+
+    /**
      * Get the redirect target location of an URL, or null if not a redirect.
      *
      * @param string $url
@@ -345,7 +403,7 @@ class Client
      */
     public function getRedirectLocation($url, $query = [])
     {
-        $uri = $this->getFullUri($url, $query);
+        $uri = $this->buildUrl($url, $query);
         $request = $this->messageFactory->createRequest('GET', $uri);
 
         try {
@@ -357,5 +415,15 @@ class Client
         $locations = $response->getHeader('Location');
 
         return count($locations) ? $locations[0] : null;
+    }
+
+    /**
+     * @param class $className
+     * @param array ...$params
+     * @return mixed
+     */
+    public function make($className, ...$params)
+    {
+        return new $className($this, ...$params);
     }
 }

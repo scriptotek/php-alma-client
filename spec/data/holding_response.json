@@ -1,0 +1,11 @@
+{
+    "anies": [
+        "<?xml version=\"1.0\" encoding=\"UTF-16\"?>\n<record>\n  \n    <leader>00370nx  a2200133ui 4500</leader>\n    <controlfield tag=\"001\">h449730-47bibsys_ubo</controlfield>\n    <controlfield tag=\"004\">000631221-47bibsys_ubo</controlfield>\n    <controlfield tag=\"007\">ta</controlfield>\n    <controlfield tag=\"008\">1511020l||||||||4   uu</controlfield>\n    <controlfield tag=\"009\">kat</controlfield>\n    <datafield ind1=\"1\" ind2=\" \" tag=\"014\">\n      <subfield code=\"a\">000631221</subfield>\n      <subfield code=\"b\">(NO-TrBIB)</subfield>\n    </datafield>\n    <datafield ind1=\" \" ind2=\" \" tag=\"035\">\n      <subfield code=\"a\">00kj16342-47bibsys_ubo</subfield>\n    </datafield>\n    <datafield ind1=\"8\" ind2=\" \" tag=\"852\">\n      <subfield code=\"b\">1030300</subfield>\n      <subfield code=\"c\">k00040</subfield>\n      <subfield code=\"h\">Ung 839.82 Vol:Ban</subfield>\n    </datafield>\n    <datafield ind1=\" \" ind2=\" \" tag=\"859\">\n      <subfield code=\"a\">1030300</subfield>\n      <subfield code=\"b\">k00040</subfield>\n      <subfield code=\"c\">Ung 839.82 Vol:Ban</subfield>\n      <subfield code=\"f\">0</subfield>\n      <subfield code=\"h\">0</subfield>\n      <subfield code=\"x\">2015-11-02</subfield>\n    </datafield>\n    <datafield ind1=\" \" ind2=\" \" tag=\"876\">\n      <subfield code=\"a\">00kj16342</subfield>\n      <subfield code=\"d\">20000529</subfield>\n      <subfield code=\"j\">kat</subfield>\n      <subfield code=\"p\">303011kj0</subfield>\n      <subfield code=\"r\">00kj16342</subfield>\n      <subfield code=\"w\">BOOK</subfield>\n    </datafield>\n  \n</record>"
+    ],
+    "created_by": "import",
+    "created_date": "2015-11-05Z",
+    "holding_id": "22163771200002204",
+    "originating_system": "ILS",
+    "originating_system_id": "h449730-47bibsys_ubo",
+    "suppress_from_publishing": "false"
+}

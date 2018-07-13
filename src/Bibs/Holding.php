@@ -3,62 +3,79 @@
 namespace Scriptotek\Alma\Bibs;
 
 use Scriptotek\Alma\Client;
+use Scriptotek\Alma\GhostModel;
 use Scriptotek\Marc\Record as MarcRecord;
 
-class Holding
+class Holding extends GhostModel
 {
-    protected $client;
+    /* @var string */
     public $mms_id;
+
+    /* @var string */
     public $holding_id;
+
+    /* @var Bib */
+    public $bib;
+
+    /* @var Items */
+    public $items;
+
+    /* @var MarcRecord */
     protected $_marc;
-    protected $_items;
 
     public function __construct(Client $client, $mms_id, $holding_id)
     {
-        $this->client = $client;
+        parent::__construct($client);
         $this->mms_id = $mms_id;
         $this->holding_id = $holding_id;
+        $this->items = Items::make($this->client, $mms_id, $holding_id);
+        $this->bib = Bib::make($this->client, $mms_id);
     }
 
     /**
-     * Returns the MARC record.
+     * Check if we have the full representation of our data object.
+     *
+     * @param \stdClass $data
+     * @return boolean
+     */
+    protected function isInitialized($data)
+    {
+        return isset($data->anies);
+    }
+
+    /**
+     * Store data onto object.
+     *
+     * @param \stdClass $data
+     */
+    protected function setData(\stdClass $data)
+    {
+        $this->_marc = MarcRecord::fromString($data->anies[0]);
+    }
+
+    /**
+     * Generate the base URL for this resource.
+     *
+     * @return string
+     */
+    protected function urlBase()
+    {
+        return "/bibs/{$this->mms_id}/holdings/{$this->holding_id}";
+    }
+
+    /**
+     * Get the MARC record.
      */
     public function getRecord()
     {
-        if (!isset($this->_marc)) {
-            $data = $this->client->getXML('/bibs/' . $this->mms_id . '/holdings/' . $this->holding_id);
-            $marcRecord = $data->first('record')->asXML();
-            $this->_marc = MarcRecord::fromString($marcRecord);
-        }
-
-        return $this->_marc;
+        return $this->init()->_marc;
     }
 
+    /**
+     * Get the items for this holding.
+     */
     public function getItems()
     {
-        if (!isset($this->_items)) {
-            $items = $this->client->getJSON('/bibs/' . $this->mms_id . '/holdings/' . $this->holding_id . '/items');
-
-            $this->_items = array_map(function ($itemData) {
-                return (new Item(
-                    $this->client,
-                    $this->mms_id,
-                    $this->holding_id,
-                    $itemData->item_data->pid
-                ))->init($itemData);
-            }, $items->item);
-        }
-
-        return $this->_items;
-    }
-
-    public function __get($key)
-    {
-        if ($key == 'record') {
-            return $this->getRecord();
-        }
-        if ($key == 'items') {
-            return $this->getItems();
-        }
+        return $this->items;
     }
 }

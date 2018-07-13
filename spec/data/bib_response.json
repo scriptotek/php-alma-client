@@ -1,0 +1,40 @@
+{
+    "anies": [
+        "<?xml version=\"1.0\" encoding=\"UTF-16\"?>\n<record><leader>01596cam a2200457 c 4500</leader><controlfield tag=\"001\">990006312214702204</controlfield><controlfield tag=\"005\">20160622152444.0</controlfield><controlfield tag=\"007\">ta</controlfield><controlfield tag=\"007\">cr||||||||||||</controlfield><controlfield tag=\"008\">150612s2000    no#||||j |||||000|1|mul| </controlfield><datafield ind1=\" \" ind2=\" \" tag=\"015\"><subfield code=\"a\">0007976</subfield><subfield code=\"2\">nbf</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"020\"><subfield code=\"a\">8247806290</subfield><subfield code=\"q\">ib.</subfield><subfield code=\"c\">Nkr 198.00</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"035\"><subfield code=\"a\">000631221-47bibsys_network</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"035\"><subfield code=\"a\">(NO-TrBIB)000631221</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"035\"><subfield code=\"a\">(NO-TrBIB)092093302</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"035\"><subfield code=\"a\">(EXLNZ-47BIBSYS_NETWORK)990006312214702201</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"040\"><subfield code=\"a\">NO-OsNB</subfield><subfield code=\"b\">nob</subfield><subfield code=\"e\">katreg</subfield></datafield><datafield ind1=\"1\" ind2=\" \" tag=\"041\"><subfield code=\"a\">nob</subfield><subfield code=\"a\">eng</subfield><subfield code=\"h\">nob</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"042\"><subfield code=\"a\">norbibl</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"044\"><subfield code=\"c\">no</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"080\"><subfield code=\"a\">839.6</subfield></datafield><datafield ind1=\"7\" ind2=\"4\" tag=\"082\"><subfield code=\"a\">839.823</subfield><subfield code=\"q\">NO-OsNB</subfield><subfield code=\"2\">4/nor</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"084\"><subfield code=\"a\">Pf 5</subfield><subfield code=\"2\">ubtkl/2</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"092\"><subfield code=\"a\">839.82u</subfield><subfield code=\"q\">NoOU</subfield><subfield code=\"9\">LOCAL</subfield></datafield><datafield ind1=\"1\" ind2=\" \" tag=\"100\"><subfield code=\"a\">Vollset, K.</subfield><subfield code=\"0\">(NO-TrBIB)30372</subfield></datafield><datafield ind1=\"1\" ind2=\"0\" tag=\"245\"><subfield code=\"a\">Bananboken</subfield><subfield code=\"c\">K. Vollset ; [illustrasjoner: Motorfinger og Jim]</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"260\"><subfield code=\"a\">[Oslo]</subfield><subfield code=\"b\">Gyldendal Tiden</subfield><subfield code=\"c\">2000</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"300\"><subfield code=\"a\">124 s.</subfield><subfield code=\"b\">ill.</subfield></datafield><datafield ind1=\"1\" ind2=\" \" tag=\"490\"><subfield code=\"a\">Ung+</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"500\"><subfield code=\"a\">Ett kapittel på engelsk</subfield></datafield><datafield ind1=\"0\" ind2=\" \" tag=\"506\"><subfield code=\"f\">Åpen tilgang</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"533\"><subfield code=\"a\">Elektronisk reproduksjon</subfield><subfield code=\"b\">[Norge]</subfield><subfield code=\"c\">Nasjonalbiblioteket Digital</subfield><subfield code=\"d\">2009-04-17</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"653\"><subfield code=\"a\">ungdomsbøker</subfield><subfield code=\"a\">personlighetsutvikling</subfield></datafield><datafield ind1=\"1\" ind2=\" \" tag=\"700\"><subfield code=\"a\">Søstuen, Rune</subfield><subfield code=\"4\">ill</subfield></datafield><datafield ind1=\"1\" ind2=\" \" tag=\"700\"><subfield code=\"a\">Due, Jørgen</subfield><subfield code=\"4\">ill</subfield></datafield><datafield ind1=\"0\" ind2=\" \" tag=\"700\"><subfield code=\"a\">Jim</subfield><subfield code=\"4\">ill</subfield></datafield><datafield ind1=\"2\" ind2=\" \" tag=\"710\"><subfield code=\"a\">Motorfinger</subfield></datafield><datafield ind1=\" \" ind2=\"0\" tag=\"830\"><subfield code=\"a\">Ung+</subfield></datafield><datafield ind1=\"4\" ind2=\"2\" tag=\"856\"><subfield code=\"3\">Beskrivelse fra forlaget (kort)</subfield><subfield code=\"u\">http://content.bibsys.no/content/?type=descr_publ_brief&amp;isbn=8247806290</subfield></datafield><datafield ind1=\"4\" ind2=\"2\" tag=\"856\"><subfield code=\"3\">Beskrivelse fra Forlagssentralen</subfield><subfield code=\"u\">http://content.bibsys.no/content/?type=descr_forlagssentr&amp;isbn=8247806290</subfield></datafield><datafield ind1=\"4\" ind2=\"0\" tag=\"856\"><subfield code=\"3\">Fulltekst</subfield><subfield code=\"u\">http://urn.nb.no/URN:NBN:no-nb_digibok_2009021004060</subfield><subfield code=\"y\">NB digitalisert</subfield><subfield code=\"z\">Elektronisk reproduksjon. Gratis. For norske IP-adresser</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"901\"><subfield code=\"a\">90</subfield></datafield><datafield ind1=\" \" ind2=\" \" tag=\"913\"><subfield code=\"a\">Norbok</subfield><subfield code=\"b\">NB</subfield></datafield></record>"
+    ],
+    "author": "Vollset, K.",
+    "cataloging_level": {
+        "desc": "kat3",
+        "value": "90"
+    },
+    "created_by": "import",
+    "created_date": "2015-11-05Z",
+    "date_of_publication": "2000",
+    "holdings": {
+        "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990006312214702204/holdings",
+        "value": null
+    },
+    "isbn": "8247806290",
+    "issn": null,
+    "last_modified_date": "2017-03-24Z",
+    "link": null,
+    "linked_record_id": {
+        "type": "NZ",
+        "value": "990006312214702201"
+    },
+    "mms_id": "990006312214702204",
+    "network_number": [
+        "(NO-TrBIB)092093302",
+        "(NO-TrBIB)000631221",
+        "000631221-47bibsys_network",
+        "(EXLNZ-47BIBSYS_NETWORK)990006312214702201"
+    ],
+    "originating_system": "ILS",
+    "originating_system_id": "000631221-47bibsys_network",
+    "place_of_publication": "[Oslo]",
+    "publisher_const": "Gyldendal Tiden",
+    "record_format": "marc21",
+    "requests": null,
+    "suppress_from_publishing": "false",
+    "title": "Bananboken"
+}
