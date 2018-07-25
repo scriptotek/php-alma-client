@@ -2,10 +2,13 @@
 
 namespace Scriptotek\Alma\Bibs;
 
+use Scriptotek\Alma\ArrayAccessResource;
 use Scriptotek\Alma\Client;
 
-class Bibs
+class Bibs implements \ArrayAccess
 {
+    use ArrayAccessResource;
+
     protected $client;
 
     public function __construct(Client $client)

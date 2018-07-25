@@ -4,12 +4,7 @@ namespace Scriptotek\Alma;
 
 trait IterableResource
 {
-    /*********************************************************
-     * Iterator
-     *********************************************************/
-
     protected $position = 0;
-    protected $_resources;
 
     public function current()
     {

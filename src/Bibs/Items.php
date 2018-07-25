@@ -2,12 +2,14 @@
 
 namespace Scriptotek\Alma\Bibs;
 
+use Scriptotek\Alma\ArrayAccessResource;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\CountableGhostModelList;
 use Scriptotek\Alma\IterableResource;
 
-class Items extends CountableGhostModelList implements \Countable, \Iterator
+class Items extends CountableGhostModelList implements \Countable, \Iterator, \ArrayAccess
 {
+    use ArrayAccessResource;
     use IterableResource;
 
     /* @var Bib */

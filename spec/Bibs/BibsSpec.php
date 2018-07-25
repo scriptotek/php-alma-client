@@ -30,6 +30,17 @@ class BibsSpec extends ObjectBehavior
         $bib->mms_id->shouldBe($mms_id);
     }
 
+    public function it_provides_a_lazy_array_interface_to_bib_objects(AlmaClient $client)
+    {
+        SpecHelper::expectNoRequests($client);
+
+        $mms_id = '123'; // str_random();
+        $bib = $this[$mms_id];
+
+        $bib->shouldHaveType(Bib::class);
+        $bib->mms_id->shouldBe($mms_id);
+    }
+
     public function it_provides_lookup_by_isbn(AlmaClient $client, SruClient $sru)
     {
         SpecHelper::expectNoRequests($client);

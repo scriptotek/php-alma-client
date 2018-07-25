@@ -74,6 +74,18 @@ class HoldingsSpec extends ObjectBehavior
         $holding->holding_id->shouldBe($holding_id);
     }
 
+    public function it_provides_a_lazy_array_interface_to_holding_objects(AlmaClient $client, Bib $bib)
+    {
+        SpecHelper::expectNoRequests($client);
+
+        $holding_id = '90123'; // str_random();
+        $holding = $this[$holding_id];
+
+        $holding->shouldHaveType(Holding::class);
+        $holding->bib->shouldBe($bib);
+        $holding->holding_id->shouldBe($holding_id);
+    }
+
     public function it_is_countable(AlmaClient $client, UriInterface $url)
     {
         $client->buildUrl('/bibs/abc/holdings', [])
