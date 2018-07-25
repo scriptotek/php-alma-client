@@ -11,7 +11,7 @@ class User extends GhostModel
      * The primary id or some other id that can be used to fetch user information.
      * @var string
      */
-    protected $user_id;
+    public $id;
 
     /**
      * @var UserIdentifiers
@@ -22,12 +22,12 @@ class User extends GhostModel
      * User constructor.
      *
      * @param Client $client
-     * @param string $user_id
+     * @param string $id
      */
-    public function __construct(Client $client, $user_id)
+    public function __construct(Client $client, $id)
     {
         parent::__construct($client);
-        $this->user_id = $user_id;
+        $this->id = $id;
     }
 
     /**
@@ -38,7 +38,7 @@ class User extends GhostModel
      */
     public function getUserId()
     {
-        return $this->user_id;
+        return $this->id;
     }
 
     /**
@@ -90,7 +90,7 @@ class User extends GhostModel
      */
     protected function urlBase()
     {
-        return "/users/{$this->user_id}";
+        return "/users/{$this->id}";
     }
 
     public function __get($key)

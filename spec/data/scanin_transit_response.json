@@ -1,0 +1,129 @@
+{
+    "additional_info": "Item's destination is: UiO HumSam-biblioteket. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1",
+    "bib_data": {
+        "author": "Vollset, K.",
+        "complete_edition": "",
+        "date_of_publication": "2000",
+        "isbn": "8247806290",
+        "issn": null,
+        "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990006312214702204",
+        "mms_id": "990006312214702204",
+        "network_number": [
+            "(NO-TrBIB)092093302",
+            "(NO-TrBIB)000631221",
+            "000631221-47bibsys_network",
+            "(EXLNZ-47BIBSYS_NETWORK)990006312214702201"
+        ],
+        "place_of_publication": "[Oslo]",
+        "publisher_const": "Gyldendal Tiden",
+        "title": "Bananboken"
+    },
+    "holding_data": {
+        "accession_number": "",
+        "call_number": "Ung 839.82 Vol:Ban",
+        "call_number_type": {
+            "desc": "Other scheme",
+            "value": "8"
+        },
+        "copy_id": "",
+        "holding_id": "22163771200002204",
+        "in_temp_location": false,
+        "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990006312214702204/holdings/22163771200002204",
+        "temp_call_number": "",
+        "temp_call_number_type": {
+            "desc": null,
+            "value": ""
+        },
+        "temp_library": {
+            "desc": null,
+            "value": null
+        },
+        "temp_location": {
+            "desc": null,
+            "value": null
+        },
+        "temp_policy": {
+            "desc": null,
+            "value": ""
+        }
+    },
+    "item_data": {
+        "alternative_call_number": "",
+        "alternative_call_number_type": {
+            "desc": null,
+            "value": ""
+        },
+        "arrival_date": "2000-05-29Z",
+        "barcode": "303011kj0",
+        "base_status": {
+            "desc": "Item not in place",
+            "value": "0"
+        },
+        "chronology_i": "",
+        "chronology_j": "",
+        "chronology_k": "",
+        "chronology_l": "",
+        "chronology_m": "",
+        "creation_date": "2015-11-05Z",
+        "description": "",
+        "edition": null,
+        "enumeration_a": "",
+        "enumeration_b": "",
+        "enumeration_c": "",
+        "enumeration_d": "",
+        "enumeration_e": "",
+        "enumeration_f": "",
+        "enumeration_g": "",
+        "enumeration_h": "",
+        "fulfillment_note": "",
+        "imprint": null,
+        "internal_note_1": "Status: kat - kat",
+        "internal_note_2": "TIME FOR CIRC STATUS: 2015-11-02 | CIRC STATUS: 0",
+        "internal_note_3": "",
+        "inventory_number": "00kj16342",
+        "is_magnetic": false,
+        "language": null,
+        "library": {
+            "desc": "UiO HumSam-biblioteket",
+            "value": "1030300"
+        },
+        "location": {
+            "desc": "UHS S-Litt",
+            "value": "k00040"
+        },
+        "modification_date": "2018-07-15Z",
+        "pages": "",
+        "physical_condition": {
+            "desc": null,
+            "value": null
+        },
+        "physical_material_type": {
+            "desc": "Book",
+            "value": "BOOK"
+        },
+        "pid": "23163771190002204",
+        "pieces": "",
+        "po_line": "",
+        "policy": {
+            "desc": null,
+            "value": ""
+        },
+        "process_type": {
+            "desc": "Transit",
+            "value": "TRANSIT"
+        },
+        "provenance": {
+            "desc": null,
+            "value": ""
+        },
+        "public_note": "",
+        "receiving_operator": "import",
+        "requested": null,
+        "statistics_note_1": "",
+        "statistics_note_2": "",
+        "statistics_note_3": "",
+        "storage_location_id": "",
+        "year_of_issue": ""
+    },
+    "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990006312214702204/holdings/22163771200002204/items/23163771190002204"
+}

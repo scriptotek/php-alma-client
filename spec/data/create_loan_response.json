@@ -1,0 +1,32 @@
+{
+    "author": "Vollset, K.",
+    "call_number": "Ung 839.82 Vol:Ban",
+    "circ_desk": {
+        "desc": "Utlånet Ureal",
+        "value": "DEFAULT_CIRC_DESK"
+    },
+    "description": null,
+    "due_date": "2018-08-10T18:00:00Z",
+    "item_barcode": "303011kj0",
+    "item_policy": {
+        "description": null,
+        "value": null
+    },
+    "library": {
+        "desc": "UiO HumSam-biblioteket",
+        "value": "1030300"
+    },
+    "loan_date": "2018-07-13T17:31:39.800Z",
+    "loan_id": "7329587120002204",
+    "loan_status": "ACTIVE",
+    "location_code": {
+        "name": "UHS S-Litt",
+        "value": "k00040"
+    },
+    "mms_id": "990006312214702204",
+    "process_status": "NORMAL",
+    "publication_year": "2000",
+    "renewable": true,
+    "title": "Bananboken K. Vollset ; [illustrasjoner: Motorfinger og Jim]",
+    "user_id": "Dan Michael"
+}

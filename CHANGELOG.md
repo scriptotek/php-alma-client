@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
       - `ResourceNotFound` (new) when a request resource was not found.
       - `InvalidQuery` (new) when the query was not understood by the server. Currently only used by the users api.
 - Added interface to get libraries (`$client->libraries`) and locations (`$client->libraries[$libraryCode]->locations`).
+- Added item checkout and scan-in.
 
 ### Changed
 
