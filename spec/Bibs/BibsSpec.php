@@ -19,16 +19,9 @@ class BibsSpec extends ObjectBehavior
         $client->sru = $sru;
     }
 
-    protected function expectNoRequests($client)
-    {
-        // No /bibs request should be made.
-        $client->getJSON(Argument::any(), Argument::any())
-            ->shouldNotBeCalled();
-    }
-
     public function it_provides_a_lazy_interface_to_bib_objects(AlmaClient $client)
     {
-        $this->expectNoRequests($client);
+        SpecHelper::expectNoRequests($client);
 
         $mms_id = '123'; // str_random();
         $bib = $this->get($mms_id);
@@ -39,7 +32,7 @@ class BibsSpec extends ObjectBehavior
 
     public function it_provides_lookup_by_isbn(AlmaClient $client, SruClient $sru)
     {
-        $this->expectNoRequests($client);
+        SpecHelper::expectNoRequests($client);
         $client->assertHasSruClient()->shouldBeCalled()->willReturn(true);
 
         $sru->all('alma.isbn="123"', 1)
@@ -60,7 +53,7 @@ class BibsSpec extends ObjectBehavior
 
     public function it_returns_null_given_unknown_isbn(AlmaClient $client, SruClient $sru)
     {
-        $this->expectNoRequests($client);
+        SpecHelper::expectNoRequests($client);
         $client->assertHasSruClient()->shouldBeCalled()->willReturn(true);
 
         $sru->all('alma.isbn="123"', 1)

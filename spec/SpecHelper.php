@@ -3,6 +3,7 @@
 namespace spec\Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
+use Prophecy\Argument;
 
 class SpecHelper
 {
@@ -19,5 +20,14 @@ class SpecHelper
         }
 
         return json_decode($data);
+    }
+
+    public static function expectNoRequests($client)
+    {
+        $client->getJSON(Argument::any(), Argument::any())
+            ->shouldNotBeCalled();
+
+        $client->getXML(Argument::any(), Argument::any())
+            ->shouldNotBeCalled();
     }
 }

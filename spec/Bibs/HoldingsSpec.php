@@ -9,6 +9,7 @@ use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Holdings;
 use Scriptotek\Alma\Client as AlmaClient;
+use spec\Scriptotek\Alma\SpecHelper;
 
 class HoldingsSpec extends ObjectBehavior
 {
@@ -61,16 +62,9 @@ class HoldingsSpec extends ObjectBehavior
         $this->beConstructedWith($client, $bib);
     }
 
-    protected function expectNoRequests($client)
-    {
-        // No /bibs request should be made.
-        $client->getJSON(Argument::any(), Argument::any())
-            ->shouldNotBeCalled();
-    }
-
     public function it_provides_a_lazy_interface_to_holding_objects(AlmaClient $client, Bib $bib)
     {
-        $this->expectNoRequests($client);
+        SpecHelper::expectNoRequests($client);
 
         $holding_id = '12345'; // str_random();
         $holding = $this->get($holding_id);

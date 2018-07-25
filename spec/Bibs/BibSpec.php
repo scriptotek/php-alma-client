@@ -22,11 +22,6 @@ class BibSpec extends ObjectBehavior
         $this->beConstructedWith($client, $mms_id);
     }
 
-    protected function expectNoRequests($client) {
-        $client->getJSON(Argument::any(), Argument::any())
-            ->shouldNotBeCalled();
-    }
-
     protected function expectRequest($client, $url) {
         $client->buildUrl('/bibs/999104760474702204', [])
             ->shouldBeCalled()
@@ -39,7 +34,7 @@ class BibSpec extends ObjectBehavior
 
     public function it_is_lazy(AlmaClient $client)
     {
-        $this->expectNoRequests($client);
+        SpecHelper::expectNoRequests($client);
         $this->shouldHaveType(Bib::class);
     }
 
@@ -72,7 +67,7 @@ class BibSpec extends ObjectBehavior
 
     public function it_provides_lazy_access_to_holdings(AlmaClient $client)
     {
-        $this->expectNoRequests($client);
+        SpecHelper::expectNoRequests($client);
         $this->holdings->shouldHaveType(Holdings::class);
     }
 
