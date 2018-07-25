@@ -1,0 +1,1229 @@
+{
+    "location": [
+        {
+            "code": "k00589",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00589",
+            "map": "",
+            "name": "Almanakker VBmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00007",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00007",
+            "map": "",
+            "name": "UBO/NETT",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00008",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00008",
+            "map": "",
+            "name": "UBO/NETT LabPatol",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "UNASSIGNED",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/UNASSIGNED",
+            "map": "",
+            "name": "UNASSIGNED location",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00411",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00411",
+            "map": "",
+            "name": "UREAL",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00413",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00413",
+            "map": "",
+            "name": "UREAL Astr.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00490",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00490",
+            "map": "",
+            "name": "UREAL/ASTR",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00491",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00491",
+            "map": "",
+            "name": "UREAL/ASTR Nærmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00415",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00415",
+            "map": "",
+            "name": "UREAL Astrosaml2 SLmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00414",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00414",
+            "map": "",
+            "name": "UREAL Astrosaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00492",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00492",
+            "map": "",
+            "name": "UREAL/ASTR Pensum",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00493",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00493",
+            "map": "",
+            "name": "UREAL/ASTR Tidsskr.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00416",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00416",
+            "map": "",
+            "name": "UREAL Atlas",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00417",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00417",
+            "map": "",
+            "name": "UREAL Avh. VBmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00418",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00418",
+            "map": "",
+            "name": "UREAL Avis",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00593",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00593",
+            "map": "",
+            "name": "UREAL Avsamling",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00412",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00412",
+            "map": "",
+            "name": "UREAL AVsamling GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00420",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00420",
+            "map": "",
+            "name": "UREAL Biofys. VBmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00421",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00421",
+            "map": "",
+            "name": "UREAL Biol.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00495",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00495",
+            "map": "",
+            "name": "UREAL/BIOL",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00422",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00422",
+            "map": "",
+            "name": "UREAL Biosaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00423",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00423",
+            "map": "",
+            "name": "UREAL Boksamling",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00419",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00419",
+            "map": "",
+            "name": "UREAL BOU GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00424",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00424",
+            "map": "",
+            "name": "UREAL Esaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00425",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00425",
+            "map": "",
+            "name": "UREAL Etter 1850 GallerietFys",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00426",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00426",
+            "map": "",
+            "name": "UREAL Farm.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00496",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00496",
+            "map": "",
+            "name": "UREAL/FARM",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00592",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00592",
+            "map": "",
+            "name": "UREAL Farm.inst. Farmakogn.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00427",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00427",
+            "map": "",
+            "name": "UREAL Farm.inst. Hist.saml.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00428",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00428",
+            "map": "",
+            "name": "UREAL Fasaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00429",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00429",
+            "map": "",
+            "name": "UREAL Fbsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00430",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00430",
+            "map": "",
+            "name": "UREAL Fcsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00431",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00431",
+            "map": "",
+            "name": "UREAL Fdsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00433",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00433",
+            "map": "",
+            "name": "UREAL Fesaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00434",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00434",
+            "map": "",
+            "name": "UREAL Ffsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00435",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00435",
+            "map": "",
+            "name": "UREAL Fgsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00436",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00436",
+            "map": "",
+            "name": "UREAL Fhsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00437",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00437",
+            "map": "",
+            "name": "UREAL Fisaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00562",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00562",
+            "map": "",
+            "name": "UREAL Fjernlån",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00438",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00438",
+            "map": "",
+            "name": "UREAL Fjsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00443",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00443",
+            "map": "",
+            "name": "UREAL Før 1850 GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00439",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00439",
+            "map": "",
+            "name": "UREAL Fsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00440",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00440",
+            "map": "",
+            "name": "UREAL Fys.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00497",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00497",
+            "map": "",
+            "name": "UREAL/FYS",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00441",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00441",
+            "map": "",
+            "name": "UREAL Fys.inst.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00442",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00442",
+            "map": "",
+            "name": "UREAL Fyssaml. VBmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00499",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00499",
+            "map": "",
+            "name": "UREAL/FYS Tab",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00500",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00500",
+            "map": "",
+            "name": "UREAL/FYS Tidsskr.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00446",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00446",
+            "map": "",
+            "name": "UREAL GalleriFys",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00447",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00447",
+            "map": "",
+            "name": "UREAL Geo.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00501",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00501",
+            "map": "",
+            "name": "UREAL/GEO",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00502",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00502",
+            "map": "",
+            "name": "UREAL/GEO Atlas",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00503",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00503",
+            "map": "",
+            "name": "UREAL/GEO Geosaml.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00448",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00448",
+            "map": "",
+            "name": "UREAL Geo.inst",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00449",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00449",
+            "map": "",
+            "name": "UREAL Geol.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00505",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00505",
+            "map": "",
+            "name": "UREAL/GEOL",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00506",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00506",
+            "map": "",
+            "name": "UREAL/GEOL ref",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00450",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00450",
+            "map": "",
+            "name": "UREAL Geolsaml.1 SLmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00451",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00451",
+            "map": "",
+            "name": "UREAL Geolsaml 2 SLmag",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00452",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00452",
+            "map": "",
+            "name": "UREAL Geosaml.  SLmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00504",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00504",
+            "map": "",
+            "name": "UREAL/GEO Tidsskr.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00453",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00453",
+            "map": "",
+            "name": "UREAL Gsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00445",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00445",
+            "map": "",
+            "name": "UREAL GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00454",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00454",
+            "map": "",
+            "name": "UREAL Hansteen Observatoriet",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00455",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00455",
+            "map": "",
+            "name": "UREAL Hist.sml.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00456",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00456",
+            "map": "",
+            "name": "UREAL Intern",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00457",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00457",
+            "map": "",
+            "name": "UREAL Kjem.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00458",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00458",
+            "map": "",
+            "name": "UREAL Kjem.inst.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00459",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00459",
+            "map": "",
+            "name": "UREAL Kjemsaml. SLmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00460",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00460",
+            "map": "",
+            "name": "UREAL Laveregrad",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00462",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00462",
+            "map": "",
+            "name": "UREAL Lærerbibl.Kjem - Dep.fagref",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00590",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00590",
+            "map": "",
+            "name": "UREAL Lærerbibl.Mat - 2.etg.Abel",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00461",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00461",
+            "map": "",
+            "name": "UREAL Linné GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00463",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00463",
+            "map": "",
+            "name": "UREAL Magsaml. VBmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00464",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00464",
+            "map": "",
+            "name": "UREAL Master VBmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00465",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00465",
+            "map": "",
+            "name": "UREAL Mat.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00525",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00525",
+            "map": "",
+            "name": "UREAL/MAT",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00466",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00466",
+            "map": "",
+            "name": "UREAL Matsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k60012",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k60012",
+            "map": "",
+            "name": "UREAL NHMsaml. Eldre bøker GSHmag316 ",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00467",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00467",
+            "map": "",
+            "name": "UREAL NHMsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00468",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00468",
+            "map": "",
+            "name": "UREAL Observat.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00469",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00469",
+            "map": "",
+            "name": "UREAL Oppsl.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00470",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00470",
+            "map": "",
+            "name": "UREAL Ore GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00471",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00471",
+            "map": "",
+            "name": "UREAL Pensum",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k60011",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k60011",
+            "map": "",
+            "name": "UREAL Pensum (Dagslån)",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00473",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00473",
+            "map": "",
+            "name": "UREAL Plv. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00475",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00475",
+            "map": "",
+            "name": "UREAL Samling 42",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00477",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00477",
+            "map": "",
+            "name": "UREAL SciFi",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00479",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00479",
+            "map": "",
+            "name": "UREAL Sjekkes",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00480",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00480",
+            "map": "",
+            "name": "UREAL Skranken",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00474",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00474",
+            "map": "",
+            "name": "UREAL SLmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00481",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00481",
+            "map": "",
+            "name": "UREAL Spill Bjørnhjørnet",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00482",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00482",
+            "map": "",
+            "name": "UREAL Teori VBmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00483",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00483",
+            "map": "",
+            "name": "UREAL Tidsskr. SLmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00484",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00484",
+            "map": "",
+            "name": "UREAL UHSsikring",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00486",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00486",
+            "map": "",
+            "name": "UREAL UiO Insp.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00485",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00485",
+            "map": "",
+            "name": "UREAL US Fh GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k60010",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k60010",
+            "map": "",
+            "name": "UREAL Utstilling",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00487",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00487",
+            "map": "",
+            "name": "UREAL VBmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00488",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00488",
+            "map": "",
+            "name": "UREAL ZEBsaml. GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00489",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00489",
+            "map": "",
+            "name": "UREAL Zsaml.1 GSHmag316",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        },
+        {
+            "code": "k00591",
+            "external_name": "",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310/locations/k00591",
+            "map": "",
+            "name": "UREAL Zsaml.2 SLmag.",
+            "remote_storage": "",
+            "type": {
+                "desc": "Open",
+                "value": "OPEN"
+            }
+        }
+    ],
+    "total_record_count": 102
+}

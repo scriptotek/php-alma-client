@@ -1,0 +1,17 @@
+{
+    "campus": {
+        "desc": "UiO Blindern",
+        "value": "BLINDERN"
+    },
+    "code": "1030310",
+    "default_location": {
+        "desc": "UREAL Boksamling",
+        "value": "k00423"
+    },
+    "description": "UiO Realfagsbiblioteket",
+    "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310",
+    "name": "UiO Realfagsbiblioteket",
+    "path": "47BIBSYS.47BIBSYS_UBO.1030310",
+    "proxy": "",
+    "resource_sharing": true
+}

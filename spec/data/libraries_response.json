@@ -1,0 +1,464 @@
+{
+    "library": [
+        {
+            "campus": {
+                "desc": null,
+                "value": ""
+            },
+            "code": "RES_SHARE",
+            "default_location": {
+                "desc": null,
+                "value": ""
+            },
+            "description": "Temporarily manages inventory that is sent to or received from resource sharing partners",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/RES_SHARE",
+            "name": "Resource Sharing Library",
+            "path": "47BIBSYS.47BIBSYS_UBO.RES_SHARE",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": null,
+                "value": ""
+            },
+            "code": "UB-Felles",
+            "default_location": {
+                "desc": null,
+                "value": ""
+            },
+            "description": "Felles innkjøp elektroniske ressurser. (Digit)",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/UB-Felles",
+            "name": "UB-Felles",
+            "path": "47BIBSYS.47BIBSYS_UBO.UB-Felles",
+            "proxy": "",
+            "resource_sharing": false
+        },
+        {
+            "campus": {
+                "desc": "UiO Arkeologisk bibliotek",
+                "value": "UHSARK"
+            },
+            "code": "1030011",
+            "default_location": {
+                "desc": "UHS/ARK Boksamling",
+                "value": "k00053"
+            },
+            "description": "UiO Arkeologisk bibliotek",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030011",
+            "name": "UiO Arkeologisk bibliotek",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030011",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO Etnografisk bibliotek",
+                "value": "UIOETNO"
+            },
+            "code": "1030010",
+            "default_location": {
+                "desc": "UHS/ETNO",
+                "value": "k00075"
+            },
+            "description": "UiO Etnografisk bibliotek",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030010",
+            "name": "UiO Etnografisk bibliotek",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030010",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO Etnografisk bibliotek",
+                "value": "UIOETNO"
+            },
+            "code": "1030012",
+            "default_location": {
+                "desc": "UHS/NUM",
+                "value": "k00083"
+            },
+            "description": "UiO Etnografisk bibliotek Numismatikk",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030012",
+            "name": "UiO Etnografisk bibliotek Numismatikk",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030012",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO Blindern",
+                "value": "BLINDERN"
+            },
+            "code": "1030300",
+            "default_location": {
+                "desc": "UHS",
+                "value": "k00009"
+            },
+            "description": "UiO HumSam-biblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030300",
+            "name": "UiO HumSam-biblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030300",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": null,
+                "value": ""
+            },
+            "code": "1030305",
+            "default_location": {
+                "desc": "UNASSIGNED location",
+                "value": "UNASSIGNED"
+            },
+            "description": "UiO HumSam-biblioteket. Innlånet",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030305",
+            "name": "UiO HumSam-biblioteket. Innlånet",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030305",
+            "proxy": "",
+            "resource_sharing": false
+        },
+        {
+            "campus": {
+                "desc": "UiO Ibsensenteret",
+                "value": "UHSIBSEN"
+            },
+            "code": "1030104",
+            "default_location": {
+                "desc": "Ibsen",
+                "value": "k10001"
+            },
+            "description": "UiO Ibsensenteret",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030104",
+            "name": "UiO Ibsensenteret",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030104",
+            "proxy": "",
+            "resource_sharing": false
+        },
+        {
+            "campus": {
+                "desc": "UiO Informatikkbiblioteket",
+                "value": "UREALINF"
+            },
+            "code": "1030317",
+            "default_location": {
+                "desc": "UREAL/INF Boksamling",
+                "value": "k00510"
+            },
+            "description": "UiO Informatikkbiblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030317",
+            "name": "UiO Informatikkbiblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030317",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030000",
+            "default_location": {
+                "desc": "UJUR Boksamling",
+                "value": "k00108"
+            },
+            "description": "UiO Juridisk bibliotek DB",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030000",
+            "name": "UiO Juridisk bibliotek DB",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030000",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030002",
+            "default_location": {
+                "desc": "UJUR/IKR Boksamling",
+                "value": "k00145"
+            },
+            "description": "UiO Kriminologibiblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030002",
+            "name": "UiO Kriminologibiblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030002",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030009",
+            "default_location": {
+                "desc": "UJUR/DN",
+                "value": "k00127"
+            },
+            "description": "UiO Læringssenteret DN",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030009",
+            "name": "UiO Læringssenteret DN",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030009",
+            "proxy": "",
+            "resource_sharing": false
+        },
+        {
+            "campus": {
+                "desc": "UiO de medisinske bibliotekene",
+                "value": "UMED"
+            },
+            "code": "1030307",
+            "default_location": {
+                "desc": "Bøker",
+                "value": "k00253"
+            },
+            "description": "UiO Medisinsk bibliotek Odontologi",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030307",
+            "name": "UiO Medisinsk bibliotek Odontologi",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030307",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de medisinske bibliotekene",
+                "value": "UMED"
+            },
+            "code": "1032300",
+            "default_location": {
+                "desc": "Bøker",
+                "value": "k00229"
+            },
+            "description": "UiO Medisinsk bibliotek Rikshospitalet",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1032300",
+            "name": "UiO Medisinsk bibliotek Rikshospitalet",
+            "path": "47BIBSYS.47BIBSYS_UBO.1032300",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de medisinske bibliotekene",
+                "value": "UMED"
+            },
+            "code": "1030338",
+            "default_location": {
+                "desc": "Bøker",
+                "value": "k00330"
+            },
+            "description": "UiO Medisinsk bibliotek Ullevål sykehus\r\n",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030338",
+            "name": "UiO Medisinsk bibliotek Ullevål sykehus",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030338",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030048",
+            "default_location": {
+                "desc": "UJUR/MR Boksamling",
+                "value": "k00174"
+            },
+            "description": "UiO Menneskerettighetsbiblioteket(STENGT)",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030048",
+            "name": "UiO Menneskerettighetsbiblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030048",
+            "proxy": "",
+            "resource_sharing": false
+        },
+        {
+            "campus": {
+                "desc": "UiO NSSF Selvmordsforskning og forebygging",
+                "value": "NSSF"
+            },
+            "code": "1032304",
+            "default_location": {
+                "desc": "NSSF",
+                "value": "k00002"
+            },
+            "description": "UiO NSSF Selvmordsforskning og forebygging",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1032304",
+            "name": "UiO NSSF Selvmordsforskning og forebygging",
+            "path": "47BIBSYS.47BIBSYS_UBO.1032304",
+            "proxy": "",
+            "resource_sharing": false
+        },
+        {
+            "campus": {
+                "desc": "UiO Naturhistorisk museum biblioteket",
+                "value": "UREALNHM"
+            },
+            "code": "1030500",
+            "default_location": {
+                "desc": "UREAL/NHM Boksamling",
+                "value": "k00528"
+            },
+            "description": "UiO Naturhistorisk museum biblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030500",
+            "name": "UiO Naturhistorisk museum biblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030500",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030003",
+            "default_location": {
+                "desc": "UJUR/IOR Boksamling",
+                "value": "k00162"
+            },
+            "description": "UiO Offentligrettsbiblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030003",
+            "name": "UiO Offentligrettsbiblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030003",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030005",
+            "default_location": {
+                "desc": "UJUR/NifsP Boksamling",
+                "value": "k00200"
+            },
+            "description": "UiO Petroleums- og EU-rettsbiblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030005",
+            "name": "UiO Petroleums- og EU-rettsbiblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030005",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030001",
+            "default_location": {
+                "desc": null,
+                "value": ""
+            },
+            "description": "UiO Privatrettsbiblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030001",
+            "name": "UiO Privatrettsbiblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030001",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO Blindern",
+                "value": "BLINDERN"
+            },
+            "code": "1030310",
+            "default_location": {
+                "desc": "UREAL Boksamling",
+                "value": "k00423"
+            },
+            "description": "UiO Realfagsbiblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030310",
+            "name": "UiO Realfagsbiblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030310",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030015",
+            "default_location": {
+                "desc": "UJUR/RS Boksamling",
+                "value": "k00211"
+            },
+            "description": "UiO Rettshistorisk samling",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030015",
+            "name": "UiO Rettshistorisk samling",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030015",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030004",
+            "default_location": {
+                "desc": "UJUR/SERI Boksamling",
+                "value": "k00220"
+            },
+            "description": "UiO Rettsinformatikkbiblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030004",
+            "name": "UiO Rettsinformatikkbiblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030004",
+            "proxy": "",
+            "resource_sharing": true
+        },
+        {
+            "campus": {
+                "desc": "UiO de juridiske bibliotekene",
+                "value": "UJUR"
+            },
+            "code": "1030006",
+            "default_location": {
+                "desc": "UJUR/Nifs Boksamling",
+                "value": "k00189"
+            },
+            "description": "UiO Sjørettsbiblioteket",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030006",
+            "name": "UiO Sjørettsbiblioteket",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030006",
+            "proxy": "",
+            "resource_sharing": false
+        },
+        {
+            "campus": {
+                "desc": "UiO Blindern",
+                "value": "BLINDERN"
+            },
+            "code": "1030303",
+            "default_location": {
+                "desc": "UHS/SOPH Utlån",
+                "value": "k00581"
+            },
+            "description": "UiO Sophus Bugge",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030303",
+            "name": "UiO Sophus Bugge",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030303",
+            "proxy": "",
+            "resource_sharing": false
+        },
+        {
+            "campus": {
+                "desc": "UiO Blindern",
+                "value": "BLINDERN"
+            },
+            "code": "1030301",
+            "default_location": {
+                "desc": "UHS/TEOL Boksamling",
+                "value": "k00095"
+            },
+            "description": "UiO Teologisk bibliotek",
+            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/1030301",
+            "name": "UiO Teologisk bibliotek",
+            "path": "47BIBSYS.47BIBSYS_UBO.1030301",
+            "proxy": "",
+            "resource_sharing": true
+        }
+    ],
+    "total_record_count": 27
+}

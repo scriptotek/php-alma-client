@@ -20,6 +20,8 @@ use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Items;
+use Scriptotek\Alma\Conf\Conf;
+use Scriptotek\Alma\Conf\Libraries;
 use Scriptotek\Alma\Exception\ClientException as AlmaClientException;
 use Scriptotek\Alma\Exception\InvalidApiKey;
 use Scriptotek\Alma\Exception\MaxNumberOfAttemptsExhausted;
@@ -108,10 +110,16 @@ class Client
         $this->setRegion($region);
 
         $this->zone = $zone;
-        $this->bibs = new Bibs($this);  // Or do some magic instead?
-        $this->items = new Items($this);  // Or do some magic instead?
-        $this->analytics = new Analytics($this);  // Or do some magic instead?
-        $this->users = new Users($this);  // Or do some magic instead?
+
+        $this->bibs = new Bibs($this);
+        $this->items = new Items($this); // Only needed for the fromBarcode method :/
+
+        $this->analytics = new Analytics($this);
+        $this->users = new Users($this);
+
+        $this->conf = new Conf($this);
+        $this->libraries = $this->conf->libraries;  // shortcut
+
         if ($zone == Zones::INSTITUTION) {
             $this->nz = new self(null, $region, Zones::NETWORK, $this->http, $this->messageFactory, $this->uriFactory);
         } elseif ($zone != Zones::NETWORK) {
