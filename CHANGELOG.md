@@ -10,12 +10,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Added options `limit` and `phrase` to `Users::search()`.
-- Added `InvalidQueryException` exception.
 - Added methods `getBarcodes()` and `getUniversityIds()` to `UserIdentifiers` to get all active values.
   These are accessible on the `User` object as `$user->barcodes` and `$user->universityIds`.
-- Added method `$client->items->fromBarcode(...)`
+- Added method `Client::items->fromBarcode(...)`
+- Added method `Item::checkOut()`, `Item::loan()`, `Item:scanIn()` and `User::loans()`
 - Added method `exists()` to `Bib`, `Holding`, `Item`, `User`. If trying to get data from a non-existing
   resource, `Scriptotek\Alma\Exception\ResourceNotFound` is thrown.
+- Added array access to `Bibs` and `Holdings`.
+- Expanded the exception tree:
+  - `ClientException` for all Alma Client errors
+    - `RequestFailed` (new) for 4xx errors. `$e->getMessage()` returns the error message from the server.
+      - `InvalidApiKey` (new)
+      - `ResourceNotFound` (new) when a request resource was not found.
+      - `InvalidQuery` (new) when the query was not understood by the server. Currently only used by the users api.
 
 ### Changed
 

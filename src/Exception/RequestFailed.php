@@ -2,6 +2,6 @@
 
 namespace Scriptotek\Alma\Exception;
 
-class ResourceNotFound extends RequestFailed
+class RequestFailed extends ClientException
 {
 }

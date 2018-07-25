@@ -3,7 +3,7 @@
 namespace Scriptotek\Alma\Users;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\Exception\InvalidQueryException;
+use Scriptotek\Alma\Exception\InvalidQuery;
 
 class Users
 {
@@ -63,7 +63,7 @@ class Users
             // Seems to indicate that the query was not understood.
             // See: https://github.com/scriptotek/php-alma-client/issues/8
             if ($response->total_record_count == -1) {
-                throw new InvalidQueryException($query);
+                throw new InvalidQuery($query);
             }
 
             if ($response->total_record_count == 0) {

@@ -3,10 +3,11 @@
 namespace spec\Scriptotek\Alma;
 
 use GuzzleHttp\Psr7\Response;
+use Http\Client\Common\Exception\ClientErrorException;
 use Http\Mock\Client as MockHttp;
 use PhpSpec\ObjectBehavior;
+use Scriptotek\Alma\Exception\ResourceNotFound;
 use Scriptotek\Alma\Zones;
-use function GuzzleHttp\Psr7\stream_for;
 
 function str_random()
 {
@@ -25,12 +26,10 @@ class ClientSpec extends ObjectBehavior
         return $http;
     }
 
-    protected function httpWithResponseBody($body)
+    protected function httpWithResponseBody($body, $statusCode = 200, $headers = [])
     {
         $http = $this->let();
-        $response = new Response();
-        $response = $response->withBody(stream_for($body));
-        $http->addResponse($response);
+        $http->addResponse(new Response($statusCode, $headers, $body));
 
         return $http;
     }
@@ -109,5 +108,19 @@ class ClientSpec extends ObjectBehavior
         $http->addResponse($response);
 
         $this->getRedirectLocation('/')->shouldBe('http://test.test');
+    }
+
+    public function it_throws_resource_not_found_exception_if_not_found(ClientErrorException $exception)
+    {
+        $responseBody = SpecHelper::getDummyData('item_barcode_error_response.json', false);
+        $exception->getResponse()->willReturn(new Response(400, [], $responseBody));
+
+        $http = $this->let();
+        $http->addException($exception->getWrappedObject());
+
+        $this->shouldThrow(new ResourceNotFound('No items found for barcode 123.', '401689'))
+            ->during('getJSON', ['/items/123']);
+
+        expect($http->getRequests())->toHaveCount(1);
     }
 }

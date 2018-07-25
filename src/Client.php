@@ -21,7 +21,9 @@ use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Items;
 use Scriptotek\Alma\Exception\ClientException as AlmaClientException;
+use Scriptotek\Alma\Exception\InvalidApiKey;
 use Scriptotek\Alma\Exception\MaxNumberOfAttemptsExhausted;
+use Scriptotek\Alma\Exception\RequestFailed;
 use Scriptotek\Alma\Exception\ResourceNotFound;
 use Scriptotek\Alma\Exception\SruClientNotSetException;
 use Scriptotek\Alma\Users\Users;
@@ -218,26 +220,30 @@ class Client
                 // We've run into the "Max 25 API calls per institution per second" limit.
                 // Wait a sec and retry, unless we've tried too many times already.
                 if ($attempt > $this->maxAttempts) {
-                    throw new MaxNumberOfAttemptsExhausted($e);
+                    throw new MaxNumberOfAttemptsExhausted(
+                        'Rate limiting error - max number of retry attempts exhausted.',
+                        0,
+                        $e
+                    );
                 }
                 time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
-
                 return $this->request($request, $attempt + 1);
             }
 
-            if ($e->getResponse()->getStatusCode() == 400) {
-                throw new ResourceNotFound($e->getMessage(), $e->getCode(), $e);
-            }
+            // Throw exception for other 4XX errors
+            throw $this->exceptionFromClientError($e);
 
-            throw $e;
         } catch (NetworkException $e) {
             // Thrown in case of a networking error
-
+            // Wait a sec and retry, unless we've tried too many times already.
             if ($attempt > $this->maxAttempts) {
-                throw new MaxNumberOfAttemptsExhausted($e);
+                throw new MaxNumberOfAttemptsExhausted(
+                    'Network error - max number of retry attempts exhausted.',
+                    0,
+                    $e
+                );
             }
             time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
-
             return $this->request($request, $attempt + 1);
         }
     }
@@ -430,5 +436,29 @@ class Client
     public function make($className, ...$params)
     {
         return new $className($this, ...$params);
+    }
+
+    /**
+     * Generate a client exception.
+     *
+     * @param HttpClientErrorException $exception
+     * @return RequestFailed
+     */
+    protected function exceptionFromClientError(HttpClientErrorException $exception)
+    {
+        $responseBody = $exception->getResponse()->getBody();
+
+        if (strtolower($responseBody) == 'invalid api key') {
+            return new InvalidApiKey($responseBody, 0, $exception);
+        }
+        $res = json_decode($responseBody, true);
+        $message = $res['errorList']['error'][0]['errorMessage'] ?? 'Bad request';
+        $code = $res['errorList']['error'][0]['errorCode'] ?? 0;
+
+        if (preg_match('/no items? found/i', $message)) {
+            return new ResourceNotFound($message, $code, $exception);
+        }
+
+        return new RequestFailed($message, $code, $exception);
     }
 }
