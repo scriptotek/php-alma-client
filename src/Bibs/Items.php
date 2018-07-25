@@ -10,24 +10,24 @@ class Items extends CountableGhostModelList implements \Countable, \Iterator
 {
     use IterableResource;
 
-    /* @var string */
-    public $mms_id;
+    /* @var Bib */
+    public $bib;
 
-    /* @var string */
-    public $holding_id;
+    /* @var Holding*/
+    public $holding;
 
-    public function __construct(Client $client, $mms_id = null, $holding_id = null)
+    public function __construct(Client $client, Bib $bib = null, Holding $holding = null)
     {
         parent::__construct($client);
-        $this->mms_id = $mms_id;
-        $this->holding_id = $holding_id;
+        $this->bib = $bib;
+        $this->holding = $holding;
     }
 
     public function setData(\stdClass $data)
     {
         $this->resources = array_map(
             function (\stdClass $item) {
-                return Item::make($this->client, $this->mms_id, $this->holding_id, $item->item_data->pid)
+                return Item::make($this->client, $this->bib, $this->holding, $item->item_data->pid)
                     ->init($item);
             },
             $data->item
@@ -52,7 +52,10 @@ class Items extends CountableGhostModelList implements \Countable, \Iterator
             $holding_id = $matches[2];
             $item_id = $matches[3];
 
-            return Item::make($this->client, $mms_id, $holding_id, $item_id);
+            $bib = Bib::make($this->client, $mms_id);
+            $holding = Holding::make($this->client, $bib, $holding_id);
+
+            return Item::make($this->client, $bib, $holding, $item_id);
         }
 
         return null;
@@ -76,6 +79,6 @@ class Items extends CountableGhostModelList implements \Countable, \Iterator
      */
     protected function urlBase()
     {
-        return "/bibs/{$this->mms_id}/holdings/{$this->holding_id}/items";
+        return "/bibs/{$this->bib->mms_id}/holdings/{$this->holding->holding_id}/items";
     }
 }

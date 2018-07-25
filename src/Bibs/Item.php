@@ -7,36 +7,29 @@ use Scriptotek\Alma\GhostModel;
 
 class Item extends GhostModel
 {
-    /** @var string */
-    protected $mms_id;
-
-    /** @var string */
-    protected $holding_id;
-
-    /** @var string */
-    protected $item_id;
-
     /** @var Bib */
     public $bib;
 
     /** @var Holding */
     public $holding;
 
+    /** @var string */
+    protected $item_id;
+
     /**
      * Item constructor.
+     *
      * @param Client $client
-     * @param $mms_id
-     * @param $holding_id
+     * @param Bib $bib
+     * @param Holding $holding
      * @param $item_id
      */
-    public function __construct(Client $client, $mms_id, $holding_id, $item_id)
+    public function __construct(Client $client, Bib $bib, Holding $holding, $item_id)
     {
         parent::__construct($client);
-        $this->mms_id = $mms_id;
-        $this->holding_id = $holding_id;
+        $this->bib = $bib;
+        $this->holding = $holding;
         $this->item_id = $item_id;
-        $this->bib = Bib::make($this->client, $mms_id);
-        $this->holding = Holding::make($this->client, $mms_id, $holding_id);
     }
 
     /**
@@ -46,7 +39,7 @@ class Item extends GhostModel
      */
     protected function urlBase()
     {
-        return "/bibs/{$this->mms_id}/holdings/{$this->holding_id}/items/{$this->item_id}";
+        return "/bibs/{$this->bib->mms_id}/holdings/{$this->holding->holding_id}/items/{$this->item_id}";
     }
 
     /**

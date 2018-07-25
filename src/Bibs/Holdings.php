@@ -9,14 +9,13 @@ use Scriptotek\Alma\IterableResource;
 class Holdings extends CountableGhostModelList implements \Countable, \Iterator, \ArrayAccess
 {
     use IterableResource;
+    /* @var Bib */
+    public $bib;
 
-    /* @var string */
-    public $mms_id;
-
-    public function __construct(Client $client, $mms_id)
+    public function __construct(Client $client, Bib $bib)
     {
         parent::__construct($client);
-        $this->mms_id = $mms_id;
+        $this->bib = $bib;
     }
 
     /**
@@ -27,14 +26,14 @@ class Holdings extends CountableGhostModelList implements \Countable, \Iterator,
      */
     public function get($holding_id)
     {
-        return Holding::make($this->client, $this->mms_id, $holding_id);
+        return Holding::make($this->client, $this->bib, $holding_id);
     }
 
     public function setData(\stdClass $data)
     {
         $this->resources = array_map(
             function (\stdClass $holding) {
-                return Holding::make($this->client, $this->mms_id, $holding->holding_id)
+                return Holding::make($this->client, $this->bib, $holding->holding_id)
                     ->init($holding);
             },
             $data->holding
@@ -59,6 +58,6 @@ class Holdings extends CountableGhostModelList implements \Countable, \Iterator,
      */
     protected function urlBase()
     {
-        return "/bibs/{$this->mms_id}/holdings";
+        return "/bibs/{$this->bib->mms_id}/holdings";
     }
 }

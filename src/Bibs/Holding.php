@@ -9,9 +9,6 @@ use Scriptotek\Marc\Record as MarcRecord;
 class Holding extends GhostModel
 {
     /* @var string */
-    public $mms_id;
-
-    /* @var string */
     public $holding_id;
 
     /* @var Bib */
@@ -23,13 +20,12 @@ class Holding extends GhostModel
     /* @var MarcRecord */
     protected $_marc;
 
-    public function __construct(Client $client, $mms_id, $holding_id)
+    public function __construct(Client $client, Bib $bib, $holding_id)
     {
         parent::__construct($client);
-        $this->mms_id = $mms_id;
+        $this->bib = $bib;
         $this->holding_id = $holding_id;
-        $this->items = Items::make($this->client, $mms_id, $holding_id);
-        $this->bib = Bib::make($this->client, $mms_id);
+        $this->items = Items::make($this->client, $bib, $this);
     }
 
     /**
@@ -60,7 +56,7 @@ class Holding extends GhostModel
      */
     protected function urlBase()
     {
-        return "/bibs/{$this->mms_id}/holdings/{$this->holding_id}";
+        return "/bibs/{$this->bib->mms_id}/holdings/{$this->holding_id}";
     }
 
     /**

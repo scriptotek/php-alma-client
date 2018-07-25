@@ -5,6 +5,8 @@ namespace spec\Scriptotek\Alma\Bibs;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Psr\Http\Message\UriInterface;
+use Scriptotek\Alma\Bibs\Bib;
+use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Item;
 use Scriptotek\Alma\Bibs\Items;
 use Scriptotek\Alma\Client as AlmaClient;
@@ -13,9 +15,9 @@ use spec\Scriptotek\Alma\SpecHelper;
 
 class ItemsSpec extends ObjectBehavior
 {
-    public function let(AlmaClient $client, SruClient $sru)
+    public function let(AlmaClient $client, SruClient $sru, Bib $bib, Holding $holding)
     {
-        $this->beConstructedWith($client);
+        $this->beConstructedWith($client, $bib, $holding);
         $client->sru = $sru;
     }
 

@@ -5,6 +5,7 @@ namespace spec\Scriptotek\Alma\Bibs;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Psr\Http\Message\UriInterface;
+use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Holdings;
 use Scriptotek\Alma\Client as AlmaClient;
@@ -54,10 +55,10 @@ class HoldingsSpec extends ObjectBehavior
           "total_record_count": 2
         }';
 
-    public function let(AlmaClient $client)
+    public function let(AlmaClient $client, Bib $bib)
     {
-        $mms_id = 'abc';
-        $this->beConstructedWith($client, $mms_id);
+        $bib->mms_id = 'abc';
+        $this->beConstructedWith($client, $bib);
     }
 
     protected function expectNoRequests($client)
@@ -67,7 +68,7 @@ class HoldingsSpec extends ObjectBehavior
             ->shouldNotBeCalled();
     }
 
-    public function it_provides_a_lazy_interface_to_holding_objects(AlmaClient $client)
+    public function it_provides_a_lazy_interface_to_holding_objects(AlmaClient $client, Bib $bib)
     {
         $this->expectNoRequests($client);
 
@@ -75,7 +76,7 @@ class HoldingsSpec extends ObjectBehavior
         $holding = $this->get($holding_id);
 
         $holding->shouldHaveType(Holding::class);
-        $holding->mms_id->shouldBe($this->mms_id);
+        $holding->bib->shouldBe($bib);
         $holding->holding_id->shouldBe($holding_id);
     }
 

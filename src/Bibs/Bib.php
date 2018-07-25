@@ -15,17 +15,17 @@ class Bib extends GhostModel
     /** @var string */
     public $mms_id;
 
-    /* @var MarcRecord */
-    protected $_marc;
-
     /* @var Holdings */
     public $holdings;
+
+    /* @var MarcRecord */
+    protected $_marc;
 
     public function __construct(Client $client = null, $mms_id = null)
     {
         parent::__construct($client);
         $this->mms_id = $mms_id;
-        $this->holdings = Holdings::make($this->client, $this->mms_id);
+        $this->holdings = Holdings::make($this->client, $this);
     }
 
     /**
