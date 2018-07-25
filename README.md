@@ -18,6 +18,7 @@ If the package doesn't fit your needs, you might take a look at the alternative
       * [Table of Contents](#table-of-contents)
       * [Install using Composer](#install-using-composer)
       * [Initializing a client](#initializing-a-client)
+      * [Note about lazy-loading and existence-checking](#note-about-lazy-loading-and-existence-checking)
       * [Bibliographic records](#bibliographic-records)
          * [Getting a single record](#getting-a-single-record)
          * [The MARC21 record](#the-marc21-record)
@@ -28,11 +29,12 @@ If the package doesn't fit your needs, you might take a look at the alternative
       * [Analytics reports](#analytics-reports)
          * [Column names](#column-names)
          * [Filters](#filters)
+      * [Items](#items)
       * [Users](#users)
       * [Laravel 5 integration](#laravel-5-integration)
       * [Future plans](#future-plans)
 
-*Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)*
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ## Install using Composer
 
@@ -91,6 +93,45 @@ $alma->nz->setSruClient(new SruClient(
 ));
 ```
 
+## Note about lazy-loading and existence-checking
+
+The library uses lazy-loading to reduce the number of network requests by delaying the data loading
+until the data is actually needed. This means you can for instance initialize a Bib object and echo
+back the MMS id without any network requests taking place:
+
+```php
+$bib = $alma->bibs->get('9901140123047044111');
+echo $bib->mms_id;
+```
+
+If you request anything else on the Bib object, like the title, the resource will automatically load:
+
+```php
+echo $bib->title;
+```
+
+If the Bib record did not exist, a `ResourceNotFound` exception would be thrown at this point. So you
+could go ahead and handle that case like so:
+
+```php
+
+$bib = $alma->bibs->get('9901140123047044111');
+try {
+    echo $bib->title;
+} catch (\Scriptotek\Alma\Exception\ResourceNotFound $exc) {
+    // Handle the case when the record doesn't exist
+}
+```
+
+But you can also use the `exists()` method, which is often more convenient:
+
+```php
+$bib = $alma->bibs->get('9901140123047044111');
+if (!$bib->exists()) {
+    // Handle the case when the record doesn't exist
+}
+```
+
 
 ## Bibliographic records
 
@@ -107,6 +148,8 @@ or by barcode:
 ```php
 $bib = $alma->bibs->fromBarcode('92nf02526');
 ```
+
+Note: This methods returns null if the barcode is not found, as does the two methods below.
 
 There are also two lookup methods that use SRU search and require that you have
 an SRU client attached. The first lets you use a generic CQL query:

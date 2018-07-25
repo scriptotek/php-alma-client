@@ -12,7 +12,7 @@ abstract class CountableGhostModelList extends GhostModel implements \Countable
      *
      * @return array
      */
-    public function get()
+    public function all()
     {
         return $this->init()->resources;
     }
@@ -26,6 +26,6 @@ abstract class CountableGhostModelList extends GhostModel implements \Countable
      */
     public function count()
     {
-        return count($this->get());
+        return count($this->all());
     }
 }

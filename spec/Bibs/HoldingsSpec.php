@@ -3,6 +3,7 @@
 namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
 use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Holdings;
@@ -59,9 +60,23 @@ class HoldingsSpec extends ObjectBehavior
         $this->beConstructedWith($client, $mms_id);
     }
 
-    public function it_is_initializable()
+    protected function expectNoRequests($client)
     {
-        $this->shouldHaveType(Holdings::class);
+        // No /bibs request should be made.
+        $client->getJSON(Argument::any(), Argument::any())
+            ->shouldNotBeCalled();
+    }
+
+    public function it_provides_a_lazy_interface_to_holding_objects(AlmaClient $client)
+    {
+        $this->expectNoRequests($client);
+
+        $holding_id = '12345'; // str_random();
+        $holding = $this->get($holding_id);
+
+        $holding->shouldHaveType(Holding::class);
+        $holding->mms_id->shouldBe($this->mms_id);
+        $holding->holding_id->shouldBe($holding_id);
     }
 
     public function it_is_countable(AlmaClient $client, UriInterface $url)

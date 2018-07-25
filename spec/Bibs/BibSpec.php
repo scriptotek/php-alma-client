@@ -10,6 +10,7 @@ use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Holdings;
 use Scriptotek\Alma\Client as AlmaClient;
+use Scriptotek\Alma\Exception\ResourceNotFound;
 use Scriptotek\Marc\Record;
 use spec\Scriptotek\Alma\SpecHelper;
 
@@ -49,6 +50,13 @@ class BibSpec extends ObjectBehavior
         $this->created_date->shouldBe('2015-11-05Z');
     }
 
+    public function it_loads_bib_data_when_needed2(AlmaClient $client, UriInterface $url)
+    {
+        $this->expectRequest($client, $url);
+
+        $this->exists()->shouldBe(true);
+    }
+
     public function it_links_to_network_zone(AlmaClient $client, AlmaClient $nz, Bibs $bibs, Bib $nz_bib, UriInterface $url)
     {
         $this->expectRequest($client, $url);
@@ -85,5 +93,18 @@ class BibSpec extends ObjectBehavior
         $client->putJSON('/bibs/999104760474702204', Argument::containingString('New title'))
             ->shouldBeCalled();
         $this->save();
+    }
+
+    public function it_catches_resource_not_found(AlmaClient $client, UriInterface $url)
+    {
+        $client->buildUrl('/bibs/999104760474702204', [])
+            ->shouldBeCalled()
+            ->willReturn($url);
+
+        $client->getJSON($url)
+            ->shouldBeCalled()
+            ->willThrow(ResourceNotFound::class);
+
+        $this->exists()->shouldBe(false);
     }
 }

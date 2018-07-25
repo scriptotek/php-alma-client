@@ -6,7 +6,7 @@ use Scriptotek\Alma\Client;
 use Scriptotek\Alma\CountableGhostModelList;
 use Scriptotek\Alma\IterableResource;
 
-class Holdings extends CountableGhostModelList implements \Countable, \Iterator
+class Holdings extends CountableGhostModelList implements \Countable, \Iterator, \ArrayAccess
 {
     use IterableResource;
 
@@ -17,6 +17,17 @@ class Holdings extends CountableGhostModelList implements \Countable, \Iterator
     {
         parent::__construct($client);
         $this->mms_id = $mms_id;
+    }
+
+    /**
+     * Get resource.
+     *
+     * @param string $holding_id
+     * @return Holding
+     */
+    public function get($holding_id)
+    {
+        return Holding::make($this->client, $this->mms_id, $holding_id);
     }
 
     public function setData(\stdClass $data)

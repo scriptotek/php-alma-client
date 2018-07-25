@@ -3,11 +3,10 @@
 namespace Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
-use Http\Client\Common\Exception\ClientErrorException;
+use Http\Client\Common\Exception\ClientErrorException as HttpClientErrorException;
 use Http\Client\Common\Plugin\ContentLengthPlugin;
 use Http\Client\Common\Plugin\ErrorPlugin;
 use Http\Client\Common\PluginClient;
-use Http\Client\Exception\HttpException;
 use Http\Client\Exception\NetworkException;
 use Http\Client\HttpClient;
 use Http\Discovery\HttpClientDiscovery;
@@ -21,8 +20,9 @@ use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Items;
-use Scriptotek\Alma\Exception\ClientException;
+use Scriptotek\Alma\Exception\ClientException as AlmaClientException;
 use Scriptotek\Alma\Exception\MaxNumberOfAttemptsExhausted;
+use Scriptotek\Alma\Exception\ResourceNotFound;
 use Scriptotek\Alma\Exception\SruClientNotSetException;
 use Scriptotek\Alma\Users\Users;
 use Scriptotek\Sru\Client as SruClient;
@@ -113,7 +113,7 @@ class Client
         if ($zone == Zones::INSTITUTION) {
             $this->nz = new self(null, $region, Zones::NETWORK, $this->http, $this->messageFactory, $this->uriFactory);
         } elseif ($zone != Zones::NETWORK) {
-            throw new ClientException('Invalid zone name.');
+            throw new AlmaClientException('Invalid zone name.');
         }
     }
 
@@ -165,7 +165,7 @@ class Client
     public function setRegion($regionCode)
     {
         if (!in_array($regionCode, ['na', 'eu', 'ap'])) {
-            throw new ClientException('Invalid region code');
+            throw new AlmaClientException('Invalid region code');
         }
         $this->baseUrl = 'https://api-' . $regionCode . '.hosted.exlibrisgroup.com/almaws/v1';
 
@@ -206,12 +206,12 @@ class Client
     public function request(RequestInterface $request, $attempt = 1)
     {
         if (!$this->key) {
-            throw new ClientException('No API key defined for ' . $this->zone);
+            throw new AlmaClientException('No API key defined for ' . $this->zone);
         }
 
         try {
             return $this->http->sendRequest($request);
-        } catch (HttpException $e) {
+        } catch (HttpClientErrorException $e) {
             // Thrown for 400 level errors
 
             if ($e->getResponse()->getStatusCode() == '429') {
@@ -223,6 +223,10 @@ class Client
                 time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
 
                 return $this->request($request, $attempt + 1);
+            }
+
+            if ($e->getResponse()->getStatusCode() == 400) {
+                throw new ResourceNotFound($e->getMessage(), $e->getCode(), $e);
             }
 
             throw $e;
@@ -403,12 +407,13 @@ class Client
      */
     public function getRedirectLocation($url, $query = [])
     {
-        $uri = $this->buildUrl($url, $query);
-        $request = $this->messageFactory->createRequest('GET', $uri);
+        $url = $this->buildUrl($url, $query);
+
+        $request = $this->messageFactory->createRequest('GET', $url);
 
         try {
             $response = $this->request($request);
-        } catch (ClientErrorException $e) {
+        } catch (ResourceNotFound $e) {
             return;
         }
 

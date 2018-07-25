@@ -3,6 +3,7 @@
 namespace Scriptotek\Alma;
 
 use Psr\Http\Message\UriInterface;
+use Scriptotek\Alma\Exception\ResourceNotFound;
 
 abstract class GhostModel extends Model
 {
@@ -40,7 +41,7 @@ abstract class GhostModel extends Model
         }
 
         if (is_null($data)) {
-            $data = $this->client->getJSON($this->url());
+            $data = $this->fetchData();
         }
 
         if (!is_null($data) && $this->isInitialized($data)) {
@@ -53,6 +54,14 @@ abstract class GhostModel extends Model
         }
 
         return $this;
+    }
+
+    /**
+     * Get the model data.
+     */
+    protected function fetchData()
+    {
+        return $this->client->getJSON($this->url());
     }
 
     /**
@@ -70,6 +79,18 @@ abstract class GhostModel extends Model
     public function getData()
     {
         return $this->init()->data;
+    }
+
+    /**
+     * Check if the object exists.
+     */
+    public function exists()
+    {
+        try {
+            $this->init();
+        } catch (ResourceNotFound $ex) {}
+
+        return $this->initialized;
     }
 
     /**
