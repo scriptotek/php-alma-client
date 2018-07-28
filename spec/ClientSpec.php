@@ -6,6 +6,8 @@ use GuzzleHttp\Psr7\Response;
 use Http\Client\Common\Exception\ClientErrorException;
 use Http\Mock\Client as MockHttp;
 use PhpSpec\ObjectBehavior;
+use Scriptotek\Alma\Exception\InvalidApiKey;
+use Scriptotek\Alma\Exception\RequestFailed;
 use Scriptotek\Alma\Exception\ResourceNotFound;
 use Scriptotek\Alma\Zones;
 
@@ -110,10 +112,51 @@ class ClientSpec extends ObjectBehavior
         $this->getRedirectLocation('/')->shouldBe('http://test.test');
     }
 
-    public function it_throws_resource_not_found_exception_if_not_found(ClientErrorException $exception)
+    public function it_processes_json_error_responses(ClientErrorException $exception)
     {
-        $responseBody = SpecHelper::getDummyData('item_barcode_error_response.json', false);
-        $exception->getResponse()->willReturn(new Response(400, [], $responseBody));
+        $exception->getResponse()->willReturn(new Response(
+            400,
+            ['Content-Type' => 'application/json;charset=utf-8'],
+            SpecHelper::getDummyData('error_response.json', false)
+        ));
+
+        $http = $this->let();
+        $http->addException($exception->getWrappedObject());
+
+        $this->shouldThrow(new RequestFailed(
+            'Mandatory field is missing: library',
+            '401664'
+        ))->during('getJSON', ['/items/123']);
+
+        expect($http->getRequests())->toHaveCount(1);
+    }
+
+    public function it_processes_xml_error_responses(ClientErrorException $exception)
+    {
+        $exception->getResponse()->willReturn(new Response(
+            400,
+            ['Content-Type' => 'application/xml;charset=utf-8'],
+            SpecHelper::getDummyData('error_response.xml', false)
+        ));
+
+        $http = $this->let();
+        $http->addException($exception->getWrappedObject());
+
+        $this->shouldThrow(new RequestFailed(
+            'Mandatory field is missing: library',
+            '401664'
+        ))->during('getXML', ['/items/123']);
+
+        expect($http->getRequests())->toHaveCount(1);
+    }
+
+    public function it_can_throw_resource_not_found(ClientErrorException $exception)
+    {
+        $exception->getResponse()->willReturn(new Response(
+            400,
+            ['Content-Type' => 'application/json;charset=utf-8'],
+            SpecHelper::getDummyData('item_barcode_error_response.json', false)
+        ));
 
         $http = $this->let();
         $http->addException($exception->getWrappedObject());
@@ -122,5 +165,38 @@ class ClientSpec extends ObjectBehavior
             ->during('getJSON', ['/items/123']);
 
         expect($http->getRequests())->toHaveCount(1);
+    }
+
+    public function it_can_throw_invalid_api_key(ClientErrorException $exception)
+    {
+        $exception->getResponse()->willReturn(new Response(
+            400,
+            ['Content-Type' => 'text/plain;charset=UTF-8'],
+            'Invalid API Key'
+        ));
+
+        $http = $this->let();
+        $http->addException($exception->getWrappedObject());
+
+        $this->shouldThrow(new InvalidApiKey('Invalid API Key', 0))
+           ->during('getJSON', ['/items/123']);
+
+        expect($http->getRequests())->toHaveCount(1);
+    }
+
+    public function it_will_retry_when_reaching_rate_limit(ClientErrorException $exception)
+    {
+        $exception->getResponse()->willReturn(new Response(
+            400,
+            ['Content-Type' => 'application/json;charset=utf-8'],
+            SpecHelper::getDummyData('per_second_threshold_error_response.json', false)
+        ));
+
+        $http = $this->let();
+        $http->addException($exception->getWrappedObject());
+
+        $this->getJSON('/items/123');
+
+        expect($http->getRequests())->toHaveCount(2);
     }
 }

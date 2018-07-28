@@ -1,0 +1,12 @@
+{
+    "errorList": {
+        "error": [
+            {
+                "errorCode": "PER_SECOND_THRESHOLD",
+                "errorMessage": "HTTP requests are more than allowed per second. See https://goo.gl/2x1c1M "
+            }
+        ]
+    },
+    "errorsExist": true,
+    "result": null
+}

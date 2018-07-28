@@ -223,8 +223,9 @@ class Client
             return $this->http->sendRequest($request);
         } catch (HttpClientErrorException $e) {
             // Thrown for 400 level errors
+            $error = $this->parseClientError($e);
 
-            if ($e->getResponse()->getStatusCode() == '429') {
+            if ($error->getErrorCode() === 'PER_SECOND_THRESHOLD') {
                 // We've run into the "Max 25 API calls per institution per second" limit.
                 // Wait a sec and retry, unless we've tried too many times already.
                 if ($attempt > $this->maxAttempts) {
@@ -239,7 +240,7 @@ class Client
             }
 
             // Throw exception for other 4XX errors
-            throw $this->exceptionFromClientError($e);
+            throw $error;
 
         } catch (NetworkException $e) {
             // Thrown in case of a networking error
@@ -452,16 +453,39 @@ class Client
      * @param HttpClientErrorException $exception
      * @return RequestFailed
      */
-    protected function exceptionFromClientError(HttpClientErrorException $exception)
+    protected function parseClientError(HttpClientErrorException $exception)
     {
-        $responseBody = $exception->getResponse()->getBody();
+        $contentType = explode(';', $exception->getResponse()->getHeaderLine('Content-Type'))[0];
+        $responseBody = (string) $exception->getResponse()->getBody();
 
-        if (strtolower($responseBody) == 'invalid api key') {
-            return new InvalidApiKey($responseBody, 0, $exception);
+        switch ($contentType) {
+            case 'application/json':
+                $res = json_decode($responseBody, true);
+                $err = $res['errorList']['error'][0];
+                $message = $err['errorMessage'];
+                $code = $err['errorCode'];
+                break;
+
+            case 'application/xml':
+                $xml = new QuiteSimpleXMLElement($responseBody);
+                $xml->registerXPathNamespace('xb', 'http://com/exlibris/urm/general/xmlbeans');
+
+                $message = $xml->text('//xb:errorMessage');
+                $code = $xml->text('//xb:errorCode');
+                break;
+
+            default:
+                $message = $responseBody;
+                $code = '';
         }
-        $res = json_decode($responseBody, true);
-        $message = $res['errorList']['error'][0]['errorMessage'] ?? 'Bad request';
-        $code = $res['errorList']['error'][0]['errorCode'] ?? 0;
+
+        // The error code is often an integer, but sometimes a string,
+        // so we generalize it as a string.
+        $code = empty($code) ? null : (string) $code;
+
+        if (strtolower($message) == 'invalid api key') {
+            return new InvalidApiKey($message, null, $exception);
+        }
 
         if (preg_match('/no items? found/i', $message)) {
             return new ResourceNotFound($message, $code, $exception);

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><web_service_result xmlns="http://com/exlibris/urm/general/xmlbeans"><errorsExist>true</errorsExist><errorList><error><errorCode>401664</errorCode><errorMessage>Mandatory field is missing: library</errorMessage><trackingId>E02-2807130150-8OWYS-AWAE533535741</trackingId></error></errorList></web_service_result>
