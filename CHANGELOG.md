@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added methods `getBarcodes()` and `getUniversityIds()` to `UserIdentifiers` to get all active values.
   These are accessible on the `User` object as `$user->barcodes` and `$user->universityIds`.
 - Added method `Client::items->fromBarcode(...)`
-- Added method `Item::checkOut()`, `Item::loan()`, `Item:scanIn()` and `User::loans()`
+- Added method `Item::checkOut()`, `Item::loan()`, `Item:scanIn()` and `User::loans`
 - Added method `exists()` to `Bib`, `Holding`, `Item`, `User`. If trying to get data from a non-existing
   resource, `Scriptotek\Alma\Exception\ResourceNotFound` is thrown.
 - Added array access to `Bibs` and `Holdings`.
