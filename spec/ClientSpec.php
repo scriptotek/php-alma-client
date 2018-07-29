@@ -4,6 +4,7 @@ namespace spec\Scriptotek\Alma;
 
 use GuzzleHttp\Psr7\Response;
 use Http\Client\Common\Exception\ClientErrorException;
+use Http\Client\Common\Exception\ServerErrorException;
 use Http\Mock\Client as MockHttp;
 use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Exception\InvalidApiKey;
@@ -163,6 +164,24 @@ class ClientSpec extends ObjectBehavior
 
         $this->shouldThrow(new ResourceNotFound('No items found for barcode 123.', '401689'))
             ->during('getJSON', ['/items/123']);
+
+        expect($http->getRequests())->toHaveCount(1);
+    }
+
+    public function it_can_throw_resource_not_found_for_500_errors_too(ServerErrorException $exception)
+    {
+        // For Analytics reports, Alma will return 500, not 4xx
+        $exception->getResponse()->willReturn(new Response(
+            500,
+            ['Content-Type' => 'application/xml;charset=utf-8'],
+            SpecHelper::getDummyData('report_not_found_response.xml', false)
+        ));
+
+        $http = $this->let();
+        $http->addException($exception->getWrappedObject());
+
+        $this->shouldThrow(new ResourceNotFound('Path not found (/test/path)', 'INTERNAL_SERVER_ERROR'))
+            ->during('getXML', ['/analytics/reports', ['path' => '/test/path']]);
 
         expect($http->getRequests())->toHaveCount(1);
     }

@@ -3,10 +3,10 @@
 namespace Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
-use Http\Client\Common\Exception\ClientErrorException as HttpClientErrorException;
 use Http\Client\Common\Plugin\ContentLengthPlugin;
 use Http\Client\Common\Plugin\ErrorPlugin;
 use Http\Client\Common\PluginClient;
+use Http\Client\Exception\HttpException;
 use Http\Client\Exception\NetworkException;
 use Http\Client\HttpClient;
 use Http\Discovery\HttpClientDiscovery;
@@ -231,8 +231,8 @@ class Client
 
         try {
             return $this->http->sendRequest($request);
-        } catch (HttpClientErrorException $e) {
-            // Thrown for 400 level errors
+        } catch (HttpException $e) {
+            // Thrown for 400 and 500 level errors.
             $error = $this->parseClientError($e);
 
             if ($error->getErrorCode() === 'PER_SECOND_THRESHOLD') {
@@ -249,7 +249,7 @@ class Client
                 return $this->request($request, $attempt + 1);
             }
 
-            // Throw exception for other 4XX errors
+            // Throw exception for other errors
             throw $error;
 
         } catch (NetworkException $e) {
@@ -460,10 +460,10 @@ class Client
     /**
      * Generate a client exception.
      *
-     * @param HttpClientErrorException $exception
+     * @param HttpException $exception
      * @return RequestFailed
      */
-    protected function parseClientError(HttpClientErrorException $exception)
+    protected function parseClientError(HttpException $exception)
     {
         $contentType = explode(';', $exception->getResponse()->getHeaderLine('Content-Type'))[0];
         $responseBody = (string) $exception->getResponse()->getBody();
@@ -497,7 +497,7 @@ class Client
             return new InvalidApiKey($message, null, $exception);
         }
 
-        if (preg_match('/no items? found/i', $message)) {
+        if (preg_match('/(no items?|not) found/i', $message)) {
             return new ResourceNotFound($message, $code, $exception);
         }
 
