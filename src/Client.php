@@ -183,6 +183,9 @@ class Client
     }
 
     /**
+     * Extend an URL (UriInterface or string) with query string parameters
+     * and return an UriInterface object.
+     *
      * @param string $url|UriInterface
      * @param array  $query
      *
@@ -190,16 +193,23 @@ class Client
      */
     public function buildUrl($url, $query = [])
     {
-        if (!is_a($url, UriInterface::class)) {
+        $query['apikey'] = $this->key;
+
+        $newQuery = [];
+        if (is_a($url, UriInterface::class)) {
+            parse_str($url->getQuery(), $newQuery);
+        } else {
             if (strpos($url, $this->baseUrl) === false) {
                 $url = $this->baseUrl . $url;
             }
             $url = $this->uriFactory->createUri($url);
         }
 
-        $query['apikey'] = $this->key;
+        foreach ($query as $k => $v) {
+            $newQuery[$k] = $v;
+        }
 
-        return $url->withQuery(http_build_query($query));
+        return $url->withQuery(http_build_query($newQuery));
     }
 
     /**
@@ -281,7 +291,7 @@ class Client
     /**
      * Make a GET request, accepting JSON.
      *
-     * @param string $url
+     * @param string $url|UriInterface
      * @param array  $query
      *
      * @return \stdClass JSON response as an object.
@@ -296,7 +306,7 @@ class Client
     /**
      * Make a GET request, accepting XML.
      *
-     * @param string $url
+     * @param string $url|UriInterface
      * @param array  $query
      *
      * @return QuiteSimpleXMLElement
