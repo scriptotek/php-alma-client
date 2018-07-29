@@ -51,7 +51,30 @@ class ReportSpec extends ObjectBehavior
             ->willReturn(SpecHelper::getDummyData('analytics_response.xml'));
 
         $this->exists()->shouldReturn(true);
-        $this->shouldHaveCount(14);
+        $this->shouldHaveCount(25);
+    }
+
+    public function it_parses_column_headers(Client $almaClient, UriInterface $url)
+    {
+        $almaClient->buildUrl('/analytics/reports', [
+            'path' => '/test/path',
+            'limit' => 1000,
+            'token' => null,
+            'filter' => null,
+        ])->shouldBeCalled()->willReturn($url);
+
+        $almaClient->getXML($url)
+            ->shouldBeCalledTimes(1)
+            ->willReturn(SpecHelper::getDummyData('analytics_response.xml'));
+
+        $this->getHeaders()->shouldHaveCount(11);
+        $this->getHeaders()->shouldContain('Event Start Date and Time');
+
+        $this->rewind();
+        $this->valid();
+        $firstRow = $this->current();
+        $firstRow->shouldHaveType(Row::class);
+        $firstRow['Event Start Date and Time']->shouldBe('2017-08-29T15:43:53');
     }
 
     public function it_supports_resumption(Client $almaClient, UriInterface $url1, UriInterface $url2)

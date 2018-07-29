@@ -107,8 +107,9 @@ class Report extends PagedLazyResourceList implements \Iterator, \Countable
         ]));
 
         $results->registerXPathNamespaces([
-            'rowset' => 'urn:schemas-microsoft-com:xml-analysis:rowset',
-            'xsd'    => 'http://www.w3.org/2001/XMLSchema',
+            'rowset'  => 'urn:schemas-microsoft-com:xml-analysis:rowset',
+            'xsd'     => 'http://www.w3.org/2001/XMLSchema',
+            'saw-sql' => 'urn:saw-sql',
         ]);
 
         $this->readColumnHeaders($results);
@@ -148,7 +149,7 @@ class Report extends PagedLazyResourceList implements \Iterator, \Countable
     protected function readColumnHeaders(QuiteSimpleXMLElement $results)
     {
         $headers = array_map(function (QuiteSimpleXMLElement $node) {
-            return $node->attr('name');
+            return $node->attr('saw-sql:columnHeading');
         }, $results->all('//xsd:complexType[@name="Row"]/xsd:sequence/xsd:element[position()>1]'));
 
         if (!count($headers)) {
@@ -206,6 +207,9 @@ class Report extends PagedLazyResourceList implements \Iterator, \Countable
     {
         if ($key === 'headers') {
             return $this->getHeaders();
+        }
+        if ($key === 'rows') {
+            return $this;
         }
     }
 }

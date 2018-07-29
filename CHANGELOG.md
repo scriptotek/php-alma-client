@@ -46,6 +46,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Removed `$client->bibs->getHolding($mmsId, $holdingId)`, please use
   `$client->bibs[$mmsId]->holdings[$holdingId]` instead. It's lazy-loaded, so
   there's no performance drawback of the new interface.
+- Analytics reports: Parses the new `saw-sql:columnHeading` attributes so that columns can be accessed
+  by name.
 
 
 ### Fixed

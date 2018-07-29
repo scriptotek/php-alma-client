@@ -1,262 +1,362 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><report><QueryResult>
-  <ResumptionToken>9430AA2905F5C40E4E1C8D0F02787290FC78BF940BDDF2E56748D67F464D011F739E7DDFAA2CBE81B9333F87ED476D5C163D8CC5881FFC5A208117904853089A</ResumptionToken>
   <IsFinished>true</IsFinished>
   <ResultXml>
     <rowset xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
       <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql" targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
         <xsd:complexType name="Row">
           <xsd:sequence>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column0" saw-sql:displayFormula="s_0" saw-sql:type="integer" type="xsd:int"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column1" saw-sql:displayFormula="s_1" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column2" saw-sql:displayFormula="s_2" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column3" saw-sql:displayFormula="s_3" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column4" saw-sql:displayFormula="s_4" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column5" saw-sql:displayFormula="s_5" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column6" saw-sql:displayFormula="s_6" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column7" saw-sql:displayFormula="s_7" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column8" saw-sql:displayFormula="s_8" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column9" saw-sql:displayFormula="s_9" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column10" saw-sql:displayFormula="s_10" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column11" saw-sql:displayFormula="s_11" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column12" saw-sql:displayFormula="s_12" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column13" saw-sql:displayFormula="s_13" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column14" saw-sql:displayFormula="s_14" saw-sql:type="varchar" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Column15" saw-sql:displayFormula="s_15" saw-sql:type="date" type="xsd:date"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column0" saw-sql:columnHeading="0" saw-sql:displayFormula="saw_0" saw-sql:tableHeading="" saw-sql:type="integer" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column1" saw-sql:columnHeading="Event End Date and Time" saw-sql:displayFormula="saw_1" saw-sql:tableHeading="Event End Date" saw-sql:type="timestamp" type="xsd:dateTime"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column2" saw-sql:columnHeading="Event Start Date and Time" saw-sql:displayFormula="saw_2" saw-sql:tableHeading="Event Start Date" saw-sql:type="timestamp" type="xsd:dateTime"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column3" saw-sql:columnHeading="Title" saw-sql:displayFormula="saw_3" saw-sql:tableHeading="Item Bibliographic Details" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column4" saw-sql:columnHeading="Source Library Code" saw-sql:displayFormula="saw_4" saw-sql:tableHeading="Source Location" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column5" saw-sql:columnHeading="Source Location Name" saw-sql:displayFormula="saw_5" saw-sql:tableHeading="Source Location" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column6" saw-sql:columnHeading="Temporary Library Name" saw-sql:displayFormula="saw_6" saw-sql:tableHeading="Temporay Location" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column7" saw-sql:columnHeading="Temporary Location Name" saw-sql:displayFormula="saw_7" saw-sql:tableHeading="Temporay Location" saw-sql:type="varchar" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column8" saw-sql:columnHeading="Num of events" saw-sql:displayFormula="saw_8" saw-sql:tableHeading="Item Event Measures" saw-sql:type="double" type="xsd:double"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column9" saw-sql:columnHeading="Total Event duration (days)" saw-sql:displayFormula="saw_9" saw-sql:tableHeading="Item Event Measures" saw-sql:type="double" type="xsd:double"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column10" saw-sql:columnHeading=" REPORT_SUM(Num of events BY )" saw-sql:displayFormula="saw_10" saw-sql:tableHeading="Item Event Measures" saw-sql:type="double" type="xsd:double"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Column11" saw-sql:columnHeading=" REPORT_SUM(Total Event duration (days) BY )" saw-sql:displayFormula="saw_11" saw-sql:tableHeading="Item Event Measures" saw-sql:type="double" type="xsd:double"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:schema>
       <Row>
         <Column0>0</Column0>
-        <Column3>9782812413926; 2812413921</Column3>
-        <Column4>999919849003602204</Column4>
-        <Column5>2013</Column5>
-        <Column6>Paris</Column6>
-        <Column7>Classiques Garnier</Column7>
-        <Column8>Romancières en France de 1848 à 1870</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16018777</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-20</Column15>
+        <Column1>2017-09-29T13:32:37</Column1>
+        <Column2>2017-08-29T15:43:53</Column2>
+        <Column3>"- og denne Videnskab har man kaldet Grammatiken" : tre studier i skolegrammatikkens historie</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>30.9088</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column1>Sansal, Boualem.</Column1>
-        <Column3>9782070142897; 2070142892</Column3>
-        <Column4>999919848984602204</Column4>
-        <Column5>[2013]</Column5>
-        <Column6>[Paris] :</Column6>
-        <Column7>Gallimard</Column7>
-        <Column8>Gouverner au nom d'Allah : islamisation et soif de pouvoir dans le monde arabe /</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16020268</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-06-30</Column15>
+        <Column2>2018-01-08T09:21:43</Column2>
+        <Column3>"- og denne Videnskab har man kaldet Grammatiken" : tre studier i skolegrammatikkens historie</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column3>2745302019; 9782745302014</Column3>
-        <Column4>999919850115002204</Column4>
-        <Column5>2000.</Column5>
-        <Column6>Paris :</Column6>
-        <Column7>Diffusion hors France Slatkine; Champion</Column7>
-        <Column8>Amoralité de la littérature, morales de l'écrivain : actes du colloque international organisé par le Centre Michel Baude littérature et spiritualité de l'Université de Metz, les 26 et 27 mars 1998 /</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16020682</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-06-30</Column15>
+        <Column1>2018-06-20T14:25:23</Column1>
+        <Column2>2018-05-14T11:17:50</Column2>
+        <Column3>"-pressen kan kun skrive ondt om jøderne" : jøden som kulturell konstruksjon i norsk dags- og vittighetspresse 1905-1925</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>37.1302</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column1>Quaranta, Jean-Marc.</Column1>
-        <Column3>9782370670205; 2370670207</Column3>
-        <Column4>999919850114902204</Column4>
-        <Column5>[2016]</Column5>
-        <Column6>Paris :</Column6>
-        <Column7>Plein jour</Column7>
-        <Column8>Houellebecq aux fourneaux /</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16020683</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-06-30</Column15>
+        <Column1>2017-11-20T12:48:47</Column1>
+        <Column2>2017-11-07T10:13:07</Column2>
+        <Column3>"... so blickt der Krieg in allen Enden hindurch" die Hansestadt Lübeck im Kriegsalltag 1914-1918</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Nyhetshylle</Column7>
+        <Column8>1</Column8>
+        <Column9>13.1081</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column1>Compagnon, Antoine, 1950-</Column1>
-        <Column3>9782849902448; 2849902446</Column3>
-        <Column4>999919851410702204</Column4>
-        <Column5>[2013]</Column5>
-        <Column6>[Paris] :</Column6>
-        <Column7>Éditions des Équateurs</Column7>
-        <Column8>Un été avec Montaigne /</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16021958</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-14</Column15>
+        <Column1>2017-10-06T12:52:55</Column1>
+        <Column2>2017-06-02T11:02:52</Column2>
+        <Column3>"...tiltalt for Barnefødsel i Dølgsmaal..." : en sosial- og rettshistorisk undersøkelse av kvinner tiltalt for barnefødsel i dølgsmål i Stavanger amt, 1610-1880</Column3>
+        <Column4/>
+        <Column5/>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>126.0764</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column1>Compagnon, Antoine, 1950- author.</Column1>
-        <Column3>2081301679; 9782081301672</Column3>
-        <Column4>999919851410602204</Column4>
-        <Column5>[2014]</Column5>
-        <Column6>[Paris] :</Column6>
-        <Column7>Flammarion</Column7>
-        <Column8>Baudelaire : l'irréductible /</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16021961</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-11</Column15>
+        <Column1>2018-06-19T12:05:50</Column1>
+        <Column2>2018-06-14T09:33:06</Column2>
+        <Column3>"A wise and discerning mind" : essays in honor of Burke O. Long</Column3>
+        <Column4>1030301</Column4>
+        <Column5>UHS/TEOL Boksamling</Column5>
+        <Column6>UiO Teologisk bibliotek</Column6>
+        <Column7>UHS/TEOL Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>5.1061</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column3>9782035923660; 2035923662</Column3>
-        <Column4>999919851810302204</Column4>
-        <Column5>2015</Column5>
-        <Column6>[Paris]</Column6>
-        <Column7>Larousse</Column7>
-        <Column8>Le grand Larousse de l'histoire de France</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16022410</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-20</Column15>
+        <Column1>2018-01-08T08:22:54</Column1>
+        <Column2>2017-12-20T13:22:45</Column2>
+        <Column3>"A živu v dome Šilja..." : adresa F.M. Dostoevskogo v Peterburge, izvestnye i neizvestnye : 1837-1881 : issledovanie</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Nyhetshylle</Column7>
+        <Column8>1</Column8>
+        <Column9>18.7918</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column1>Quignard, Pascal</Column1>
-        <Column3>9782070401284; 2070401286</Column3>
-        <Column4>999919852113602204</Column4>
-        <Column5>1997</Column5>
-        <Column6>Paris</Column6>
-        <Column7>Gallimard</Column7>
-        <Column8>Petites traités II</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16022690</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-15</Column15>
+        <Column1>2018-03-16T13:07:26</Column1>
+        <Column2>2017-11-14T10:26:52</Column2>
+        <Column3>"Akkurat nå liker jeg alt mulig rart egentlig" : jenter med ADHD forteller om egne skoleerfaringer : en kvalitativ studie</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS Mag312 Master</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>122.1115</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column1>Schor, Ralph</Column1>
-        <Column3>9782701132136; 2701132134</Column3>
-        <Column4>999919852113202204</Column4>
-        <Column5>2005</Column5>
-        <Column6>Paris</Column6>
-        <Column7>Belin</Column7>
-        <Column8>Histoire de la société française au XXe siècle</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16022697</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-15</Column15>
+        <Column1>2018-01-22T10:01:56</Column1>
+        <Column2>2018-01-18T14:23:20</Column2>
+        <Column3>"Alexander L. Kielland"-ulykken : hendelsen, etterspillet, hemmelighetene</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Nyhetshylle</Column7>
+        <Column8>1</Column8>
+        <Column9>3.8185</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column1>Biglari, Amir</Column1>
-        <Column3>9782806102676; 2806102677</Column3>
-        <Column4>999919852110502204</Column4>
-        <Column5>2016</Column5>
-        <Column6>Paris</Column6>
-        <Column7>L'Harmattan</Column7>
-        <Column8>Figures en discours</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16022869</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-20</Column15>
+        <Column2>2018-06-28T12:22:38</Column2>
+        <Column3>"Am I that name?" : feminism and the category of "women" in history</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column3>9782200294823; 2200294824</Column3>
-        <Column4>999919852414902204</Column4>
-        <Column5>[2015]</Column5>
-        <Column6>Paris :</Column6>
-        <Column7>Armand Colin</Column7>
-        <Column8>Dictionnaire arts et émotions /</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16023301</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-20</Column15>
+        <Column1>2017-12-13T13:04:08</Column1>
+        <Column2>2017-11-30T11:38:36</Column2>
+        <Column3>"Bedre frem Bergen-" : Bergens næringsliv 1845-1995</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS MagNum</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>13.0594</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column1>Gefen, Alexandre</Column1>
-        <Column3>9782874492471; 2874492477</Column3>
-        <Column4>999919852414802204</Column4>
-        <Column5>2015</Column5>
-        <Column6>Bruxelles</Column6>
-        <Column7>Les Impressions Nouvelles</Column7>
-        <Column8>Inventer une vie: la fabrique littéraire de l'individu</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16023306</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-15</Column15>
+        <Column1>2018-05-25T12:11:26</Column1>
+        <Column2>2018-04-23T16:02:09</Column2>
+        <Column3>"Believing women" in Islam : unreading patriarchal interpretations of the Qur'ān</Column3>
+        <Column4>1030301</Column4>
+        <Column5>UHS/TEOL Boksamling</Column5>
+        <Column6>UiO Teologisk bibliotek</Column6>
+        <Column7>UHS/TEOL Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>31.8398</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column1>Quignard, Pascal</Column1>
-        <Column3>9782070401277; 2070401278</Column3>
-        <Column4>999919852113502204</Column4>
-        <Column5>1997</Column5>
-        <Column6>Paris</Column6>
-        <Column7>Gallimard</Column7>
-        <Column8>Petits traites 1</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16026286</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-15</Column15>
+        <Column1>2017-11-23T13:39:46</Column1>
+        <Column2>2017-08-04T10:40:33</Column2>
+        <Column3>"Bombemål S/N 102 Bergen" : de allierte bombeangrepene på Laksevåg i 1944 og 1945</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>111.1245</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
       <Row>
         <Column0>0</Column0>
-        <Column3>9782035923660; 2035923662</Column3>
-        <Column4>999919851810302204</Column4>
-        <Column5>2015</Column5>
-        <Column6>[Paris]</Column6>
-        <Column7>Larousse</Column7>
-        <Column8>Le grand Larousse de l'histoire de France</Column8>
-        <Column9>Fransk</Column9>
-        <Column10>Unknown</Column10>
-        <Column11>UiO HumSam-biblioteket</Column11>
-        <Column12>UHS</Column12>
-        <Column13>k16026578</Column13>
-        <Column14>In Process</Column14>
-        <Column15>2016-07-20</Column15>
+        <Column2>2017-10-09T14:58:23</Column2>
+        <Column3>"Constructing" the United Nations headquarters : modern architecture as public diplomacy</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS Mag312</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>2018-07-10T12:38:23</Column1>
+        <Column2>2018-06-27T13:20:28</Column2>
+        <Column3>"Curry &amp; rice", or The ingredients of social life at "our station" in India</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS Mag315</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>12.9708</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>2018-07-10T12:43:31</Column1>
+        <Column2>2018-07-10T12:38:24</Column2>
+        <Column3>"Curry &amp; rice", or The ingredients of social life at "our station" in India</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS Mag315</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>0.0036</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>2018-07-10T12:48:19</Column1>
+        <Column2>2018-07-10T12:43:32</Column2>
+        <Column3>"Curry &amp; rice", or The ingredients of social life at "our station" in India</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS Mag315</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>0.0033</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>2018-07-20T12:27:09</Column1>
+        <Column2>2018-07-10T12:48:20</Column2>
+        <Column3>"Curry &amp; rice", or The ingredients of social life at "our station" in India</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS Mag315</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>9.9853</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column2>2018-07-04T11:06:18</Column2>
+        <Column3>"Das Mädchen aus der Fremde" : Hannah Arendt und die Dichtung : Rezeption - Reflexion - Produktion</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Nyhetshylle</Column7>
+        <Column8>1</Column8>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column2>2018-02-14T16:01:28</Column2>
+        <Column3>"Das war's dann wohl" : Abschiedsbriefe von Männern</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Ny skjønnlitteratur</Column7>
+        <Column8>1</Column8>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>2018-04-04T13:32:30</Column1>
+        <Column2>2017-10-23T11:09:34</Column2>
+        <Column3>"De andra" i pedagogiska texter : afrikaner i svenska skoltexter, 1768-1920</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS K311</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>163.0993</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>2017-10-11T12:45:47</Column1>
+        <Column2>2017-08-17T11:33:32</Column2>
+        <Column3>"De er jo bare barn" : om barnehagebarn og mobbing</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS MagNum</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>55.0502</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>2018-05-07T14:39:50</Column1>
+        <Column2>2018-04-11T13:48:47</Column2>
+        <Column3>"De er jo bare barn" : om barnehagebarn og mobbing</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS MagNum</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>26.0355</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column2>2018-05-25T09:15:18</Column2>
+        <Column3>"De kjempet, de falt, de gav oss alt" : om den rituelle bruken av norske krigsminnesmerker</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS Mag312 Avh</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
+      </Row>
+      <Row>
+        <Column0>0</Column0>
+        <Column1>2018-07-18T13:27:38</Column1>
+        <Column2>2018-03-01T11:08:12</Column2>
+        <Column3>"De nære ting" Signe Scheel 1860-1942</Column3>
+        <Column4>1030300</Column4>
+        <Column5>UHS Mag312 Avh</Column5>
+        <Column6>UiO HumSam-biblioteket</Column6>
+        <Column7>UHS Fjernlån</Column7>
+        <Column8>1</Column8>
+        <Column9>139.0968</Column9>
+        <Column10>23794</Column10>
+        <Column11>957950.0411</Column11>
       </Row>
     </rowset>
   </ResultXml>

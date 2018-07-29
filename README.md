@@ -259,14 +259,40 @@ foreach ($alma->bibs->get('990310361044702204')->getHolding('22102913020002204')
 }
 ```
 
+## Items
+
+There is a special entrypoint to retrieve an item by barcode:
+
+```php
+$item = $alma->items->fromBarcode('92nf02526');
+```
+
+## Users
+
+**WARNING**: The interface is incomplete. Editing has not yet been implemented.
+
+```php
+foreach ($alma->users->search('last_name~Heggø AND first_name~Dan') as $user) {
+    echo "{$user->first_name} {$user->last_name} ({$user->primary_id})\n";
+}
+```
+
+Loans:
+```php
+
+foreach ($user->loans as $loan) {
+    echo "{$loan->due_date} {$loan->title}\n";
+}
+```
+
 ## Analytics reports
 
 To retrieve the results from a single report:
 
 ```php
-$report = $alma->analytics->get('UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fysikk');
-foreach ($report->rows as $row) {
-    echo $row[0] . ": " . $row[1] . "\n";
+$report = $alma->analytics->get('/shared/Alma/Item Historical Events/Reports/Items went into temporary location');
+foreach ($report as $row) {
+    echo implode("\t", $row) . "\n";
 }
 ```
 
@@ -276,16 +302,30 @@ want a subset of the rows, you must take care of breaking out of the loop yourse
 
 ### Column names
 
-Unfortunately, the Analytics API doesn't provide column names (an inherent
-limitation in OBI according to a comment
-[here](https://developers.exlibrisgroup.com/blog/Working-with-Analytics-REST-APIs)),
-but as a workaround you can pass a list of column names into the get method to
-create a manual mapping (which will of course break if someone decides to re-order
-the columns inside OBI... there's just no way to safeguard against that).
+The column names can be accessed through `headers`:
+
+```php
+$report = $alma->analytics->get('/shared/Alma/Item Historical Events/Reports/Items went into temporary location');
+foreach ($report->headers as $header) {
+    echo "$header\n";
+}
+```
+
+The column names can be accessed through can also be used to access columns for a given row:
+
+```php
+foreach ($report as $row) {
+    echo $row['Title'] . "\n";
+}
+```
+
+If you would rather use other column names than the ones defined in Analytics
+it is also possible to override them by passing in an array of names that must
+follow the same order as the columns in the report:
 
 ```php
 $report = $alma->analytics->get(
-    'UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fysikk',
+    '/shared/Alma/Item Historical Events/Reports/Items went into temporary location',
     [
         'mms_id',
         'receiving_date',
@@ -303,7 +343,7 @@ The method also accepts a filter.
 
 ```php
 $report = $alma->analytics->get(
-    'UIO,Universitetsbiblioteket/Reports/RSS/Nyhetslister : Fysikk',
+    '/shared/Alma/Item Historical Events/Reports/Items went into temporary location',
     [
         'mms_id',
         'receiving_date',
