@@ -19,7 +19,6 @@
         "php-http/client-common": "^1.5"
     },
     "require-dev": {
-        "sami/sami": "~3.3",
         "phpspec/phpspec": "^3.4",
         "bossa/phpspec2-expect": "^2.1",
         "leanphp/phpspec-code-coverage": "~3.1",
