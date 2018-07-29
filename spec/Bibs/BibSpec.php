@@ -22,7 +22,8 @@ class BibSpec extends ObjectBehavior
         $this->beConstructedWith($client, $mms_id);
     }
 
-    protected function expectRequest($client, $url) {
+    protected function expectRequest($client, $url)
+    {
         $client->buildUrl('/bibs/999104760474702204', [])
             ->shouldBeCalled()
             ->willReturn($url);

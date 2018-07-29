@@ -27,7 +27,8 @@
         "php-http/mock-client": "^1.0",
         "php-http/message": "^1.0",
         "guzzlehttp/psr7": "^1.0",
-        "php-http/guzzle6-adapter": "^1.1"
+        "php-http/guzzle6-adapter": "^1.1",
+        "squizlabs/php_codesniffer": "^3.3"
     },
     "license": "MIT",
     "authors": [

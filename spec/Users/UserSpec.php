@@ -19,7 +19,6 @@ class UserSpec extends ObjectBehavior
 
         $client->getJSON($url)
             ->willReturn(SpecHelper::getDummyData('user_response.json'));
-
     }
 
     public function it_is_initializable()

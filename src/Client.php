@@ -69,7 +69,7 @@ class Client
     public $users;
 
     /** @var Items */
-    public  $items;
+    public $items;
 
     /** @var int Max number of retries if we get 429 errors */
     public $maxAttempts = 10;
@@ -98,7 +98,8 @@ class Client
         UriFactory $uriFactory = null
     ) {
         $this->http = new PluginClient(
-            $http ?: HttpClientDiscovery::find(), [
+            $http ?: HttpClientDiscovery::find(),
+            [
                 new ContentLengthPlugin(),
                 new ErrorPlugin(),
             ]
@@ -251,7 +252,6 @@ class Client
 
             // Throw exception for other errors
             throw $error;
-
         } catch (NetworkException $e) {
             // Thrown in case of a networking error
             // Wait a sec and retry, unless we've tried too many times already.

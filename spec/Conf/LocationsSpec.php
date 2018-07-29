@@ -41,5 +41,4 @@ class LocationsSpec extends ObjectBehavior
         $this->all()->shouldBeArray();
         $this->all()[0]->shouldBeAnInstanceOf(Location::class);
     }
-
 }

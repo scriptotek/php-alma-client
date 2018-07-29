@@ -48,9 +48,10 @@ class BibsSpec extends ObjectBehavior
 
         $sru->all('alma.isbn="123"', 1)
             ->shouldBeCalled()
-            ->willReturn([SruRecord::make(1,
+            ->willReturn([SruRecord::make(
+                1,
                 '<record><controlfield tag="001">990114012304702201</controlfield></record>'
-                )]);
+            )]);
 
         $bib = $this->fromIsbn('123');
         $bib->shouldHaveType(Bib::class);

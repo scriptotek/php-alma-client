@@ -86,7 +86,6 @@ class ReportSpec extends ObjectBehavior
                 // If Analytics is having a bad day, we might get a "still loading" response
                 // See: https://bitbucket.org/uwlib/uwlib-alma-analytic-tools/wiki/Understanding_Analytic_GET_Requests#!analytic-still-loading
                 SpecHelper::getDummyData('analytics_still_loading_response.xml'),
-
                 SpecHelper::getDummyData('analytics_response_part2.xml'),
                 SpecHelper::getDummyData('analytics_response_part3.xml')
             );
@@ -94,20 +93,19 @@ class ReportSpec extends ObjectBehavior
         $this->shouldHaveCount(150 + 150 + 88);
     }
 
-     public function it_might_not_exist(Client $almaClient, UriInterface $url)
-     {
-         $almaClient->buildUrl('/analytics/reports', [
-             'path' => '/test/path',
-             'limit' => 1000,
-             'token' => null,
-             'filter' => null,
-         ])->shouldBeCalled()->willReturn($url);
+    public function it_might_not_exist(Client $almaClient, UriInterface $url)
+    {
+        $almaClient->buildUrl('/analytics/reports', [
+            'path' => '/test/path',
+            'limit' => 1000,
+            'token' => null,
+            'filter' => null,
+        ])->shouldBeCalled()->willReturn($url);
 
-         $almaClient->getXML($url)
-             ->shouldBeCalledTimes(1)
-             ->willThrow(new ResourceNotFound('Path not found (/test/path)'));
+        $almaClient->getXML($url)
+            ->shouldBeCalledTimes(1)
+            ->willThrow(new ResourceNotFound('Path not found (/test/path)'));
 
-         $this->exists()->shouldReturn(false);
-     }
-
+        $this->exists()->shouldReturn(false);
+    }
 }

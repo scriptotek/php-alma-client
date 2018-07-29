@@ -15,7 +15,7 @@ class UserIdentifiers extends Model
      * @param string $status (Default: 'ACTIVE').
      * @return string[]
      */
-    public function all($status='ACTIVE')
+    public function all($status = 'ACTIVE')
     {
         $ids = [$this->data->primary_id];
         foreach ($this->data->user_identifier as $identifier) {

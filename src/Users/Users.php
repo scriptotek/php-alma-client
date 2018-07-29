@@ -54,7 +54,9 @@ class Users implements \ArrayAccess
         // Number of records to fetch each batch. Usually no need to change this.
         $batchSize = array_key_exists('batchSize', $options) ? $options['batchSize'] : 10;
 
-        if ($limit != 0 && $limit < $batchSize) $batchSize = $limit;
+        if ($limit != 0 && $limit < $batchSize) {
+            $batchSize = $limit;
+        }
 
         // The API will throw a 400 response if you include properly encoded spaces,
         // but underscores work as a substitute.
@@ -85,7 +87,6 @@ class Users implements \ArrayAccess
             }
 
             foreach ($response->user as $data) {
-
                 // Contacts without a primary identifier will have the primary_id
                 // field populated with something weird like "no primary id (123456789023)".
                 // We ignore those.
