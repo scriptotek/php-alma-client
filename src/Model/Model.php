@@ -1,13 +1,18 @@
 <?php
 
-namespace Scriptotek\Alma;
+namespace Scriptotek\Alma\Model;
 
+use Scriptotek\Alma\Client;
+
+/**
+ * The Model class is our base class.
+ */
 abstract class Model
 {
     /* @var Client */
     protected $client;
 
-    /* @var \stdClass */
+    /* @var \stdClass|array */
     protected $data;
 
     public function __construct(Client $client, $data = null)
@@ -21,9 +26,10 @@ abstract class Model
      * @param array ...$params
      * @return static
      */
-	static function make($client, ...$params) {
-		return new static($client, ...$params);
-	}
+    public static function make($client, ...$params)
+    {
+        return new static($client, ...$params);
+    }
 
     /**
      * Load data onto this object. Chainable method.

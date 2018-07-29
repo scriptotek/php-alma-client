@@ -3,9 +3,12 @@
 namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\GhostModel;
+use Scriptotek\Alma\Model\LazyResource;
 
-class Library extends GhostModel
+/**
+ * A single Library resource.
+ */
+class Library extends LazyResource
 {
     /** @var string */
     public $code;

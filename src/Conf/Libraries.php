@@ -2,14 +2,17 @@
 
 namespace Scriptotek\Alma\Conf;
 
-use Scriptotek\Alma\ArrayAccessResource;
-use Scriptotek\Alma\CountableGhostModelList;
-use Scriptotek\Alma\IterableResource;
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
+use Scriptotek\Alma\Model\LazyResourceList;
+use Scriptotek\Alma\Model\IterableCollection;
 
-class Libraries extends CountableGhostModelList implements \ArrayAccess, \Countable, \Iterator
+/**
+ * Iterable collection of Library resources.
+ */
+class Libraries extends LazyResourceList implements \ArrayAccess, \Countable, \Iterator
 {
-    use ArrayAccessResource;
-    use IterableResource;
+    use ReadOnlyArrayAccess;
+    use IterableCollection;
 
     /**
      * Get resource.
@@ -22,7 +25,7 @@ class Libraries extends CountableGhostModelList implements \ArrayAccess, \Counta
         return Library::make($this->client, $code);
     }
 
-    protected function setData(\stdClass $data)
+    protected function setData($data)
     {
         $this->resources = array_map(
             function (\stdClass $library) {

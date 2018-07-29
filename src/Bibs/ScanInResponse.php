@@ -3,8 +3,11 @@
 namespace Scriptotek\Alma\Bibs;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\Model;
+use Scriptotek\Alma\Model\Model;
 
+/**
+ * Response from a scan-in operation of some Item resource.
+ */
 class ScanInResponse extends Model
 {
     protected $data;

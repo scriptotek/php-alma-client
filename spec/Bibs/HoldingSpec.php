@@ -37,6 +37,9 @@ class HoldingSpec extends ObjectBehavior
 
         $items = $this->items;
         $items->shouldHaveCount(9);
+
+        $items->rewind();
+        $items->valid()->shouldBe(true);
         $items->current()->shouldHaveType(Item::class);
     }
 }

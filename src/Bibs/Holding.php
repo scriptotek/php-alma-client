@@ -3,10 +3,13 @@
 namespace Scriptotek\Alma\Bibs;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\GhostModel;
+use Scriptotek\Alma\Model\LazyResource;
 use Scriptotek\Marc\Record as MarcRecord;
 
-class Holding extends GhostModel
+/**
+ * A single Holding resource.
+ */
+class Holding extends LazyResource
 {
     /* @var string */
     public $holding_id;
@@ -44,7 +47,7 @@ class Holding extends GhostModel
      *
      * @param \stdClass $data
      */
-    protected function setData(\stdClass $data)
+    protected function setData($data)
     {
         $this->_marc = MarcRecord::fromString($data->anies[0]);
     }

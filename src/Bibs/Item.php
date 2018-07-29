@@ -4,11 +4,11 @@ namespace Scriptotek\Alma\Bibs;
 
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Conf\Library;
-use Scriptotek\Alma\GhostModel;
+use Scriptotek\Alma\Model\LazyResource;
 use Scriptotek\Alma\Users\Loan;
 use Scriptotek\Alma\Users\User;
 
-class Item extends GhostModel
+class Item extends LazyResource
 {
     /** @var Bib */
     public $bib;
@@ -61,7 +61,7 @@ class Item extends GhostModel
      *
      * @param \stdClass $data
      */
-    protected function setData(\stdClass $data)
+    protected function setData($data)
     {
         if (isset($this->bib_data)) {
             $this->bib->init($this->bib_data);
@@ -92,7 +92,7 @@ class Item extends GhostModel
             $postData
         );
 
-        return Loan::make($this->client, $user, $this, $data->loan_id)
+        return Loan::make($this->client, $user, $data->loan_id)
             ->init($data);
     }
 
@@ -129,7 +129,6 @@ class Item extends GhostModel
             return Loan::make(
                 $this->client,
                 User::make($this->client, $data->item_loan[0]->user_id),
-                $this,
                 $data->item_loan[0]->loan_id
             )->init($data->item_loan[0]);
         }

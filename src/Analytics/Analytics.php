@@ -3,9 +3,15 @@
 namespace Scriptotek\Alma\Analytics;
 
 use Scriptotek\Alma\Client;
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 
-class Analytics
+/**
+ * Non-iterable collection of Report resources.
+ */
+class Analytics implements \ArrayAccess
 {
+    use ReadOnlyArrayAccess;
+
     /** @var Client */
     protected $client;
 

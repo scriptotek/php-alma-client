@@ -4,6 +4,9 @@ namespace Scriptotek\Alma\Analytics;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 
+/**
+ * A single Row belonging to some Report.
+ */
 class Row implements \ArrayAccess, \IteratorAggregate, \Countable
 {
     protected $byIndex = [];

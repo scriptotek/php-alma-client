@@ -3,9 +3,12 @@
 namespace Scriptotek\Alma\Users;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\GhostModel;
+use Scriptotek\Alma\Model\LazyResource;
 
-class User extends GhostModel
+/**
+ * A single User resource.
+ */
+class User extends LazyResource
 {
     /**
      * The primary id or some other id that can be used to fetch user information.
@@ -77,7 +80,7 @@ class User extends GhostModel
      *
      * @param \stdClass $data
      */
-    protected function setData(\stdClass $data)
+    protected function setData($data)
     {
         $this->_identifiers = UserIdentifiers::make($this->client, $data);
     }

@@ -2,15 +2,18 @@
 
 namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\ArrayAccessResource;
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\CountableGhostModelList;
-use Scriptotek\Alma\IterableResource;
+use Scriptotek\Alma\Model\IterableCollection;
+use Scriptotek\Alma\Model\LazyResourceList;
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 
-class Holdings extends CountableGhostModelList implements \Countable, \Iterator, \ArrayAccess
+/**
+ * Iterable collection of Holding resources belonging to some Bib resource.
+ */
+class Holdings extends LazyResourceList implements \Countable, \Iterator, \ArrayAccess
 {
-    use ArrayAccessResource;
-    use IterableResource;
+    use ReadOnlyArrayAccess;
+    use IterableCollection;
 
     /* @var Bib */
     public $bib;
@@ -32,7 +35,7 @@ class Holdings extends CountableGhostModelList implements \Countable, \Iterator,
         return Holding::make($this->client, $this->bib, $holding_id);
     }
 
-    public function setData(\stdClass $data)
+    public function setData($data)
     {
         $this->resources = array_map(
             function (\stdClass $holding) {

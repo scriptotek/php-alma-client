@@ -1,8 +1,8 @@
 <?php
 
-namespace Scriptotek\Alma;
+namespace Scriptotek\Alma\Model;
 
-trait ArrayAccessResource
+trait ReadOnlyArrayAccess
 {
     public function offsetSet($offset, $value)
     {

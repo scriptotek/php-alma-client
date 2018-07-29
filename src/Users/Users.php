@@ -2,11 +2,18 @@
 
 namespace Scriptotek\Alma\Users;
 
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\InvalidQuery;
 
-class Users
+/**
+ * Non-iterable collection of User resources.
+ */
+class Users implements \ArrayAccess
 {
+    use ReadOnlyArrayAccess;
+
+    /* @var Client */
     protected $client;
 
     public function __construct(Client $client)

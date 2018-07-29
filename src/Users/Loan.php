@@ -4,9 +4,12 @@ namespace Scriptotek\Alma\Users;
 
 use Scriptotek\Alma\Bibs\Item;
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\GhostModel;
+use Scriptotek\Alma\Model\LazyResource;
 
-class Loan extends GhostModel
+/**
+ * A single Loan resource.
+ */
+class Loan extends LazyResource
 {
     /* @var User */
     protected $user;

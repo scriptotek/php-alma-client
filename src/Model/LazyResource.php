@@ -1,11 +1,18 @@
 <?php
 
-namespace Scriptotek\Alma;
+namespace Scriptotek\Alma\Model;
 
 use Psr\Http\Message\UriInterface;
+use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\ResourceNotFound;
 
-abstract class GhostModel extends Model
+/**
+ * A LazyResource is anything that has its own URL and therefore can be lazy-loaded.
+ * This class implements the basic ghost model functionality.
+ *
+ * The $initialized property indicates if the model is loaded or not.
+ */
+abstract class LazyResource extends Model
 {
     /**
      * This class is a ghost object that lazy loads the full record only when needed.
@@ -67,9 +74,9 @@ abstract class GhostModel extends Model
     /**
      * Store data onto object. Can be overriden.
      *
-     * @param \stdClass $data
+     * @param mixed $data
      */
-    protected function setData(\stdClass $data)
+    protected function setData($data)
     {
     }
 
@@ -88,7 +95,8 @@ abstract class GhostModel extends Model
     {
         try {
             $this->init();
-        } catch (ResourceNotFound $ex) {}
+        } catch (ResourceNotFound $ex) {
+        }
 
         return $this->initialized;
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Scriptotek\Alma;
+namespace Scriptotek\Alma\Model;
 
-trait IterableResource
+trait IterableCollection
 {
     protected $position = 0;
 

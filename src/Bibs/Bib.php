@@ -2,15 +2,16 @@
 
 namespace Scriptotek\Alma\Bibs;
 
-use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\NoLinkedNetworkZoneRecordException;
-use Scriptotek\Alma\GhostModel;
-use Scriptotek\Alma\GhostResource;
+use Scriptotek\Alma\Model\LazyResource;
 use Scriptotek\Marc\Record as MarcRecord;
 use Scriptotek\Sru\Record as SruRecord;
 
-class Bib extends GhostModel
+/**
+ * A single Bib resource.
+ */
+class Bib extends LazyResource
 {
     /** @var string */
     public $mms_id;
@@ -125,7 +126,7 @@ class Bib extends GhostModel
      *
      * @param \stdClass $data
      */
-    protected function setData(\stdClass $data)
+    protected function setData($data)
     {
         $this->setMarcRecord($data->anies[0]);
     }

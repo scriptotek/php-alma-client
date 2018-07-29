@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
       - `InvalidQuery` (new) when the query was not understood by the server. Currently only used by the users api.
 - Added interface to get libraries (`$client->libraries`) and locations (`$client->libraries[$libraryCode]->locations`).
 - Added item checkout and scan-in.
+- Analytics: The `getRows()` method is deprecated. Iterate over the `Report` instead.
 
 ### Changed
 
@@ -39,8 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   `$user->identifiers->firstOfType(...)` and `$user->identifiers->all()`.
   All methods now return only identifiers with status 'ACTIVE' by default.
   Removed the `$user->hasFullRecord()` method.
-- Replaced the `ResourceList` base model with `GhostModel` and `Model` for models that can/cannot
-  be lazy-loaded respectively.
+- Replaced/split the `ResourceList` base model into `Model`, `LazyResource` and `LazyResourceList`.
 - Removed the `Bib::getXml()` method in favour of a standardized `getData()` method part
   of the new `Model` base model.
 - Removed `$client->bibs->getHolding($mmsId, $holdingId)`, please use

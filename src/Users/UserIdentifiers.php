@@ -2,8 +2,11 @@
 
 namespace Scriptotek\Alma\Users;
 
-use Scriptotek\Alma\Model;
+use Scriptotek\Alma\Model\Model;
 
+/**
+ * Collection of identifiers belonging to some User.
+ */
 class UserIdentifiers extends Model
 {
     /**

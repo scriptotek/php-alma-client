@@ -3,9 +3,12 @@
 namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\GhostModel;
+use Scriptotek\Alma\Model\LazyResource;
 
-class Location extends GhostModel
+/**
+ * A single Location resource.
+ */
+class Location extends LazyResource
 {
     /** @var Library */
     public $library;

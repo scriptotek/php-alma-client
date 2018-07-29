@@ -2,12 +2,15 @@
 
 namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\ArrayAccessResource;
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 use Scriptotek\Alma\Client;
 
+/**
+ * Non-iterable collection of Bib resources.
+ */
 class Bibs implements \ArrayAccess
 {
-    use ArrayAccessResource;
+    use ReadOnlyArrayAccess;
 
     protected $client;
 
