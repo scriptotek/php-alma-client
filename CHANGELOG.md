@@ -15,10 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added method `Client::items->fromBarcode(...)`
 - Added method `Item::checkOut()`, `Item::loan()`, `Item:scanIn()` and `User::loans`
 - Added method `exists()` to `Bib`, `Holding`, `Item`, `User`. If trying to get data from a non-existing
-  resource, `Scriptotek\Alma\Exception\ResourceNotFound` is thrown.
+  resource, `Scriptotek\Facade\Exception\ResourceNotFound` is thrown.
 - Added array access to `Bibs` and `Holdings`.
 - Expanded the exception tree:
-  - `ClientException` for all Alma Client errors
+  - `ClientException` for all Facade Client errors
     - `RequestFailed` (new) for 4xx errors. `$e->getMessage()` returns the error message from the server.
       - `InvalidApiKey` (new)
       - `ResourceNotFound` (new) when a request resource was not found.
@@ -26,13 +26,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added interface to get libraries (`$client->libraries`) and locations (`$client->libraries[$libraryCode]->locations`).
 - Added item checkout and scan-in.
 - Analytics: The `getRows()` method is deprecated. Iterate over the `Report` instead.
+- Made package auto-discoverable in Laravel 5.5+.
 
 ### Changed
 
 - BC: Changed the signature of `Users::search()`.
   Change `users->search($query, $full, $batchSize)`
   to `users->search($query, ['expand' => $full, 'batchSize' => $batchSize])`.
-- All exceptions now extend `Scriptotek\Alma\Exception\ClientException`.
+- All exceptions now extend `Scriptotek\Facade\Exception\ClientException`.
 - BC: Moved the user identifier logic from the `User` class to a new `UserIdentifiers` class.
   The `$user->barcode` and `$user->universityId` magic properties work as before, but
   `$user->getBarcode()`, `$user->getUniversityId()`, `$user->getIdOfType(...)` and `$user->getIds()`

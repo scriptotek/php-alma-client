@@ -398,20 +398,20 @@ foreach ($alma->users->search('last_name~Heggø AND first_name~Dan') as $user) {
 
 ## Laravel 5 integration
 
-This project ships with a service provider that you can add to the
-`$providers` array in your `config/app.php` if you like:
+This project ships with an auto-discoverable service provider and facade. Run
 
-    Scriptotek\Alma\Providers\AlmaServiceProvider::class,
-
-There's also a facade you can add to the `$aliases` array:
-
-    'Alma' => Scriptotek\Alma\Facades\Alma::class,
-
-Run
-
-    $ php artisan vendor:publish --provider="Scriptotek\Alma\Providers\AlmaServiceProvider"
+    $ php artisan vendor:publish --provider="Scriptotek\Alma\Laravel\ServiceProvider"
 
 to create the `config/alma.php` configuration file.
+
+If you are on Laravel 5.4 or older, you must manually add the service provider to the
+`$providers` array in your `config/app.php`:
+
+    Scriptotek\Alma\Laravel\ServiceProvider::class,
+
+And the facade:
+
+    'Alma' => Scriptotek\Alma\Laravel\Facade::class,
 
 ## Future plans
 

@@ -45,5 +45,15 @@
         "psr-4": {
             "spec\\Scriptotek\\Alma\\": "spec/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Scriptotek\\Alma\\Laravel\\ServiceProvider"
+            ],
+            "aliases": {
+                "Alma": "Scriptotek\\Alma\\Laravel\\Facade"
+            }
+        }
     }
 }

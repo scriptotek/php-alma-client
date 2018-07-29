@@ -1,10 +1,10 @@
 <?php
 
-namespace Scriptotek\Alma\Facades;
+namespace Scriptotek\Alma\Laravel;
 
-use Illuminate\Support\Facades\Facade;
+use Scriptotek\Alma\Client as AlmaClient;
 
-class Alma extends Facade
+class Facade extends \Illuminate\Support\Facades\Facade
 {
     /**
      * Get the registered name of the component.
@@ -13,6 +13,6 @@ class Alma extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'alma';
+        return AlmaClient::class;
     }
 }
