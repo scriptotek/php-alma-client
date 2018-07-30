@@ -49,7 +49,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   there's no performance drawback of the new interface.
 - Analytics reports: Parses the new `saw-sql:columnHeading` attributes so that columns can be accessed
   by name.
-
+- The `post()` and `put()` methods on `Client` now returns the response body.
 
 ### Fixed
 

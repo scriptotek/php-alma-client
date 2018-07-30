@@ -272,7 +272,7 @@ class Client
      * @param array  $query
      * @param string $contentType
      *
-     * @return string Response body
+     * @return string The response body
      */
     public function get($url, $query = [], $contentType = 'application/json')
     {
@@ -323,7 +323,7 @@ class Client
      * @param $data
      * @param string $contentType
      *
-     * @return bool
+     * @return string The response body
      */
     public function put($url, $data, $contentType = 'application/json')
     {
@@ -336,8 +336,7 @@ class Client
         $request = $this->messageFactory->createRequest('PUT', $uri, $headers, $data);
         $response = $this->request($request);
 
-        // Consider it a success if status code is 2XX
-        return substr($response->getStatusCode(), 0, 1) == '2';
+        return strval($response->getBody());
     }
 
     /**
@@ -346,13 +345,13 @@ class Client
      * @param string $url
      * @param $data
      *
-     * @return bool
+     * @return \stdClass
      */
     public function putJSON($url, $data)
     {
-        $data = json_encode($data);
+        $responseBody = $this->put($url, json_encode($data), 'application/json');
 
-        return $this->put($url, $data, 'application/json');
+        return json_decode($responseBody);
     }
 
     /**
@@ -361,11 +360,13 @@ class Client
      * @param string $url
      * @param $data
      *
-     * @return bool
+     * @return QuiteSimpleXMLElement
      */
     public function putXML($url, $data)
     {
-        return $this->put($url, $data, 'application/xml');
+        $responseBody = $this->put($url, $data, 'application/xml');
+
+        return new QuiteSimpleXMLElement($responseBody);
     }
 
     /**
@@ -375,7 +376,7 @@ class Client
      * @param $data
      * @param string $contentType
      *
-     * @return bool
+     * @return string The response body
      */
     public function post($url, $data, $contentType = 'application/json')
     {
@@ -388,8 +389,7 @@ class Client
         $request = $this->messageFactory->createRequest('POST', $uri, $headers, $data);
         $response = $this->request($request);
 
-        // Consider it a success if status code is 2XX
-        return substr($response->getStatusCode(), 0, 1) == '2';
+        return strval($response->getBody());
     }
 
     /**
@@ -398,13 +398,13 @@ class Client
      * @param string $url
      * @param $data
      *
-     * @return bool
+     * @return \stdClass
      */
     public function postJSON($url, $data = null)
     {
-        $data = json_encode($data);
+        $responseBody = $this->post($url, json_encode($data), 'application/json');
 
-        return $this->post($url, $data, 'application/json');
+        return json_decode($responseBody);
     }
 
     /**
@@ -413,11 +413,13 @@ class Client
      * @param string $url
      * @param $data
      *
-     * @return bool
+     * @return QuiteSimpleXMLElement
      */
     public function postXML($url, $data = null)
     {
-        return $this->post($url, $data, 'application/xml');
+        $responseBody = $this->post($url, $data, 'application/xml');
+
+        return new QuiteSimpleXMLElement($responseBody);
     }
 
     /**

@@ -75,6 +75,17 @@ class ClientSpec extends ObjectBehavior
         expect($request->getHeader('Accept')[0])->toBe('application/json');
     }
 
+    public function it_can_post_and_parse_JSON()
+    {
+        $http = $this->httpWithResponseBody(SpecHelper::getDummyData('create_loan_response.json', false));
+
+        $this->postJSON(str_random())->loan_id->shouldBe('7329587120002204');
+
+        $request = $http->getRequests()[0];
+        expect($request->getHeader('Content-Type')[0])->toBe('application/json');
+        expect($request->getHeader('Accept')[0])->toBe('application/json');
+    }
+
     public function it_can_request_and_parse_XML()
     {
         $responseBody = "<?xml version=\"1.0\"?>\n<some_key>some_value</some_key>\n";
@@ -97,7 +108,7 @@ class ClientSpec extends ObjectBehavior
         $responseBody = str_random();
         $http = $this->httpWithResponseBody($responseBody);
 
-        $this->put(str_random(), str_random(), 'application/json')->shouldBe(true);
+        $this->put(str_random(), str_random(), 'application/json')->shouldBe($responseBody);
 
         expect($http->getRequests())->toHaveCount(1);
         expect($http->getRequests()[0])->getMethod()->toBe('PUT');
