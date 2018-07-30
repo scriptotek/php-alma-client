@@ -121,7 +121,7 @@ class Item extends LazyResource
      *
      * @returns Loan|null
      */
-    public function loan()
+    public function getLoan()
     {
         $data = $this->client->getJSON($this->url('/loans'));
 
@@ -138,6 +138,10 @@ class Item extends LazyResource
 
     public function __get($key)
     {
+        if ($key == 'loan') {
+            return $this->getLoan();
+        }
+
         $this->init();
 
         if (isset($this->data->item_data->{$key})) {

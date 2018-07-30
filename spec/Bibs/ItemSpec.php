@@ -56,10 +56,21 @@ class ItemSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('item_loan_response.json'));
 
-        $user->id = 'Dan Michael';
-        $library->code = 'THAT LIBRARY';
+        $this->getLoan()->shouldHaveType(Loan::class);
+        $this->loan->shouldHaveType(Loan::class);
+    }
 
-        $this->loan()->shouldHaveType(Loan::class);
+    function it_can_be_available(AlmaClient $client, User $user, Library $library, UriInterface $url)
+    {
+        $client->buildUrl('/bibs/990006312214702204/holdings/22163771200002204/items/23163771190002204/loans', [])
+            ->willReturn($url);
+
+        $client->getJSON($url)
+            ->shouldBeCalled()
+            ->willReturn(SpecHelper::getDummyData('item_no_loan_response.json'));
+
+        $this->getLoan()->shouldBe(null);
+        $this->loan->shouldBe(null);
     }
 
     function it_can_be_scanned_in(AlmaClient $client, Library $library, UriInterface $url)
