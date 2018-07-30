@@ -22,12 +22,16 @@ class Bibs implements \ArrayAccess
     /**
      * Get a Bib object.
      *
-     * @param $mms_id
+     * @param string $mms_id
+     * @param array $expand Expand the bibliographic record with additional information.
      * @return Bib
      */
-    public function get($mms_id)
+    public function get($mms_id, $expand = null)
     {
-        return Bib::make($this->client, $mms_id);
+        $params = ['expand' => $expand];
+
+        return Bib::make($this->client, $mms_id)
+            ->setParams($params);
     }
 
     /**

@@ -194,11 +194,9 @@ class Client
      */
     public function buildUrl($url, $query = [])
     {
-        $query['apikey'] = $this->key;
-
-        $newQuery = [];
+        $oldQuery = [];
         if (is_a($url, UriInterface::class)) {
-            parse_str($url->getQuery(), $newQuery);
+            parse_str($url->getQuery(), $oldQuery);
         } else {
             if (strpos($url, $this->baseUrl) === false) {
                 $url = $this->baseUrl . $url;
@@ -206,11 +204,11 @@ class Client
             $url = $this->uriFactory->createUri($url);
         }
 
-        foreach ($query as $k => $v) {
-            $newQuery[$k] = $v;
-        }
+        $query['apikey'] = $this->key;
 
-        return $url->withQuery(http_build_query($newQuery));
+        $query = array_merge($oldQuery, $query);
+
+        return $url->withQuery(http_build_query($query));
     }
 
     /**

@@ -21,9 +21,29 @@ abstract class LazyResource extends Model
      */
     protected $initialized = false;
 
-    public function __construct(Client $client)
+    /**
+     * @var array Query string parameters
+     */
+    protected $params = [];
+
+    /**
+     * Set request query string parameters.
+     * @param $params array
+     * @return $this
+     */
+    public function setParams($params)
     {
-        parent::__construct($client);
+        $this->params = $params;
+        return $this;
+    }
+
+    /**
+     * Get the request query string parameters.
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->params;
     }
 
     /**
@@ -39,7 +59,7 @@ abstract class LazyResource extends Model
      *
      * @param \stdClass $data
      *
-     * @return self
+     * @return $this
      */
     public function init($data = null)
     {
@@ -117,6 +137,8 @@ abstract class LazyResource extends Model
      */
     protected function url($url = '', $query = [])
     {
+        $query = array_merge($this->params, $query);
+
         return $this->client->buildUrl($this->urlBase() . $url, $query);
     }
 }

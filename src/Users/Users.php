@@ -24,12 +24,14 @@ class Users implements \ArrayAccess
     /**
      * Get a User object by id.
      *
-     * @param $user_id
+     * @param $user_id int
+     * @param $params array Additional query string parameters
      * @return User
      */
-    public function get($user_id)
+    public function get($user_id, $params = [])
     {
-        return User::make($this->client, $user_id);
+        return User::make($this->client, $user_id)
+            ->setParams($params);
     }
 
     /**

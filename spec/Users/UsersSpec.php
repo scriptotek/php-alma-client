@@ -31,6 +31,19 @@ class UsersSpec extends ObjectBehavior
         $user->shouldHaveType(User::class);
     }
 
+    public function it_accepts_additional_parameters(AlmaClient $client, UriInterface $url)
+    {
+        $client->buildUrl('/users/12345', ['expand' => 'fees'])
+            ->shouldBeCalled()
+            ->willReturn($url);
+
+        $client->getJSON($url)
+            ->shouldBeCalled()
+            ->willReturn(SpecHelper::getDummyData('user_response.json'));
+
+        $this->get('12345', ['expand' => 'fees'])->fees;
+    }
+
     public function it_provides_lookup_by_id(AlmaClient $client, UriInterface $url)
     {
         $client->buildUrl('/users/12345', [])
