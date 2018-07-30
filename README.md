@@ -14,25 +14,25 @@ If the package doesn't fit your needs, you might take a look at the alternative
 
 ## Table of Contents
 
-   * [php-alma-client](#php-alma-client)
-      * [Table of Contents](#table-of-contents)
-      * [Install using Composer](#install-using-composer)
-      * [Initializing a client](#initializing-a-client)
-      * [Note about lazy-loading and existence-checking](#note-about-lazy-loading-and-existence-checking)
-      * [Bibliographic records](#bibliographic-records)
-         * [Getting a single record](#getting-a-single-record)
-         * [The MARC21 record](#the-marc21-record)
-         * [Searching for records](#searching-for-records)
-         * [Getting linked record from network zone](#getting-linked-record-from-network-zone)
-         * [Editing records](#editing-records)
-         * [Holdings and items](#holdings-and-items)
-      * [Analytics reports](#analytics-reports)
-         * [Column names](#column-names)
-         * [Filters](#filters)
-      * [Items](#items)
-      * [Users](#users)
-      * [Laravel 5 integration](#laravel-5-integration)
-      * [Future plans](#future-plans)
+  * [Install using Composer](#install-using-composer)
+  * [Initializing a client](#initializing-a-client)
+  * [Quick intro](#quick-intro)
+  * [Note about lazy-loading and existence-checking](#note-about-lazy-loading-and-existence-checking)
+  * [Bibs: Bibliographic records, Holdings, Items](#bibs-bibliographic-records-holdings-items)
+     * [Getting a single record](#getting-a-single-record)
+     * [The MARC21 record](#the-marc21-record)
+     * [Searching for records](#searching-for-records)
+     * [Getting linked record from network zone](#getting-linked-record-from-network-zone)
+     * [Editing records](#editing-records)
+     * [Holdings and items](#holdings-and-items)
+  * [Items](#items)
+  * [Users and loans](#users-and-loans)
+     * [Loans](#loans)
+  * [Analytics reports](#analytics-reports)
+     * [Column names](#column-names)
+     * [Filters](#filters)
+  * [Laravel 5 integration](#laravel-5-integration)
+  * [Future plans](#future-plans)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
@@ -93,25 +93,44 @@ $alma->nz->setSruClient(new SruClient(
 ));
 ```
 
+## Quick intro
+
+The `$alma` object provides `$alma->bibs` (for Bibs, Holdings, Items), `$alma->users` (for Users),
+`$alma->analytics` (for Analytics reports), `$alma->libraries` (for Libraries).
+
+```php
+$bib = $alma->bibs->get('990114012304702204');
+```
+
 ## Note about lazy-loading and existence-checking
 
-The library uses lazy-loading to reduce the number of network requests by delaying the data loading
-until the data is actually needed. This means you can for instance initialize a Bib object and echo
-back the MMS id without any network requests taking place:
+Lazy loading: Note that the client uses lazy loading to reduce the number of HTTP
+requests. Requests are not made when you instantiate objects, but when you request
+data from them. So in this case, a HTTP request for the holding record is first
+made when you call `getRecord()`. The response is then cached on the object for
+re-use. In the same way, no HTTP request is made for the Bib record in this case,
+since we don't request any data from that.
+
+
+In general the library delays fetching data until it's actually needed, a practice
+called lazy-loading. This means you can for instance initialize a `Bib` object and echo
+back the MMS id without any network requests taking place, since there is no need to
+fetch any data yet:
 
 ```php
 $bib = $alma->bibs->get('9901140123047044111');
 echo $bib->mms_id;
 ```
 
-If you request anything else on the Bib object, like the title, the resource will automatically load:
+If you request anything else on the Bib object, like the title, the data will automatically
+be fetched and populated on the object:
 
 ```php
 echo $bib->title;
 ```
 
-If the Bib record did not exist, a `ResourceNotFound` exception would be thrown at this point. So you
-could go ahead and handle that case like so:
+If the resource did not exist, a `ResourceNotFound` exception would be thrown at this point.
+So you could go ahead and handle that case like so:
 
 ```php
 
@@ -132,8 +151,7 @@ if (!$bib->exists()) {
 }
 ```
 
-
-## Bibliographic records
+## Bibs: Bibliographic records, Holdings, Items
 
 ### Getting a single record
 
@@ -226,13 +244,6 @@ $holding = $bib->getHolding('22102913020002204');
 $marc = $holding->getRecord();
 ```
 
-Lazy loading: Note that the client uses lazy loading to reduce the number of HTTP
-requests. Requests are not made when you instantiate objects, but when you request
-data from them. So in this case, a HTTP request for the holding record is first
-made when you call `getRecord()`. The response is then cached on the object for
-re-use. In the same way, no HTTP request is made for the Bib record in this case,
-since we don't request any data from that.
-
 To loop over holdings and items:
 
 ```php
@@ -267,7 +278,7 @@ There is a special entrypoint to retrieve an item by barcode:
 $item = $alma->items->fromBarcode('92nf02526');
 ```
 
-## Users
+## Users and loans
 
 **WARNING**: The interface is incomplete. Editing has not yet been implemented.
 
@@ -277,7 +288,8 @@ foreach ($alma->users->search('last_name~Heggø AND first_name~Dan') as $user) {
 }
 ```
 
-Loans:
+### Loans
+
 ```php
 
 foreach ($user->loans as $loan) {
@@ -378,23 +390,6 @@ convert a filter to SQL. The results looks like this:
 But used with the API, the response is the same as if you forget to include an
 "is prompted" filter: a loong wait follow by a "400 No more rows to fetch".
 
-## Items
-
-Retrieving an item by barcode:
-
-```php
-$item = $alma->items->fromBarcode('92nf02526');
-```
-
-## Users
-
-**WARNING**: The interface is subject to change.
-
-```php
-foreach ($alma->users->search('last_name~Heggø AND first_name~Dan') as $user) {
-    echo "$user->first_name $user->last_name ($user->primary_id)\n";
-}
-```
 
 ## Laravel 5 integration
 
@@ -413,11 +408,10 @@ And the facade:
 
     'Alma' => Scriptotek\Alma\Laravel\Facade::class,
 
+
 ## Future plans
 
-In the future, the package might add more abstraction, so you
-do, say,
-
+- Better support for editing, perhaps better integration with the php-marc package to provide a fluent editing interface:
 
 ```php
 $bib = $alma->bibs->get('990114012304702204');  // a Bib object
@@ -428,23 +422,10 @@ $bib->record->subjects->add([
 $bib->save()
 ```
 
-but that's not supported yet.
-
-Adding a new record: (not tested)
+- Support for creating records and users:
 
 ```php
 $bib = new Bib();
 $alma->bibs->store($bib);
-```
-
-Getting holdings and items:
-
-```php
-$bib = $alma->bibs->get('990114012304702204');
-foreach ($bib->holdings() as $holding) {
-    foreach ($holding->items() as $item) {
-        echo $item->id;
-    }
-}
 ```
 
