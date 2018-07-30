@@ -77,7 +77,7 @@ abstract class LazyResource extends Model
 
         $this->data = $data;
         if ($this->initialized) {
-            $this->setData($data);
+            $this->onData($data);
         }
 
         return $this;
@@ -92,11 +92,12 @@ abstract class LazyResource extends Model
     }
 
     /**
-     * Store data onto object. Can be overriden.
+     * Called when data is available to be processed.
+     * The resource classes can use this method to process the data.
      *
      * @param mixed $data
      */
-    protected function setData($data)
+    protected function onData($data)
     {
     }
 

@@ -15,17 +15,27 @@ class Holdings extends LazyResourceList implements \Countable, \Iterator, \Array
     use ReadOnlyArrayAccess;
     use IterableCollection;
 
-    /* @var Bib */
+    /**
+     * The Bib this Holdings list belongs to.
+     *
+     * @var Bib
+     */
     public $bib;
 
+    /**
+     * Holdings constructor.
+     *
+     * @param Client $client
+     * @param Bib $bib
+     */
     public function __construct(Client $client, Bib $bib)
     {
-        parent::__construct($client);
+        parent::__construct($client, 'holding');
         $this->bib = $bib;
     }
 
     /**
-     * Get resource.
+     * Get a single holding record by id.
      *
      * @param string $holding_id
      * @return Holding
@@ -35,26 +45,16 @@ class Holdings extends LazyResourceList implements \Countable, \Iterator, \Array
         return Holding::make($this->client, $this->bib, $holding_id);
     }
 
-    public function setData($data)
-    {
-        $this->resources = array_map(
-            function (\stdClass $holding) {
-                return Holding::make($this->client, $this->bib, $holding->holding_id)
-                    ->init($holding);
-            },
-            $data->holding
-        );
-    }
-
     /**
-     * Check if we have the full representation of our data object.
+     * Convert a data element to a resource object.
      *
-     * @param \stdClass $data
-     * @return boolean
+     * @param $data
+     * @return Holding
      */
-    protected function isInitialized($data)
+    protected function convertToResource($data)
     {
-        return $data->total_record_count;
+        return Holding::make($this->client, $this->bib, $data->holding_id)
+            ->init($data);
     }
 
     /**

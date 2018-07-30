@@ -57,11 +57,11 @@ class Item extends LazyResource
     }
 
     /**
-     * Store data onto object.
+     * Called when data is available to be processed.
      *
-     * @param \stdClass $data
+     * @param mixed $data
      */
-    protected function setData($data)
+    protected function onData($data)
     {
         if (isset($this->bib_data)) {
             $this->bib->init($this->bib_data);

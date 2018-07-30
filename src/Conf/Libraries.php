@@ -2,6 +2,7 @@
 
 namespace Scriptotek\Alma\Conf;
 
+use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 use Scriptotek\Alma\Model\LazyResourceList;
 use Scriptotek\Alma\Model\IterableCollection;
@@ -15,7 +16,17 @@ class Libraries extends LazyResourceList implements \ArrayAccess, \Countable, \I
     use IterableCollection;
 
     /**
-     * Get resource.
+     * Locations constructor.
+     *
+     * @param Client $client
+     */
+    public function __construct(Client $client)
+    {
+        parent::__construct($client, 'library');
+    }
+
+    /**
+     * Get a single library by its library code.
      *
      * @param string $code
      * @return Library
@@ -25,26 +36,16 @@ class Libraries extends LazyResourceList implements \ArrayAccess, \Countable, \I
         return Library::make($this->client, $code);
     }
 
-    protected function setData($data)
-    {
-        $this->resources = array_map(
-            function (\stdClass $library) {
-                return Library::make($this->client, $library->code)
-                    ->init($library);
-            },
-            $data->library
-        );
-    }
-
     /**
-     * Check if we have the full representation of our data object.
+     * Convert a data element to a resource object.
      *
-     * @param \stdClass $data
-     * @return boolean
+     * @param $data
+     * @return Library
      */
-    protected function isInitialized($data)
+    protected function convertToResource($data)
     {
-        return isset($data->library);
+        return Library::make($this->client, $data->code)
+            ->init($data);
     }
 
     /**

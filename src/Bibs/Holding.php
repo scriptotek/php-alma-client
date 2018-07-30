@@ -43,11 +43,11 @@ class Holding extends LazyResource
     }
 
     /**
-     * Store data onto object.
+     * Called when data is available to be processed.
      *
-     * @param \stdClass $data
+     * @param mixed $data
      */
-    protected function setData($data)
+    protected function onData($data)
     {
         $this->_marc = MarcRecord::fromString($data->anies[0]);
     }

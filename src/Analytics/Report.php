@@ -5,13 +5,16 @@ namespace Scriptotek\Alma\Analytics;
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\RequestFailed;
-use Scriptotek\Alma\Model\PagedLazyResourceList;
+use Scriptotek\Alma\Model\LazyResource;
+use Scriptotek\Alma\Model\PaginatedList;
 
 /**
  * A single Report resource.
  */
-class Report extends PagedLazyResourceList implements \Iterator, \Countable
+class Report extends LazyResource implements \Iterator, \Countable
 {
+    use PaginatedList;
+
     /** @var Client */
     protected $client;
 
@@ -32,6 +35,9 @@ class Report extends PagedLazyResourceList implements \Iterator, \Countable
 
     /** @var integer */
     public $chunkSize = 1000;
+
+    /** @var Row[] */
+    protected $resources = [];
 
     public static $maxAttempts = 5;
 
@@ -54,7 +60,6 @@ class Report extends PagedLazyResourceList implements \Iterator, \Countable
     {
         return $this;
     }
-
 
     public function getHeaders()
     {

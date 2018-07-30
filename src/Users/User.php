@@ -82,15 +82,14 @@ class User extends LazyResource
     }
 
     /**
-     * Store data onto object.
+     * Called when data is available to be processed.
      *
-     * @param \stdClass $data
+     * @param mixed $data
      */
-    protected function setData($data)
+    protected function onData($data)
     {
         $this->_identifiers = UserIdentifiers::make($this->client, $data);
     }
-
 
     /**
      * Generate the base URL for this resource.

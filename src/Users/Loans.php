@@ -3,19 +3,19 @@
 namespace Scriptotek\Alma\Users;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\Model\SimplePagedLazyResourceList;
+use Scriptotek\Alma\Model\SimplePaginatedList;
 
 /**
  * Iterable collection of Loan resources belonging to some User.
  */
-class Loans extends SimplePagedLazyResourceList implements \Countable, \Iterator
+class Loans extends SimplePaginatedList implements \Countable, \Iterator
 {
     /* @var User */
     public $user;
 
     public function __construct(Client $client, User $user)
     {
-        parent::__construct($client);
+        parent::__construct($client, 'item_loan');
         $this->user = $user;
     }
 

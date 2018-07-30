@@ -15,28 +15,54 @@ class Items extends LazyResourceList implements \Countable, \Iterator, \ArrayAcc
     use ReadOnlyArrayAccess;
     use IterableCollection;
 
-    /* @var Bib */
+    /**
+     * The Bib this Items list belongs to.
+     *
+     * @var Bib
+     */
     public $bib;
 
-    /* @var Holding*/
+    /**
+     * The Holding this Items list belongs to.
+     *
+     * @var Holding
+     */
     public $holding;
 
+    /**
+     * Items constructor.
+     *
+     * @param Client $client
+     * @param Bib $bib
+     * @param Holding $holding
+     */
     public function __construct(Client $client, Bib $bib = null, Holding $holding = null)
     {
-        parent::__construct($client);
+        parent::__construct($client, 'item');
         $this->bib = $bib;
         $this->holding = $holding;
     }
 
-    public function setData($data)
+    /**
+     * Convert a data element to a resource object.
+     *
+     * @param $data
+     * @return Item
+     */
+    protected function convertToResource($data)
     {
-        $this->resources = array_map(
-            function (\stdClass $item) {
-                return Item::make($this->client, $this->bib, $this->holding, $item->item_data->pid)
-                    ->init($item);
-            },
-            $data->item
-        );
+        return Item::make($this->client, $this->bib, $this->holding, $data->item_data->pid)
+            ->init($data);
+    }
+
+    /**
+     * Generate the base URL for this resource.
+     *
+     * @return string
+     */
+    protected function urlBase()
+    {
+        return "/bibs/{$this->bib->mms_id}/holdings/{$this->holding->holding_id}/items";
     }
 
     /**
@@ -64,26 +90,5 @@ class Items extends LazyResourceList implements \Countable, \Iterator, \ArrayAcc
         }
 
         return null;
-    }
-
-    /**
-     * Check if we have the full representation of our data object.
-     *
-     * @param \stdClass $data
-     * @return boolean
-     */
-    protected function isInitialized($data)
-    {
-        return isset($data->total_record_count);
-    }
-
-    /**
-     * Generate the base URL for this resource.
-     *
-     * @return string
-     */
-    protected function urlBase()
-    {
-        return "/bibs/{$this->bib->mms_id}/holdings/{$this->holding->holding_id}/items";
     }
 }

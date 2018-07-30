@@ -15,7 +15,11 @@ class Locations extends LazyResourceList implements \ArrayAccess, \Countable, \I
     use ReadOnlyArrayAccess;
     use IterableCollection;
 
-    /** @var Library */
+    /**
+     * The Library this Locations list belongs to.
+     *
+     * @var Library
+     */
     protected $library;
 
     /**
@@ -26,12 +30,12 @@ class Locations extends LazyResourceList implements \ArrayAccess, \Countable, \I
      */
     public function __construct(Client $client, Library $library)
     {
-        parent::__construct($client);
+        parent::__construct($client, 'location');
         $this->library = $library;
     }
 
     /**
-     * Get resource.
+     * Get a single location by its location code.
      *
      * @param string $code
      * @return Location
@@ -41,26 +45,16 @@ class Locations extends LazyResourceList implements \ArrayAccess, \Countable, \I
         return Location::make($this->client, $this->library, $code);
     }
 
-    protected function setData($data)
-    {
-        $this->resources = array_map(
-            function (\stdClass $location) {
-                return Location::make($this->client, $this->library, $location->code)
-                    ->init($location);
-            },
-            $data->location
-        );
-    }
-
     /**
-     * Check if we have the full representation of our data object.
+     * Convert a data element to a resource object.
      *
-     * @param \stdClass $data
-     * @return boolean
+     * @param $data
+     * @return Location
      */
-    protected function isInitialized($data)
+    protected function convertToResource($data)
     {
-        return isset($data->location);
+        return Location::make($this->client, $this->library, $data->code)
+            ->init($data);
     }
 
     /**

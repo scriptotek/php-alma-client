@@ -2,29 +2,10 @@
 
 namespace Scriptotek\Alma\Model;
 
-/**
- * The PagedLazyResourceList extends the LazyResourceList class with functionality
- * for iteratively fetching paged resources.
- */
-abstract class PagedLazyResourceList extends LazyResourceList
+trait PaginatedList
 {
     /* @var integer */
     protected $position = 0;
-
-    /**
-     * Convert a retrieved resource object to a model object.
-     *
-     * @param $data
-     * @return mixed
-     */
-    abstract protected function convertToResource($data);
-
-    /**
-     * Fetch more resources.
-     *
-     * @return mixed
-     */
-    abstract protected function fetchBatch();
 
     /**
      * Fetch all the data.

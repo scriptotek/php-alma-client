@@ -122,11 +122,11 @@ class Bib extends LazyResource
     }
 
     /**
-     * Store data onto object.
+     * Called when data is available to be processed.
      *
-     * @param \stdClass $data
+     * @param mixed $data
      */
-    protected function setData($data)
+    protected function onData($data)
     {
         $this->setMarcRecord($data->anies[0]);
     }
