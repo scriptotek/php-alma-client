@@ -5,6 +5,7 @@ namespace spec\Scriptotek\Alma\Users;
 use PhpSpec\ObjectBehavior;
 use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Client as AlmaClient;
+use Scriptotek\Alma\Users\Fees;
 use Scriptotek\Alma\Users\Loans;
 use Scriptotek\Alma\Users\User;
 use spec\Scriptotek\Alma\SpecHelper;
@@ -61,5 +62,11 @@ class UserSpec extends ObjectBehavior
     {
         SpecHelper::expectNoRequests($client);
         $this->loans->shouldHaveType(Loans::class);
+    }
+
+    function it_has_fees(AlmaClient $client)
+    {
+        SpecHelper::expectNoRequests($client);
+        $this->fees->shouldHaveType(Fees::class);
     }
 }

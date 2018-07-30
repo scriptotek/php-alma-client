@@ -1,0 +1,25 @@
+{
+  "id": "9854064491211104",
+  "type": {
+    "value": "LOSTITEMREPLACEMENTFEE",
+    "desc": "Lost item replacement fee"
+  },
+  "status": {
+    "value": "ACTIVE",
+    "desc": "Active"
+  },
+  "balance": 750,
+  "remaining_vat_amount": 0,
+  "original_amount": 750,
+  "original_vat_amount": 0,
+  "creation_time": "2018-01-05T04:49:27.349Z",
+  "status_time": "2018-01-05T04:49:27.349Z",
+  "comment": null,
+  "owner": {
+    "value": "1030310",
+    "desc": "UiO Realfagsbiblioteket"
+  },
+  "title": "Knowledge concepts",
+  "barcode": null,
+  "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/users/12345/fees/9854064491211104"
+}

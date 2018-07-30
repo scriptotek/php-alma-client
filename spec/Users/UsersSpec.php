@@ -41,7 +41,7 @@ class UsersSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('user_response.json'));
 
-        $this->get('12345', ['expand' => 'fees'])->fees;
+        $this->get('12345', ['expand' => 'fees'])->init();
     }
 
     public function it_provides_lookup_by_id(AlmaClient $client, UriInterface $url)

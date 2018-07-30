@@ -27,6 +27,11 @@ class User extends LazyResource
     public $loans;
 
     /**
+     * @var Fees
+     */
+    public $fees;
+
+    /**
      * User constructor.
      *
      * @param Client $client
@@ -37,6 +42,7 @@ class User extends LazyResource
         parent::__construct($client);
         $this->id = $id;
         $this->loans = Loans::make($this->client, $this);
+        $this->fees = Fees::make($this->client, $this);
     }
 
     /**

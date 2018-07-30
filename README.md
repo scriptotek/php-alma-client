@@ -194,12 +194,12 @@ meaning you can use all File_MARC methods in addition to the convenience methods
 ### Searching for records
 
 If you have connected an SRU client (described above), you can search using
-the CQL search syntax.
+CQL search syntax like so:
 
 ```php
 foreach ($alma->bibs->search('alma.dewey_decimal_class_number=530.12') as $bib) {
-	$rec = $bib->record;
-	echo "$rec->id: $rec->title\n";
+	$marcRecord = $bib->record;
+	echo "$marcRecord->id: $marcRecord->title\n";
 }
 ```
 
@@ -214,14 +214,16 @@ $nzBib = $bib->getNzRecord();
 
 ### Editing records
 
-The MARC21 record can easily be edited using the `File_MARC_Record` interface
-(see [File_MARC](https://github.com/pear/File_MARC) for documentation):
+The MARC21 record can be edited using the `File_MARC_Record` interface
+(see [File_MARC](https://github.com/pear/File_MARC) for documentation),
+and then saved back to Alma using the `save()` method on the `Bib` object.
+In the example below we delete a subject heading and add another:
 
 ```php
+$bib = $alma->bibs->get('990114012304702204');
 
 foreach ($bib->record->getSubjects() as $subject) {
-    $term = strval($subject);
-    if ($term == 'Boating with dogs') {
+    if ($subject->vocabulary == 'noubomn' && (string) $subject == 'Boating with dogs') {
         $subject->delete();
     }
 }
@@ -236,15 +238,25 @@ $bib->save();
 
 ### Holdings and items
 
-To get a MARC21 holding record:
+The `Bib` object provides easy access to holdings through the `holdings` iterator:
 
 ```php
 $bib = $alma->bibs->get('990310361044702204');
-$holding = $bib->getHolding('22102913020002204');
-$marc = $holding->getRecord();
+foreach ($bib->holdings as $holding) {
+    echo "{$holding->holding_id} {$holding->call_number}";
+}
 ```
 
-To loop over holdings and items:
+As with the `Bib` object, the MARC record for the `Holding` object is available
+either from the `getRecord()` method or the `record` property:
+
+```php
+$holding = $alma->bibs['990310361044702204']->holdings['22102913020002204'];
+$marcRecord = $holding->record;
+```
+
+Items can be listed from holdings in the same manner as holdings can be fetched from bibs.
+Here's an example:
 
 ```php
 $bib = $alma->bibs->get('990310361044702204');
@@ -259,16 +271,7 @@ foreach ($bib->holdings as $holding) {
 ```
 
 In this case, the client makes one request to fetch the list of holdings, and
-then one request per holding.
-
-If you're only interested in item info for a single holding, and know the
-holding ID, you can get away with a single HTTP request using
-
-```
-foreach ($alma->bibs->get('990310361044702204')->getHolding('22102913020002204')->items as $item) {
-    // Do stuff
-}
-```
+then one request per holding to fetch items.
 
 ## Items
 
@@ -278,9 +281,13 @@ There is a special entrypoint to retrieve an item by barcode:
 $item = $alma->items->fromBarcode('92nf02526');
 ```
 
-## Users and loans
+## Users, loans and fees
 
-**WARNING**: The interface is incomplete. Editing has not yet been implemented.
+**Note**: Editing is not yet implemented.
+
+### Search
+
+Example:
 
 ```php
 foreach ($alma->users->search('last_name~Heggø AND first_name~Dan') as $user) {
@@ -290,10 +297,27 @@ foreach ($alma->users->search('last_name~Heggø AND first_name~Dan') as $user) {
 
 ### Loans
 
+Example:
+
 ```php
 
 foreach ($user->loans as $loan) {
     echo "{$loan->due_date} {$loan->title}\n";
+}
+```
+
+Note that `$user->loans` is an iterator. To get an array instead,
+you can use `iterator_to_array($user->loans)`.
+
+### Fees
+
+Example:
+
+```php
+printf('Total: %s %s', $user->fees->total_sum, $user->fees->currency);
+
+foreach ($user->fees as $fee) {
+    echo "{$fee->type->value}\t{$fee->balance}\t{$fee->title}\n";
 }
 ```
 
