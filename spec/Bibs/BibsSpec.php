@@ -48,9 +48,9 @@ class BibsSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($url);
 
-        $client->getJSON($url)
+        $client->getXML($url)
             ->shouldBeCalled()
-            ->willReturn(SpecHelper::getDummyData('bib_response_with_availability.json'));
+            ->willReturn(SpecHelper::getDummyData('bib_response_with_availability.xml'));
 
         $this->get('12345', 'p_avail')->record;
     }
@@ -92,13 +92,13 @@ class BibsSpec extends ObjectBehavior
 
     public function it_supports_lookup_by_holding_id(AlmaClient $client)
     {
-        $client->getJSON('/bibs', Argument::containing('12345'))
+        $client->getXML('/bibs', Argument::containing('12345'))
             ->shouldBeCalled()
-            ->willReturn(SpecHelper::getDummyData('bibs_holdings.json'));
+            ->willReturn(SpecHelper::getDummyData('bibs_holdings.xml'));
 
         $bib = $this->fromHoldingsId('12345');
         $bib->shouldHaveType(Bib::class);
-        $bib->mms_id->shouldBe('990006312214702204');
+        $bib->mms_id->shouldBe('999900137074702204');
     }
 
     /*

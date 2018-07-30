@@ -63,9 +63,10 @@ class Bibs implements \ArrayAccess
      */
     public function fromHoldingsId($holdings_id)
     {
-        $data = $this->client->getJSON('/bibs', ['holdings_id' => $holdings_id]);
+        $data = $this->client->getXML('/bibs', ['holdings_id' => $holdings_id]);
 
-        return $this->get($data->bib[0]->mms_id)->init($data->bib[0]);
+        return $this->get($data->text('bib/mms_id'))
+            ->init($data->first('bib'));
     }
 
     /**

@@ -18,8 +18,7 @@ class BibSpec extends ObjectBehavior
 {
     public function let(AlmaClient $client, UriInterface $url)
     {
-        $mms_id = '999104760474702204';
-        $this->beConstructedWith($client, $mms_id);
+        $this->beConstructedWith($client, '999104760474702204');
     }
 
     protected function expectRequest($client, $url)
@@ -28,9 +27,9 @@ class BibSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($url);
 
-        $client->getJSON($url)
+        $client->getXML($url)
             ->shouldBeCalled()
-            ->willReturn(SpecHelper::getDummyData('bib_response_iz.json'));
+            ->willReturn(SpecHelper::getDummyData('bib_response_iz.xml'));
     }
 
     public function it_is_lazy(AlmaClient $client)
@@ -46,7 +45,7 @@ class BibSpec extends ObjectBehavior
         $this->created_date->shouldBe('2015-11-05Z');
     }
 
-    public function it_loads_bib_data_when_needed2(AlmaClient $client, UriInterface $url)
+    public function it_can_exist(AlmaClient $client, UriInterface $url)
     {
         $this->expectRequest($client, $url);
 
@@ -86,8 +85,9 @@ class BibSpec extends ObjectBehavior
 
         $this->record->getField('245')->getSubfield('a')->setData('New title');
 
-        $client->putJSON('/bibs/999104760474702204', Argument::containingString('New title'))
+        $client->putXML($url, Argument::containingString('New title'))
             ->shouldBeCalled();
+
         $this->save();
     }
 
@@ -97,7 +97,7 @@ class BibSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($url);
 
-        $client->getJSON($url)
+        $client->getXML($url)
             ->shouldBeCalled()
             ->willThrow(ResourceNotFound::class);
 

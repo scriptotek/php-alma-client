@@ -2,6 +2,7 @@
 
 namespace Scriptotek\Alma\Bibs;
 
+use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\NoLinkedNetworkZoneRecordException;
 use Scriptotek\Alma\Model\LazyResource;
@@ -30,6 +31,15 @@ class Bib extends LazyResource
     }
 
     /**
+     * Get the model data. This API does not support JSON for editing,
+     * so we fetch XML instead.
+     */
+    protected function fetchData()
+    {
+        return $this->client->getXML($this->url());
+    }
+
+    /**
      * Load MARC record onto this Bib object. Chainable method.
      *
      * @param string $xml
@@ -38,9 +48,6 @@ class Bib extends LazyResource
      */
     public function setMarcRecord($xml)
     {
-        // Workaround for a long-standing API-bug
-        $xml = str_replace('UTF-16', 'UTF-8', $xml);
-
         $this->_marc = MarcRecord::fromString($xml);
         // Note: do not marc as initialized, since we miss some other data from the Bib record. Oh, Alma :/
 
@@ -62,26 +69,34 @@ class Bib extends LazyResource
             ->setMarcRecord($record->data->asXML());
     }
 
+    /**
+     * For backwards-compability.
+     */
     public function getHoldings()
     {
         return $this->holdings;
     }
 
+    /**
+     * Save the MARC record.
+     */
     public function save()
     {
         // If initialized from an SRU record, we need to fetch the
         // remaining parts of the Bib record.
         $this->init();
 
-        // Serialize the MARC record
-        $data = $this->_marc->toXML('UTF-8', false, false);
+        // Inject the MARC record
+        $marcXml = new QuiteSimpleXMLElement($this->_marc->toXML('UTF-8', false, false));
+        $this->data->first('record')->replace($marcXml);
 
-        // but wait, Alma hates namespaces, so we have to remove them...
-        $data = str_replace(' xmlns="http://www.loc.gov/MARC21/slim"', '', $data);
+        // Serialize
+        $newData = $this->data->asXML();
 
-        $this->data->anies = [$data];
+        // Alma doesn't like namespaces
+        $newData = str_replace(' xmlns="http://www.loc.gov/MARC21/slim"', '', $newData);
 
-        return $this->client->putJSON('/bibs/' . $this->mms_id, $data);
+        return $this->client->putXML($this->url(), $newData);
     }
 
     /**
@@ -93,8 +108,7 @@ class Bib extends LazyResource
         // remaining parts of the Bib record.
         $this->init();
 
-        // @TODO: What if record is also linked to CZ? Probably an array is returned.
-        $nz_mms_id = $this->data->linked_record_id->value;
+        $nz_mms_id = $this->data->text("linked_record_id[@type='NZ']");
         if (!$nz_mms_id) {
             throw new NoLinkedNetworkZoneRecordException("Record $this->mms_id is not linked to a network zone record.");
         }
@@ -128,18 +142,18 @@ class Bib extends LazyResource
      */
     protected function onData($data)
     {
-        $this->setMarcRecord($data->anies[0]);
+        $this->setMarcRecord($data->first('record')->asXML());
     }
 
     /**
      * Check if we have the full representation of our data object.
      *
-     * @param \stdClass $data
+     * @param $data
      * @return boolean
      */
     protected function isInitialized($data)
     {
-        return isset($data->anies);
+        return $data->has('record');
     }
 
     /**
@@ -150,5 +164,23 @@ class Bib extends LazyResource
     protected function urlBase()
     {
         return "/bibs/{$this->mms_id}";
+    }
+
+    /**
+     * Magic!
+     * @param string $key
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        // If there's a getter method, call it.
+        if ($key == 'record') {
+            return $this->getRecord();
+        }
+
+        $this->init();
+
+        // If the property is defined in our data object, return it.
+        return $this->data->text($key);
     }
 }
