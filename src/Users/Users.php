@@ -35,6 +35,18 @@ class Users implements \ArrayAccess
     }
 
     /**
+     * Get the first user matching a given query, or NULL if not found.
+     *
+     * @param string $query
+     * @param array $options
+     * @return User|null
+     */
+    public function findOne($query, array $options = [])
+    {
+        return $this->search($query, $options)->current();
+    }
+
+    /**
      * Iterates over all users matching the given query.
      * Handles continuation.
      * @param string $query

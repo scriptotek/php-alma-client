@@ -7,7 +7,7 @@ use Scriptotek\Alma\Client;
 /**
  * The Model class is our base class.
  */
-abstract class Model
+abstract class Model implements \JsonSerializable
 {
     /* @var Client */
     protected $client;
@@ -74,5 +74,10 @@ abstract class Model
         }
 
         return null;
+    }
+
+    public function jsonSerialize()
+    {
+        return $this->data;
     }
 }
