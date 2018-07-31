@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Analytics: The `getRows()` method is deprecated. Iterate over the `Report` instead.
 - Made package auto-discoverable in Laravel 5.5+.
 - Added helper method `Users::findOne()` to get the first match from a search.
+- Added support for retrieving user requests from `Bib`, `Item` and `User`.
 
 ### Changed
 

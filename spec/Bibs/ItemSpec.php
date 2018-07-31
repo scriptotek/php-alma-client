@@ -10,6 +10,7 @@ use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Bibs\ScanInResponse;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\Users\Loan;
+use Scriptotek\Alma\Users\Requests;
 use Scriptotek\Alma\Users\User;
 use spec\Scriptotek\Alma\SpecHelper;
 
@@ -78,5 +79,10 @@ class ItemSpec extends ObjectBehavior
 
         $this->scanIn($library)
             ->shouldHaveType(ScanInResponse::class);
+    }
+
+    public function it_has_requests()
+    {
+        $this->requests->shouldHaveType(Requests::class);
     }
 }

@@ -6,6 +6,7 @@ use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\Fees;
 use Scriptotek\Alma\Users\Loans;
+use Scriptotek\Alma\Users\Requests;
 use Scriptotek\Alma\Users\User;
 use spec\Scriptotek\Alma\SpecHelper;
 
@@ -64,5 +65,10 @@ class UserSpec extends ObjectBehavior
     {
         SpecHelper::expectNoRequests($client);
         $this->fees->shouldHaveType(Fees::class);
+    }
+
+    public function it_has_requests()
+    {
+        $this->requests->shouldHaveType(Requests::class);
     }
 }

@@ -6,6 +6,7 @@ use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\NoLinkedNetworkZoneRecordException;
 use Scriptotek\Alma\Model\LazyResource;
+use Scriptotek\Alma\Users\Requests;
 use Scriptotek\Marc\Record as MarcRecord;
 use Scriptotek\Sru\Record as SruRecord;
 
@@ -23,11 +24,15 @@ class Bib extends LazyResource
     /* @var MarcRecord */
     protected $_marc;
 
+    /** @var Requests */
+    public $requests;
+
     public function __construct(Client $client = null, $mms_id = null)
     {
         parent::__construct($client);
         $this->mms_id = $mms_id;
         $this->holdings = Holdings::make($this->client, $this);
+        $this->requests = Requests::make($this->client, $this->url('/requests'));
     }
 
     /**

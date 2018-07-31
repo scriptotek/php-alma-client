@@ -10,6 +10,7 @@ use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Holdings;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Exception\ResourceNotFound;
+use Scriptotek\Alma\Users\Requests;
 use Scriptotek\Marc\Record;
 use spec\Scriptotek\Alma\SpecHelper;
 
@@ -93,5 +94,10 @@ class BibSpec extends ObjectBehavior
             ->willThrow(ResourceNotFound::class);
 
         $this->exists()->shouldBe(false);
+    }
+
+    public function it_has_requests()
+    {
+        $this->requests->shouldHaveType(Requests::class);
     }
 }

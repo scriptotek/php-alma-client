@@ -14,6 +14,7 @@ If the package doesn't fit your needs, you might take a look at the alternative
 
 ## Table of Contents
 
+  * [Table of Contents](#table-of-contents)
   * [Install using Composer](#install-using-composer)
   * [Initializing a client](#initializing-a-client)
   * [Quick intro](#quick-intro)
@@ -26,8 +27,11 @@ If the package doesn't fit your needs, you might take a look at the alternative
      * [Editing records](#editing-records)
      * [Holdings and items](#holdings-and-items)
   * [Items](#items)
-  * [Users and loans](#users-and-loans)
+  * [Users, loans, fees and requests](#users-loans-fees-and-requests)
+     * [Search](#search)
      * [Loans](#loans)
+     * [Fees](#fees)
+     * [Requests](#requests)
   * [Analytics reports](#analytics-reports)
      * [Column names](#column-names)
      * [Filters](#filters)
@@ -281,7 +285,7 @@ There is a special entrypoint to retrieve an item by barcode:
 $item = $alma->items->fromBarcode('92nf02526');
 ```
 
-## Users, loans and fees
+## Users, loans, fees and requests
 
 **Note**: Editing is not yet implemented.
 
@@ -320,6 +324,18 @@ foreach ($user->fees as $fee) {
     echo "{$fee->type->value}\t{$fee->balance}\t{$fee->title}\n";
 }
 ```
+
+### Requests
+
+Example:
+
+```php
+foreach ($user->requests as $request) {
+    echo json_encode($request, JSON_PRETTY_PRINT);
+}
+```
+
+Requests can also be retrieved from a `Bib` object or an `Item` object.
 
 ## Analytics reports
 

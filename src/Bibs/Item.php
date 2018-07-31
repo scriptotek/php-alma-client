@@ -6,6 +6,7 @@ use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\Model\LazyResource;
 use Scriptotek\Alma\Users\Loan;
+use Scriptotek\Alma\Users\Requests;
 use Scriptotek\Alma\Users\User;
 
 class Item extends LazyResource
@@ -16,8 +17,11 @@ class Item extends LazyResource
     /** @var Holding */
     public $holding;
 
+    /** @var Requests */
+    public $requests;
+
     /** @var string */
-    protected $item_id;
+    public $item_id;
 
     /**
      * Item constructor.
@@ -33,6 +37,7 @@ class Item extends LazyResource
         $this->bib = $bib;
         $this->holding = $holding;
         $this->item_id = $item_id;
+        $this->requests = Requests::make($this->client, $this->url('/requests'));
     }
 
     /**

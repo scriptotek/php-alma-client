@@ -1,0 +1,30 @@
+{
+    "total_record_count": 1,
+    "user_request": [
+        {
+            "author": "Osipov, Andrey V.",
+            "barcode": null,
+            "comment": null,
+            "description": null,
+            "material_type": {
+                "desc": null,
+                "value": null
+            },
+            "mms_id": "999919897211902204",
+            "pickup_location": "UiO Realfagsbiblioteket",
+            "pickup_location_library": "1030310",
+            "pickup_location_type": "LIBRARY",
+            "place_in_queue": 1,
+            "request_date": "2018-07-31Z",
+            "request_id": "1403795240001204",
+            "request_status": "NOT_STARTED",
+            "request_sub_type": {
+                "desc": "Patron physical item request",
+                "value": "PATRON_PHYSICAL"
+            },
+            "request_type": "HOLD",
+            "title": "Modern electromagnetic scattering theory with applications Andrey V. Osipov, Sergei A. Tretyakov",
+            "user_primary_id": "Some User"
+        }
+    ]
+}
