@@ -4,7 +4,6 @@ namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Item;
@@ -25,13 +24,9 @@ class HoldingSpec extends ObjectBehavior
         $this->shouldHaveType(Holding::class);
     }
 
-    public function it_has_items(AlmaClient $client, UriInterface $url)
+    public function it_has_items(AlmaClient $client)
     {
-        $client->buildUrl('/bibs/abc/holdings/123/items', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/bibs/abc/holdings/123/items')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('items_response.json'));
 

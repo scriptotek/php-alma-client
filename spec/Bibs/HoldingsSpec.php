@@ -4,7 +4,6 @@ namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Holdings;
@@ -86,26 +85,18 @@ class HoldingsSpec extends ObjectBehavior
         $holding->holding_id->shouldBe($holding_id);
     }
 
-    public function it_is_countable(AlmaClient $client, UriInterface $url)
+    public function it_is_countable(AlmaClient $client)
     {
-        $client->buildUrl('/bibs/abc/holdings', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/bibs/abc/holdings')
             ->shouldBeCalled()
             ->willReturn(json_decode($this->sample));
 
         $this->shouldHaveCount(2);
     }
 
-    public function it_provides_an_iterator_interface_to_holding_objects(AlmaClient $client, UriInterface $url)
+    public function it_provides_an_iterator_interface_to_holding_objects(AlmaClient $client)
     {
-        $client->buildUrl('/bibs/abc/holdings', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/bibs/abc/holdings')
             ->shouldBeCalled()
             ->willReturn(json_decode($this->sample));
 

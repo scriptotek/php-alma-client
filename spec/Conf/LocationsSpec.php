@@ -2,7 +2,6 @@
 
 namespace spec\Scriptotek\Alma\Conf;
 
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\Conf\Location;
@@ -28,13 +27,9 @@ class LocationsSpec extends ObjectBehavior
         $location->code->shouldBe($code);
     }
 
-    function it_provides_locations(AlmaClient $client, UriInterface $url)
+    function it_provides_locations(AlmaClient $client)
     {
-        $client->buildUrl('/conf/libraries/LIB_CODE/locations', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/conf/libraries/LIB_CODE/locations')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('locations_response.json'));
 

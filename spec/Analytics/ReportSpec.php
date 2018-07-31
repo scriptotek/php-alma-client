@@ -3,7 +3,6 @@
 namespace spec\Scriptotek\Alma\Analytics;
 
 use PhpSpec\ObjectBehavior;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Analytics\Report;
 use Scriptotek\Alma\Analytics\Row;
 use Scriptotek\Alma\Analytics\Rows;
@@ -37,16 +36,9 @@ class ReportSpec extends ObjectBehavior
         $this->filter->shouldBe('la la la');
     }
 
-    public function it_can_be_counted(Client $almaClient, UriInterface $url)
+    public function it_can_be_counted(Client $almaClient)
     {
-        $almaClient->buildUrl('/analytics/reports', [
-            'path' => '/test/path',
-            'limit' => 1000,
-            'token' => null,
-            'filter' => null,
-        ])->shouldBeCalled()->willReturn($url);
-
-        $almaClient->getXML($url)
+        $almaClient->getXML('/analytics/reports?path=%2Ftest%2Fpath&limit=1000')
             ->shouldBeCalledTimes(1)
             ->willReturn(SpecHelper::getDummyData('analytics_response.xml'));
 
@@ -54,16 +46,9 @@ class ReportSpec extends ObjectBehavior
         $this->shouldHaveCount(25);
     }
 
-    public function it_parses_column_headers(Client $almaClient, UriInterface $url)
+    public function it_parses_column_headers(Client $almaClient)
     {
-        $almaClient->buildUrl('/analytics/reports', [
-            'path' => '/test/path',
-            'limit' => 1000,
-            'token' => null,
-            'filter' => null,
-        ])->shouldBeCalled()->willReturn($url);
-
-        $almaClient->getXML($url)
+        $almaClient->getXML('/analytics/reports?path=%2Ftest%2Fpath&limit=1000')
             ->shouldBeCalledTimes(1)
             ->willReturn(SpecHelper::getDummyData('analytics_response.xml'));
 
@@ -77,32 +62,18 @@ class ReportSpec extends ObjectBehavior
         $firstRow['Event Start Date and Time']->shouldBe('2017-08-29T15:43:53');
     }
 
-    public function it_supports_resumption(Client $almaClient, UriInterface $url1, UriInterface $url2)
+    public function it_supports_resumption(Client $almaClient)
     {
         $path = '/test/path';
 
         // To speed up tests
         Report::$retryDelayTime = 0;
 
-        $almaClient->buildUrl('/analytics/reports', [
-            'path' => $path,
-            'limit' => 1000,
-            'token' => null,
-            'filter' => null,
-        ])->shouldBeCalled()->willReturn($url1);
-
-        $almaClient->getXML($url1)
+        $almaClient->getXML('/analytics/reports?path=%2Ftest%2Fpath&limit=1000')
             ->shouldBeCalledTimes(1)
             ->willReturn(SpecHelper::getDummyData('analytics_response_part1.xml'));
 
-        $almaClient->buildUrl('/analytics/reports', [
-            'path' => null,
-            'limit' => 1000,
-            'token' => '9672D715A8E2EAAA6F30DD22FC52BE4CCAE35E29D921E0AC8BE8C6734C9E1571B4E48EEFCA4046EFF8CD7D1662C2D0A7677D3AD05EDC3CA7F06182E34E9D7A2F',
-            'filter' => null,
-        ])->shouldBeCalled()->willReturn($url2);
-
-        $almaClient->getXML($url2)
+        $almaClient->getXML('/analytics/reports?limit=1000&token=9672D715A8E2EAAA6F30DD22FC52BE4CCAE35E29D921E0AC8BE8C6734C9E1571B4E48EEFCA4046EFF8CD7D1662C2D0A7677D3AD05EDC3CA7F06182E34E9D7A2F')
             ->shouldBeCalledTimes(3)
             ->willReturn(
 
@@ -116,16 +87,9 @@ class ReportSpec extends ObjectBehavior
         $this->shouldHaveCount(150 + 150 + 88);
     }
 
-    public function it_might_not_exist(Client $almaClient, UriInterface $url)
+    public function it_might_not_exist(Client $almaClient)
     {
-        $almaClient->buildUrl('/analytics/reports', [
-            'path' => '/test/path',
-            'limit' => 1000,
-            'token' => null,
-            'filter' => null,
-        ])->shouldBeCalled()->willReturn($url);
-
-        $almaClient->getXML($url)
+        $almaClient->getXML('/analytics/reports?path=%2Ftest%2Fpath&limit=1000')
             ->shouldBeCalledTimes(1)
             ->willThrow(new ResourceNotFound('Path not found (/test/path)'));
 

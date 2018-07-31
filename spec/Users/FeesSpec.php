@@ -3,7 +3,6 @@
 namespace spec\Scriptotek\Alma\Users;
 
 use PhpSpec\ObjectBehavior;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\Fee;
 use Scriptotek\Alma\Users\Fees;
@@ -23,13 +22,9 @@ class FeesSpec extends ObjectBehavior
         $this->shouldHaveType(Fees::class);
     }
 
-    public function it_yields_fees(AlmaClient $client, UriInterface $url)
+    public function it_yields_fees(AlmaClient $client)
     {
-        $client->buildUrl('/users/123435/fees', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/users/123435/fees')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('fees_response.json'));
 
@@ -42,13 +37,9 @@ class FeesSpec extends ObjectBehavior
         $this->shouldHaveCount(1);
     }
 
-    public function it_can_be_empty(AlmaClient $client, UriInterface $url)
+    public function it_can_be_empty(AlmaClient $client)
     {
-        $client->buildUrl('/users/123435/fees', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/users/123435/fees')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('zero_fees_response.json'));
 

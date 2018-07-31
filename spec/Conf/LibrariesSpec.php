@@ -2,7 +2,6 @@
 
 namespace spec\Scriptotek\Alma\Conf;
 
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Conf\Libraries;
 use Scriptotek\Alma\Conf\Library;
@@ -34,13 +33,9 @@ class LibrariesSpec extends ObjectBehavior
         $library->code->shouldBe($libraryCode);
     }
 
-    function it_provides_libraries(AlmaClient $client, UriInterface $url)
+    function it_provides_libraries(AlmaClient $client)
     {
-        $client->buildUrl('/conf/libraries', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/conf/libraries')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('libraries_response.json'));
 

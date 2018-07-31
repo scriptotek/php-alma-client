@@ -4,7 +4,6 @@ namespace spec\Scriptotek\Alma\Users;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\Fee;
 use Scriptotek\Alma\Users\User;

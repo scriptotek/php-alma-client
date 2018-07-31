@@ -3,7 +3,6 @@
 namespace spec\Scriptotek\Alma\Users;
 
 use PhpSpec\ObjectBehavior;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\Fees;
 use Scriptotek\Alma\Users\Loans;
@@ -12,14 +11,11 @@ use spec\Scriptotek\Alma\SpecHelper;
 
 class UserSpec extends ObjectBehavior
 {
-    public function let(AlmaClient $client, UriInterface $url)
+    public function let(AlmaClient $client)
     {
         $this->beConstructedWith($client, '12345');
 
-        $client->buildUrl('/users/12345', [])
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/users/12345')
             ->willReturn(SpecHelper::getDummyData('user_response.json'));
     }
 

@@ -4,7 +4,6 @@ namespace spec\Scriptotek\Alma\Users;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\User;
 use Scriptotek\Alma\Users\Users;
@@ -24,33 +23,25 @@ class UsersSpec extends ObjectBehavior
 
     public function it_provides_lazy_lookup_by_id(AlmaClient $client)
     {
-        $client->buildUrl('/users/12345', [])
+        $client->getJSON('/users/12345', [])
             ->shouldNotBeCalled();
 
         $user = $this->get('12345');
         $user->shouldHaveType(User::class);
     }
 
-    public function it_accepts_additional_parameters(AlmaClient $client, UriInterface $url)
+    public function it_accepts_additional_parameters(AlmaClient $client)
     {
-        $client->buildUrl('/users/12345', ['expand' => 'fees'])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/users/12345?expand=fees')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('user_response.json'));
 
         $this->get('12345', ['expand' => 'fees'])->init();
     }
 
-    public function it_provides_lookup_by_id(AlmaClient $client, UriInterface $url)
+    public function it_provides_lookup_by_id(AlmaClient $client)
     {
-        $client->buildUrl('/users/12345', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/users/12345')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('user_response.json'));
 

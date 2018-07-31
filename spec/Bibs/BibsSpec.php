@@ -4,7 +4,6 @@ namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Marc\Record;
@@ -42,13 +41,9 @@ class BibsSpec extends ObjectBehavior
         $bib->mms_id->shouldBe($mms_id);
     }
 
-    public function it_accepts_expand_parameter(AlmaClient $client, UriInterface $url)
+    public function it_accepts_expand_parameter(AlmaClient $client)
     {
-        $client->buildUrl('/bibs/12345', ['expand' => 'p_avail'])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getXML($url)
+        $client->getXML('/bibs/12345?expand=p_avail')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('bib_response_with_availability.xml'));
 

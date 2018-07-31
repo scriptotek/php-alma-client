@@ -4,7 +4,6 @@ namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Holding;
@@ -16,18 +15,14 @@ use spec\Scriptotek\Alma\SpecHelper;
 
 class BibSpec extends ObjectBehavior
 {
-    public function let(AlmaClient $client, UriInterface $url)
+    public function let(AlmaClient $client)
     {
         $this->beConstructedWith($client, '999104760474702204');
     }
 
-    protected function expectRequest($client, $url)
+    protected function expectRequest($client)
     {
-        $client->buildUrl('/bibs/999104760474702204', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getXML($url)
+        $client->getXML('/bibs/999104760474702204')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('bib_response_iz.xml'));
     }
@@ -38,23 +33,23 @@ class BibSpec extends ObjectBehavior
         $this->shouldHaveType(Bib::class);
     }
 
-    public function it_loads_bib_data_when_needed(AlmaClient $client, UriInterface $url)
+    public function it_loads_bib_data_when_needed(AlmaClient $client)
     {
-        $this->expectRequest($client, $url);
+        $this->expectRequest($client);
 
         $this->created_date->shouldBe('2015-11-05Z');
     }
 
-    public function it_can_exist(AlmaClient $client, UriInterface $url)
+    public function it_can_exist(AlmaClient $client)
     {
-        $this->expectRequest($client, $url);
+        $this->expectRequest($client);
 
         $this->exists()->shouldBe(true);
     }
 
-    public function it_links_to_network_zone(AlmaClient $client, AlmaClient $nz, Bibs $bibs, Bib $nz_bib, UriInterface $url)
+    public function it_links_to_network_zone(AlmaClient $client, AlmaClient $nz, Bibs $bibs, Bib $nz_bib)
     {
-        $this->expectRequest($client, $url);
+        $this->expectRequest($client);
 
         $client->nz = $nz;
         $nz->bibs = $bibs;
@@ -71,33 +66,29 @@ class BibSpec extends ObjectBehavior
         $this->holdings->shouldHaveType(Holdings::class);
     }
 
-    public function it_has_a_MARC_record(AlmaClient $client, UriInterface $url)
+    public function it_has_a_MARC_record(AlmaClient $client)
     {
-        $this->expectRequest($client, $url);
+        $this->expectRequest($client);
 
         $this->record->shouldHaveType(Record::class);
         $this->record->getField('245')->getSubfield('a')->getData()->shouldBe('Lonely hearts of the cosmos :');
     }
 
-    public function it_can_be_edited(AlmaClient $client, UriInterface $url)
+    public function it_can_be_edited(AlmaClient $client)
     {
-        $this->expectRequest($client, $url);
+        $this->expectRequest($client);
 
         $this->record->getField('245')->getSubfield('a')->setData('New title');
 
-        $client->putXML($url, Argument::containingString('New title'))
+        $client->putXML('/bibs/999104760474702204', Argument::containingString('New title'))
             ->shouldBeCalled();
 
         $this->save();
     }
 
-    public function it_catches_resource_not_found(AlmaClient $client, UriInterface $url)
+    public function it_catches_resource_not_found(AlmaClient $client)
     {
-        $client->buildUrl('/bibs/999104760474702204', [])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getXML($url)
+        $client->getXML('/bibs/999104760474702204')
             ->shouldBeCalled()
             ->willThrow(ResourceNotFound::class);
 

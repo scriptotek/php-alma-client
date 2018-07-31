@@ -130,16 +130,22 @@ abstract class LazyResource extends Model
     abstract protected function urlBase();
 
     /**
-     * Build a full URL for a resource.
+     * Build a relative URL for a resource.
      *
-     * @param string $url
+     * @param string $path
      * @param array $query
-     * @return UriInterface
+     * @return string
      */
-    protected function url($url = '', $query = [])
+    protected function url($path = '', $query = [])
     {
-        $query = array_merge($this->params, $query);
+        $path = $this->urlBase() . $path;
+        $query = http_build_query(array_merge($this->params, $query));
 
-        return $this->client->buildUrl($this->urlBase() . $url, $query);
+        $url = $path;
+        if (!empty($query)) {
+            $url .= '?' . $query;
+        }
+
+        return $url;
     }
 }

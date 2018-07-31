@@ -184,31 +184,29 @@ class Client
     }
 
     /**
-     * Extend an URL (UriInterface or string) with query string parameters
-     * and return an UriInterface object.
+     * Extend an URL with query string parameters and return an UriInterface object.
      *
-     * @param string $url|UriInterface
-     * @param array  $query
+     * @param string $url
+     * @param array $query
      *
      * @return UriInterface
      */
-    public function buildUrl($url, $query = [])
+    protected function buildUrl($url, $query = [])
     {
-        $oldQuery = [];
-        if (is_a($url, UriInterface::class)) {
-            parse_str($url->getQuery(), $oldQuery);
-        } else {
-            if (strpos($url, $this->baseUrl) === false) {
-                $url = $this->baseUrl . $url;
-            }
-            $url = $this->uriFactory->createUri($url);
+        $url = explode('?', $url, 1);
+        if (count($url) == 2) {
+            $query = array_merge($url[1], $query);
         }
-
         $query['apikey'] = $this->key;
 
-        $query = array_merge($oldQuery, $query);
+        $url = $url[0];
 
-        return $url->withQuery(http_build_query($query));
+        if (strpos($url, $this->baseUrl) === false) {
+            $url = $this->baseUrl . $url;
+        }
+
+        return $this->uriFactory->createUri($url)
+            ->withQuery(http_build_query($query));
     }
 
     /**
@@ -268,7 +266,7 @@ class Client
     /**
      * Make a GET request.
      *
-     * @param string $url|UriInterface
+     * @param string $url
      * @param array  $query
      * @param string $contentType
      *
@@ -289,7 +287,7 @@ class Client
     /**
      * Make a GET request, accepting JSON.
      *
-     * @param string $url|UriInterface
+     * @param string $url
      * @param array  $query
      *
      * @return \stdClass JSON response as an object.
@@ -304,7 +302,7 @@ class Client
     /**
      * Make a GET request, accepting XML.
      *
-     * @param string $url|UriInterface
+     * @param string $url
      * @param array  $query
      *
      * @return QuiteSimpleXMLElement

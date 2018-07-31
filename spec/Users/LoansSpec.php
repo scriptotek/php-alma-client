@@ -3,7 +3,6 @@
 namespace spec\Scriptotek\Alma\Users;
 
 use Scriptotek\Alma\Client as AlmaClient;
-use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Users\Loan;
 use Scriptotek\Alma\Users\Loans;
 use PhpSpec\ObjectBehavior;
@@ -23,16 +22,11 @@ class LoansSpec extends ObjectBehavior
         $this->shouldHaveType(Loans::class);
     }
 
-    public function it_yields_loans(AlmaClient $client, UriInterface $url)
+    public function it_yields_loans(AlmaClient $client)
     {
-        $client->buildUrl('/users/123435/loans', ['offset' => 0, 'limit' => 10])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/users/123435/loans?offset=0&limit=10')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('loans_response.json'));
-
 
         $this->rewind();
         $this->valid()->shouldBe(true);
@@ -41,13 +35,9 @@ class LoansSpec extends ObjectBehavior
         $this->shouldHaveCount(2);
     }
 
-    public function it_can_be_empty(AlmaClient $client, UriInterface $url)
+    public function it_can_be_empty(AlmaClient $client)
     {
-        $client->buildUrl('/users/123435/loans', ['offset' => 0, 'limit' => 10])
-            ->shouldBeCalled()
-            ->willReturn($url);
-
-        $client->getJSON($url)
+        $client->getJSON('/users/123435/loans?offset=0&limit=10')
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('zero_loans_response.json'));
 
