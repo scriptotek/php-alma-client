@@ -193,9 +193,10 @@ class Client
      */
     protected function buildUrl($url, $query = [])
     {
-        $url = explode('?', $url, 1);
+        $url = explode('?', $url, 2);
         if (count($url) == 2) {
-            $query = array_merge($url[1], $query);
+            parse_str($url[1], $query0);
+            $query = array_merge($query0, $query);
         }
         $query['apikey'] = $this->key;
 
