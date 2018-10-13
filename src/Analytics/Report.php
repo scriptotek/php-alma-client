@@ -146,6 +146,14 @@ class Report extends LazyResource implements \Iterator, \Countable
         }
     }
 
+    protected function fetchData()
+    {
+        do {
+            $this->fetchBatch();
+        } while (!$this->isFinished);
+        return null;
+    }
+
     /**
      * Read column headers from response, and check that we got the right number of columns back.
      *

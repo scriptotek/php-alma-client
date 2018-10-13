@@ -6,10 +6,13 @@ use Scriptotek\Alma\Client;
 
 /**
  * The LazyResourceList extends the LazyResource class with functionality for
- * working with lists of resources, such as holdings, items, loans, etc.
+ * working with non-paginated lists of resources, such as holdings, items, loans, etc.
  */
 abstract class LazyResourceList extends LazyResource implements \Countable
 {
+    /* @var integer */
+    protected $totalRecordCount = null;
+
     /* @var array */
     protected $resources = [];
 
@@ -41,18 +44,24 @@ abstract class LazyResourceList extends LazyResource implements \Countable
     abstract protected function convertToResource($data);
 
     /**
-     * Called when data is available to be processed.
+     * Called when data is available on the object.
+     * The resource classes can use this method to process the data.
      *
-     * @param mixed $data
+     * @param $data
      */
-    public function onData($data)
+    protected function onData($data)
     {
-        $this->resources = ($data->total_record_count === 0) ? [] : array_map(
-            function (\stdClass $res) {
-                return $this->convertToResource($res);
-            },
-            $data->{$this->responseKey}
-        );
+        if (is_null($this->totalRecordCount)) {
+            $this->totalRecordCount = $data->total_record_count;
+        }
+
+        if (!isset($data->{$this->responseKey})) {
+            return;
+        }
+
+        foreach ($data->{$this->responseKey} as $result) {
+            $this->resources[] = $this->convertToResource($result);
+        }
     }
 
     /**

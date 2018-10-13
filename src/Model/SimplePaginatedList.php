@@ -20,8 +20,6 @@ abstract class SimplePaginatedList extends LazyResourceList
     /* @var integer */
     protected $limit = 10;
 
-    /* @var integer */
-    protected $totalRecordCount = null;
 
     protected function fetchBatch()
     {
@@ -33,24 +31,21 @@ abstract class SimplePaginatedList extends LazyResourceList
             'offset' => $this->offset,
             'limit' => $this->limit,
         ]));
-
-        if (is_null($this->totalRecordCount)) {
-            $this->totalRecordCount = $response->total_record_count;
-        }
-
-        if ($this->totalRecordCount === 0) {
-            return;
-        }
-
-        foreach ($response->{$this->responseKey} as $res) {
-            $this->resources[] = $this->convertToResource($res);
-        }
-        $this->offset = count($this->resources);
+        return $this->onData($response);
     }
 
-    public function fetchData()
+    protected function fetchData()
     {
-        $this->all();
+        do {
+            $this->fetchBatch();
+        } while (!$this->isInitialized($this->resources));
+        return null;
+    }
+
+    protected function onData($data)
+    {
+        parent::onData($data);
+        $this->offset = count($this->resources);
     }
 
     /**

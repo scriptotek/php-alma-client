@@ -71,7 +71,7 @@ abstract class LazyResource extends Model
             $data = $this->fetchData();
         }
 
-        if (!is_null($data) && $this->isInitialized($data)) {
+        if ($this->isInitialized($data)) {
             $this->initialized = true;
         }
 
@@ -84,7 +84,8 @@ abstract class LazyResource extends Model
     }
 
     /**
-     * Get the model data.
+     * Get and return the model data.
+     * @return object
      */
     protected function fetchData()
     {
@@ -92,7 +93,7 @@ abstract class LazyResource extends Model
     }
 
     /**
-     * Called when data is available to be processed.
+     * Called when data is available on the object.
      * The resource classes can use this method to process the data.
      *
      * @param mixed $data

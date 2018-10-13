@@ -8,14 +8,6 @@ trait PaginatedList
     protected $position = 0;
 
     /**
-     * Fetch all the data.
-     */
-    protected function fetchData()
-    {
-        return iterator_to_array($this);
-    }
-
-    /**
      * Rewind the Iterator to the first element.
      *
      * @link http://php.net/manual/en/iterator.rewind.php

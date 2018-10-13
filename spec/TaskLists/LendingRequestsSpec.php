@@ -19,12 +19,11 @@ class LendingRequestsSpec extends ObjectBehavior
         ]);
 
         $client->getJSON('/task-lists/rs/lending-requests?printed=N&status=REQUEST_CREATED_LEND&library=SOME_LIBRARY')
-            ->shouldBeCalled()
+            ->shouldBeCalledTimes(1)
             ->willReturn(SpecHelper::getDummyData('lending_requests_created.json'));
 
-        $result = $this->all();
-        $result->shouldBeArray();
-        $result->shouldHaveCount(3);
-        $result[0]->shouldBeAnInstanceOf(ResourceSharingRequest::class);
+        $this->all()->shouldBeArray();
+        $this->all()->shouldHaveCount(3);
+        $this->all()[0]->shouldBeAnInstanceOf(ResourceSharingRequest::class);
     }
 }
