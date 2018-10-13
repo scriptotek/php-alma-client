@@ -2,7 +2,7 @@
     "name": "scriptotek/alma-client",
     "type": "library",
     "description": "Package for interacting with some of the Alma APIs",
-    "homepage": "http://github.com/scriptotek/alma-client",
+    "homepage": "http://github.com/scriptotek/php-alma-client",
     "keywords": ["alma"],
     "minimum-stability": "dev",
     "prefer-stable": true,
