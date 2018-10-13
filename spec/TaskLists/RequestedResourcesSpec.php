@@ -2,18 +2,17 @@
 
 namespace spec\Scriptotek\Alma\TaskLists;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\TaskLists\RequestedResource;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class RequestedResourcesSpec extends ObjectBehavior
 {
-    function it_provides_filtering_options(AlmaClient $client, Library $library, Bibs $bibs, Bib $bib)
+    public function it_provides_filtering_options(AlmaClient $client, Library $library, Bibs $bibs, Bib $bib)
     {
         $library->code = 'SOME_LIBRARY';
         $this->beConstructedWith($client, $library, 'DEFAULT_CIRC_DESK', [

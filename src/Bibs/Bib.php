@@ -61,8 +61,10 @@ class Bib extends LazyResource
 
     /**
      * Initialize from SRU record without having to fetch the Bib record.
-     * @param SruRecord $record
+     *
+     * @param SruRecord   $record
      * @param Client|null $client
+     *
      * @return Bib
      */
     public static function fromSruRecord(SruRecord $record, Client $client = null)
@@ -137,6 +139,7 @@ class Bib extends LazyResource
         if (is_null($this->_marc)) {
             $this->init();
         }
+
         return $this->_marc;
     }
 
@@ -154,7 +157,8 @@ class Bib extends LazyResource
      * Check if we have the full representation of our data object.
      *
      * @param $data
-     * @return boolean
+     *
+     * @return bool
      */
     protected function isInitialized($data)
     {
@@ -173,7 +177,9 @@ class Bib extends LazyResource
 
     /**
      * Magic!
+     *
      * @param string $key
+     *
      * @return mixed
      */
     public function __get($key)

@@ -2,10 +2,10 @@
 
 namespace Scriptotek\Alma\Conf;
 
-use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\Model\LazyResourceList;
 use Scriptotek\Alma\Model\IterableCollection;
+use Scriptotek\Alma\Model\LazyResourceList;
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 
 /**
  * Iterable collection of Location resources.
@@ -25,7 +25,7 @@ class Locations extends LazyResourceList implements \ArrayAccess, \Countable, \I
     /**
      * Locations constructor.
      *
-     * @param Client $client
+     * @param Client  $client
      * @param Library $library
      */
     public function __construct(Client $client, Library $library)
@@ -38,6 +38,7 @@ class Locations extends LazyResourceList implements \ArrayAccess, \Countable, \I
      * Get a single location by its location code.
      *
      * @param string $code
+     *
      * @return Location
      */
     public function get($code)
@@ -49,6 +50,7 @@ class Locations extends LazyResourceList implements \ArrayAccess, \Countable, \I
      * Convert a data element to a resource object.
      *
      * @param $data
+     *
      * @return Location
      */
     protected function convertToResource($data)

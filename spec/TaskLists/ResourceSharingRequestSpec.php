@@ -2,12 +2,8 @@
 
 namespace spec\Scriptotek\Alma\TaskLists;
 
-use Scriptotek\Alma\Client as AlmaClient;
-use Scriptotek\Alma\Conf\Library;
-use Scriptotek\Alma\TaskLists\LendingRequests;
-use Scriptotek\Alma\TaskLists\LendingRequest;
 use PhpSpec\ObjectBehavior;
-use spec\Scriptotek\Alma\SpecHelper;
+use Scriptotek\Alma\Client as AlmaClient;
 
 class ResourceSharingRequestSpec extends ObjectBehavior
 {

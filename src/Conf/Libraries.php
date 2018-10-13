@@ -3,9 +3,9 @@
 namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
-use Scriptotek\Alma\Model\LazyResourceList;
 use Scriptotek\Alma\Model\IterableCollection;
+use Scriptotek\Alma\Model\LazyResourceList;
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 
 /**
  * Iterable collection of Library resources.
@@ -29,6 +29,7 @@ class Libraries extends LazyResourceList implements \ArrayAccess, \Countable, \I
      * Get a single library by its library code.
      *
      * @param string $code
+     *
      * @return Library
      */
     public function get($code)
@@ -40,6 +41,7 @@ class Libraries extends LazyResourceList implements \ArrayAccess, \Countable, \I
      * Convert a data element to a resource object.
      *
      * @param $data
+     *
      * @return Library
      */
     protected function convertToResource($data)
@@ -55,6 +57,6 @@ class Libraries extends LazyResourceList implements \ArrayAccess, \Countable, \I
      */
     protected function urlBase()
     {
-        return "/conf/libraries";
+        return '/conf/libraries';
     }
 }

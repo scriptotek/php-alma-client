@@ -26,7 +26,7 @@ class Fees extends LazyResourceList implements \Countable, \Iterator, \ArrayAcce
      * Fees constructor.
      *
      * @param Client $client
-     * @param User $user
+     * @param User   $user
      */
     public function __construct(Client $client, User $user)
     {
@@ -38,6 +38,7 @@ class Fees extends LazyResourceList implements \Countable, \Iterator, \ArrayAcce
      * Get a single Fee by id.
      *
      * @param string $id
+     *
      * @return Fee
      */
     public function get($id)
@@ -49,6 +50,7 @@ class Fees extends LazyResourceList implements \Countable, \Iterator, \ArrayAcce
      * Convert a retrieved resource object to a model object.
      *
      * @param $data
+     *
      * @return Fee
      */
     public function convertToResource($data)

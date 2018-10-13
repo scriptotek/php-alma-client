@@ -2,7 +2,6 @@
 
 namespace Scriptotek\Alma\TaskLists;
 
-use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\Model\SimplePaginatedList;
@@ -15,10 +14,10 @@ class RequestedResources extends SimplePaginatedList implements \Countable, \Ite
     /**
      * RequestedResources constructor.
      *
-     * @param Client $client
+     * @param Client  $client
      * @param Library $library
-     * @param string $circ_desk
-     * @param array $params
+     * @param string  $circ_desk
+     * @param array   $params
      */
     public function __construct(Client $client, Library $library, $circ_desk = 'DEFAULT_CIRC_DESK', $params = [])
     {
@@ -43,6 +42,7 @@ class RequestedResources extends SimplePaginatedList implements \Countable, \Ite
      * Convert a data element to a resource object.
      *
      * @param $data
+     *
      * @return mixed
      */
     protected function convertToResource($data)

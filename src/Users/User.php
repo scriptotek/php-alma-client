@@ -12,6 +12,7 @@ class User extends LazyResource
 {
     /**
      * The primary id or some other id that can be used to fetch user information.
+     *
      * @var string
      */
     public $id;
@@ -86,7 +87,8 @@ class User extends LazyResource
      * Check if we have the full representation of our data object.
      *
      * @param \stdClass $data
-     * @return boolean
+     *
+     * @return bool
      */
     protected function isInitialized($data)
     {
@@ -139,7 +141,5 @@ class User extends LazyResource
         if (isset($this->data->{$key})) {
             return $this->data->{$key};
         }
-
-        return null;
     }
 }

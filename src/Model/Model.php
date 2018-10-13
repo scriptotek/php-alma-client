@@ -23,7 +23,8 @@ abstract class Model implements \JsonSerializable
 
     /**
      * @param Client $client
-     * @param array ...$params
+     * @param array  ...$params
+     *
      * @return static
      */
     public static function make($client, ...$params)
@@ -57,7 +58,9 @@ abstract class Model implements \JsonSerializable
 
     /**
      * Magic!
+     *
      * @param string $key
+     *
      * @return mixed
      */
     public function __get($key)
@@ -74,8 +77,6 @@ abstract class Model implements \JsonSerializable
         if (isset($this->data->{$key})) {
             return $this->data->{$key};
         }
-
-        return null;
     }
 
     public function jsonSerialize()

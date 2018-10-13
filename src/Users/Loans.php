@@ -23,6 +23,7 @@ class Loans extends SimplePaginatedList implements \Countable, \Iterator
      * Get resource.
      *
      * @param string $loan_id
+     *
      * @return Loan
      */
     public function get($loan_id)
@@ -34,6 +35,7 @@ class Loans extends SimplePaginatedList implements \Countable, \Iterator
      * Convert a retrieved resource object to a model object.
      *
      * @param $data
+     *
      * @return Loan
      */
     public function convertToResource($data)

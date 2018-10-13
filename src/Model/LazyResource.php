@@ -2,8 +2,6 @@
 
 namespace Scriptotek\Alma\Model;
 
-use Psr\Http\Message\UriInterface;
-use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\ResourceNotFound;
 
 /**
@@ -28,17 +26,21 @@ abstract class LazyResource extends Model
 
     /**
      * Set request query string parameters.
+     *
      * @param $params array
+     *
      * @return $this
      */
     public function setParams($params)
     {
         $this->params = $params;
+
         return $this;
     }
 
     /**
      * Get the request query string parameters.
+     *
      * @return array
      */
     public function getParams()
@@ -50,7 +52,8 @@ abstract class LazyResource extends Model
      * Check if we have the full representation of our data object.
      *
      * @param \stdClass $data
-     * @return boolean
+     *
+     * @return bool
      */
     abstract protected function isInitialized($data);
 
@@ -85,6 +88,7 @@ abstract class LazyResource extends Model
 
     /**
      * Get and return the model data.
+     *
      * @return object
      */
     protected function fetchData()
@@ -134,7 +138,8 @@ abstract class LazyResource extends Model
      * Build a relative URL for a resource.
      *
      * @param string $path
-     * @param array $query
+     * @param array  $query
+     *
      * @return string
      */
     protected function url($path = '', $query = [])

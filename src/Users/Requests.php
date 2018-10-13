@@ -33,6 +33,7 @@ class Requests extends LazyResourceList implements \Countable, \Iterator, \Array
      * Convert a data element to a resource object.
      *
      * @param $data
+     *
      * @return Request
      */
     protected function convertToResource($data)

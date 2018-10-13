@@ -3,7 +3,6 @@
 namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Item;

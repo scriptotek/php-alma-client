@@ -39,6 +39,7 @@ abstract class LazyResourceList extends LazyResource implements \Countable
      * Convert a data element to a resource object.
      *
      * @param $data
+     *
      * @return mixed
      */
     abstract protected function convertToResource($data);
@@ -68,7 +69,8 @@ abstract class LazyResourceList extends LazyResource implements \Countable
      * Check if we have the full representation of our data object.
      *
      * @param \stdClass $data
-     * @return boolean
+     *
+     * @return bool
      */
     protected function isInitialized($data)
     {

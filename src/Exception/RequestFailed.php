@@ -11,8 +11,9 @@ class RequestFailed extends ClientException
 
     /**
      * RequestFailed constructor.
-     * @param string $message
-     * @param string $errorCode
+     *
+     * @param string          $message
+     * @param string          $errorCode
      * @param \Exception|null $previous
      */
     public function __construct($message, $errorCode = null, \Exception $previous = null)

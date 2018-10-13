@@ -6,8 +6,8 @@ use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Item;
-use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Bibs\ScanInResponse;
+use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\Users\Loan;
 use Scriptotek\Alma\Users\Requests;
@@ -30,13 +30,13 @@ class ItemSpec extends ObjectBehavior
         $this->shouldHaveType(Item::class);
     }
 
-    function it_can_be_checked_out(AlmaClient $client, User $user, Library $library)
+    public function it_can_be_checked_out(AlmaClient $client, User $user, Library $library)
     {
         $client->postJSON(
             '/bibs/990006312214702204/holdings/22163771200002204/items/23163771190002204/loans?user_id=Dan+Michael',
             [
-                'library' => ['value' => 'THAT LIBRARY'],
-                'circ_desk' => ['value' => 'DEFAULT_CIRC_DESK']
+                'library'   => ['value' => 'THAT LIBRARY'],
+                'circ_desk' => ['value' => 'DEFAULT_CIRC_DESK'],
             ]
         )
             ->shouldBeCalled()
@@ -49,7 +49,7 @@ class ItemSpec extends ObjectBehavior
             ->shouldHaveType(Loan::class);
     }
 
-    function it_can_be_on_loan(AlmaClient $client, User $user, Library $library)
+    public function it_can_be_on_loan(AlmaClient $client, User $user, Library $library)
     {
         $client->getJSON('/bibs/990006312214702204/holdings/22163771200002204/items/23163771190002204/loans')
             ->shouldBeCalled()
@@ -59,7 +59,7 @@ class ItemSpec extends ObjectBehavior
         $this->loan->shouldHaveType(Loan::class);
     }
 
-    function it_can_be_available(AlmaClient $client, User $user, Library $library)
+    public function it_can_be_available(AlmaClient $client, User $user, Library $library)
     {
         $client->getJSON('/bibs/990006312214702204/holdings/22163771200002204/items/23163771190002204/loans')
             ->shouldBeCalled()
@@ -69,7 +69,7 @@ class ItemSpec extends ObjectBehavior
         $this->loan->shouldBe(null);
     }
 
-    function it_can_be_scanned_in(AlmaClient $client, Library $library)
+    public function it_can_be_scanned_in(AlmaClient $client, Library $library)
     {
         $client->postJSON('/bibs/990006312214702204/holdings/22163771200002204/items/23163771190002204?op=scan&library=THAT+LIBRARY&circ_desk=DEFAULT_CIRC_DESK')
             ->shouldBeCalled()
@@ -81,7 +81,7 @@ class ItemSpec extends ObjectBehavior
             ->shouldHaveType(ScanInResponse::class);
     }
 
-    function it_can_be_scanned_in_with_params(AlmaClient $client, Library $library)
+    public function it_can_be_scanned_in_with_params(AlmaClient $client, Library $library)
     {
         $client->postJSON('/bibs/990006312214702204/holdings/22163771200002204/items/23163771190002204?place_on_hold_shelf=true&op=scan&library=THAT+LIBRARY&circ_desk=OTHER_DESK')
             ->shouldBeCalled()

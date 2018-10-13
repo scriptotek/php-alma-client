@@ -2,13 +2,11 @@
 
 namespace spec\Scriptotek\Alma\TaskLists;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\TaskLists\RequestedResource;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-
 
 class RequestedResourceSpec extends ObjectBehavior
 {
@@ -17,7 +15,7 @@ class RequestedResourceSpec extends ObjectBehavior
         $this->beConstructedWith($client, $library, 'SUPER_DESK', $bib);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(RequestedResource::class);
     }

@@ -6,7 +6,6 @@ use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Bibs;
-use Scriptotek\Alma\Bibs\Holding;
 use Scriptotek\Alma\Bibs\Holdings;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Exception\ResourceNotFound;

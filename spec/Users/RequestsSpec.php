@@ -2,10 +2,9 @@
 
 namespace spec\Scriptotek\Alma\Users;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\Requests;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class RequestsSpec extends ObjectBehavior
@@ -25,8 +24,7 @@ class RequestsSpec extends ObjectBehavior
         $this->shouldHaveCount(1);
     }
 
-
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(Requests::class);
     }

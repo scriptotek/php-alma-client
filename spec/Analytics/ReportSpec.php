@@ -5,7 +5,6 @@ namespace spec\Scriptotek\Alma\Analytics;
 use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Analytics\Report;
 use Scriptotek\Alma\Analytics\Row;
-use Scriptotek\Alma\Analytics\Rows;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\ResourceNotFound;
 use spec\Scriptotek\Alma\SpecHelper;

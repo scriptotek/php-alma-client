@@ -11,6 +11,7 @@ trait PaginatedList
      * Rewind the Iterator to the first element.
      *
      * @link http://php.net/manual/en/iterator.rewind.php
+     *
      * @return void
      */
     public function rewind()
@@ -22,7 +23,8 @@ trait PaginatedList
      * Checks if current position is valid.
      *
      * @link http://php.net/manual/en/iterator.valid.php
-     * @return boolean
+     *
+     * @return bool
      */
     public function valid()
     {
@@ -34,8 +36,10 @@ trait PaginatedList
     }
 
     /**
-     * Return the current element
+     * Return the current element.
+     *
      * @link http://php.net/manual/en/iterator.current.php
+     *
      * @return mixed
      */
     public function current()
@@ -44,8 +48,10 @@ trait PaginatedList
     }
 
     /**
-     * Move forward to next element
+     * Move forward to next element.
+     *
      * @link http://php.net/manual/en/iterator.next.php
+     *
      * @return void
      */
     public function next()
@@ -54,9 +60,11 @@ trait PaginatedList
     }
 
     /**
-     * Return the key of the current element
+     * Return the key of the current element.
+     *
      * @link http://php.net/manual/en/iterator.key.php
-     * @return integer|null Scalar on success, or null on failure.
+     *
+     * @return int|null Scalar on success, or null on failure.
      */
     public function key()
     {
