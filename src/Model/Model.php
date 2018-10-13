@@ -40,7 +40,9 @@ abstract class Model implements \JsonSerializable
      */
     public function init($data = null)
     {
-        $this->data = $data;
+        if (!is_null($data)) {
+            $this->data = $data;
+        }
 
         return $this;
     }

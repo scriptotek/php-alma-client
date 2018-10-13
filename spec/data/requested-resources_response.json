@@ -1,0 +1,68 @@
+{
+    "requested_resource": [
+        {
+            "location": {
+                "call_number": "2011 TAN",
+                "copy": [
+                    {
+                        "alternative_call_number": "",
+                        "barcode": "049313na0",
+                        "base_status": {
+                            "desc": "Item in place",
+                            "value": "1"
+                        },
+                        "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/991120800814702204/holdings/22166970490002204/items/23166970440002204",
+                        "pid": "23166970440002204",
+                        "storage_location_id": ""
+                    }
+                ],
+                "holding_id": {
+                    "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/991120800814702204/holdings/22166970490002204",
+                    "value": "22166970490002204"
+                },
+                "library": {
+                    "desc": "UiO Realfagsbiblioteket",
+                    "value": "1030310"
+                },
+                "shelving_location": "k00464"
+            },
+            "request": [
+                {
+                    "destination": {
+                        "desc": "UiO Realfagsbiblioteket",
+                        "value": "1030310"
+                    },
+                    "id": "7989649590002204",
+                    "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/991120800814702204/requests/7989344220002204",
+                    "printed": false,
+                    "reported": false,
+                    "request_date": "2018-10-10Z",
+                    "request_sub_type": {
+                        "desc": "Patron physical item request",
+                        "value": "PATRON_PHYSICAL"
+                    },
+                    "request_type": "HOLD",
+                    "requester": {
+                        "desc": "Test User",
+                        "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/users/test-user",
+                        "value": null
+                    }
+                }
+            ],
+            "resource_metadata": {
+                "author": "Tanveer, Omar",
+                "isbn": null,
+                "issn": null,
+                "mms_id": {
+                    "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/991120800814702204",
+                    "value": "991120800814702204"
+                },
+                "publication_place": "Oslo",
+                "publication_year": "2011",
+                "publisher": "O Tanveer",
+                "title": "Complexity assessment within IT portfolios Omar Tanveer"
+            }
+        }
+    ],
+    "total_record_count": 1
+}

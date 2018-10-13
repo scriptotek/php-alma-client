@@ -48,6 +48,11 @@ abstract class SimplePaginatedList extends LazyResourceList
         $this->offset = count($this->resources);
     }
 
+    public function fetchData()
+    {
+        $this->all();
+    }
+
     /**
      * Check if we have the full representation of our data object.
      *

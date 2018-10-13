@@ -22,12 +22,15 @@ use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Items;
 use Scriptotek\Alma\Conf\Conf;
 use Scriptotek\Alma\Conf\Libraries;
+use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\Exception\ClientException as AlmaClientException;
 use Scriptotek\Alma\Exception\InvalidApiKey;
 use Scriptotek\Alma\Exception\MaxNumberOfAttemptsExhausted;
 use Scriptotek\Alma\Exception\RequestFailed;
 use Scriptotek\Alma\Exception\ResourceNotFound;
 use Scriptotek\Alma\Exception\SruClientNotSetException;
+use Scriptotek\Alma\TaskLists\LendingRequests;
+use Scriptotek\Alma\TaskLists\TaskLists;
 use Scriptotek\Alma\Users\Users;
 use Scriptotek\Sru\Client as SruClient;
 
@@ -121,11 +124,18 @@ class Client
         $this->conf = new Conf($this);
         $this->libraries = $this->conf->libraries;  // shortcut
 
+        $this->taskLists = new TaskLists($this);
+
         if ($zone == Zones::INSTITUTION) {
             $this->nz = new self(null, $region, Zones::NETWORK, $this->http, $this->messageFactory, $this->uriFactory);
         } elseif ($zone != Zones::NETWORK) {
             throw new AlmaClientException('Invalid zone name.');
         }
+    }
+
+    public function lendingRequests(Library $library, $params = [])
+    {
+        return new LendingRequests($this, $library, $params);
     }
 
     /**

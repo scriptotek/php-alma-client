@@ -430,6 +430,34 @@ convert a filter to SQL. The results looks like this:
 But used with the API, the response is the same as if you forget to include an
 "is prompted" filter: a loong wait follow by a "400 No more rows to fetch".
 
+## Task lists
+
+### Lending requests
+
+````php
+$library = $alma->conf->libraries['LIBRARY_CODE'];
+$requests = $alma->taskLists->getLendingRequests($library, [
+    'printed' => 'N',
+    'status' => 'REQUEST_CREATED_LEND',
+]);
+foreach ($requests as $request) {
+    echo "- {$request->request_id} {$request->status}\n";
+}
+````
+
+Note: As of 2018-10-13, there is a bug preventing you from retrieving more than 100 lending requests.
+
+### Requested resources (pick from shelf)
+
+````php
+$library = $alma->conf->libraries['LIBRARY_CODE'];
+$requests = $alma->taskLists->getRequestedResources($library, 'DEFAULT_CIRC_DESK', [
+    'printed' => 'N',
+]);
+foreach ($requests as $request) {
+    echo "- {$request->resource_metadata->title} {$request->resource_metadata->mms_id->value}\n";
+}
+````
 
 ## Laravel 5 integration
 
