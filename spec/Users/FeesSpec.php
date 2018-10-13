@@ -17,7 +17,7 @@ class FeesSpec extends ObjectBehavior
         $this->beConstructedWith($client, $user);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(Fees::class);
     }
@@ -48,5 +48,4 @@ class FeesSpec extends ObjectBehavior
 
         $this->shouldHaveCount(0);
     }
-
 }

@@ -3,12 +3,10 @@
 namespace spec\Scriptotek\Alma\Users;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\Fee;
 use Scriptotek\Alma\Users\User;
 use spec\Scriptotek\Alma\SpecHelper;
-
 
 class FeeSpec extends ObjectBehavior
 {
@@ -18,7 +16,7 @@ class FeeSpec extends ObjectBehavior
         $this->beConstructedWith($client, $user, $fee_id);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(Fee::class);
     }

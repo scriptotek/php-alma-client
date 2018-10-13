@@ -38,7 +38,8 @@ class Fee extends LazyResource
      * Check if we have the full representation of our data object.
      *
      * @param \stdClass $data
-     * @return boolean
+     *
+     * @return bool
      */
     protected function isInitialized($data)
     {
@@ -55,7 +56,5 @@ class Fee extends LazyResource
         if (isset($this->barcode)) {
             return $this->client->items->fromBarcode($this->barcode);
         }
-
-        return null;
     }
 }

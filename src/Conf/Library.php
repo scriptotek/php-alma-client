@@ -36,7 +36,8 @@ class Library extends LazyResource
      * random element.
      *
      * @param \stdClass $data
-     * @return boolean
+     *
+     * @return bool
      */
     protected function isInitialized($data)
     {

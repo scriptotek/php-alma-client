@@ -15,7 +15,8 @@ class RequestedResource extends Model
 
     /**
      * RequestedResource constructor.
-     * @param Client $client
+     *
+     * @param Client  $client
      * @param Library $library
      * @param $circ_desc
      * @param Bib $bib

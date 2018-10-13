@@ -2,11 +2,10 @@
 
 namespace spec\Scriptotek\Alma\Users;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Bibs\Item;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\Loan;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Scriptotek\Alma\Users\User;
 use spec\Scriptotek\Alma\SpecHelper;
 
@@ -25,7 +24,7 @@ class LoanSpec extends ObjectBehavior
 
     public function it_can_exist()
     {
-    	$this->init(SpecHelper::getDummyData('item_loan_response.json')->item_loan[0]);
+        $this->init(SpecHelper::getDummyData('item_loan_response.json')->item_loan[0]);
 
         $this->exists()->shouldBe(true);
     }

@@ -24,9 +24,9 @@ class LendingRequests extends LazyResourceList implements \Countable, \Iterator
     /**
      * LendingRequests constructor.
      *
-     * @param Client $client
+     * @param Client  $client
      * @param Library $library
-     * @param array $params
+     * @param array   $params
      */
     public function __construct(Client $client, Library $library, $params = [])
     {
@@ -50,6 +50,7 @@ class LendingRequests extends LazyResourceList implements \Countable, \Iterator
      * Convert a data element to a resource object.
      *
      * @param $data
+     *
      * @return mixed
      */
     protected function convertToResource($data)

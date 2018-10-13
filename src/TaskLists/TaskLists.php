@@ -11,6 +11,7 @@ class TaskLists
 
     /**
      * TaskLists constructor.
+     *
      * @param Client $client
      */
     public function __construct(Client $client)

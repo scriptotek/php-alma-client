@@ -2,8 +2,8 @@
 
 namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 use Scriptotek\Alma\Client;
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 
 /**
  * Non-iterable collection of Bib resources.
@@ -23,7 +23,8 @@ class Bibs implements \ArrayAccess
      * Get a Bib object.
      *
      * @param string $mms_id
-     * @param array $expand Expand the bibliographic record with additional information.
+     * @param array  $expand Expand the bibliographic record with additional information.
+     *
      * @return Bib
      */
     public function get($mms_id, $expand = null)

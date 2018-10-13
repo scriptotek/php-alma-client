@@ -26,7 +26,7 @@ class Holdings extends LazyResourceList implements \Countable, \Iterator, \Array
      * Holdings constructor.
      *
      * @param Client $client
-     * @param Bib $bib
+     * @param Bib    $bib
      */
     public function __construct(Client $client, Bib $bib)
     {
@@ -38,6 +38,7 @@ class Holdings extends LazyResourceList implements \Countable, \Iterator, \Array
      * Get a single holding record by id.
      *
      * @param string $holding_id
+     *
      * @return Holding
      */
     public function get($holding_id)
@@ -49,6 +50,7 @@ class Holdings extends LazyResourceList implements \Countable, \Iterator, \Array
      * Convert a data element to a resource object.
      *
      * @param $data
+     *
      * @return Holding
      */
     protected function convertToResource($data)

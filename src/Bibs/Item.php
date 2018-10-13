@@ -26,8 +26,8 @@ class Item extends LazyResource
     /**
      * Item constructor.
      *
-     * @param Client $client
-     * @param Bib $bib
+     * @param Client  $client
+     * @param Bib     $bib
      * @param Holding $holding
      * @param $item_id
      */
@@ -54,7 +54,8 @@ class Item extends LazyResource
      * Check if we have the full representation of our data object.
      *
      * @param \stdClass $data
-     * @return boolean
+     *
+     * @return bool
      */
     protected function isInitialized($data)
     {
@@ -79,16 +80,18 @@ class Item extends LazyResource
     /**
      * Create a new loan.
      *
-     * @param User $user
+     * @param User    $user
      * @param Library $library
-     * @param string $circ_desk
-     * @return Loan
+     * @param string  $circ_desk
+     *
      * @throws \Scriptotek\Alma\Exception\RequestFailed
+     *
+     * @return Loan
      */
     public function checkOut(User $user, Library $library, $circ_desk = 'DEFAULT_CIRC_DESK')
     {
         $postData = [
-            'library' => ['value' => $library->code],
+            'library'   => ['value' => $library->code],
             'circ_desk' => ['value' => $circ_desk],
         ];
 
@@ -105,10 +108,12 @@ class Item extends LazyResource
      * Perform scan-in on item.
      *
      * @param Library $library
-     * @param string $circ_desk
-     * @param array $params
-     * @return ScanInResponse
+     * @param string  $circ_desk
+     * @param array   $params
+     *
      * @throws \Scriptotek\Alma\Exception\RequestFailed
+     *
+     * @return ScanInResponse
      */
     public function scanIn(Library $library, $circ_desk = 'DEFAULT_CIRC_DESK', $params = [])
     {
@@ -137,8 +142,6 @@ class Item extends LazyResource
                 $data->item_loan[0]->loan_id
             )->init($data->item_loan[0]);
         }
-
-        return null;
     }
 
     public function __get($key)

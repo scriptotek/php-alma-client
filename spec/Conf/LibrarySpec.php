@@ -2,10 +2,9 @@
 
 namespace spec\Scriptotek\Alma\Conf;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Conf\Library;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Scriptotek\Alma\Conf\Locations;
 
 class LibrarySpec extends ObjectBehavior
@@ -16,12 +15,12 @@ class LibrarySpec extends ObjectBehavior
         $this->beConstructedWith($client, $libraryCode);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(Library::class);
     }
 
-    function it_should_have_locations()
+    public function it_should_have_locations()
     {
         $this->locations->shouldBeAnInstanceOf(Locations::class);
     }

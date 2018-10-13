@@ -2,10 +2,10 @@
 
 namespace spec\Scriptotek\Alma\Conf;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\Conf\Location;
-use PhpSpec\ObjectBehavior;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class LocationsSpec extends ObjectBehavior
@@ -16,7 +16,7 @@ class LocationsSpec extends ObjectBehavior
         $this->beConstructedWith($client, $library);
     }
 
-    function it_provides_a_lazy_interface_to_location_objects(AlmaClient $client)
+    public function it_provides_a_lazy_interface_to_location_objects(AlmaClient $client)
     {
         SpecHelper::expectNoRequests($client);
 
@@ -27,7 +27,7 @@ class LocationsSpec extends ObjectBehavior
         $location->code->shouldBe($code);
     }
 
-    function it_provides_locations(AlmaClient $client)
+    public function it_provides_locations(AlmaClient $client)
     {
         $client->getJSON('/conf/libraries/LIB_CODE/locations')
             ->shouldBeCalled()

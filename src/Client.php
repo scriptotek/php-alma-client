@@ -21,7 +21,6 @@ use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Items;
 use Scriptotek\Alma\Conf\Conf;
-use Scriptotek\Alma\Conf\Libraries;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\Exception\ClientException as AlmaClientException;
 use Scriptotek\Alma\Exception\InvalidApiKey;
@@ -197,7 +196,7 @@ class Client
      * Extend an URL with query string parameters and return an UriInterface object.
      *
      * @param string $url
-     * @param array $query
+     * @param array  $query
      *
      * @return UriInterface
      */
@@ -254,6 +253,7 @@ class Client
                     );
                 }
                 time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
+
                 return $this->request($request, $attempt + 1);
             }
 
@@ -270,6 +270,7 @@ class Client
                 );
             }
             time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
+
             return $this->request($request, $attempt + 1);
         }
     }
@@ -459,6 +460,7 @@ class Client
     /**
      * @param class $className
      * @param array ...$params
+     *
      * @return mixed
      */
     public function make($className, ...$params)
@@ -470,6 +472,7 @@ class Client
      * Generate a client exception.
      *
      * @param HttpException $exception
+     *
      * @return RequestFailed
      */
     protected function parseClientError(HttpException $exception)

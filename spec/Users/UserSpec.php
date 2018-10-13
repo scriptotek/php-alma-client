@@ -55,13 +55,13 @@ class UserSpec extends ObjectBehavior
         $this->identifiers->all()->shouldBe(['12345', 'ub54321', 'ntb12897787', 'test@uio.no']);
     }
 
-    function it_has_loans(AlmaClient $client)
+    public function it_has_loans(AlmaClient $client)
     {
         SpecHelper::expectNoRequests($client);
         $this->loans->shouldHaveType(Loans::class);
     }
 
-    function it_has_fees(AlmaClient $client)
+    public function it_has_fees(AlmaClient $client)
     {
         SpecHelper::expectNoRequests($client);
         $this->fees->shouldHaveType(Fees::class);

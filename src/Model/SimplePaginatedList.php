@@ -2,8 +2,6 @@
 
 namespace Scriptotek\Alma\Model;
 
-use Scriptotek\Alma\Exception\ClientException;
-
 /**
  * A SimplePaginatedList is a list that is paged using the `offset`
  * and `limit` parameters and that provides a `totalRecordCount` in the first response,
@@ -20,7 +18,6 @@ abstract class SimplePaginatedList extends LazyResourceList
     /* @var integer */
     protected $limit = 10;
 
-
     protected function fetchBatch()
     {
         if (!is_null($this->totalRecordCount) && $this->offset >= $this->totalRecordCount) {
@@ -29,8 +26,9 @@ abstract class SimplePaginatedList extends LazyResourceList
 
         $response = $this->client->getJSON($this->url('', [
             'offset' => $this->offset,
-            'limit' => $this->limit,
+            'limit'  => $this->limit,
         ]));
+
         return $this->onData($response);
     }
 
@@ -39,7 +37,6 @@ abstract class SimplePaginatedList extends LazyResourceList
         do {
             $this->fetchBatch();
         } while (!$this->isInitialized($this->resources));
-        return null;
     }
 
     protected function onData($data)
@@ -52,7 +49,8 @@ abstract class SimplePaginatedList extends LazyResourceList
      * Check if we have the full representation of our data object.
      *
      * @param \stdClass $data
-     * @return boolean
+     *
+     * @return bool
      */
     protected function isInitialized($data)
     {
@@ -61,7 +59,9 @@ abstract class SimplePaginatedList extends LazyResourceList
 
     /**
      * Total number of resources.
+     *
      * @link http://php.net/manual/en/countable.count.php
+     *
      * @return int
      */
     public function count()

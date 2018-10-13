@@ -2,10 +2,10 @@
 
 namespace spec\Scriptotek\Alma\Users;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Users\Loan;
 use Scriptotek\Alma\Users\Loans;
-use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Users\User;
 use spec\Scriptotek\Alma\SpecHelper;
 

@@ -2,10 +2,10 @@
 
 namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\Model\LazyResourceList;
 use Scriptotek\Alma\Model\IterableCollection;
+use Scriptotek\Alma\Model\LazyResourceList;
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 
 /**
  * Iterable collection of Item resources belonging to some Holding resource.
@@ -32,8 +32,8 @@ class Items extends LazyResourceList implements \Countable, \Iterator, \ArrayAcc
     /**
      * Items constructor.
      *
-     * @param Client $client
-     * @param Bib $bib
+     * @param Client  $client
+     * @param Bib     $bib
      * @param Holding $holding
      */
     public function __construct(Client $client, Bib $bib = null, Holding $holding = null)
@@ -47,6 +47,7 @@ class Items extends LazyResourceList implements \Countable, \Iterator, \ArrayAcc
      * Convert a data element to a resource object.
      *
      * @param $data
+     *
      * @return Item
      */
     protected function convertToResource($data)
@@ -88,7 +89,5 @@ class Items extends LazyResourceList implements \Countable, \Iterator, \ArrayAcc
 
             return Item::make($this->client, $bib, $holding, $item_id);
         }
-
-        return null;
     }
 }

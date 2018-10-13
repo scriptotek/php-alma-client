@@ -30,10 +30,10 @@ class Report extends LazyResource implements \Iterator, \Countable
     /** @var string */
     protected $resumptionToken = null;
 
-    /** @var boolean */
+    /** @var bool */
     protected $isFinished = false;
 
-    /** @var integer */
+    /** @var int */
     public $chunkSize = 1000;
 
     /** @var Row[] */
@@ -54,6 +54,7 @@ class Report extends LazyResource implements \Iterator, \Countable
 
     /**
      * @deprecated
+     *
      * @return $this
      */
     public function getRows()
@@ -84,6 +85,7 @@ class Report extends LazyResource implements \Iterator, \Countable
      * Convert a retrieved resource to an object.
      *
      * @param $data
+     *
      * @return mixed
      */
     protected function convertToResource($data)
@@ -96,6 +98,7 @@ class Report extends LazyResource implements \Iterator, \Countable
      *
      * @param int $attempt
      * @param int $chunkSize
+     *
      * @return void
      */
     protected function fetchBatch($attempt = 1, $chunkSize = null)
@@ -128,7 +131,6 @@ class Report extends LazyResource implements \Iterator, \Countable
         $this->resumptionToken = $results->text('/report/QueryResult/ResumptionToken') ?: $this->resumptionToken;
         $this->isFinished = ($results->text('/report/QueryResult/IsFinished') === 'true');
 
-
         if (!count($rows) && !$this->isFinished) {
             // If the Analytics server spends too long time preparing the results, it can
             // sometimes return an empty result set. If this happens, we should just wait
@@ -151,7 +153,6 @@ class Report extends LazyResource implements \Iterator, \Countable
         do {
             $this->fetchBatch();
         } while (!$this->isFinished);
-        return null;
     }
 
     /**
@@ -192,7 +193,8 @@ class Report extends LazyResource implements \Iterator, \Countable
      * we should have all the data.
      *
      * @param \stdClass $data
-     * @return boolean
+     *
+     * @return bool
      */
     protected function isInitialized($data)
     {
@@ -204,6 +206,7 @@ class Report extends LazyResource implements \Iterator, \Countable
      * so we have to fetch all the rows to find out.
      *
      * @link http://php.net/manual/en/countable.count.php
+     *
      * @return int
      */
     public function count()
@@ -213,7 +216,9 @@ class Report extends LazyResource implements \Iterator, \Countable
 
     /**
      * Magic!
+     *
      * @param string $key
+     *
      * @return mixed
      */
     public function __get($key)

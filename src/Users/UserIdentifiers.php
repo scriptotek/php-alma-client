@@ -13,6 +13,7 @@ class UserIdentifiers extends Model
      * Get a flat array of all the user IDs.
      *
      * @param string $status (Default: 'ACTIVE').
+     *
      * @return string[]
      */
     public function all($status = 'ACTIVE')
@@ -32,6 +33,7 @@ class UserIdentifiers extends Model
      *
      * @param string $value
      * @param string $status
+     *
      * @return array
      */
     public function allOfType($value, $status = 'ACTIVE')
@@ -42,6 +44,7 @@ class UserIdentifiers extends Model
                 $ids[] = $identifier->value;
             }
         }
+
         return $ids;
     }
 
@@ -50,6 +53,7 @@ class UserIdentifiers extends Model
      *
      * @param string $value
      * @param string $status
+     *
      * @return null|string
      */
     public function firstOfType($value, $status = 'ACTIVE')

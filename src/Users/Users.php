@@ -2,9 +2,9 @@
 
 namespace Scriptotek\Alma\Users;
 
-use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\InvalidQuery;
+use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 
 /**
  * Non-iterable collection of User resources.
@@ -26,6 +26,7 @@ class Users implements \ArrayAccess
      *
      * @param $user_id int
      * @param $params array Additional query string parameters
+     *
      * @return User
      */
     public function get($user_id, $params = [])
@@ -38,7 +39,8 @@ class Users implements \ArrayAccess
      * Get the first user matching a given query, or NULL if not found.
      *
      * @param string $query
-     * @param array $options
+     * @param array  $options
+     *
      * @return User|null
      */
     public function findOne($query, array $options = [])
@@ -49,8 +51,10 @@ class Users implements \ArrayAccess
     /**
      * Iterates over all users matching the given query.
      * Handles continuation.
+     *
      * @param string $query
-     * @param array $options
+     * @param array  $options
+     *
      * @return \Generator
      */
     public function search($query, array $options = [])
