@@ -8,6 +8,7 @@
     "prefer-stable": true,
     "require": {
         "php" : ">=5.6",
+        "ext-json": "*",
         "scriptotek/marc": "^1.0 || dev-master",
         "danmichaelo/quitesimplexmlelement": "^1.0",
         "scriptotek/sru-client": "^0.6",
