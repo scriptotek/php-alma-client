@@ -97,7 +97,7 @@ class Users implements \ArrayAccess
                 break;
             }
 
-            if (!isset($response->user)) {
+            if (!isset($response->user) || empty($response->user)) {
                 // We cannot trust the value in 'total_record_count', so if there are no more records,
                 // we have to assume the result set is depleted.
                 // See: https://github.com/scriptotek/php-alma-client/issues/7
@@ -105,6 +105,7 @@ class Users implements \ArrayAccess
             }
 
             foreach ($response->user as $data) {
+                $offset++;
                 // Contacts without a primary identifier will have the primary_id
                 // field populated with something weird like "no primary id (123456789023)".
                 // We ignore those.
@@ -118,7 +119,6 @@ class Users implements \ArrayAccess
                     $user->init();
                 }
                 yield $user;
-                $offset++;
             }
             if ($offset >= $response->total_record_count) {
                 break;
