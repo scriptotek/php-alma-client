@@ -162,7 +162,7 @@ class Bib extends LazyResource
      */
     protected function isInitialized($data)
     {
-        return $data->has('record');
+        return is_a($data, QuiteSimpleXMLElement::class) && $data->has('record');
     }
 
     /**
@@ -173,25 +173,5 @@ class Bib extends LazyResource
     protected function urlBase()
     {
         return "/bibs/{$this->mms_id}";
-    }
-
-    /**
-     * Magic!
-     *
-     * @param string $key
-     *
-     * @return mixed
-     */
-    public function __get($key)
-    {
-        // If there's a getter method, call it.
-        if ($key == 'record') {
-            return $this->getRecord();
-        }
-
-        $this->init();
-
-        // If the property is defined in our data object, return it.
-        return $this->data->text($key);
     }
 }

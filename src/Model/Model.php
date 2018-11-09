@@ -2,6 +2,7 @@
 
 namespace Scriptotek\Alma\Model;
 
+use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 
 /**
@@ -35,7 +36,7 @@ abstract class Model implements \JsonSerializable
     /**
      * Load data onto this object. Chainable method.
      *
-     * @param \stdClass $data
+     * @param \stdClass|QuiteSimpleXMLElement $data
      *
      * @return self
      */
@@ -71,9 +72,19 @@ abstract class Model implements \JsonSerializable
             return $this->$method();
         }
 
+        // If the property is already defined on our data object, return it.
+        if (isset($this->data->{$key})) {
+            return $this->data->{$key};
+        }
+
         $this->init();
 
-        // If the property is defined in our data object, return it.
+        // If data comes from an XML response (Bib or Holding record)
+        if (is_a($this->data, QuiteSimpleXMLElement::class)) {
+            return $this->data->text($key);
+        }
+
+        // If the property is defined on our data object now, return it.
         if (isset($this->data->{$key})) {
             return $this->data->{$key};
         }

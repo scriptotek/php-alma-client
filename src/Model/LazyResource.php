@@ -2,6 +2,7 @@
 
 namespace Scriptotek\Alma\Model;
 
+use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Exception\ResourceNotFound;
 
 /**
@@ -60,7 +61,7 @@ abstract class LazyResource extends Model
     /**
      * Load data onto this object. Chainable method.
      *
-     * @param \stdClass $data
+     * @param \stdClass|QuiteSimpleXMLElement $data
      *
      * @return $this
      */

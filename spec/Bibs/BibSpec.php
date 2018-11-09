@@ -33,10 +33,11 @@ class BibSpec extends ObjectBehavior
         $this->shouldHaveType(Bib::class);
     }
 
-    public function it_loads_bib_data_when_needed(AlmaClient $client)
+    public function it_fetches_record_data_when_needed(AlmaClient $client)
     {
         $this->expectRequest($client);
 
+        $this->created_by->shouldBe('import');
         $this->created_date->shouldBe('2015-11-05Z');
     }
 
