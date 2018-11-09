@@ -2,6 +2,7 @@
 
 namespace Scriptotek\Alma\Bibs;
 
+use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Model\LazyResource;
 use Scriptotek\Marc\Record as MarcRecord;
@@ -32,15 +33,37 @@ class Holding extends LazyResource
     }
 
     /**
+     * Get the model data.
+     */
+    protected function fetchData()
+    {
+        return $this->client->getXML($this->url());
+    }
+
+    /**
      * Check if we have the full representation of our data object.
      *
-     * @param \stdClass $data
+     * @param $data
      *
      * @return bool
      */
     protected function isInitialized($data)
     {
-        return isset($data->anies);
+        return is_a($data, QuiteSimpleXMLElement::class) && $data->has('record');
+    }
+
+    /**
+     * Load MARC record onto this Bib object. Chainable method.
+     *
+     * @param string $xml
+     *
+     * @return Holding
+     */
+    public function setMarcRecord($xml)
+    {
+        $this->_marc = MarcRecord::fromString($xml);
+
+        return $this;
     }
 
     /**
@@ -50,7 +73,7 @@ class Holding extends LazyResource
      */
     protected function onData($data)
     {
-        $this->_marc = MarcRecord::fromString($data->anies[0]);
+        $this->setMarcRecord($data->first('record')->asXML());
     }
 
     /**

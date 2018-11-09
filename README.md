@@ -259,6 +259,8 @@ $holding = $alma->bibs['990310361044702204']->holdings['22102913020002204'];
 $marcRecord = $holding->record;
 ```
 
+**Note:** Editing holding records is not yet supported. Will be added in the future.
+
 Items can be listed from holdings in the same manner as holdings can be fetched from bibs.
 Here's an example:
 

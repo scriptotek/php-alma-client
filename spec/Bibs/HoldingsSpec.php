@@ -103,4 +103,15 @@ class HoldingsSpec extends ObjectBehavior
 
         $this->current()->shouldHaveType(Holding::class);
     }
+
+    public function it_provides_basic_data_without_loading_the_full_record(AlmaClient $client)
+    {
+        $client->getJSON('/bibs/abc/holdings')
+            ->shouldBeCalledTimes(1)
+            ->willReturn(json_decode($this->sample));
+
+        $this->shouldHaveCount(2);
+        $this->all()[0]->shouldHaveType(Holding::class);
+        $this->all()[0]->library->desc->shouldBe('BURNS');
+    }
 }
