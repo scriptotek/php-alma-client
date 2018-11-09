@@ -6,7 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+(nothing yet)
+
+## [0.7.2] - 2018-11-09
+
+### Added
+
 - Added methods for retrieving task lists (lending requests and requested resources).
+
+### Fixed
+
+- Fixed retrieval of Holding records: [#9](https://github.com/scriptotek/php-alma-client/issues/9)
 
 ## [0.7.1] - 2018-10-23
 
@@ -71,7 +81,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 tbd.
 
-[Unreleased]: https://github.com/scriptotek/php-marc/compare/v0.7.1...HEAD
+[Unreleased]: https://github.com/scriptotek/php-marc/compare/v0.7.2...HEAD
+[0.7.2]: https://github.com/scriptotek/php-marc/compare/v0.7.1...v0.7.2
 [0.7.1]: https://github.com/scriptotek/php-marc/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/scriptotek/php-marc/compare/v0.6.1...v0.7.0
 [0.6.1]: https://github.com/scriptotek/php-marc/compare/v0.6.0...v0.6.1
