@@ -59,7 +59,7 @@ class BibsSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn([SruRecord::make(
                 1,
-                '<record><controlfield tag="001">990114012304702201</controlfield></record>'
+                '<record xmlns="http://www.loc.gov/MARC21/slim"><controlfield tag="001">990114012304702201</controlfield></record>'
             )]);
 
         $bib = $this->fromIsbn('123');

@@ -70,7 +70,7 @@ class Bib extends LazyResource
     public static function fromSruRecord(SruRecord $record, Client $client = null)
     {
         $record->data->registerXPathNamespace('marc', 'http://www.loc.gov/MARC21/slim');
-        $mmsId = $record->data->text('.//controlfield[@tag="001"]');
+        $mmsId = $record->data->text('.//marc:controlfield[@tag="001"]');
 
         return (new self($client, $mmsId))
             ->setMarcRecord($record->data->asXML());
