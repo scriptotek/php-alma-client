@@ -1,0 +1,869 @@
+{
+  "representation_file": [
+    {
+      "pid": "13216677500002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side085.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677500002204",
+      "label": "75nb26737_side085",
+      "size": 16086776,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677530002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side082.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677530002204",
+      "label": "75nb26737_side082",
+      "size": 15989624,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677520002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side083.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677520002204",
+      "label": "75nb26737_side083",
+      "size": 15939892,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677540002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side081.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677540002204",
+      "label": "75nb26737_side081",
+      "size": 15984728,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678290002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side006.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678290002204",
+      "label": "75nb26737_side006",
+      "size": 15992540,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677510002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side084.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677510002204",
+      "label": "75nb26737_side084",
+      "size": 16086620,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677550002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side080.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677550002204",
+      "label": "75nb26737_side080",
+      "size": 16031680,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677390002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tittelblad003.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677390002204",
+      "label": "75nb26737_tittelblad003",
+      "size": 16141548,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678110002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side024.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678110002204",
+      "label": "75nb26737_side024",
+      "size": 16123724,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677980002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side037.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677980002204",
+      "label": "75nb26737_side037",
+      "size": 15958356,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678200002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side015.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678200002204",
+      "label": "75nb26737_side015",
+      "size": 15846132,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677890002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side046.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677890002204",
+      "label": "75nb26737_side046",
+      "size": 15940020,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677960002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side039.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677960002204",
+      "label": "75nb26737_side039",
+      "size": 16031808,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678130002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side022.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678130002204",
+      "label": "75nb26737_side022",
+      "size": 15929660,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677940002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side041.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677940002204",
+      "label": "75nb26737_side041",
+      "size": 15976716,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678220002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side013.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678220002204",
+      "label": "75nb26737_side013",
+      "size": 16068464,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678240002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side011.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678240002204",
+      "label": "75nb26737_side011",
+      "size": 16049992,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678330002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side002.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678330002204",
+      "label": "75nb26737_side002",
+      "size": 16087044,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677490002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side086.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677490002204",
+      "label": "75nb26737_side086",
+      "size": 16068520,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678310002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side004.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678310002204",
+      "label": "75nb26737_side004",
+      "size": 16105428,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677650002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side070.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677650002204",
+      "label": "75nb26737_side070",
+      "size": 15976352,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677740002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side061.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677740002204",
+      "label": "75nb26737_side061",
+      "size": 16031824,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677810002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side054.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677810002204",
+      "label": "75nb26737_side054",
+      "size": 15995172,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677830002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side052.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677830002204",
+      "label": "75nb26737_side052",
+      "size": 15921496,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677560002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side079.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677560002204",
+      "label": "75nb26737_side079",
+      "size": 16013432,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677580002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side077.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677580002204",
+      "label": "75nb26737_side077",
+      "size": 15976528,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678260002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side009.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678260002204",
+      "label": "75nb26737_side009",
+      "size": 16031704,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678280002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side007.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678280002204",
+      "label": "75nb26737_side007",
+      "size": 16057940,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677670002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side068.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677670002204",
+      "label": "75nb26737_side068",
+      "size": 15929356,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677920002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side043.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677920002204",
+      "label": "75nb26737_side043",
+      "size": 15297624,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678170002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side018.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678170002204",
+      "label": "75nb26737_side018",
+      "size": 15903268,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678190002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side016.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678190002204",
+      "label": "75nb26737_side016",
+      "size": 15903472,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677630002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side072.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677630002204",
+      "label": "75nb26737_side072",
+      "size": 16050104,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677900002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side045.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677900002204",
+      "label": "75nb26737_side045",
+      "size": 15994884,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677700002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side065.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677700002204",
+      "label": "75nb26737_side065",
+      "size": 16160192,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678060002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side029.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678060002204",
+      "label": "75nb26737_side029",
+      "size": 15733112,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677690002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side066.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677690002204",
+      "label": "75nb26737_side066",
+      "size": 15916468,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678150002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side020.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678150002204",
+      "label": "75nb26737_side020",
+      "size": 16068664,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677850002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side050.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677850002204",
+      "label": "75nb26737_side050",
+      "size": 16068620,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677870002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side048.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677870002204",
+      "label": "75nb26737_side048",
+      "size": 16013468,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678080002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side027.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678080002204",
+      "label": "75nb26737_side027",
+      "size": 15577240,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677720002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side063.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677720002204",
+      "label": "75nb26737_side063",
+      "size": 15921572,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677760002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side059.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677760002204",
+      "label": "75nb26737_side059",
+      "size": 16068224,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677780002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side057.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677780002204",
+      "label": "75nb26737_side057",
+      "size": 16076232,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678000002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side035.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678000002204",
+      "label": "75nb26737_side035",
+      "size": 16050276,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678020002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side033.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678020002204",
+      "label": "75nb26737_side033",
+      "size": 16013436,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678040002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side031.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678040002204",
+      "label": "75nb26737_side031",
+      "size": 15958256,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677410002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tittelblad001.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677410002204",
+      "label": "75nb26737_tittelblad001",
+      "size": 16031804,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677400002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tittelblad002.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677400002204",
+      "label": "75nb26737_tittelblad002",
+      "size": 16031184,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677420002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tab007.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677420002204",
+      "label": "75nb26737_tab007",
+      "size": 16106196,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677600002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side075.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677600002204",
+      "label": "75nb26737_side075",
+      "size": 14933860,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677610002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side074.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677610002204",
+      "label": "75nb26737_side074",
+      "size": 15120196,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677440002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tab005.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677440002204",
+      "label": "75nb26737_tab005",
+      "size": 16050352,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677450002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tab004.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677450002204",
+      "label": "75nb26737_tab004",
+      "size": 16031956,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677430002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tab006.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677430002204",
+      "label": "75nb26737_tab006",
+      "size": 15668536,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677460002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tab003.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677460002204",
+      "label": "75nb26737_tab003",
+      "size": 16086924,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677470002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tab002.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677470002204",
+      "label": "75nb26737_tab002",
+      "size": 15517532,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677480002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_tab001.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677480002204",
+      "label": "75nb26737_tab001",
+      "size": 15934812,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678100002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side025.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678100002204",
+      "label": "75nb26737_side025",
+      "size": 16013380,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677880002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side047.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677880002204",
+      "label": "75nb26737_side047",
+      "size": 16068464,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678210002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side014.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678210002204",
+      "label": "75nb26737_side014",
+      "size": 16160468,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677990002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side036.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677990002204",
+      "label": "75nb26737_side036",
+      "size": 16050228,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678120002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side023.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678120002204",
+      "label": "75nb26737_side023",
+      "size": 15903168,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677950002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side040.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677950002204",
+      "label": "75nb26737_side040",
+      "size": 16050400,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677970002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side038.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677970002204",
+      "label": "75nb26737_side038",
+      "size": 15884864,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678230002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side012.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678230002204",
+      "label": "75nb26737_side012",
+      "size": 15775808,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677590002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side076.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677590002204",
+      "label": "75nb26737_side076",
+      "size": 16031688,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678340002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side001.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678340002204",
+      "label": "75nb26737_side001",
+      "size": 16068276,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678300002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side005.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678300002204",
+      "label": "75nb26737_side005",
+      "size": 16141992,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678320002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side003.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678320002204",
+      "label": "75nb26737_side003",
+      "size": 15995096,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677820002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side053.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677820002204",
+      "label": "75nb26737_side053",
+      "size": 15958384,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678180002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side017.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678180002204",
+      "label": "75nb26737_side017",
+      "size": 16105272,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677730002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side062.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677730002204",
+      "label": "75nb26737_side062",
+      "size": 16013364,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677570002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side078.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677570002204",
+      "label": "75nb26737_side078",
+      "size": 15877396,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678250002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side010.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678250002204",
+      "label": "75nb26737_side010",
+      "size": 16215256,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678270002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side008.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678270002204",
+      "label": "75nb26737_side008",
+      "size": 16105444,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678160002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side019.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678160002204",
+      "label": "75nb26737_side019",
+      "size": 15921532,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677640002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side071.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677640002204",
+      "label": "75nb26737_side071",
+      "size": 15884772,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677660002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side069.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677660002204",
+      "label": "75nb26737_side069",
+      "size": 16049628,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677680002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side067.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677680002204",
+      "label": "75nb26737_side067",
+      "size": 15939440,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677930002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side042.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677930002204",
+      "label": "75nb26737_side042",
+      "size": 16105128,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677620002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side073.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677620002204",
+      "label": "75nb26737_side073",
+      "size": 16013088,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677910002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side044.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677910002204",
+      "label": "75nb26737_side044",
+      "size": 15958164,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677770002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side058.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677770002204",
+      "label": "75nb26737_side058",
+      "size": 16031644,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678140002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side021.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678140002204",
+      "label": "75nb26737_side021",
+      "size": 15738140,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677840002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side051.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677840002204",
+      "label": "75nb26737_side051",
+      "size": 16123740,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677860002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side049.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677860002204",
+      "label": "75nb26737_side049",
+      "size": 15903348,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677790002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side056.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677790002204",
+      "label": "75nb26737_side056",
+      "size": 16050048,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677800002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side055.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677800002204",
+      "label": "75nb26737_side055",
+      "size": 15984592,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677710002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side064.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677710002204",
+      "label": "75nb26737_side064",
+      "size": 16021432,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216677750002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side060.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216677750002204",
+      "label": "75nb26737_side060",
+      "size": 15994916,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678050002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side030.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678050002204",
+      "label": "75nb26737_side030",
+      "size": 15609544,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678070002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side028.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678070002204",
+      "label": "75nb26737_side028",
+      "size": 15531572,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678090002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side026.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678090002204",
+      "label": "75nb26737_side026",
+      "size": 15976604,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678010002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side034.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678010002204",
+      "label": "75nb26737_side034",
+      "size": 16160504,
+      "url": null,
+      "fulltext": null
+    },
+    {
+      "pid": "13216678030002204",
+      "path": "47BIBSYS_UBO/storage/alma/36/3A/65/88/BA/6D/E0/92/B2/57/23/07/75/65/57/4E/75nb26737_side032.tif",
+      "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/13216678030002204",
+      "label": "75nb26737_side032",
+      "size": 15995172,
+      "url": null,
+      "fulltext": null
+    }
+  ],
+  "total_record_count": 96
+}

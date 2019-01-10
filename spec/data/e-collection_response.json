@@ -1,0 +1,72 @@
+{
+  "id": "61173723710002204",
+  "is_local": false,
+  "public_name": "SpringerLink Books Complete",
+  "public_name_override": "",
+  "description": "",
+  "internal_description": "",
+  "library": {
+    "value": "",
+    "link": null
+  },
+  "type": {
+    "value": "0",
+    "desc": "Selective package"
+  },
+  "interface": {
+    "name": "Springer Link",
+    "vendor": null
+  },
+  "process_type": {
+    "value": "",
+    "desc": null
+  },
+  "access_type": {
+    "value": "",
+    "desc": null
+  },
+  "po_line": {
+    "value": "",
+    "link": null
+  },
+  "activation_date": "2010-09-17Z",
+  "license": {
+    "value": "070001039",
+    "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/acq/licenses/070001039"
+  },
+  "alternative_title": "",
+  "source": "",
+  "creator": "",
+  "url": "http://link.springer.com",
+  "url_override": "",
+  "free": {
+    "value": "",
+    "desc": null
+  },
+  "proxy_enabled": {
+    "value": "",
+    "desc": null
+  },
+  "proxy": "",
+  "language": {
+    "value": "",
+    "desc": null
+  },
+  "category": "",
+  "resource_metadata": {
+    "mms_id": {
+      "value": "999919849150002204",
+      "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999919849150002204"
+    },
+    "title": "SpringerLink Books Complete",
+    "author": "",
+    "issn": ""
+  },
+  "portfolios": {
+    "value": 55900,
+    "link": null
+  },
+  "authentication_note": "",
+  "public_note": "",
+  "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/electronic/e-collections/61173723710002204"
+}

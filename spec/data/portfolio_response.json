@@ -1,0 +1,73 @@
+{
+  "id": "53182555270002204",
+  "is_local": false,
+  "is_standalone": false,
+  "resource_metadata": {
+    "mms_id": {
+      "value": "999919790879802204",
+      "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999919790879802204"
+    },
+    "title": "Elementary Mechanics Using Matlab A Modern Course Combining Analytical and Numerical Techniques /"
+  },
+  "electronic_collection": {
+    "id": {
+      "value": "61173723710002204",
+      "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/electronic/e-collections/61173723710002204"
+    },
+    "service": {
+      "value": "62173726760002204",
+      "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/electronic/e-collections/61173723710002204/e-services/62173726760002204"
+    }
+  },
+  "availability": {
+    "value": "11",
+    "desc": "Available"
+  },
+  "material_type": {
+    "value": "BOOK",
+    "desc": "Book"
+  },
+  "library": {
+    "value": "",
+    "link": null
+  },
+  "linking_details": {
+    "url": "",
+    "url_type": {
+      "value": "",
+      "desc": null
+    },
+    "dynamic_url": "",
+    "static_url": "",
+    "parser_parameters": "",
+    "parser_parameters_override": "",
+    "proxy_enabled": {
+      "value": "false",
+      "desc": "No"
+    },
+    "proxy": ""
+  },
+  "coverage_details": {
+    "coverage_in_use": {
+      "value": "0",
+      "desc": "Only local"
+    },
+    "global_date_coverage_parameters": [],
+    "local_date_coverage_parameters": []
+  },
+  "po_line": {
+    "value": "",
+    "link": null
+  },
+  "license": {
+    "value": "070001039",
+    "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/acq/licenses/070001039"
+  },
+  "pda": {
+    "value": "",
+    "link": ""
+  },
+  "authentication_note": "",
+  "public_note": "",
+  "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999919790879802204/portfolios/53182555270002204"
+}

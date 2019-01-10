@@ -1,0 +1,35 @@
+{
+  "portfolio": [
+    {
+      "id": "53182555270002204",
+      "is_local": false,
+      "is_standalone": false,
+      "resource_metadata": {
+        "mms_id": {
+          "value": "999919790879802204",
+          "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999919790879802204"
+        },
+        "title": "Elementary Mechanics Using Matlab A Modern Course Combining Analytical and Numerical Techniques /"
+      },
+      "electronic_collection": {
+        "id": {
+          "value": "61173723710002204",
+          "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/electronic/e-collections/61173723710002204"
+        },
+        "service": {
+          "value": "62173726760002204",
+          "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/electronic/e-collections/61173723710002204/e-services/62173726760002204"
+        }
+      },
+      "availability": {
+        "value": "11",
+        "desc": "Available"
+      },
+      "library": null,
+      "license": null,
+      "pda": null,
+      "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999919790879802204/portfolios/53182555270002204"
+    }
+  ],
+  "total_record_count": 1
+}

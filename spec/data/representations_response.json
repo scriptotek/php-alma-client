@@ -1,0 +1,59 @@
+{
+  "representation": [
+    {
+      "id": "12216823130002204",
+      "label": "PDF",
+      "active": {
+        "value": "true",
+        "desc": "Active"
+      },
+      "author": null,
+      "title": null,
+      "volume": null,
+      "issue": null,
+      "date": null,
+      "track": null,
+      "number": null,
+      "year": null,
+      "repository": {
+        "value": "Alma",
+        "desc": null
+      },
+      "files": {
+        "value": null,
+        "total_record_count": 1,
+        "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999814378424702204/representations/12216823130002204/files"
+      },
+      "is_remote": false,
+      "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999814378424702204/representations/12216823130002204"
+    },
+    {
+      "id": "12216823140002204",
+      "label": "High resolution TIFF images",
+      "active": {
+        "value": "true",
+        "desc": "Active"
+      },
+      "author": null,
+      "title": null,
+      "volume": null,
+      "issue": null,
+      "date": null,
+      "track": null,
+      "number": null,
+      "year": null,
+      "repository": {
+        "value": "Alma",
+        "desc": null
+      },
+      "files": {
+        "value": null,
+        "total_record_count": 96,
+        "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999814378424702204/representations/12216823140002204/files"
+      },
+      "is_remote": false,
+      "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999814378424702204/representations/12216823140002204"
+    }
+  ],
+  "total_record_count": 2
+}

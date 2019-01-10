@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Add portfolios and representations to Bib objects.
+
 ### Fixed
 
 - Set MMS id on Bib object when initiated from SRU response.

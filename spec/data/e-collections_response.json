@@ -1,0 +1,29 @@
+{
+  "electronic_collection": [
+    {
+      "id": "61173723710002204",
+      "is_local": false,
+      "public_name": "SpringerLink Books Complete",
+      "description": "",
+      "library": null,
+      "type": {
+        "value": "0",
+        "desc": "Selective package"
+      },
+      "license": null,
+      "source": null,
+      "creator": null,
+      "url": null,
+      "free": null,
+      "proxy": null,
+      "language": null,
+      "category": null,
+      "portfolios": {
+        "value": 55900,
+        "link": null
+      },
+      "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/electronic/e-collections/61173723710002204"
+    }
+  ],
+  "total_record_count": 1
+}

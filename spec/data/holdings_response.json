@@ -18,18 +18,28 @@
     },
     "holding": [
         {
-            "call_number": "Ung 839.82 Vol:Ban",
-            "holding_id": "22163771200002204",
+            "holding_id": "2221159990000121",
             "library": {
-                "desc": "UiO HumSam-biblioteket",
-                "value": "1030300"
+                "desc": "BURNS",
+                "value": "65144020000121"
             },
-            "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/990006312214702204/holdings/22163771200002204",
+            "link": "/almaws/v1/bibs/99100383900121/holdings/2221159990000121",
             "location": {
-                "desc": "UHS S-Litt",
-                "value": "k00040"
+                "desc": "UNASSIGNED location",
+                "value": "UNASSIGNED"
+            }
+        },
+        {
+            "holding_id": "2221410000000121",
+            "library": {
+                "desc": "Main Library",
+                "value": "5867020000121"
             },
-            "suppress_from_publishing": "false"
+            "link": "/almaws/v1/bibs/99100383900121/holdings/2221410000000121",
+            "location": {
+                "desc": "Microforms",
+                "value": "MICR"
+            }
         }
     ],
     "total_record_count": 1

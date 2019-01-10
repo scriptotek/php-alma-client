@@ -66,8 +66,13 @@ abstract class Model implements \JsonSerializable
      */
     public function __get($key)
     {
+        // Convert electronic_collections to ElectronicCollections
+        $key_s = implode('', array_map(function ($x) {
+            return ucfirst($x);
+        }, explode('_', $key)));
+
         // If there's a getter method, call it.
-        $method = 'get' . ucfirst($key);
+        $method = 'get' . ucfirst($key_s);
         if (method_exists($this, $method)) {
             return $this->$method();
         }

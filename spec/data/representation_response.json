@@ -1,0 +1,46 @@
+{
+  "library": {
+    "value": "1030300",
+    "desc": "UiO HumSam-biblioteket"
+  },
+  "id": "12216823140002204",
+  "label": "High resolution TIFF images",
+  "public_note": "Bare del 4 er digitalisert.",
+  "usage_type": {
+    "value": "PRESERVATION_MASTER",
+    "desc": "Master"
+  },
+  "active": {
+    "value": "true",
+    "desc": "Active"
+  },
+  "author": null,
+  "title": null,
+  "volume": null,
+  "issue": null,
+  "date": null,
+  "track": null,
+  "number": null,
+  "year": null,
+  "access_rights_policy_id": {
+    "value": "6863669220002204",
+    "desc": "Fri tilgang!"
+  },
+  "delivery_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/47BIBSYS_UBO/12216823140002204",
+  "thumbnail_url": "https://eu01.alma.exlibrisgroup.com/view/delivery/thumbnail/47BIBSYS_UBO/12216823140002204",
+  "repository": {
+    "value": "Alma",
+    "desc": null
+  },
+  "created_by": "System",
+  "created_date": "2018-09-05Z",
+  "last_modified_by": "System",
+  "last_modified_date": "2018-09-13Z",
+  "files": {
+    "value": null,
+    "total_record_count": 96,
+    "link": "https://api-eu.hosted.exlibrisgroup.com/almaws/v1/bibs/999814378424702204/representations/12216823140002204/files"
+  },
+  "is_remote": false,
+  "link": null
+}

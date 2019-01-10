@@ -14,19 +14,20 @@ If the package doesn't fit your needs, you might take a look at the alternative
 
 ## Table of Contents
 
-  * [Table of Contents](#table-of-contents)
   * [Install using Composer](#install-using-composer)
   * [Initializing a client](#initializing-a-client)
   * [Quick intro](#quick-intro)
   * [Note about lazy-loading and existence-checking](#note-about-lazy-loading-and-existence-checking)
-  * [Bibs: Bibliographic records, Holdings, Items](#bibs-bibliographic-records-holdings-items)
+  * [Bibs: Bibliographic records, Holdings, Representations, Portfolios](#bibs-bibliographic-records-holdings-representations-portfolios)
      * [Getting a single record](#getting-a-single-record)
      * [The MARC21 record](#the-marc21-record)
      * [Searching for records](#searching-for-records)
      * [Getting linked record from network zone](#getting-linked-record-from-network-zone)
      * [Editing records](#editing-records)
      * [Holdings and items](#holdings-and-items)
-  * [Items](#items)
+     * [Item by barcode](#items-by-barcode)
+     * [Electronic portfolios and collections](#electronic-portfolios-and-collections)
+     * [Digital representation and files](#digital-representation-and-files)
   * [Users, loans, fees and requests](#users-loans-fees-and-requests)
      * [Search](#search)
      * [Loans](#loans)
@@ -35,6 +36,9 @@ If the package doesn't fit your needs, you might take a look at the alternative
   * [Analytics reports](#analytics-reports)
      * [Column names](#column-names)
      * [Filters](#filters)
+  * [Task lists](#task-lists)
+     * [Lending requests](#lending-requests)
+     * [Requested resources (pick from shelf)](#requested-resources-pick-from-shelf)
   * [Laravel 5 integration](#laravel-5-integration)
   * [Future plans](#future-plans)
 
@@ -155,7 +159,7 @@ if (!$bib->exists()) {
 }
 ```
 
-## Bibs: Bibliographic records, Holdings, Items
+## Bibs: Bibliographic records, Holdings, Representations, Portfolios
 
 ### Getting a single record
 
@@ -279,12 +283,43 @@ foreach ($bib->holdings as $holding) {
 In this case, the client makes one request to fetch the list of holdings, and
 then one request per holding to fetch items.
 
-## Items
+### Item by barcode
 
 There is a special entrypoint to retrieve an item by barcode:
 
 ```php
 $item = $alma->items->fromBarcode('92nf02526');
+```
+
+### Electronic portfolios and collections
+
+Electronic portfolios and collections are available on the `Bib` object in the same way as holdings.
+
+```php
+$bib = $alma->bibs->get('990310361044702204');
+foreach ($bib->portfolios as $portfolio) {
+    echo "{$portfolio->portfolio_id} {$portfolio->electronic_collection->service->link} ";
+    echo "{$portfolio->electronic_collection->public_name}\n";
+}
+```
+
+```php
+$bib = $alma->bibs->get('990310361044702204');
+foreach ($bib->electronic_collections as $collection) {
+    echo "{$collection->public_name}";
+}
+```
+
+### Digital representation and files
+
+```php
+$bib = $alma->bibs->get('990310361044702204');
+foreach ($bib->representations as $rep) {
+    echo "{$rep->representation_id} {$rep->label}\n";
+    foreach ($rep->files as $rep_file) {
+        echo "{$rep_file->label} {$rep_file->thumbnail_url}\n";
+    }
+}
 ```
 
 ## Users, loans, fees and requests

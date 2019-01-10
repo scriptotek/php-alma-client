@@ -21,6 +21,15 @@ class Bib extends LazyResource
     /* @var Holdings */
     public $holdings;
 
+    /* @var Portfolios */
+    public $portfolios;
+
+    /* @var Representations */
+    public $representations;
+
+    /* @var ElectronicCollections */
+    public $electronic_collections;
+
     /* @var MarcRecord */
     protected $_marc;
 
@@ -32,6 +41,9 @@ class Bib extends LazyResource
         parent::__construct($client);
         $this->mms_id = $mms_id;
         $this->holdings = Holdings::make($this->client, $this);
+        $this->portfolios = Portfolios::make($this->client, $this);
+        $this->representations = Representations::make($this->client, $this);
+        $this->electronic_collections = ElectronicCollections::make($this->client, $this);
         $this->requests = Requests::make($this->client, $this->url('/requests'));
     }
 
