@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Set MMS id on Bib object when initiated from SRU response.
+- Handle more error responses.
 
 ## [0.7.2] - 2018-11-09
 

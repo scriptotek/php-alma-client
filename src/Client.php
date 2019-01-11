@@ -483,6 +483,9 @@ class Client
         switch ($contentType) {
             case 'application/json':
                 $res = json_decode($responseBody, true);
+                if (isset($res['web_service_result'])) {
+                    $res = $res['web_service_result'];
+                }
                 $err = $res['errorList']['error'][0];
                 $message = $err['errorMessage'];
                 $code = $err['errorCode'];
