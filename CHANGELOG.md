@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Add portfolios and representations to Bib objects.
 
+### Changed
+
+- Updated [scriptotek/marc](https://github.com/scriptotek/php-marc/) to version 2.0.
+  Please see [the corresponding CHANGELOG](https://github.com/scriptotek/php-marc/blob/master/CHANGELOG.md#200---2018-10-23) for information about changes that might break your app if you work with MARC records.
+
 ### Fixed
 
 - Set MMS id on Bib object when initiated from SRU response.
