@@ -54,7 +54,11 @@ abstract class SimplePaginatedList extends LazyResourceList
      */
     protected function isInitialized($data)
     {
-        return count($data) === $this->totalRecordCount;
+        if (is_countable($data)) {
+            return count($data) === $this->totalRecordCount;
+        }
+
+        return false;
     }
 
     /**
