@@ -3,19 +3,20 @@
 namespace Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
+use function GuzzleHttp\Psr7\stream_for;
 use Http\Client\Common\Plugin\ContentLengthPlugin;
 use Http\Client\Common\Plugin\ErrorPlugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\Exception\HttpException;
 use Http\Client\Exception\NetworkException;
-use Http\Client\HttpClient;
-use Http\Discovery\HttpClientDiscovery;
-use Http\Discovery\MessageFactoryDiscovery;
-use Http\Discovery\UriFactoryDiscovery;
-use Http\Message\MessageFactory;
+use Http\Factory\Discovery\HttpClient;
+use Http\Factory\Discovery\HttpFactory;
 use Http\Message\UriFactory;
+use Psr\Http\Client\ClientInterface as HttpClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
 use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
@@ -49,11 +50,11 @@ class Client
     /** @var Client Network zone instance */
     public $nz;
 
-    /** @var HttpClient */
+    /** @var HttpClientInterface */
     protected $http;
 
-    /** @var MessageFactory */
-    protected $messageFactory;
+    /** @var RequestFactoryInterface */
+    protected $requestFactory;
 
     /** @var UriFactory */
     protected $uriFactory;
@@ -82,12 +83,12 @@ class Client
     /**
      * Create a new client to connect to a given Alma instance.
      *
-     * @param string         $key            API key
-     * @param string         $region         Hosted region code, used to build base URL
-     * @param string         $zone           Alma zone (Either Zones::INSTITUTION or Zones::NETWORK)
-     * @param HttpClient     $http
-     * @param MessageFactory $messageFactory
-     * @param UriFactory     $uriFactory
+     * @param string                  $key            API key
+     * @param string                  $region         Hosted region code, used to build base URL
+     * @param string                  $zone           Alma zone (Either Zones::INSTITUTION or Zones::NETWORK)
+     * @param HttpClientInterface     $http
+     * @param RequestFactoryInterface $requestFactory
+     * @param UriFactoryInterface     $uriFactory
      *
      * @throws \ErrorException
      */
@@ -95,19 +96,19 @@ class Client
         $key = null,
         $region = 'eu',
         $zone = Zones::INSTITUTION,
-        HttpClient $http = null,
-        MessageFactory $messageFactory = null,
-        UriFactory $uriFactory = null
+        HttpClientInterface $http = null,
+        RequestFactoryInterface $requestFactory = null,
+        UriFactoryInterface $uriFactory = null
     ) {
         $this->http = new PluginClient(
-            $http ?: HttpClientDiscovery::find(),
+            $http ?: HttpClient::client(),
             [
                 new ContentLengthPlugin(),
                 new ErrorPlugin(),
             ]
         );
-        $this->messageFactory = $messageFactory ?: MessageFactoryDiscovery::find();
-        $this->uriFactory = $uriFactory ?: UriFactoryDiscovery::find();
+        $this->requestFactory = $requestFactory ?: HttpFactory::requestFactory();
+        $this->uriFactory = $uriFactory ?: HttpFactory::uriFactory();
 
         $this->key = $key;
         $this->setRegion($region);
@@ -126,7 +127,7 @@ class Client
         $this->taskLists = new TaskLists($this);
 
         if ($zone == Zones::INSTITUTION) {
-            $this->nz = new self(null, $region, Zones::NETWORK, $this->http, $this->messageFactory, $this->uriFactory);
+            $this->nz = new self(null, $region, Zones::NETWORK, $this->http, $this->requestFactory, $this->uriFactory);
         } elseif ($zone != Zones::NETWORK) {
             throw new AlmaClientException('Invalid zone name.');
         }
@@ -287,10 +288,9 @@ class Client
     public function get($url, $query = [], $contentType = 'application/json')
     {
         $url = $this->buildUrl($url, $query);
-        $headers = [
-            'Accept' => $contentType,
-        ];
-        $request = $this->messageFactory->createRequest('GET', $url, $headers);
+        $request = $this->requestFactory->createRequest('GET', $url)
+            ->withHeader('Accept', $contentType);
+
         $response = $this->request($request);
 
         return strval($response->getBody());
@@ -338,12 +338,14 @@ class Client
     public function put($url, $data, $contentType = 'application/json')
     {
         $uri = $this->buildUrl($url);
-        $headers = [];
+
+        $request = $this->requestFactory->createRequest('PUT', $uri);
         if (!is_null($contentType)) {
-            $headers['Content-Type'] = $contentType;
-            $headers['Accept'] = $contentType;
+            $request = $request->withHeader('Content-Type', $contentType);
+            $request = $request->withHeader('Accept', $contentType);
         }
-        $request = $this->messageFactory->createRequest('PUT', $uri, $headers, $data);
+        $request = $request->withBody(stream_for($data));
+
         $response = $this->request($request);
 
         return strval($response->getBody());
@@ -391,12 +393,14 @@ class Client
     public function post($url, $data, $contentType = 'application/json')
     {
         $uri = $this->buildUrl($url);
-        $headers = [];
+
+        $request = $this->requestFactory->createRequest('POST', $uri);
         if (!is_null($contentType)) {
-            $headers['Content-Type'] = $contentType;
-            $headers['Accept'] = $contentType;
+            $request = $request->withHeader('Content-Type', $contentType);
+            $request = $request->withHeader('Accept', $contentType);
         }
-        $request = $this->messageFactory->createRequest('POST', $uri, $headers, $data);
+        $request = $request->withBody(stream_for($data));
+
         $response = $this->request($request);
 
         return strval($response->getBody());
@@ -444,7 +448,7 @@ class Client
     {
         $url = $this->buildUrl($url, $query);
 
-        $request = $this->messageFactory->createRequest('GET', $url);
+        $request = $this->requestFactory->createRequest('GET', $url);
 
         try {
             $response = $this->request($request);

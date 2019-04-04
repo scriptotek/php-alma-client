@@ -2,11 +2,14 @@
 
 namespace spec\Scriptotek\Alma\Users;
 
+use Http\Mock\Client as MockHttp;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Scriptotek\Alma\Client as AlmaClient;
+use Scriptotek\Alma\Exception\RequestFailed;
 use Scriptotek\Alma\Users\User;
 use Scriptotek\Alma\Users\Users;
+use Scriptotek\Alma\Zones;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class UsersSpec extends ObjectBehavior

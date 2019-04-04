@@ -12,8 +12,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Updated [scriptotek/marc](https://github.com/scriptotek/php-marc/) to version 2.0.
+- Update [scriptotek/marc](https://github.com/scriptotek/php-marc/) to version 2.0.
   Please see [the corresponding CHANGELOG](https://github.com/scriptotek/php-marc/blob/master/CHANGELOG.md#200---2018-10-23) for information about changes that might break your app if you work with MARC records.
+- Update from HTTPlug to PSR-17/PSR-18 HTTP discovery.
+  Note that a HTTP factory implementation is now required.
+  Run `composer require http-interop/http-factory-guzzle` to add a HTTP Factory for Guzzle
 
 ### Fixed
 
