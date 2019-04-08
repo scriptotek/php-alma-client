@@ -2,11 +2,10 @@
 
 namespace spec\Scriptotek\Alma\Bibs;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\ElectronicCollections;
 use Scriptotek\Alma\Client as AlmaClient;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Scriptotek\Alma\Electronic\Collection;
 use spec\Scriptotek\Alma\SpecHelper;
 
@@ -18,7 +17,7 @@ class ElectronicCollectionsSpec extends ObjectBehavior
         $this->beConstructedWith($client, $bib);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(ElectronicCollections::class);
     }

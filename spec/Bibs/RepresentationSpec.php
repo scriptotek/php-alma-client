@@ -2,13 +2,12 @@
 
 namespace spec\Scriptotek\Alma\Bibs;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\File;
-use Scriptotek\Alma\Bibs\Representations;
 use Scriptotek\Alma\Bibs\Representation;
+use Scriptotek\Alma\Bibs\Representations;
 use Scriptotek\Alma\Client as AlmaClient;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class RepresentationSpec extends ObjectBehavior
@@ -52,5 +51,4 @@ class RepresentationSpec extends ObjectBehavior
         $files->valid()->shouldBe(true);
         $files->current()->shouldHaveType(File::class);
     }
-
 }

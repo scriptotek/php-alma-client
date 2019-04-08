@@ -2,7 +2,6 @@
 
 namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Electronic\Collection;
 use Scriptotek\Alma\Model\LazyResource;

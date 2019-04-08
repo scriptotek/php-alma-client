@@ -3,11 +3,11 @@
 namespace spec\Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
-use function GuzzleHttp\Psr7\stream_for;
 use Http\Client\Common\Exception\ClientErrorException;
 use Http\Factory\Guzzle\RequestFactory;
 use Http\Factory\Guzzle\ResponseFactory;
 use Prophecy\Argument;
+use function GuzzleHttp\Psr7\stream_for;
 
 class SpecHelper
 {
@@ -40,8 +40,7 @@ class SpecHelper
         $code = 400,
         $contentType = 'application/json;charset=utf-8',
         $cls = ClientErrorException::class
-    )
-    {
+    ) {
         $requestFactory = new RequestFactory();
         $responseFactory = new ResponseFactory();
 
@@ -52,7 +51,5 @@ class SpecHelper
                 ->withHeader('Content-Type', $contentType)
                 ->withBody(stream_for($body))
         );
-
-
     }
 }
