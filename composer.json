@@ -16,7 +16,8 @@
         "psr/http-client-implementation": "^1.0",
         "psr/http-factory-implementation": "^1.0",
         "http-interop/http-factory-discovery": "^1.4",
-        "php-http/client-common": "^1.9 || ^2.0"
+        "php-http/client-common": "^1.9 || ^2.0",
+        "symfony/polyfill-php73": "^1.11"
     },
     "require-dev": {
         "phpspec/phpspec": "^3.4 || ^4.0 || ^5.0",
