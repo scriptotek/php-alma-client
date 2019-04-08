@@ -32,8 +32,8 @@ class Files extends LazyResourceList implements \Countable, \Iterator, \ArrayAcc
     /**
      * Files constructor.
      *
-     * @param Client  $client
-     * @param Bib     $bib
+     * @param Client         $client
+     * @param Bib            $bib
      * @param Representation $representation
      */
     public function __construct(Client $client, Bib $bib = null, Representation $representation = null)

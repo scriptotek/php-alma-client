@@ -3,7 +3,6 @@
 namespace Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
-use function GuzzleHttp\Psr7\stream_for;
 use Http\Client\Common\Plugin\ContentLengthPlugin;
 use Http\Client\Common\Plugin\ErrorPlugin;
 use Http\Client\Common\PluginClient;
@@ -33,6 +32,7 @@ use Scriptotek\Alma\TaskLists\LendingRequests;
 use Scriptotek\Alma\TaskLists\TaskLists;
 use Scriptotek\Alma\Users\Users;
 use Scriptotek\Sru\Client as SruClient;
+use function GuzzleHttp\Psr7\stream_for;
 
 /**
  * Alma client.

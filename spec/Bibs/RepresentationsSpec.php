@@ -2,11 +2,10 @@
 
 namespace spec\Scriptotek\Alma\Bibs;
 
+use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Representations;
 use Scriptotek\Alma\Client as AlmaClient;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class RepresentationsSpec extends ObjectBehavior
@@ -17,7 +16,7 @@ class RepresentationsSpec extends ObjectBehavior
         $this->beConstructedWith($client, $bib);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(Representations::class);
     }
