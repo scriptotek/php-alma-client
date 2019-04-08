@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+(nothing yet)
+
+## [0.8.0] - 2019-04-08
+
 ### Added
 
 - Add portfolios and representations to Bib objects.
@@ -16,7 +20,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   Please see [the corresponding CHANGELOG](https://github.com/scriptotek/php-marc/blob/master/CHANGELOG.md#200---2018-10-23) for information about changes that might break your app if you work with MARC records.
 - Update from HTTPlug to PSR-17/PSR-18 HTTP discovery.
   Note that a HTTP factory implementation is now required.
-  Run `composer require http-interop/http-factory-guzzle` to add a HTTP Factory for Guzzle
+  Run `composer require http-interop/http-factory-guzzle` to add a HTTP Factory for Guzzle.
+- Require PHP >= 7.1.
 
 ### Fixed
 
