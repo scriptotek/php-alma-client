@@ -2,9 +2,7 @@
 
 namespace Scriptotek\Alma\Bibs;
 
-use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\Bibs\Portfolio;
 use Scriptotek\Alma\Model\IterableCollection;
 use Scriptotek\Alma\Model\LazyResourceList;
 use Scriptotek\Alma\Model\ReadOnlyArrayAccess;

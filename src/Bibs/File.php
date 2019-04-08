@@ -22,8 +22,8 @@ class File extends LazyResource
     /**
      * File constructor.
      *
-     * @param Client  $client
-     * @param Bib     $bib
+     * @param Client         $client
+     * @param Bib            $bib
      * @param Representation $representation
      * @param $file_id
      */

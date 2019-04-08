@@ -3,7 +3,6 @@
 namespace spec\Scriptotek\Alma\Bibs;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Portfolio;
 use Scriptotek\Alma\Bibs\Portfolios;
@@ -20,7 +19,7 @@ class PortfolioSpec extends ObjectBehavior
         $this->beConstructedWith($client, $bib, $portfolio_id);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(Portfolio::class);
     }
@@ -45,4 +44,5 @@ class PortfolioSpec extends ObjectBehavior
 
         $this->getElectronicCollection()->shouldHaveType(Collection::class);
         $this->electronic_collection->shouldHaveType(Collection::class);
-    }}
+    }
+}

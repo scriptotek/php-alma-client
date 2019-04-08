@@ -3,8 +3,8 @@
 namespace spec\Scriptotek\Alma\Electronic;
 
 use PhpSpec\ObjectBehavior;
-use Scriptotek\Alma\Electronic\Collection;
 use Scriptotek\Alma\Client as AlmaClient;
+use Scriptotek\Alma\Electronic\Collection;
 use spec\Scriptotek\Alma\SpecHelper;
 
 class CollectionSpec extends ObjectBehavior
