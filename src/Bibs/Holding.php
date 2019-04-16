@@ -66,6 +66,20 @@ class Holding extends LazyResource
         return $this;
     }
 
+
+    /**
+     * Save the holding.
+     */
+    public function save()
+    {
+        $marcXml = $this->getRecord()->toXML('UTF-8', false, false);
+        $marcXml = new QuiteSimpleXMLElement($marcXml);
+        $this->data->first('record')->replace($marcXml);
+        $newData = $this->data->asXML();
+
+        return $this->client->putXML($this->url(), $newData);
+    }
+
     /**
      * Called when data is available to be processed.
      *
