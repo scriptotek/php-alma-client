@@ -490,7 +490,7 @@ class Client
                 if (isset($res['web_service_result'])) {
                     $res = $res['web_service_result'];
                 }
-                $err = $res['errorList']['error'][0];
+                $err = isset($res['errorList']['error'][0]) ? $res['errorList']['error'][0] : $res['errorList']['error'];
                 $message = $err['errorMessage'];
                 $code = $err['errorCode'];
                 break;
