@@ -201,7 +201,7 @@ class Client
      *
      * @return UriInterface
      */
-    protected function buildUrl($url, $query = [])
+    public function buildUrl($url, $query = [])
     {
         $url = explode('?', $url, 2);
         if (count($url) == 2) {
