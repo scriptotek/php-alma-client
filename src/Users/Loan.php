@@ -31,7 +31,7 @@ class Loan extends LazyResource
      */
     protected function urlBase()
     {
-        return "/users/{$this->user->id}/loans/{$this->loan_id}";
+        return sprintf('/users/%s/loans/%s', rawurlencode($this->user->id), $this->loan_id);
     }
 
     /**

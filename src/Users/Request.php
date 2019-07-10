@@ -42,6 +42,6 @@ class Request extends LazyResource
      */
     protected function urlBase()
     {
-        return "/users/{$this->user->id}/requests/{$this->request_id}";
+        return sprintf('/users/%s/requests/%s', rawurlencode($this->user->id), $this->request_id);
     }
 }

@@ -31,7 +31,7 @@ class Fee extends LazyResource
      */
     protected function urlBase()
     {
-        return "/users/{$this->user->id}/fees/{$this->id}";
+        return sprintf('/users/%s/fees/%s', rawurlencode($this->user->id), $this->id);
     }
 
     /**

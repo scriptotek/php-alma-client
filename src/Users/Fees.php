@@ -65,6 +65,6 @@ class Fees extends LazyResourceList implements \Countable, \Iterator, \ArrayAcce
      */
     protected function urlBase()
     {
-        return "/users/{$this->user->id}/fees";
+        return sprintf('/users/%s/fees', rawurlencode($this->user->id));
     }
 }

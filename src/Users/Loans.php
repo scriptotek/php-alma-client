@@ -50,6 +50,6 @@ class Loans extends SimplePaginatedList implements \Countable, \Iterator
      */
     protected function urlBase()
     {
-        return "/users/{$this->user->id}/loans";
+        return sprintf('/users/%s/loans', $this->user->id);
     }
 }

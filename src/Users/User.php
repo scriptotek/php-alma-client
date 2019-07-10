@@ -112,7 +112,7 @@ class User extends LazyResource
      */
     protected function urlBase()
     {
-        return "/users/{$this->id}";
+        return sprintf('/users/%s', rawurlencode($this->id));
     }
 
     public function __get($key)
