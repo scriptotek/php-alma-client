@@ -6,7 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-(nothing yet)
+### Changed
+
+- Made the `Client::buildUrl` method public.
+
+### Fixed
+
+- Fix: URL encode user IDs in URLs, since Alma user IDs can contain any Unicode character.
 
 ## [0.8.0] - 2019-04-08
 
