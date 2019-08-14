@@ -25,7 +25,7 @@ If the package doesn't fit your needs, you might take a look at the alternative
      * [Getting linked record from network zone](#getting-linked-record-from-network-zone)
      * [Editing records](#editing-records)
      * [Holdings and items](#holdings-and-items)
-     * [Item by barcode](#items-by-barcode)
+     * [Item by barcode](#item-by-barcode)
      * [Electronic portfolios and collections](#electronic-portfolios-and-collections)
      * [Digital representation and files](#digital-representation-and-files)
   * [Users, loans, fees and requests](#users-loans-fees-and-requests)
