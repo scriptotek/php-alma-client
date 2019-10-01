@@ -6,13 +6,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+(Nothing yet)
+
+## [0.8.1] - 2019-10-01
+
 ### Changed
 
 - Made the `Client::buildUrl` method public.
 
 ### Fixed
 
-- Fix: URL encode user IDs in URLs, since Alma user IDs can contain any Unicode character.
+- URL encode user IDs in URLs (since Alma user IDs can contain any Unicode character).
+- Added extra type check in error response handling
+- Docs: Fix "Item by barcode" anchor (#14)
+- Fix for breaking change in Alma Analytics API response
 
 ## [0.8.0] - 2019-04-08
 
