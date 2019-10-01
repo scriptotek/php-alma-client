@@ -53,7 +53,7 @@ class Holding extends LazyResource
     }
 
     /**
-     * Load MARC record onto this Bib object. Chainable method.
+     * Update the MARC record on this holding object. Chainable method.
      *
      * @param string $xml
      *
@@ -87,7 +87,7 @@ class Holding extends LazyResource
     }
 
     /**
-     * Get the MARC record.
+     * Get the MARC record for this holding object.
      */
     public function getRecord()
     {

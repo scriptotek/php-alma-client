@@ -17,7 +17,7 @@ class Row implements \ArrayAccess, \IteratorAggregate, \Countable
     {
         $this->headers = $headers;
         foreach ($headers as $idx => $header) {
-            $value = $data->text('rowset:Column' . ($idx + 1)) ?: null;
+            $value = $data->text('Column' . ($idx + 1)) ?: null;
             $this->byIndex[$idx] = $value;
             $this->byHeader[$header] = $value;
         }

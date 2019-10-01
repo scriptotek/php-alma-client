@@ -18,7 +18,7 @@
 PreCommit:
   TrailingWhitespace:
     enabled: true
-    on_warn: fail
+    problem_on_unmodified_line: warn
   PhpCs:
     enabled: true
     command: 'vendor/bin/phpcs'

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><report><QueryResult>
   <IsFinished>true</IsFinished>
   <ResultXml>
-    <rowset xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
+    <rowset>
       <Row>
         <Column0>0</Column0>
         <Column1>Parham, Peter 1950-</Column1>

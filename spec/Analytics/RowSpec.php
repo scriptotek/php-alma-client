@@ -13,7 +13,7 @@ class RowSpec extends ObjectBehavior
         // We need to be able to handle missing data, so let's assume we have
         // a report with three columns, but that we for this row only got data
         // for two of the columns (data missing for Column2).
-        $xml = QuiteSimpleXMLElement::make('<Row xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
+        $xml = QuiteSimpleXMLElement::make('<Row>
                 <Column0>0</Column0>
                 <Column1>col1 content</Column1>
                 <Column3>col3 content</Column3>
