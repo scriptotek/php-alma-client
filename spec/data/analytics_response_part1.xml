@@ -2,7 +2,7 @@
   <ResumptionToken>9672D715A8E2EAAA6F30DD22FC52BE4CCAE35E29D921E0AC8BE8C6734C9E1571B4E48EEFCA4046EFF8CD7D1662C2D0A7677D3AD05EDC3CA7F06182E34E9D7A2F</ResumptionToken>
   <IsFinished>false</IsFinished>
   <ResultXml>
-    <rowset>
+    <rowset xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
       <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql" targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
         <xsd:complexType name="Row">
           <xsd:sequence>

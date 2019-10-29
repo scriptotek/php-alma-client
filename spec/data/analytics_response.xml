@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><report><QueryResult>
   <IsFinished>true</IsFinished>
   <ResultXml>
-    <rowset>
+    <rowset xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
       <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql" targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
         <xsd:complexType name="Row">
           <xsd:sequence>

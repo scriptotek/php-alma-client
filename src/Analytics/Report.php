@@ -122,7 +122,7 @@ class Report extends LazyResource implements \Iterator, \Countable
 
         $this->readColumnHeaders($results);
 
-        $rows = $results->all('//Row');
+        $rows = $results->all('//rowset:Row');
 
         foreach ($rows as $row) {
             $this->resources[] = $this->convertToResource($row);

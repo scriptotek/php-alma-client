@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 (Nothing yet)
 
+## [0.8.2] - 2019-10-29
+
+### Fixed
+
+- Fix for revertion of namespace removal in Alma Analytics API response
+  (seems like the removal was just a mistake from Ex Libris)
+
 ## [0.8.1] - 2019-10-01
 
 ### Changed
@@ -19,7 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - URL encode user IDs in URLs (since Alma user IDs can contain any Unicode character).
 - Added extra type check in error response handling
 - Docs: Fix "Item by barcode" anchor (#14)
-- Fix for breaking change in Alma Analytics API response
+- Fix for sudden namespace removal in Alma Analytics API response
 
 ## [0.8.0] - 2019-04-08
 
