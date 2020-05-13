@@ -71,7 +71,7 @@ class ReportSpec extends ObjectBehavior
                 SpecHelper::getDummyData('analytics_response_part3.xml')
             );
 
-        $this->count()->shouldBe(150 + 150 + 88);
+        $this->shouldHaveCount(150 + 150 + 88);
     }
 
     public function it_might_not_exist(Client $almaClient)

@@ -16,7 +16,9 @@ trait PaginatedListGenerator
      */
     public function rewind()
     {
-        throw new \Exception('Cannot rewind a generator that was already run');
+        if ($this->position > 0) {
+            throw new \Exception('Cannot rewind a generator that was already run');
+        }
     }
 
     /**
