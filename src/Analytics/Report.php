@@ -6,14 +6,14 @@ use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Exception\RequestFailed;
 use Scriptotek\Alma\Model\LazyResource;
-use Scriptotek\Alma\Model\PaginatedList;
+use Scriptotek\Alma\Model\PaginatedListGenerator;
 
 /**
  * A single Report resource.
  */
 class Report extends LazyResource implements \Iterator, \Countable
 {
-    use PaginatedList;
+    use PaginatedListGenerator;
 
     /** @var Client */
     protected $client;
