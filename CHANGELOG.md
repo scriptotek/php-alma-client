@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 (Nothing yet)
 
+## [0.9.0] - 2020-05-13
+
+### Changed
+
+- Breaking change: The Analytics Report iterator was changed to a generator to reduce memory
+  usage when iterating over large reports. Results are now thrown away after they have been
+  yieleded. This is a breaking change since count() is no longer supported.
+
 ## [0.8.2] - 2019-10-29
 
 ### Fixed
