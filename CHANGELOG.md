@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 (Nothing yet)
 
+## [0.9.2] - 2020-05-14
+
+### Added
+
+- Added new options `maxAttemptsOnServerError` and `sleepTimeOnServerError`.
+
+### Changed
+
+- Updated the Laravel Service Provider to use existing PSR-17/18 interface bindings, if any.
+
 ## [0.9.1] - 2020-05-13
 
 ### Fixed

@@ -482,7 +482,7 @@ Note: As of 2018-10-13, there is a bug preventing you from retrieving more than 
 
 ### Requested resources (pick from shelf)
 
-````php
+```php
 $library = $alma->conf->libraries['LIBRARY_CODE'];
 $requests = $alma->taskLists->getRequestedResources($library, 'DEFAULT_CIRC_DESK', [
     'printed' => 'N',
@@ -490,9 +490,31 @@ $requests = $alma->taskLists->getRequestedResources($library, 'DEFAULT_CIRC_DESK
 foreach ($requests as $request) {
     echo "- {$request->resource_metadata->title} {$request->resource_metadata->mms_id->value}\n";
 }
-````
+```
 
-## Laravel 5 integration
+## Automatic retries on errors
+
+If the client receives a 429 (rate limiting) response from Alma, it will sleep for a short time (0.5 seconds by default)
+and retry the request a configurable number of times (10 by default), before giving up and throwing a
+`Scriptotek\Alma\Exception\MaxNumberOfAttemptsExhausted`.
+Both the max number of attempts and the sleep time can be configured:
+
+```php
+$client->maxAttempts = 5;
+$client->sleepTimeOnRetry = 3;  // seconds
+```
+
+If the client receives a 5XX server error, it will by default not retry the request, but this can be configured.
+This can be useful when retrieving large Analytics reports, which have a tendency to fail intermittently.
+
+```php
+$client->maxAttemptsOnServerError = 10;
+$client->sleepTimeOnServerError = 10;  // seconds
+```
+
+When the number of retries have been exhausted, a `Scriptotek\Alma\Exception\RequestFailed` exception is thrown.
+
+## Laravel integration
 
 This project ships with an auto-discoverable service provider and facade. Run
 
@@ -509,6 +531,48 @@ And the facade:
 
     'Alma' => Scriptotek\Alma\Laravel\Facade::class,
 
+### Customizing the HTTP client stack
+
+If the Laravel [Service Container](https://laravel.com/docs/master/providers)
+contains a PSR-18 HTTP Client bound to `Psr\Http\Client\ClientInterface`,
+Alma Client will use that implementation instead of instantiating its own HTTP
+client.
+
+Here's an example service provider that registers a HTTP client with some middleware
+from [php-http/client-common](http://docs.php-http.org/en/latest/plugins/introduction.html#install):
+
+```php
+<?php
+
+namespace App\Providers;
+
+use Http\Client\Common\Plugin\ContentLengthPlugin;
+use Http\Client\Common\Plugin\ErrorPlugin;
+use Http\Client\Common\Plugin\RetryPlugin;
+use Http\Client\Common\PluginClient;
+use Http\Factory\Discovery\HttpClient;
+use Illuminate\Support\ServiceProvider;
+use Psr\Http\Client\ClientInterface;
+
+class HttpServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+        $this->app->singleton(ClientInterface::class, function($app) {
+            return new PluginClient(
+                HttpClient::client(),
+                [
+                    new ContentLengthPlugin(),
+                    new RetryPlugin([
+                        'retries' => 10,
+                    ]),
+                    new ErrorPlugin(),
+                ]
+            );
+        });
+    }
+}
+```
 
 ## Future plans
 
