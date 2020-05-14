@@ -6,6 +6,7 @@ use Psr\Http\Client\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
 use Scriptotek\Alma\Client as AlmaClient;
+use Scriptotek\Alma\Zones;
 use Scriptotek\Sru\Client as SruClient;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
