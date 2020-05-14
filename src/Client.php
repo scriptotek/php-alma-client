@@ -77,8 +77,14 @@ class Client
     /** @var int Max number of retries if we get 429 errors */
     public $maxAttempts = 10;
 
+    /** @var int Max number of retries if we get 5XX errors */
+    public $maxAttemptsOnServerError = 1;
+
     /** @var float Number of seconds to sleep before retrying */
     public $sleepTimeOnRetry = 0.5;
+
+    /** @var float Number of seconds to sleep before retrying after a server error */
+    public $sleepTimeOnServerError = 10;
 
     /**
      * Create a new client to connect to a given Alma instance.
@@ -241,12 +247,14 @@ class Client
             return $this->http->sendRequest($request);
         } catch (HttpException $e) {
             // Thrown for 400 and 500 level errors.
+            $statusCode = $e->getResponse()->getStatusCode();
+
             $error = $this->parseClientError($e);
 
             if ($error->getErrorCode() === 'PER_SECOND_THRESHOLD') {
                 // We've run into the "Max 25 API calls per institution per second" limit.
                 // Wait a sec and retry, unless we've tried too many times already.
-                if ($attempt > $this->maxAttempts) {
+                if ($attempt >= $this->maxAttempts) {
                     throw new MaxNumberOfAttemptsExhausted(
                         'Rate limiting error - max number of retry attempts exhausted.',
                         0,
@@ -254,6 +262,15 @@ class Client
                     );
                 }
                 time_nanosleep(0, $this->sleepTimeOnRetry * 1000000000);
+
+                return $this->request($request, $attempt + 1);
+            }
+
+            if ($statusCode >= 500 && $statusCode < 600) {
+                if ($attempt >= $this->maxAttemptsOnServerError) {
+                    throw $error;
+                }
+                time_nanosleep(0, $this->sleepTimeOnServerError * 1000000000);
 
                 return $this->request($request, $attempt + 1);
             }
