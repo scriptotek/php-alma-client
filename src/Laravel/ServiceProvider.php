@@ -2,6 +2,9 @@
 
 namespace Scriptotek\Alma\Laravel;
 
+use Psr\Http\Client\ClientInterface as HttpClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\UriFactoryInterface;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Sru\Client as SruClient;
 
@@ -43,7 +46,11 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             // Create Alma client
             $alma = new AlmaClient(
                 $app['config']->get('alma.iz.key'),
-                $app['config']->get('alma.region')
+                $app['config']->get('alma.region'),
+                Zones::INSTITUTION,
+                isset($app[HttpClientInterface::class]) ? $app[HttpClientInterface::class] : null,
+                isset($app[RequestFactoryInterface::class]) ? $app[RequestFactoryInterface::class] : null,
+                isset($app[UriFactoryInterface::class]) ? $app[UriFactoryInterface::class] : null
             );
 
             // Set network zone key, if any
