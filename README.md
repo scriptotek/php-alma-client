@@ -39,7 +39,9 @@ If the package doesn't fit your needs, you might take a look at the alternative
   * [Task lists](#task-lists)
      * [Lending requests](#lending-requests)
      * [Requested resources (pick from shelf)](#requested-resources-pick-from-shelf)
-  * [Laravel 5 integration](#laravel-5-integration)
+  * [Automatic retries on errors](#automatic-retries-on-errors)
+  * [Laravel integration](#laravel-integration)
+     * [Customizing the HTTP client stack](#customizing-the-http-client-stack)
   * [Future plans](#future-plans)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
