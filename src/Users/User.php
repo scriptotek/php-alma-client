@@ -84,6 +84,63 @@ class User extends LazyResource
     }
 
     /**
+     * Get the user's preferred SMS number.
+     *
+     * @return string|null
+     */
+    public function getSmsNumber()
+    {
+        $this->init();
+        if ($this->data->contact_info->phone) {
+            foreach ($this->data->contact_info->phone as $phone) {
+                if ($phone->preferred_sms) {
+                    return $phone->phone_number;
+                }
+            }
+        }
+        return;
+    }
+   
+    /**
+     * Set the user's preferred SMS number, creating a new number if needed
+     */
+    public function setSmsNumber($number)
+    {
+        $currentNumber = $this->getSmsNumber();
+        if ($number === $currentNumber) {
+            return;
+        }
+        $updated = false;
+        if ($this->data->contact_info->phone) {
+            foreach ($this->data->contact_info->phone as $phone) {
+                if ($phone->preferred_sms) {
+                    $phone->preferred_sms = false;
+                } else if ($phone->phone_number === $number) {
+                    $phone->preferred_sms = true;
+                }
+            }
+        }
+        if (!$updated) {
+            $phones = json_encode($this->data->contact_info->phone);
+            $phoneArray = json_decode($phones, true);
+            $phoneArray[] = json_decode('{"phone_number":"'.$number.'","preferred":false,"preferred_sms":true,"segment_type":"Internal","phone_type":[{"value":"mobile","desc":"Mobile"}]}', true);
+            $this->data->contact_info->phone = json_decode(json_encode($phoneArray));
+        }
+        return;
+    }
+    
+    /**
+     * Save the user
+     * 
+     * @return string The API response body
+     */
+    public function save()
+    {
+        $this->init();
+        return $this->client->put($this->url(), json_encode($this->jsonSerialize()));
+    }
+
+    /**
      * Check if we have the full representation of our data object.
      *
      * @param \stdClass $data
