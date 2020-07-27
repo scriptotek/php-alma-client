@@ -1,0 +1,41 @@
+{
+	"link": "string",
+	"id": "M26714670000011",
+	"name": "Export Physical Items",
+	"description": "Export Physical Items",
+	"type": {
+		"desc": "Manual",
+		"value": "MANUAL"
+	},
+	"category": {
+		"desc": "Normalization",
+		"value": "NORMALIZATION"
+	},
+	"content": {
+		"desc": "All Titles",
+		"value": "BIB_MMS"
+	},
+	"schedule": {
+		"desc": "Not scheduled",
+		"value": "NOT_SCHEDULED"
+	},
+	"creator": "string",
+	"next_run": "2024-05-30T09:30:10Z",
+	"parameter": [
+		{
+			"name": {
+				"desc": "string",
+				"value": "string"
+			},
+			"value": "string"
+		}
+	],
+	"related_profile": {
+		"link": "string",
+		"value": "ID123"
+	},
+	"additional_info": {
+		"link": "string",
+		"value": "string"
+	}
+}
