@@ -65,6 +65,18 @@
                 "preferred": true,
                 "preferred_sms": false,
                 "segment_type": "Internal"
+            },
+            {
+                "phone_number": "87654321",
+                "phone_type": [
+                    {
+                        "desc": "Mobile",
+                        "value": "mobile"
+                    }
+                ],
+                "preferred": false,
+                "preferred_sms": true,
+                "segment_type": "Internal"
             }
         ]
     },

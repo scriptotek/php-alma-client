@@ -71,4 +71,28 @@ class UserSpec extends ObjectBehavior
     {
         $this->requests->shouldHaveType(Requests::class);
     }
+
+    public function it_has_sms()
+    {
+        $this->getSmsNumber()->shouldBe('87654321');
+    }
+    
+    public function it_can_change_sms()
+    {
+        $this->setSmsNumber('12345678')->shouldBeCalled();
+        $this->getSmsNumber()->shouldBe('12345678');
+    }
+
+    public function it_can_add_sms()
+    {
+        $this->setSmsNumber('9999999')->shouldBeCalled();
+        $this->getSmsNumber()->shouldBe('9999999');
+    }
+
+    public function it_can_remove_sms()
+    {
+        $this->unsetSmsNumber()->shouldBeCalled();
+        $this->getSmsNumber()->shouldBe(null);
+    }
+
 }
