@@ -14,8 +14,8 @@ class Job extends LazyResource
     /** @var string */
     public $job_id;
 
-    /** @var Locations */
-    public $locations;
+    /** @var JobInstances */
+    public $instances;
 
     /**
      * Job constructor.

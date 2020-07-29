@@ -31,7 +31,7 @@ class Jobs extends SimplePaginatedList implements \ArrayAccess, \Countable, \Ite
      *
      * @param string $job_id
      *
-     * @return Library
+     * @return Job
      */
     public function get($job_id)
     {
@@ -43,7 +43,7 @@ class Jobs extends SimplePaginatedList implements \ArrayAccess, \Countable, \Ite
      *
      * @param $data
      *
-     * @return Library
+     * @return Job
      */
     protected function convertToResource($data)
     {
