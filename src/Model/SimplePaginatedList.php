@@ -47,8 +47,10 @@ abstract class SimplePaginatedList extends LazyResourceList
 
     protected function onData($data)
     {
+        $before = count($this->resources);
         parent::onData($data);
-        $this->offset = count($this->resources);
+        $after = count($this->resources);
+        $this->offset += $after - $before;
     }
 
     /**
