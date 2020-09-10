@@ -79,19 +79,19 @@ class UserSpec extends ObjectBehavior
     
     public function it_can_change_sms()
     {
-        $this->setSmsNumber('12345678')->shouldBeCalled();
+        $this->setSmsNumber('12345678');
         $this->getSmsNumber()->shouldBe('12345678');
     }
 
     public function it_can_add_sms()
     {
-        $this->setSmsNumber('9999999')->shouldBeCalled();
+        $this->setSmsNumber('9999999');
         $this->getSmsNumber()->shouldBe('9999999');
     }
 
     public function it_can_remove_sms()
     {
-        $this->unsetSmsNumber()->shouldBeCalled();
+        $this->unsetSmsNumber();
         $this->getSmsNumber()->shouldBe(null);
     }
 
