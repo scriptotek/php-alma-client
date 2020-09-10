@@ -1,9 +1,10 @@
 language: php
+dist: bionic
 
 php:
-  - 7.1
   - 7.2
   - 7.3
+  - 7.4
 
 before_script:
  - echo 'date.timezone = "UTC"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
