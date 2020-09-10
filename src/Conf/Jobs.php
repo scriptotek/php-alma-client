@@ -3,7 +3,7 @@
 namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\Model\IterableCollection;
+use Scriptotek\Alma\Model\PaginatedListGenerator;
 use Scriptotek\Alma\Model\SimplePaginatedList;
 use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
 use Scriptotek\Alma\Conf\Job;
@@ -14,7 +14,7 @@ use Scriptotek\Alma\Conf\Job;
 class Jobs extends SimplePaginatedList implements \ArrayAccess, \Countable, \Iterator
 {
     use ReadOnlyArrayAccess;
-    use IterableCollection;
+    use PaginatedListGenerator;
 
     /**
      * Job constructor.
