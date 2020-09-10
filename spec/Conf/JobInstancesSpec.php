@@ -22,14 +22,14 @@ class JobInstancesSpec extends ObjectBehavior
 
         $jobId = '1108569450000121';
         $instanceId = '1108569450000121';
-        $jobInstance = $this->get($jobId, $instanceId);
+        $jobInstance = $this->get($instanceId);
         $jobInstance->shouldBeAnInstanceOf(JobInstance::class);
     }
 
-    public function it_provides_jobintances(AlmaClient $client)
+    public function it_provides_job_instances(AlmaClient $client)
     {
         $jobId = '1108569450000121';
-        $client->getJSON("/conf/jobs/{$jobId}/instances")
+        $client->getJSON("/conf/jobs/{$jobId}/instances?offset=0&limit=10")
             ->shouldBeCalled()
             ->willReturn(SpecHelper::getDummyData('jobinstances_response.json'));
 

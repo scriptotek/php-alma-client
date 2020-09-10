@@ -10,8 +10,8 @@ use Scriptotek\Alma\Model\LazyResource;
  */
 class JobInstance extends LazyResource
 {
-    /** @var string */
-    public $job_id;
+    /** @var Job */
+    public $job;
 
     /** @var string */
     public $job_instance_id;
@@ -20,12 +20,12 @@ class JobInstance extends LazyResource
      * JobInstance constructor.
      *
      * @param Client $client
-     * @param string $job_id
+     * @param Job $job
      * @param string $job_instance_id
      */
-    public function __construct(Client $client, $job_id, $job_instance_id)
+    public function __construct(Client $client, Job $job, string $job_instance_id)
     {
-        $this->job_id = $job_id;
+        $this->job = $job;
         $this->job_instance_id = $job_instance_id;
         parent::__construct($client);
     }
@@ -49,6 +49,6 @@ class JobInstance extends LazyResource
      */
     protected function urlBase()
     {
-        return "/conf/jobs/{$this->job_id}/instances/{$this->job_instance_id}";
+        return "/conf/jobs/{$this->job->job_id}/instances/{$this->job_instance_id}";
     }
 }

@@ -23,11 +23,11 @@ class Job extends LazyResource
      * @param Client $client
      * @param string $job_id
      */
-    public function __construct(Client $client, $job_id)
+    public function __construct(Client $client, string $job_id)
     {
         parent::__construct($client);
         $this->job_id = $job_id;
-        $this->instances = new JobInstances($client, $job_id);
+        $this->instances = new JobInstances($client, $this);
     }
 
     /**

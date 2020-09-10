@@ -11,6 +11,7 @@ class JobInstanceSpec extends ObjectBehavior
 {
     public function let(AlmaClient $client, Job $job)
     {
+        $job->job_id = '123';
         $instanceId = '1108569450000121';
         $this->beConstructedWith($client, $job, $instanceId);
     }

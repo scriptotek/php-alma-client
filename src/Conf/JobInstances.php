@@ -16,32 +16,31 @@ class JobInstances extends SimplePaginatedList implements \ArrayAccess, \Countab
     use ReadOnlyArrayAccess;
     use IterableCollection;
 
-    /** @var string */
-    public $job_id;
+    /** @var Job */
+    public $job;
 
     /**
      * Job Instances constructor.
      *
      * @param Client $client
-     * @param string $job_id
+     * @param Job $job
      */
-    public function __construct(Client $client, $job_id)
+    public function __construct(Client $client, Job $job)
     {
-        $this->job_id = $job_id;
         parent::__construct($client, 'job_instance');
+        $this->job = $job;
     }
 
     /**
-     * Get a single Job Instance by its job_id and instance_id.
+     * Get a single Job Instance by its instance_id.
      *
-     * @param string $job_id
      * @param string $instance_id
      *
      * @return JobInstance
      */
-    public function get($job_id, $instance_id)
+    public function get(string $instance_id)
     {
-        return JobInstance::make($this->client, $job_id, $instance_id);
+        return JobInstance::make($this->client, $this->job, $instance_id);
     }
 
     /**
@@ -53,7 +52,7 @@ class JobInstances extends SimplePaginatedList implements \ArrayAccess, \Countab
      */
     protected function convertToResource($data)
     {
-        return JobInstance::make($this->client, $data->job_info->id, $data->id)
+        return JobInstance::make($this->client, $this->job, $data->id)
             ->init($data);
     }
 
@@ -64,6 +63,6 @@ class JobInstances extends SimplePaginatedList implements \ArrayAccess, \Countab
      */
     protected function urlBase()
     {
-        return "/conf/jobs/{$this->job_id}/instances";
+        return "/conf/jobs/{$this->job->job_id}/instances";
     }
 }
