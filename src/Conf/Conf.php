@@ -3,6 +3,7 @@
 namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
+use Scriptotek\Alma\Conf\Jobs;
 
 class Conf
 {
@@ -10,5 +11,6 @@ class Conf
     {
         $this->client = $client;
         $this->libraries = new Libraries($client);
+        $this->jobs = new Jobs($client);
     }
 }
