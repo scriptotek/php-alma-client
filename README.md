@@ -39,6 +39,10 @@ If the package doesn't fit your needs, you might take a look at the alternative
   * [Task lists](#task-lists)
      * [Lending requests](#lending-requests)
      * [Requested resources (pick from shelf)](#requested-resources-pick-from-shelf)
+  * [Jobs](#jobs)
+     * [Listing jobs](#listing-jobs)
+     * [Retrieving information about a specific job](#retrieving-information-about-a-specific-job)
+     * [Submitting a job](#submitting-a-job)
   * [Automatic retries on errors](#automatic-retries-on-errors)
   * [Laravel integration](#laravel-integration)
      * [Customizing the HTTP client stack](#customizing-the-http-client-stack)
@@ -101,8 +105,11 @@ $alma->nz->setSruClient(new SruClient(
 
 ## Quick intro
 
-The `$alma` object provides `$alma->bibs` (for Bibs, Holdings, Items), `$alma->users` (for Users),
-`$alma->analytics` (for Analytics reports), `$alma->libraries` (for Libraries).
+The library provides access to Bibs, Holdings and Items
+through `$alma->bibs`, Users (`$alma->users`), Analytics reports
+(`$alma->analytics`), Libraries (`$alma->libraries`), Task Lists (`$alma->taskLists`) and Jobs (`$alma->jobs`).
+
+To fetch a Bib record:
 
 ```php
 $bib = $alma->bibs->get('990114012304702204');
@@ -485,13 +492,42 @@ Note: As of 2018-10-13, there is a bug preventing you from retrieving more than 
 ### Requested resources (pick from shelf)
 
 ```php
-$library = $alma->conf->libraries['LIBRARY_CODE'];
+$library = $alma->libraries['LIBRARY_CODE'];
 $requests = $alma->taskLists->getRequestedResources($library, 'DEFAULT_CIRC_DESK', [
     'printed' => 'N',
 ]);
 foreach ($requests as $request) {
     echo "- {$request->resource_metadata->title} {$request->resource_metadata->mms_id->value}\n";
 }
+```
+
+## Jobs
+
+### Listing jobs
+
+To list all jobs and their instances:
+
+```php
+foreach ($alma->jobs as $job) {
+    echo "[{$job->id}] {$job->name} / {$job->description}\n";
+    foreach ($job->instances as $instance) {
+        echo "    [{$instance->id}] Status: {$instance->status->desc}\n";
+    }
+}
+```
+
+This is a generator, so you can start processing results before the full list has been retrieved (it fetches jobs in batches of 10).
+
+### Retrieving information about a specific job
+
+```php
+$job = $alma->jobs['M43'];
+```
+
+### Submitting a job
+
+```php
+$instance = $alma->jobs['M43']->submit();
 ```
 
 ## Automatic retries on errors
