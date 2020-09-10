@@ -21,6 +21,8 @@ use Scriptotek\Alma\Analytics\Analytics;
 use Scriptotek\Alma\Bibs\Bibs;
 use Scriptotek\Alma\Bibs\Items;
 use Scriptotek\Alma\Conf\Conf;
+use Scriptotek\Alma\Conf\Jobs;
+use Scriptotek\Alma\Conf\Libraries;
 use Scriptotek\Alma\Conf\Library;
 use Scriptotek\Alma\Exception\ClientException as AlmaClientException;
 use Scriptotek\Alma\Exception\InvalidApiKey;
@@ -87,14 +89,34 @@ class Client
     public $sleepTimeOnServerError = 10;
 
     /**
+     * @var Conf
+     */
+    public $conf;
+
+    /**
+     * @var Libraries
+     */
+    public $libraries;
+
+    /**
+     * @var Jobs
+     */
+    public $jobs;
+
+    /**
+     * @var TaskLists
+     */
+    public $taskLists;
+
+    /**
      * Create a new client to connect to a given Alma instance.
      *
-     * @param string                  $key            API key
-     * @param string                  $region         Hosted region code, used to build base URL
-     * @param string                  $zone           Alma zone (Either Zones::INSTITUTION or Zones::NETWORK)
-     * @param HttpClientInterface     $http
-     * @param RequestFactoryInterface $requestFactory
-     * @param UriFactoryInterface     $uriFactory
+     * @param ?string                  $key            API key
+     * @param string                   $region         Hosted region code, used to build base URL
+     * @param string                   $zone           Alma zone (Either Zones::INSTITUTION or Zones::NETWORK)
+     * @param ?HttpClientInterface     $http
+     * @param ?RequestFactoryInterface $requestFactory
+     * @param ?UriFactoryInterface     $uriFactory
      *
      * @throws \ErrorException
      */
@@ -129,6 +151,7 @@ class Client
 
         $this->conf = new Conf($this);
         $this->libraries = $this->conf->libraries;  // shortcut
+        $this->jobs = $this->conf->jobs;  // shortcut
 
         $this->taskLists = new TaskLists($this);
 
