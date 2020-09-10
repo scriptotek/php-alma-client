@@ -24,10 +24,16 @@ abstract class SimplePaginatedList extends LazyResourceList
             return;
         }
 
-        $response = $this->client->getJSON($this->url('', [
+        $url = $this->url('', [
             'offset' => $this->offset,
             'limit'  => $this->limit,
-        ]));
+        ]);
+
+        $response = $this->client->getJSON($url);
+
+        if (is_null($response)) {
+            throw new \RuntimeException("Empty response from URL: $url");
+        }
 
         return $this->onData($response);
     }
