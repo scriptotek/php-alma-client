@@ -23,6 +23,11 @@ class User extends LazyResource
     protected $_identifiers;
 
     /**
+     * @var ContactInfo
+     */
+    protected $_contact_info;
+
+    /**
      * @var Loans
      */
     public $loans;
@@ -84,75 +89,11 @@ class User extends LazyResource
     }
 
     /**
-     * Get the user's preferred SMS number.
-     *
-     * @return string|null
+     * Get the user's contact info.
      */
-    public function getSmsNumber()
+    public function getContactInfo()
     {
-        $this->init();
-        if ($this->data->contact_info->phone) {
-            foreach ($this->data->contact_info->phone as $phone) {
-                if ($phone->preferred_sms) {
-                    return $phone->phone_number;
-                }
-            }
-        }
-        return null;
-    }
- 
-    /**
-     * Remove the preferred SMS flag from any number.
-     */
-    public function unsetSmsNumber()
-    {
-        $this->init();
-        if ($this->data->contact_info->phone) {
-            foreach ($this->data->contact_info->phone as $phone) {
-                if ($phone->preferred_sms) {
-                    $phone->preferred_sms = false;
-                }
-            }
-        }
-    }
-
-    /**
-     * Set the user's preferred SMS number, creating a new internal mobile number if needed
-     * @param $number string The SMS-capable mobile phone number
-     */
-    public function setSmsNumber($number)
-    {
-        $currentNumber = $this->getSmsNumber();
-        if ($number === $currentNumber) {
-            return;
-        }
-        $this->unsetSmsNumber();
-        $updated = false;
-        if ($this->data->contact_info->phone) {
-            foreach ($this->data->contact_info->phone as $phone) {
-                if ($phone->phone_number === $number) {
-                    $phone->preferred_sms = true;
-                }
-            }
-        }
-        if (!$updated) {
-            $this->addSmsNumber($number);
-        }
-    }
-
-    /**
-     * Add the user's preferred SMS number as a new internal mobile number.
-     * @param $number string The SMS-capable mobile phone number
-     */
-    public function addSmsNumber($number)
-    {
-        $currentNumber = $this->getSmsNumber();
-        if ($currentNumber) {
-            $this->unsetSmsNumber();
-        }
-        $phones = json_decode(json_encode($this->data->contact_info->phone), true);
-        $phones[] = json_decode('{"phone_number":'.json_encode($number).',"preferred":false,"preferred_sms":true,"segment_type":"Internal","phone_type":[{"value":"mobile","desc":"Mobile"}]}', true);
-        $this->data->contact_info->phone = json_decode(json_encode($phones));
+        return $this->init()->_contact_info;
     }
 
     /**
@@ -186,6 +127,7 @@ class User extends LazyResource
     protected function onData($data)
     {
         $this->_identifiers = UserIdentifiers::make($this->client, $data);
+        $this->_contact_info = ContactInfo::make($this->client, $data->contact_info);
     }
 
     /**
