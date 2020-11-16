@@ -329,7 +329,7 @@ foreach ($bib->representations as $rep) {
 
 ## Users, loans, fees and requests
 
-**Note**: Editing is not yet implemented.
+**Note**: Editing is not fully implemented.
 
 ### Search
 
@@ -339,6 +339,54 @@ Example:
 foreach ($alma->users->search('last_name~Heggø AND first_name~Dan') as $user) {
     echo "{$user->first_name} {$user->last_name} ({$user->primary_id})\n";
 }
+```
+
+### Contact Info Updates
+
+#### Update an address
+
+Example:
+
+```php
+$uerr = $alma->users->get('EXTID_123456');
+$user->contactInfo->unsetPreferredAddress();
+$addresses = $user->contactInfo->getAddresses();
+$campusBox = 'Box 876';
+$changed = false;
+foreach ($addresses as $address) {
+	if ($address->address_type[0]->value === 'school') {
+		$address->line1 = $campusBox;
+		$address->preferred = true;
+		$changed = true;
+		break;
+	}
+}
+if (!$changed) {
+	$new = json_decode('{ "preferred": true, "segment_type": "Internal", "line1": "My University", "line2": ".$campusBox.", "city": "Scottsdale", "state_province": "AZ", "postal_code": "85054", "country": { "value": "USA" }, "address_note": "string", "start_date": "2020-07-20", "end_date": "2021-07-20", "address_type": [ { "value": "school" } ] }');
+	$user->contactInfo->addAddress($new);
+}
+$user->save();
+```
+
+#### Add an SMS number
+
+Example:
+
+```php
+$user = $alma->users->get('EXTID_123456');
+$user->contactInfo->setSmsSNumber('18005882300');
+$user->save();
+```
+
+#### Change an email
+
+Example:
+
+```php
+$user = $alma->users->get('EXTID_123456');
+$user->contactInfo->removeEmail('bounced@email.org');
+$user->contactInfo->addEmail('confirmed@email.net');
+$user->save();
 ```
 
 ### Loans
