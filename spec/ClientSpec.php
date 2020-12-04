@@ -225,4 +225,16 @@ class ClientSpec extends ObjectBehavior
 
         expect($http->getRequests())->toHaveCount(2);
     }
+
+    public function it_uses_the_lang_parameter() {
+        $this->setLang("fr");
+        $url = $this->buildUrl("/items/123")->getWrappedObject()->__toString();
+        expect($url)->shouldEndWith("&lang=fr");
+    }
+
+    public function it_does_not_use_empty_lang_parameter() {
+        $url = $this->buildUrl("/items/123")->getWrappedObject()->__toString();
+        expect($url)->shouldNotContain("&lang=");
+        print_r($url);
+    }
 }
