@@ -49,6 +49,9 @@ class Client
     /** @var string Alma Developers Network API key for this zone */
     public $key;
 
+    /** @var string default language for API results */
+    public $lang;
+
     /** @var Client Network zone instance */
     public $nz;
 
@@ -204,6 +207,20 @@ class Client
     }
 
     /**
+     * Set the default language for the API.
+     *
+     * @param string $lang The language
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->lang = $lang;
+
+        return $this;
+    }
+
+    /**
      * Set the Alma region code ('na' for North America, 'eu' for Europe, 'ap' for Asia Pacific).
      *
      * @param $regionCode
@@ -238,6 +255,7 @@ class Client
             $query = array_merge($query0, $query);
         }
         $query['apikey'] = $this->key;
+        $query['lang'] = $this->lang;
 
         $url = $url[0];
 
