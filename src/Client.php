@@ -275,7 +275,6 @@ class Client
             parse_str($url[1], $query0);
             $query = array_merge($query0, $query);
         }
-        $query['apikey'] = $this->key;
 
         $url = $url[0];
 
@@ -300,8 +299,8 @@ class Client
      */
     public function request(RequestInterface $request, $attempt = 1)
     {
-        if (!$this->key) {
-            throw new AlmaClientException('No API key defined for ' . $this->zone);
+        if (isset($this->key)) {
+            $request = $request->withHeader('Authorization', 'apikey ' . $this->key);
         }
         foreach ($this->extraHeaders as $key => $val) {
             $request = $request->withHeader($key, $val);
@@ -592,6 +591,10 @@ class Client
         // The error code is often an integer, but sometimes a string,
         // so we generalize it as a string.
         $code = empty($code) ? null : (string) $code;
+
+        if ($code == 'UNAUTHORIZED') {
+            return new InvalidApiKey($message, null, $exception);
+        }
 
         if (strtolower($message) == 'invalid api key') {
             return new InvalidApiKey($message, null, $exception);

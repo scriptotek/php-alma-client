@@ -68,7 +68,7 @@ class ClientSpec extends ObjectBehavior
         $this->getJSON(str_random());
 
         // Query string should include apikey
-        expect($http->getRequests()[0])->getUri()->getQuery()->toContain('apikey=DummyApiKey');
+        expect($http->getRequests()[0])->getHeaderLine('authorization')->toBe('apikey DummyApiKey');
     }
 
     public function it_can_request_and_parse_JSON()
