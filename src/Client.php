@@ -117,6 +117,7 @@ class Client
      * @param ?HttpClientInterface     $http
      * @param ?RequestFactoryInterface $requestFactory
      * @param ?UriFactoryInterface     $uriFactory
+     * @param ?string                  $baseUrl
      *
      * @throws \ErrorException
      */
@@ -126,7 +127,8 @@ class Client
         $zone = Zones::INSTITUTION,
         HttpClientInterface $http = null,
         RequestFactoryInterface $requestFactory = null,
-        UriFactoryInterface $uriFactory = null
+        UriFactoryInterface $uriFactory = null,
+        string $baseUrl = null
     ) {
         $this->http = new PluginClient(
             $http ?: HttpClient::client(),
@@ -139,7 +141,12 @@ class Client
         $this->uriFactory = $uriFactory ?: HttpFactory::uriFactory();
 
         $this->key = $key;
-        $this->setRegion($region);
+
+        if (!is_null($baseUrl)) {
+            $this->setBaseUrl($baseUrl);
+        } else {
+            $this->setRegion($region);
+        }
 
         $this->zone = $zone;
 
@@ -156,7 +163,7 @@ class Client
         $this->taskLists = new TaskLists($this);
 
         if ($zone == Zones::INSTITUTION) {
-            $this->nz = new self(null, $region, Zones::NETWORK, $this->http, $this->requestFactory, $this->uriFactory);
+            $this->nz = new self(null, $region, Zones::NETWORK, $this->http, $this->requestFactory, $this->uriFactory, $baseUrl);
         } elseif ($zone != Zones::NETWORK) {
             throw new AlmaClientException('Invalid zone name.');
         }
@@ -207,9 +214,7 @@ class Client
      * Set the Alma region code ('na' for North America, 'eu' for Europe, 'ap' for Asia Pacific).
      *
      * @param $regionCode
-     *
-     * @throws \ErrorException
-     *
+     * @throws AlmaClientException
      * @return $this
      */
     public function setRegion($regionCode)
@@ -217,7 +222,24 @@ class Client
         if (!in_array($regionCode, ['na', 'eu', 'ap'])) {
             throw new AlmaClientException('Invalid region code');
         }
-        $this->baseUrl = 'https://api-' . $regionCode . '.hosted.exlibrisgroup.com/almaws/v1';
+        $this->setBaseUrl('https://api-' . $regionCode . '.hosted.exlibrisgroup.com/almaws/v1');
+
+        return $this;
+    }
+
+    /**
+     * Set the Alma API base url.
+     *
+     * @param string $baseUrl
+     * @return $this
+     */
+    public function setBaseUrl(string $baseUrl)
+    {
+        $this->baseUrl = $baseUrl;
+
+        if (!is_null($this->nz)) {
+            $this->nz->setBaseUrl($baseUrl);
+        }
 
         return $this;
     }

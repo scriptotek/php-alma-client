@@ -29,4 +29,13 @@ return [
         'sru' => env('ALMA_NZ_SRU_URL'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Base URL
+    |--------------------------------------------------------------------------
+    | This is only necessary to set if you connect to a non-standard API URL,
+    | for instance though a proxy.
+    */
+    'baseUrl' => null,
+
 ];

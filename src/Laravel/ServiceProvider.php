@@ -51,7 +51,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
                 Zones::INSTITUTION,
                 isset($app[HttpClientInterface::class]) ? $app[HttpClientInterface::class] : null,
                 isset($app[RequestFactoryInterface::class]) ? $app[RequestFactoryInterface::class] : null,
-                isset($app[UriFactoryInterface::class]) ? $app[UriFactoryInterface::class] : null
+                isset($app[UriFactoryInterface::class]) ? $app[UriFactoryInterface::class] : null,
+                $app['config']->get('alma.baseUrl')
             );
 
             // Set network zone key, if any

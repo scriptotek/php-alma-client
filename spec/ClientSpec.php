@@ -28,6 +28,14 @@ class ClientSpec extends ObjectBehavior
         return $http;
     }
 
+    public function it_can_be_constructed_with_custom_base_url()
+    {
+        $this->beConstructedWith('DummyKey');
+        $this->setBaseUrl('http://proxy.foxy');
+        $this->baseUrl->shouldBe('http://proxy.foxy');
+    }
+
+
     protected function httpWithResponseBody($body, $statusCode = 200, $headers = [])
     {
         $http = $this->let();
