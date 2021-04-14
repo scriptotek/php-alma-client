@@ -54,18 +54,18 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
                 isset($app[UriFactoryInterface::class]) ? $app[UriFactoryInterface::class] : null
             );
 
-            if ($app['config']->get('alma.iz.baseUrl')) {
-                $alma->setBaseUrl($app['config']->get('alma.iz.baseUrl'));
+            if ($app['config']->get('alma.iz.entrypoint')) {
+                $alma->setEntryPoint($app['config']->get('alma.iz.entrypoint'));
             }
-            $alma->setExtraHeaders($app['config']->get('alma.extraHeaders', []));
+            $alma->setExtraHeaders($app['config']->get('alma.iz.headers', []));
 
             // Set network zone key, if any
             $alma->nz->setKey($app['config']->get('alma.nz.key'));
 
-            if ($app['config']->get('alma.nz.baseUrl')) {
-                $alma->nz->setBaseUrl($app['config']->get('alma.nz.baseUrl'));
+            if ($app['config']->get('alma.nz.entrypoint')) {
+                $alma->nz->setEntryPoint($app['config']->get('alma.nz.entrypoint'));
             }
-            $alma->nz->setExtraHeaders($app['config']->get('alma.nz.extraHeaders', []));
+            $alma->nz->setExtraHeaders($app['config']->get('alma.nz.headers', []));
 
             // Optionally, attach SRU client for institution zone
             if ($app['config']->get('alma.iz.sru')) {

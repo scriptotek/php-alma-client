@@ -77,12 +77,12 @@ $alma = new AlmaClient('MY_SECRET_API_KEY', 'eu');
 ```
 
 where `'eu'` is the region code for Europe (use `'na'` for North America or `'ap'` for Asia Pacific).
-By default, the API base URL is generated from the region code,
-but if you're connecting to the API through a proxy, you can set the base URL directly:
+By default, the API entry point URL is generated from the region code,
+but if you're connecting to the API through a proxy, you can configure a different URL:
 
 ```
 $alma = new AlmaClient('MY_SECRET_API_KEY')
-    ->setBaseUrl('https://gw-uio.intark.uh-it.no/alma/v1');
+    ->setEntryPoint('https://gw-uio.intark.uh-it.no/alma/v1');
 ```
 
 If your Alma instance is connected to a network zone and you want to work

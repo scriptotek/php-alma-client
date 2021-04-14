@@ -31,8 +31,8 @@ class ClientSpec extends ObjectBehavior
     public function it_can_be_configured_with_custom_base_url()
     {
         $this->beConstructedWith('DummyKey');
-        $this->setBaseUrl('http://proxy.foxy');
-        $this->baseUrl->shouldBe('http://proxy.foxy');
+        $this->setEntryPoint('http://proxy.foxy');
+        $this->entrypoint->shouldBe('http://proxy.foxy');
     }
 
 

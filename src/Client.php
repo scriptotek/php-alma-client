@@ -41,7 +41,7 @@ use function GuzzleHttp\Psr7\stream_for;
  */
 class Client
 {
-    public $baseUrl;
+    public $entrypoint;
 
     /** @var string Alma zone (institution or network) */
     public $zone;
@@ -89,7 +89,7 @@ class Client
     public $sleepTimeOnServerError = 10;
 
     /** @var array Extra request headers */
-    public $extraHeaders = [];
+    public $headers = [];
 
     /**
      * @var Conf
@@ -115,7 +115,7 @@ class Client
      * Create a new client to connect to a given Alma instance.
      *
      * @param ?string                  $key            API key
-     * @param string                   $region         Hosted region code, used to build base URL
+     * @param string                   $region         Hosted region code, used to build the entrypoint URL
      * @param string                   $zone           Alma zone (Either Zones::INSTITUTION or Zones::NETWORK)
      * @param ?HttpClientInterface     $http
      * @param ?RequestFactoryInterface $requestFactory
@@ -228,7 +228,7 @@ class Client
         if (!in_array($regionCode, ['na', 'eu', 'ap'])) {
             throw new AlmaClientException('Invalid region code');
         }
-        $this->setBaseUrl('https://api-' . $regionCode . '.hosted.exlibrisgroup.com/almaws/v1');
+        $this->setEntryPoint('https://api-' . $regionCode . '.hosted.exlibrisgroup.com/almaws/v1');
 
         return $this;
     }
@@ -236,12 +236,12 @@ class Client
     /**
      * Set the Alma API base url.
      *
-     * @param string $baseUrl
+     * @param string $url
      * @return $this
      */
-    public function setBaseUrl(string $baseUrl)
+    public function setEntryPoint(string $url)
     {
-        $this->baseUrl = $baseUrl;
+        $this->entrypoint = $url;
 
         return $this;
     }
@@ -249,12 +249,12 @@ class Client
     /**
      * Set extra request headers.
      *
-     * @param array $extraHeaders
+     * @param array $headers
      * @return $this
      */
-    public function setExtraHeaders(array $extraHeaders)
+    public function setExtraHeaders(array $headers)
     {
-        $this->extraHeaders = $extraHeaders;
+        $this->headers = $headers;
 
         return $this;
     }
@@ -277,8 +277,8 @@ class Client
 
         $url = $url[0];
 
-        if (strpos($url, $this->baseUrl) === false) {
-            $url = $this->baseUrl . $url;
+        if (strpos($url, $this->entrypoint) === false) {
+            $url = $this->entrypoint . $url;
         }
 
         return $this->uriFactory->createUri($url)
@@ -301,7 +301,7 @@ class Client
         if (isset($this->key)) {
             $request = $request->withHeader('Authorization', 'apikey ' . $this->key);
         }
-        foreach ($this->extraHeaders as $key => $val) {
+        foreach ($this->headers as $key => $val) {
             $request = $request->withHeader($key, $val);
         }
 
