@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 (Nothing yet)
 
+## [0.9.3] - 2021-04-14
+
+### Added
+
+- Added support for setting a custom entry point URL, so it's possible to connect to the API through a proxy.
+- Added support for adding custom request headers.
+
+### Changed
+
+- Switched from passing the apikey in query string to authorization header.
+
 ## [0.9.2] - 2020-05-14
 
 ### Added
