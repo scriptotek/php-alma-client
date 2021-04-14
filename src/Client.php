@@ -88,6 +88,9 @@ class Client
     /** @var float Number of seconds to sleep before retrying after a server error */
     public $sleepTimeOnServerError = 10;
 
+    /** @var array Extra request headers */
+    public $extraHeaders = [];
+
     /**
      * @var Conf
      */
@@ -118,6 +121,7 @@ class Client
      * @param ?RequestFactoryInterface $requestFactory
      * @param ?UriFactoryInterface     $uriFactory
      * @param ?string                  $baseUrl
+     * @param array                    $extraHeaders
      *
      * @throws \ErrorException
      */
@@ -128,7 +132,8 @@ class Client
         HttpClientInterface $http = null,
         RequestFactoryInterface $requestFactory = null,
         UriFactoryInterface $uriFactory = null,
-        string $baseUrl = null
+        string $baseUrl = null,
+        array $extraHeaders = []
     ) {
         $this->http = new PluginClient(
             $http ?: HttpClient::client(),
@@ -148,6 +153,8 @@ class Client
             $this->setRegion($region);
         }
 
+        $this->extraHeaders = $extraHeaders;
+
         $this->zone = $zone;
 
         $this->bibs = new Bibs($this);
@@ -163,7 +170,16 @@ class Client
         $this->taskLists = new TaskLists($this);
 
         if ($zone == Zones::INSTITUTION) {
-            $this->nz = new self(null, $region, Zones::NETWORK, $this->http, $this->requestFactory, $this->uriFactory, $baseUrl);
+            $this->nz = new self(
+                null,
+                $region,
+                Zones::NETWORK,
+                $this->http,
+                $this->requestFactory,
+                $this->uriFactory,
+                $baseUrl,
+                $extraHeaders
+            );
         } elseif ($zone != Zones::NETWORK) {
             throw new AlmaClientException('Invalid zone name.');
         }
@@ -286,6 +302,9 @@ class Client
     {
         if (!$this->key) {
             throw new AlmaClientException('No API key defined for ' . $this->zone);
+        }
+        foreach ($this->extraHeaders as $key => $val) {
+            $request = $request->withHeader($key, $val);
         }
 
         try {

@@ -38,4 +38,14 @@ return [
     */
     'baseUrl' => null,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Extra request headers
+    |--------------------------------------------------------------------------
+    | An associated array of extra headers to be sent with each request.
+    */
+    'extraHeaders' => [
+        // 'x-proxy-auth' => 'custom proxy auth'
+    ],
+
 ];
