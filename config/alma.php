@@ -15,8 +15,20 @@ return [
     |--------------------------------------------------------------------------
     */
     'iz' => [
+        // API key for institution zone
         'key' => env('ALMA_IZ_KEY'),
+
+        // SRU URL for institution zone
         'sru' => env('ALMA_IZ_SRU_URL'),
+
+        // Base URL for institution zone. This only needs to be specified if you
+        // use a proxy or other non-standard URL.
+        'baseUrl' => null,
+
+        // Optional list of extra headers to send with each request.
+        'extraHeaders' => [
+            // 'x-proxy-auth' => 'custom proxy auth'
+        ],
     ],
 
     /*
@@ -25,27 +37,19 @@ return [
     |--------------------------------------------------------------------------
     */
     'nz' => [
+        // API key for institution zone
         'key' => env('ALMA_NZ_KEY'),
+
+        // SRU URL for institution zone
         'sru' => env('ALMA_NZ_SRU_URL'),
+
+        // Base URL for institution zone. This only needs to be specified if you
+        // use a proxy or other non-standard URL.
+        'baseUrl' => null,
+
+        // Optional list of extra headers to send with each request.
+        'extraHeaders' => [
+            // 'x-proxy-auth' => 'custom proxy auth'
+        ],
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Base URL
-    |--------------------------------------------------------------------------
-    | This is only necessary to set if you connect to a non-standard API URL,
-    | for instance though a proxy.
-    */
-    'baseUrl' => null,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Extra request headers
-    |--------------------------------------------------------------------------
-    | An associated array of extra headers to be sent with each request.
-    */
-    'extraHeaders' => [
-        // 'x-proxy-auth' => 'custom proxy auth'
-    ],
-
 ];

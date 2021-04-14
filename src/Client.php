@@ -120,8 +120,6 @@ class Client
      * @param ?HttpClientInterface     $http
      * @param ?RequestFactoryInterface $requestFactory
      * @param ?UriFactoryInterface     $uriFactory
-     * @param ?string                  $baseUrl
-     * @param array                    $extraHeaders
      *
      * @throws \ErrorException
      */
@@ -131,9 +129,7 @@ class Client
         $zone = Zones::INSTITUTION,
         HttpClientInterface $http = null,
         RequestFactoryInterface $requestFactory = null,
-        UriFactoryInterface $uriFactory = null,
-        string $baseUrl = null,
-        array $extraHeaders = []
+        UriFactoryInterface $uriFactory = null
     ) {
         $this->http = new PluginClient(
             $http ?: HttpClient::client(),
@@ -147,13 +143,9 @@ class Client
 
         $this->key = $key;
 
-        if (!is_null($baseUrl)) {
-            $this->setBaseUrl($baseUrl);
-        } else {
+        if (!is_null($region)) {
             $this->setRegion($region);
         }
-
-        $this->extraHeaders = $extraHeaders;
 
         $this->zone = $zone;
 
@@ -176,9 +168,7 @@ class Client
                 Zones::NETWORK,
                 $this->http,
                 $this->requestFactory,
-                $this->uriFactory,
-                $baseUrl,
-                $extraHeaders
+                $this->uriFactory
             );
         } elseif ($zone != Zones::NETWORK) {
             throw new AlmaClientException('Invalid zone name.');
@@ -253,9 +243,18 @@ class Client
     {
         $this->baseUrl = $baseUrl;
 
-        if (!is_null($this->nz)) {
-            $this->nz->setBaseUrl($baseUrl);
-        }
+        return $this;
+    }
+
+    /**
+     * Set extra request headers.
+     *
+     * @param array $extraHeaders
+     * @return $this
+     */
+    public function setExtraHeaders(array $extraHeaders)
+    {
+        $this->extraHeaders = $extraHeaders;
 
         return $this;
     }
