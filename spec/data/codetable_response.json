@@ -1,0 +1,109 @@
+{
+  "name": "systemJobStatus",
+  "description": "System Job Status",
+  "sub_system": {
+    "value": "INFRA",
+    "desc": "Infra"
+  },
+  "patron_facing": true,
+  "language": {
+    "value": "en",
+    "desc": "English"
+  },
+  "scope": {
+    "institution_id": {
+      "value": "01MY_INST",
+      "desc": "My Institution"
+    },
+    "library_id": {
+      "value": "",
+      "desc": ""
+    }
+  },
+  "row": [
+    {
+      "code": "QUEUED",
+      "description": "Queued",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PENDING",
+      "description": "Pending",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "INITIALIZING",
+      "description": "Initializing",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "RUNNING",
+      "description": "Running",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "MANUAL_HANDLING_REQUIRED",
+      "description": "Manual Handling Required",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "FINALIZING",
+      "description": "Finalizing",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "COMPLETED_SUCCESS",
+      "description": "Completed Successfully",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "COMPLETED_NO_BULKS",
+      "description": "Completed with no Bulks",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "COMPLETED_FAILED",
+      "description": "Completed with Errors",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "FAILED",
+      "description": "Failed",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "COMPLETED_WARNING",
+      "description": "Completed with Warnings",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "USER_ABORTED",
+      "description": "Aborted by User",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "SYSTEM_ABORTED",
+      "description": "Aborted by System",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "SKIPPED",
+      "description": "Skipped",
+      "default": false,
+      "enabled": true
+    }
+  ]
+}

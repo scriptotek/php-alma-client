@@ -24,6 +24,7 @@ use Scriptotek\Alma\Conf\Conf;
 use Scriptotek\Alma\Conf\Jobs;
 use Scriptotek\Alma\Conf\Libraries;
 use Scriptotek\Alma\Conf\Library;
+use Scriptotek\Alma\Conf\CodeTables;
 use Scriptotek\Alma\Exception\ClientException as AlmaClientException;
 use Scriptotek\Alma\Exception\InvalidApiKey;
 use Scriptotek\Alma\Exception\MaxNumberOfAttemptsExhausted;
@@ -107,6 +108,11 @@ class Client
     public $jobs;
 
     /**
+     * @var CodeTables
+     */
+    public $codetables;
+
+    /**
      * @var TaskLists
      */
     public $taskLists;
@@ -158,6 +164,7 @@ class Client
         $this->conf = new Conf($this);
         $this->libraries = $this->conf->libraries;  // shortcut
         $this->jobs = $this->conf->jobs;  // shortcut
+        $this->codetables = $this->conf->codetables;  // shortcut
 
         $this->taskLists = new TaskLists($this);
 
