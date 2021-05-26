@@ -43,6 +43,8 @@ If the package doesn't fit your needs, you might take a look at the alternative
      * [Listing jobs](#listing-jobs)
      * [Retrieving information about a specific job](#retrieving-information-about-a-specific-job)
      * [Submitting a job](#submitting-a-job)
+  * [Code Tables](#code-tables)
+     * [Getting a single code table](#getting-a-codetable)
   * [Automatic retries on errors](#automatic-retries-on-errors)
   * [Laravel integration](#laravel-integration)
      * [Customizing the HTTP client stack](#customizing-the-http-client-stack)
@@ -576,6 +578,20 @@ $job = $alma->jobs['M43'];
 
 ```php
 $instance = $alma->jobs['M43']->submit();
+```
+
+## Code Tables
+
+### Getting a Code Table
+
+To fetch a code table
+
+```php
+$ct = $alma->codetables->get('systemJobStatus');
+echo "Rows for ".$ct->sub_system->value."'s ".$ct->name."\n";
+foreach ($ct->row as $row) {
+	echo "code: ".$row->code.", description: ".$row->description."\n";
+}
 ```
 
 ## Automatic retries on errors
