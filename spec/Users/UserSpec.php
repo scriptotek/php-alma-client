@@ -74,25 +74,129 @@ class UserSpec extends ObjectBehavior
 
     public function it_has_sms()
     {
-        $this->getSmsNumber()->shouldBe('87654321');
+        $this->contactInfo->getSmsNumber()->phone_number->shouldBe('87654321');
     }
     
     public function it_can_change_sms()
     {
-        $this->setSmsNumber('12345678');
-        $this->getSmsNumber()->shouldBe('12345678');
+        $this->contactInfo->setSmsNumber('12345678');
+        $this->contactInfo->getSmsNumber()->phone_number->shouldBe('12345678');
     }
 
     public function it_can_add_sms()
     {
-        $this->setSmsNumber('9999999');
-        $this->getSmsNumber()->shouldBe('9999999');
+        $this->contactInfo->setSmsNumber('9999999');
+        $this->contactInfo->getSmsNumber()->phone_number->shouldBe('9999999');
     }
 
     public function it_can_remove_sms()
     {
-        $this->unsetSmsNumber();
-        $this->getSmsNumber()->shouldBe(null);
+        $this->contactInfo->unsetSmsNumber();
+        $this->contactInfo->getSmsNumber()->shouldBe(null);
     }
 
+    public function it_can_add_email()
+    {
+        $this->contactInfo->addEmail('example@example.com', 'work', true);
+        $this->contactInfo->getEmail()->email_address->shouldBe('example@example.com');
+    }
+
+    public function it_can_unset_email()
+    {
+        $this->contactInfo->unsetEmail();
+        $this->contactInfo->getEmail()->shouldBe(null);
+    }
+
+    public function it_can_remove_email()
+    {
+        $this->contactInfo->removeEmail('dan@banan.com');
+        $this->contactInfo->allEmails()->shouldBe([]);
+    }
+
+    public function it_can_add_address()
+    {
+        $this->contactInfo->addAddress([
+            'line1' => '123 Something Blvd.',
+            'city' => 'Somewhere',
+            'state_province' => 'IL',
+            'postal_code' => '12345',
+            'country' => 'USA',
+            'address_type' => 'home'
+        ])->shouldBeAnInstanceOf('Scriptotek\Alma\Users\Address');
+        $this->contactInfo->address[1]->shouldBeLike((object) [
+            'line1' => '123 Something Blvd.',
+            'city' => 'Somewhere',
+            'state_province' => 'IL',
+            'postal_code' => '12345',
+            'country' => (object) ['value' => 'USA'],
+            'address_type' => [(object) ['value' => 'home']]
+        ]);
+    }
+
+    public function it_can_remove_address()
+    {
+        $address = $this->contactInfo->addresses[0];
+        $this->contactInfo->removeAddress($address);
+        $this->contactInfo->addresses->shouldBe([]);
+    }
+
+    public function it_can_set_preferred_address()
+    {
+        $address = $this->contactInfo->addresses[0];
+        $address->preferred = true;
+        $address->preferred->shouldBe(true);
+        $address->preferred = false;
+        $address->preferred->shouldBe(false);
+    }
+
+    public function it_can_unset_preferred_address()
+    {
+        $this->contactInfo->unsetPreferredAddress();
+        $this->contactInfo->getPreferredAddress()->shouldBe(null);
+    }
+
+    public function it_can_set_address_type()
+    {
+        $address = $this->contactInfo->addresses[0];
+        $address->setAddressType('work', 'Work');
+        $address->data->address_type[0]->shouldBeLike((object)[
+            'value' => 'work',
+            'desc' => 'Work'
+        ]);
+        $address->address_type = 'home';
+        $address->data->address_type[0]->shouldBeLike((object)[
+            'value' => 'home'
+        ]);
+    }
+
+    public function it_can_add_phone_number()
+    {
+        $this->contactInfo->addPhone('8675309', 'home', true);
+        $this->contactInfo->getPreferredPhone()->phone_number->shouldBe('8675309');
+    }
+
+    public function it_can_remove_phone_number()
+    {
+        $this->contactInfo->removePhone('12345678');
+        $this->contactInfo->getPreferredPhone()->shouldBe(null);
+    }
+
+    public function it_can_set_preferred_phone()
+    {
+        $this->contactInfo->setPreferredPhone('87654321');
+        $this->contactInfo->getPreferredPhone()->phone_number->shouldBe('87654321');
+    }
+
+    public function it_can_unset_preferred_phone()
+    {
+        $this->contactInfo->unsetPreferredPhone();
+        $this->contactInfo->getPreferredPhone()->shouldBe(null);
+    }
+
+    public function it_can_get_all_phone_numbers()
+    {
+        $phones = $this->contactInfo->allPhones();
+        $phones[0]->phone_number->shouldBe('12345678');
+        $phones[1]->phone_number->shouldBe('87654321');
+    }
 }
