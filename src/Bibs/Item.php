@@ -51,6 +51,15 @@ class Item extends LazyResource
     }
 
     /**
+     * Save the item.
+     */
+    public function save()
+    {
+        return $this->client->putJSON($this->url(), $this->getData());
+    }
+
+
+    /**
      * Check if we have the full representation of our data object.
      *
      * @param \stdClass $data
