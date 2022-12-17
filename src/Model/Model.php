@@ -95,7 +95,7 @@ abstract class Model implements \JsonSerializable
         }
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return $this->data;
     }

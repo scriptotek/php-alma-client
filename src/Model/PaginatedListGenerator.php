@@ -11,10 +11,8 @@ trait PaginatedListGenerator
      * Rewind the Iterator to the first element.
      *
      * @link http://php.net/manual/en/iterator.rewind.php
-     *
-     * @return void
      */
-    public function rewind()
+    public function rewind(): void
     {
         if ($this->position > 0) {
             throw new \Exception('Cannot rewind a generator that was already run');
@@ -25,10 +23,8 @@ trait PaginatedListGenerator
      * Checks if current position is valid.
      *
      * @link http://php.net/manual/en/iterator.valid.php
-     *
-     * @return bool
      */
-    public function valid()
+    public function valid(): bool
     {
         if (!isset($this->resources[0])) {
             $this->fetchBatch();
@@ -41,10 +37,8 @@ trait PaginatedListGenerator
      * Return the current element.
      *
      * @link http://php.net/manual/en/iterator.current.php
-     *
-     * @return mixed
      */
-    public function current()
+    public function current(): mixed
     {
         return array_shift($this->resources);
     }
@@ -53,10 +47,8 @@ trait PaginatedListGenerator
      * Move forward to next element.
      *
      * @link http://php.net/manual/en/iterator.next.php
-     *
-     * @return void
      */
-    public function next()
+    public function next(): void
     {
         $this->position++;
     }
@@ -68,7 +60,7 @@ trait PaginatedListGenerator
      *
      * @return int|null Scalar on success, or null on failure.
      */
-    public function key()
+    public function key(): mixed
     {
         return $this->position;
     }

@@ -7,21 +7,21 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php" : "^7.1|^8.0|^9.0",
+        "php" : ">=7.1",
         "ext-json": "*",
-        "scriptotek/marc": "^2.0 || dev-master",
+        "scriptotek/marc": "^2.0",
         "danmichaelo/quitesimplexmlelement": "^1.0",
-        "scriptotek/sru-client": "^0.7",
+        "scriptotek/sru-client": "^0.7.1",
         "psr/http-message": "^1.0",
         "psr/http-client-implementation": "^1.0",
         "psr/http-factory-implementation": "^1.0",
         "http-interop/http-factory-discovery": "^1.4",
         "php-http/client-common": "^1.9 || ^2.0",
-        "symfony/polyfill-php73": "^1.11"
+        "symfony/polyfill-php73": "^1.11",
+        "friends-of-phpspec/phpspec-expect": "^4.0"
     },
     "require-dev": {
-        "phpspec/phpspec": "^5.0 || ^6.0",
-        "bossa/phpspec2-expect": "^2.1 || ^3.0",
+        "phpspec/phpspec": "^5.0 || ^6.0 || ^7.0",
         "wp-cli/php-cli-tools": "^0.11.1",
         "php-http/mock-client": "^1.0",
         "php-http/guzzle6-adapter": "^1.1 || ^2.0",

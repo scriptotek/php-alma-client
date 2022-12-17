@@ -28,22 +28,22 @@ class Row implements \ArrayAccess, \IteratorAggregate, \Countable
         return $this->byHeader[$name];
     }
 
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         throw new \RuntimeException('Sorry, column values cannot be modified.');
     }
 
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->byIndex[$offset]) || isset($this->byHeader[$offset]);
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         throw new \RuntimeException('Sorry, column values cannot be modified.');
     }
 
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         if (isset($this->byIndex[$offset])) {
             return $this->byIndex[$offset];
@@ -51,19 +51,20 @@ class Row implements \ArrayAccess, \IteratorAggregate, \Countable
         if (isset($this->byHeader[$offset])) {
             return $this->byHeader[$offset];
         }
+        return null;
     }
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->byHeader);
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->byIndex);
     }
 
-    public function toArray()
+    public function toArray(): mixed
     {
         return $this->byHeader;
     }

@@ -209,7 +209,7 @@ class Report extends LazyResource implements \Iterator, \Countable
      *
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return count($this->init()->resources);
     }

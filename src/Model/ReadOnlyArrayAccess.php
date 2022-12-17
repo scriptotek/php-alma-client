@@ -4,22 +4,22 @@ namespace Scriptotek\Alma\Model;
 
 trait ReadOnlyArrayAccess
 {
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         throw \Exception('Not implemented');
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         throw \Exception('Not implemented');
     }
 
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return $this->get($offset)->exists();
     }
 
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->get($offset);
     }

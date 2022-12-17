@@ -91,10 +91,8 @@ abstract class LazyResourceList extends LazyResource implements \Countable
      * Number of resources.
      *
      * @link http://php.net/manual/en/countable.count.php
-     *
-     * @return int The number of resources as an integer.
      */
-    public function count()
+    public function count(): int
     {
         return count($this->all());
     }
