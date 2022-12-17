@@ -4,7 +4,6 @@ namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Model\LazyResource;
-use Scriptotek\Alma\Conf\JobInstances;
 
 /**
  * A single Job resource.
@@ -31,13 +30,13 @@ class Job extends LazyResource
     }
 
     /**
-     * Submit the job for running
+     * Submit the job for running.
      *
      * @return string The API response body
      */
     public function submit()
     {
-        return $this->client->post($this->url().'?op=run', json_encode($this->jsonSerialize()));
+        return $this->client->post($this->url() . '?op=run', json_encode($this->jsonSerialize()));
     }
 
     /**

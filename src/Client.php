@@ -3,6 +3,7 @@
 namespace Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
+use function GuzzleHttp\Psr7\stream_for;
 use Http\Client\Common\Plugin\ContentLengthPlugin;
 use Http\Client\Common\Plugin\ErrorPlugin;
 use Http\Client\Common\PluginClient;
@@ -34,7 +35,6 @@ use Scriptotek\Alma\TaskLists\LendingRequests;
 use Scriptotek\Alma\TaskLists\TaskLists;
 use Scriptotek\Alma\Users\Users;
 use Scriptotek\Sru\Client as SruClient;
-use function GuzzleHttp\Psr7\stream_for;
 
 /**
  * Alma client.
@@ -220,7 +220,9 @@ class Client
      * Set the Alma region code ('na' for North America, 'eu' for Europe, 'ap' for Asia Pacific).
      *
      * @param $regionCode
+     *
      * @throws AlmaClientException
+     *
      * @return $this
      */
     public function setRegion($regionCode)
@@ -237,6 +239,7 @@ class Client
      * Set the Alma API base url.
      *
      * @param string $url
+     *
      * @return $this
      */
     public function setEntryPoint(string $url)
@@ -250,6 +253,7 @@ class Client
      * Set extra request headers.
      *
      * @param array $headers
+     *
      * @return $this
      */
     public function setExtraHeaders(array $headers)

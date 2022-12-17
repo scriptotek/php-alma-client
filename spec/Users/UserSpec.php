@@ -76,7 +76,7 @@ class UserSpec extends ObjectBehavior
     {
         $this->getSmsNumber()->shouldBe('87654321');
     }
-    
+
     public function it_can_change_sms()
     {
         $this->setSmsNumber('12345678');
@@ -94,5 +94,4 @@ class UserSpec extends ObjectBehavior
         $this->unsetSmsNumber();
         $this->getSmsNumber()->shouldBe(null);
     }
-
 }

@@ -6,7 +6,6 @@ use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\File;
 use Scriptotek\Alma\Bibs\Representation;
-use Scriptotek\Alma\Bibs\Representations;
 use Scriptotek\Alma\Client as AlmaClient;
 use spec\Scriptotek\Alma\SpecHelper;
 
