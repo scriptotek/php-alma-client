@@ -20,7 +20,7 @@ class JobInstance extends LazyResource
      * JobInstance constructor.
      *
      * @param Client $client
-     * @param Job $job
+     * @param Job    $job
      * @param string $job_instance_id
      */
     public function __construct(Client $client, Job $job, string $job_instance_id)

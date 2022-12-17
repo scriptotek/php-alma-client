@@ -4,9 +4,8 @@ namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Model\PaginatedListGenerator;
-use Scriptotek\Alma\Model\SimplePaginatedList;
 use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
-use Scriptotek\Alma\Conf\Job;
+use Scriptotek\Alma\Model\SimplePaginatedList;
 
 /**
  * Iterable collection of Jobs.

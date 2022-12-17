@@ -5,7 +5,6 @@ namespace spec\Scriptotek\Alma\Bibs;
 use PhpSpec\ObjectBehavior;
 use Scriptotek\Alma\Bibs\Bib;
 use Scriptotek\Alma\Bibs\Portfolio;
-use Scriptotek\Alma\Bibs\Portfolios;
 use Scriptotek\Alma\Client as AlmaClient;
 use Scriptotek\Alma\Electronic\Collection;
 use spec\Scriptotek\Alma\SpecHelper;

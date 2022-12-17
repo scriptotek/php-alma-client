@@ -98,9 +98,10 @@ class User extends LazyResource
                 }
             }
         }
+
         return null;
     }
- 
+
     /**
      * Remove the preferred SMS flag from any number.
      */
@@ -117,7 +118,8 @@ class User extends LazyResource
     }
 
     /**
-     * Set the user's preferred SMS number, creating a new internal mobile number if needed
+     * Set the user's preferred SMS number, creating a new internal mobile number if needed.
+     *
      * @param $number string The SMS-capable mobile phone number
      */
     public function setSmsNumber($number)
@@ -142,6 +144,7 @@ class User extends LazyResource
 
     /**
      * Add the user's preferred SMS number as a new internal mobile number.
+     *
      * @param $number string The SMS-capable mobile phone number
      */
     public function addSmsNumber($number)
@@ -151,18 +154,19 @@ class User extends LazyResource
             $this->unsetSmsNumber();
         }
         $phones = json_decode(json_encode($this->data->contact_info->phone), true);
-        $phones[] = json_decode('{"phone_number":'.json_encode($number).',"preferred":false,"preferred_sms":true,"segment_type":"Internal","phone_type":[{"value":"mobile","desc":"Mobile"}]}', true);
+        $phones[] = json_decode('{"phone_number":' . json_encode($number) . ',"preferred":false,"preferred_sms":true,"segment_type":"Internal","phone_type":[{"value":"mobile","desc":"Mobile"}]}', true);
         $this->data->contact_info->phone = json_decode(json_encode($phones));
     }
 
     /**
-     * Save the user
-     * 
+     * Save the user.
+     *
      * @return string The API response body
      */
     public function save()
     {
         $this->init();
+
         return $this->client->put($this->url(), json_encode($this->jsonSerialize()));
     }
 

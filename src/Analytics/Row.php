@@ -51,6 +51,7 @@ class Row implements \ArrayAccess, \IteratorAggregate, \Countable
         if (isset($this->byHeader[$offset])) {
             return $this->byHeader[$offset];
         }
+
         return null;
     }
 

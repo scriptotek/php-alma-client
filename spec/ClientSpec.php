@@ -35,7 +35,6 @@ class ClientSpec extends ObjectBehavior
         $this->entrypoint->shouldBe('http://proxy.foxy');
     }
 
-
     protected function httpWithResponseBody($body, $statusCode = 200, $headers = [])
     {
         $http = $this->let();

@@ -3,11 +3,11 @@
 namespace spec\Scriptotek\Alma;
 
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
+use function GuzzleHttp\Psr7\stream_for;
 use Http\Client\Common\Exception\ClientErrorException;
 use Http\Factory\Guzzle\RequestFactory;
 use Http\Factory\Guzzle\ResponseFactory;
 use Prophecy\Argument;
-use function GuzzleHttp\Psr7\stream_for;
 
 class SpecHelper
 {

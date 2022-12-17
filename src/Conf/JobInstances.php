@@ -4,9 +4,8 @@ namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Model\IterableCollection;
-use Scriptotek\Alma\Model\SimplePaginatedList;
 use Scriptotek\Alma\Model\ReadOnlyArrayAccess;
-use Scriptotek\Alma\Conf\JobInstance;
+use Scriptotek\Alma\Model\SimplePaginatedList;
 
 /**
  * Iterable collection of Job Instances.
@@ -23,7 +22,7 @@ class JobInstances extends SimplePaginatedList implements \ArrayAccess, \Countab
      * Job Instances constructor.
      *
      * @param Client $client
-     * @param Job $job
+     * @param Job    $job
      */
     public function __construct(Client $client, Job $job)
     {

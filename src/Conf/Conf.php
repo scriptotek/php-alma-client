@@ -3,7 +3,6 @@
 namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
-use Scriptotek\Alma\Conf\Jobs;
 
 class Conf
 {
