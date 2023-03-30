@@ -84,4 +84,19 @@ abstract class SimplePaginatedList extends LazyResourceList
 
         return $this->totalRecordCount;
     }
+
+    /**
+     * Mutate the pagination limit
+     *
+     * @param int $limit Maximum number of items per page (0  - 100)
+     * @throws \RuntimeException
+     */
+    public function setPaginationLimit($limit)
+    {
+       if ((int)$limit < 0 || (int)$limit > 100) {
+               throw new \RuntimeException('Invalid limit value (0 - 100): '.$limit);
+       }
+        $this->limit = (int) $limit;
+    }
+
 }
