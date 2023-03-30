@@ -4,6 +4,7 @@ namespace Scriptotek\Alma\Conf;
 
 use Scriptotek\Alma\Client;
 use Scriptotek\Alma\Conf\Jobs;
+use Scriptotek\Alma\Conf\CodeTables;
 
 class Conf
 {
@@ -12,5 +13,6 @@ class Conf
         $this->client = $client;
         $this->libraries = new Libraries($client);
         $this->jobs = new Jobs($client);
+        $this->codetables = new CodeTables($client);
     }
 }
